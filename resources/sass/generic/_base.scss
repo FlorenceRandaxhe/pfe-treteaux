@@ -1,0 +1,38 @@
+html {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    -webkit-box-sizing: inherit;
+       -moz-box-sizing: inherit;
+            box-sizing: inherit;
+    }
+
+}
+
+body{
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: color(black);
+    text-decoration: none;
+}
+
+.sro {
+    @include hidden();
+}
+
+.wrapper {
+    max-width: em($grid_width);
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+}

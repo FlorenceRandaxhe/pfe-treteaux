@@ -1,0 +1,19 @@
+@function color($name) {
+    @return map-get($colors, $name);
+}
+
+@function icon($name) {
+    @return map-get($icons, $name);
+}
+
+@function em($size: m, $parent: m) {
+    $size: if(type-of($size) == 'number', $size, map-get($font-sizes, $size) * 1em);
+    $parent: if(type-of($parent) == 'number', $parent, map-get($font-sizes, $parent) * 1em);
+    @return ($size / $parent * 1em);
+}
+
+@function rem($size: m, $parent: m) {
+    $size: if(type-of($size) == 'number', $size, map-get($font-sizes, $size) * 1em);
+    $parent: if(type-of($parent) == 'number', $parent, map-get($font-sizes, $parent) * 1em);
+    @return ($size / $parent * 1rem);
+}

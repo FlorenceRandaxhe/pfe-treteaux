@@ -1,0 +1,46 @@
+@mixin hidden
+{
+    position: absolute;
+    top: -9999px;
+    font-size: 0;
+    text-indent: -9999px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    letter-spacing: 0;
+}
+
+@mixin overlay() {
+    position: absolute;
+    bottom: 0; top: 0;
+    left: 0; right: 0;
+    width:100%;
+    height:100%;
+}
+
+
+@mixin clearfix( $clear:both ){
+    &:after{
+        content: "";
+        display: block;
+        clear: $clear;
+    }
+}
+
+@mixin input-placeholder
+{
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin reset-input-styles{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    overflow: hidden;
+    border-radius: 0;
+    max-width: 100%;
+}

@@ -1,0 +1,16 @@
+$grid_unit:     1em;
+$grid_columns:  12;
+$grid_width:    1206;
+$gutter_width:   30;
+
+$columns_width: ($grid_width - (($grid_columns - 1) * $gutter_width))/$grid_columns;
+
+@function gut($gut){
+    @if $gut == 0 { @return 0 }
+    @return    ($gut * $gutter_width);
+}
+
+@function col($col){
+    @if $gut == 0 { @return 0 }
+    @return    ($col * $columns_width);
+}

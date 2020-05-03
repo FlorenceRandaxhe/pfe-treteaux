@@ -1,0 +1,93 @@
+body{
+    margin: 100px auto;
+    width: 600px;
+}
+
+.link{
+    @include font();
+
+    &--line{
+        display: inline-block;
+        position: relative;
+        padding: em(10) 0 em(10) em(70);
+        transition: padding 0.3s cubic-bezier(.645, .045, .355, 1);
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 2px;
+            width: 60px;
+            background-color: color(black);
+            transition: transform 0.3s cubic-bezier(.645, .045, .355, 1);
+        }
+
+        &:hover{
+            padding: em(10) em(70) em(10) 0;
+
+            &:before{
+                animation: lineAnim 0.3s cubic-bezier(.645, .045, .355, 1);
+                transform: translateX(calc(100% + 20px));
+            }
+        }
+    }
+
+    &--lineUp{
+        display: inline-block;
+        position: relative;
+        transition: color 0.3s cubic-bezier(.645, .045, .355, 1);
+
+        &:before{
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            width: 2px;
+            height: 40px;
+            background-color: color(black);
+            transition: background-color 0.3s cubic-bezier(.645, .045, .355, 1);
+
+        }
+
+        &:hover{
+            color: color(purple);
+
+            &:before{
+                background-color: color(purple);
+                animation: lineAppear 1s cubic-bezier(.645, .045, .355, 1);
+            }
+        }
+    }
+}
+
+@keyframes lineAnim{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes lineAppear{
+    0%{
+        bottom: 30px;
+        height: 40px;
+    }
+    50%{
+        bottom: 30px;
+        height: 0;
+    }
+    70%{
+        bottom: 70px;
+        height: 0;
+    }
+    100%{
+        bottom: 30px;
+        height: 40px;
+    }
+}

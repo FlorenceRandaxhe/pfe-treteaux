@@ -1,0 +1,97 @@
+.form{
+
+    &__control{
+        position: relative;
+
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: color(purple);
+            transition: width 1s cubic-bezier(.645, .045, .355, 1);
+        }
+
+        &:not(&--disabled):hover{
+            &:after{
+                width: 100%;
+            }
+
+            .form__input{
+                opacity: 1;
+                color: color(purple);
+
+                &::placeholder{
+                    color: color(purple);
+                }
+            }
+        }
+
+        &--error{
+            .form__input{
+                opacity: 1;
+                border-bottom-color: color(error);
+                color: color(error);
+            }
+            .form__input::placeholder{
+                color: color(error);
+            }
+        }
+
+        &--disabled{
+            .form__input,
+            .form__label{
+                cursor: default;
+                opacity: 0.5;
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__error{
+        color: color(error);
+        @include font(latobold);
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__label{
+        cursor: pointer;
+        display: block;
+        @include font(latobold);
+        padding-bottom: em(10)
+    }
+
+    &__input{
+        @include reset-input-styles();
+        @include input-placeholder();
+        border-bottom: 2px solid color(black);
+        opacity: 0.6;
+        @include font();
+        font-size: em(xl3);
+        color: color(black);
+        padding: em(5) 0;
+        width: 100%;
+        text-transform: uppercase;
+        transition: opacity 0.5s cubic-bezier(.645, .045, .355, 1);
+
+        &::placeholder{
+            opacity: 0.8;
+            transition: color 0.5s cubic-bezier(.645, .045, .355, 1);
+            color: color(black);
+        }
+
+        &:focus{
+            border-bottom-color: color(purple);
+            opacity: 1;
+            color: color(purple);
+
+            &::placeholder{
+                color: color(purple);
+            }
+        }
+    }
+}

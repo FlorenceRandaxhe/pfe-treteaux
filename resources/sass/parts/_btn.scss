@@ -1,0 +1,35 @@
+.btn{
+    @include font();
+    font-size: em(m);
+    text-align: center;
+
+    &--primary{
+        padding: em(15,m) em(25,m) ;
+        border: 2px solid color(black);
+        transition: background-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+
+        &:hover{
+            background-color: color(black);
+            color: color(white);
+        }
+    }
+
+    &--secondary{
+        text-transform: uppercase;
+        color:color(blue);
+        font-size: em(l, m);
+        background-color: color(purple);
+        border: 2px solid color(purple);
+        padding: em(15,m) em(25,m);
+        transition: background-color 0.2s ease-in-out,
+                    color 0.2s ease-in-out;
+
+        &:hover{
+            background-color: color(blue);
+            color: color(purple);
+        }
+    }
+
+
+}

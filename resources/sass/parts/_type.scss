@@ -1,0 +1,33 @@
+.type{
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: em(s);
+    @include font(latobold);
+    letter-spacing: em(1, s);
+    padding: em(8) em(20);
+
+    &--big{
+        font-size: em(m);
+    }
+
+    &--fill{
+        background-color: color(purple);
+        color: color(blue);
+    }
+
+    &--outline-red{
+        @include font(latoblack);
+        color: color(purple);
+        border: 3px solid color(purple);
+    }
+
+    &--outline-blue{
+        @include font(latoblack);
+        color: color(blue);
+        border: 3px solid color(blue);
+    }
+
+    &--white{
+        color: color(white);
+    }
+}

@@ -3,17 +3,23 @@
         Les Tréteaux
     </div>
 
-    <div class="header__nav">
-        @include('parts.nav')
+    <div class="header__responsive">
+
     </div>
 
-    <div class="header__icons">
-        <div class="header__search">
-
+    <div class="header__content">
+        <div class="header__nav">
+            @include('parts.nav')
         </div>
 
-        <div class="header__social">
-            @include('parts.social')
+        <div class="header__icons">
+            <div class="header__search">
+
+            </div>
+
+            <div class="header__social">
+                @include('parts.social')
+            </div>
         </div>
     </div>
 </header>

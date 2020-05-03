@@ -1,0 +1,102 @@
+.nav{
+
+    &__item{
+        display: inline-block;
+        margin: 0 em(35);
+        position: relative;
+
+        &--dropdown{
+            &:hover{
+                .nav__list_sub{
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateX(-50%) translateY(0);
+                }
+            }
+        }
+    }
+
+    &__link{
+        @include font(latobold);
+        font-size: em(s);
+        text-transform: uppercase;
+        letter-spacing: em(1, s);
+        position: relative;
+        padding: em(10);
+        transition: color 0.3s $easin;
+
+        &:before{
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            width: 0;
+            background-color: color(blue);
+            transition: width 0.3s $easin;
+
+        }
+
+        &:hover{
+            color: color(purple);
+            &:before{
+                width: 100%;
+            }
+        }
+
+        &--dropdown{
+            &:after{
+                @include icon(chevron);
+                font-size: em(s);
+                margin-left: em(10);
+            }
+        }
+
+    }
+
+    &__list_sub{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        top: calc(100% + 5px);
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        padding: em(20) 0 em(20) em(30);
+        background-color: color(blue);
+        border: 2px solid color(purple);
+        width: em(200);
+        transition: transform 0.3s $easin,
+                    opacity 0.3s $easin,
+                    visibility 0.3s $easin;
+    }
+
+    &__item_sub{
+        font-size: em(s);
+        text-transform: uppercase;
+        letter-spacing: em(1, s);
+        position: relative;
+        padding: em(15) 0;
+        transition: font-weight 0.3s $easin;
+
+        &:after{
+            position: absolute;
+            @include icon(arrow);
+            display: inline-block;
+            font-weight: bold;
+            font-size: em(xl);
+            opacity: 0;
+            top: calc(50% - 9px);
+            transition: opacity 0.3s $easin,
+                        transform 0.3s $easin;
+        }
+
+        &:hover{
+            font-weight: bold;
+
+            &:after{
+                transform: translateX(15px);
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -98,5 +98,5 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: quote(map-get($colors, $name));
+  content: quote(map-get($icons, $name));
 }

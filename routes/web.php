@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'EventController@index');
+Route::get('/', 'HomeController')->name('home');

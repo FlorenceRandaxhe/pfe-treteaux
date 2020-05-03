@@ -68,6 +68,12 @@
         &__responsive{
             display: none
         }
+
+        &__icons{
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
     }
 
 }

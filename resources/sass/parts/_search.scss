@@ -1,5 +1,5 @@
-.social{
-    &__item{
+.search{
+    &__link{
         display: inline-block;
         padding: em(7) em(8);
         margin: 0 em(12);
@@ -7,6 +7,11 @@
         background-color: color(black);
         position: relative;
         transition: background-color 0.2s $easin;
+
+        &:before{
+            @include icon(fb);
+            color: color(white);
+        }
 
         &:after{
             content: '';
@@ -19,7 +24,6 @@
             border: 2px solid color(purple);
             border-radius: 100%;
             opacity: 0;
-            z-index: -1;
             transition: width 0.2s $easin,
                         height 0.2s $easin,
                         opacity 0.2s $easin,
@@ -34,28 +38,17 @@
                 opacity: 1;
             }
         }
-
-    }
-
-    &__link{
-        font-size: em(m);
-        &--fb{
-            &:after{
-                @include icon(fb);
-                color: color(white);
-            }
-        }
-        &--insta{
-            &:after{
-                @include icon(insta);
-                color: color(white);
-            }
-        }
     }
 
     @include mq(s, max){
-        &__list{
-            text-align: center;
+        &__link{
+            display: none;
+        }
+    }
+
+    @include mq(s, min){
+        &__container{
+            display: none;
         }
     }
 }

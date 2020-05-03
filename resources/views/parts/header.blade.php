@@ -17,7 +17,7 @@
 
             <div class="header__icons">
                 <div class="header__search">
-
+                    @include('parts.search')
                 </div>
 
                 <div class="header__social">

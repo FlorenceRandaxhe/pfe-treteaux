@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Season;
 
 class SeasonSeeder extends Seeder
 {
@@ -11,6 +12,18 @@ class SeasonSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Season::create([
+            'year' => '2018-2019',
+            'archived' => false,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        Season::create([
+            'year' => '2019-2020',
+            'archived' => true,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

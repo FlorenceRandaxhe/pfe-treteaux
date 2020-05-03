@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('content');
+            $table->string('img');
             $table->timestamp('published_at');
             $table->foreignId('tag_id')->constrained()->onDelete('cascade');
             $table->softDeletes();

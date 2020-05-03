@@ -18,9 +18,10 @@ class CreateEventsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('intro');
+            $table->string('img');
             $table->text('description');
             $table->text('distribution')->nullable();
-            $table->text('info')->nullabel();
+            $table->text('info')->nullable();
             $table->timestamp('date');
             $table->json('details');
             $table->json('gallery')->nullable();

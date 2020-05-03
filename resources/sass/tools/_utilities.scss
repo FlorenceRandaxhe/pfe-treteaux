@@ -40,7 +40,9 @@
 @mixin reset-input-styles{
     -webkit-appearance: none;
     -moz-appearance: none;
+    border:none;
     overflow: hidden;
     border-radius: 0;
     max-width: 100%;
+    &:focus{outline:none}
 }

@@ -6,14 +6,14 @@
     @return map-get($icons, $name);
 }
 
-@function em($size: m, $parent: m) {
-    $size: if(type-of($size) == 'number', $size, map-get($font-sizes, $size) * 1em);
-    $parent: if(type-of($parent) == 'number', $parent, map-get($font-sizes, $parent) * 1em);
-    @return ($size / $parent * 1em);
+@function value($size: m) {
+    @return map-get($font-sizes, $size);
 }
 
-@function rem($size: m, $parent: m) {
-    $size: if(type-of($size) == 'number', $size, map-get($font-sizes, $size) * 1em);
-    $parent: if(type-of($parent) == 'number', $parent, map-get($font-sizes, $parent) * 1em);
-    @return ($size / $parent * 1rem);
+
+@function em($size: m, $parent: m){
+    $size: if(type-of($size) == number, $size * 1em, value($size) * 1em);
+    $parent: if(type-of($parent) == number, $parent * 1em, value($parent) * 1em);
+    @return $size / $parent * 1em;
 }
+

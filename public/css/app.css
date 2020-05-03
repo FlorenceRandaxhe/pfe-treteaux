@@ -227,6 +227,8 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "latoregular", Playfair, Arial, serif;
+  color: #292828;
 }
 
 a {
@@ -247,7 +249,7 @@ a {
 }
 
 .wrapper {
-  max-width: 75.375;
+  max-width: 75.375em;
   width: 90%;
   position: relative;
   margin: 0 auto;

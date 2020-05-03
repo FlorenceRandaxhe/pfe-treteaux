@@ -659,10 +659,9 @@ a {
   margin-left: 0.625em;
 }
 
-@media only screen and (max-width: 559px) {
+@media only screen and (max-width: 639px) {
   .nav {
     margin: 2.5em auto;
-    width: 90%;
   }
 
   .nav__item {
@@ -690,7 +689,7 @@ a {
 
   .nav__link--dropdown:after {
     position: absolute;
-    right: 15%;
+    right: 10%;
   }
 
   .nav__list_sub {
@@ -725,7 +724,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 640px) {
   .nav__item {
     display: inline-block;
     margin: 0 2.1875em;
@@ -820,6 +819,7 @@ a {
 .social__item {
   display: inline-block;
   padding: 0.4375em 0.5em;
+  margin: 0 0.75em;
   border-radius: 100%;
   background-color: #292828;
   position: relative;
@@ -880,5 +880,82 @@ a {
   -moz-osx-font-smoothing: grayscale;
   content: "\E901";
   color: #ffffff;
+}
+
+@media only screen and (max-width: 639px) {
+  .social__list {
+    text-align: center;
+  }
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.875em 0;
+}
+
+.header__content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header--show {
+  background-color: #DAE7F2;
+}
+
+@media only screen and (max-width: 639px) {
+  .header__container {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .header__responsive {
+    position: absolute;
+    right: 0;
+    top: 2.375em;
+  }
+
+  .header__lines {
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: #4F1C28;
+    position: relative;
+  }
+
+  .header__lines:after,
+  .header__lines:before {
+    content: "";
+    position: absolute;
+    background-color: #4F1C28;
+    height: 3px;
+    width: 30px;
+    left: 0;
+  }
+
+  .header__lines:after {
+    top: -8px;
+  }
+
+  .header__lines:before {
+    top: 8px;
+  }
+
+  .header__content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .header__container {
+    align-items: center;
+  }
+
+  .header__responsive {
+    display: none;
+  }
 }
 

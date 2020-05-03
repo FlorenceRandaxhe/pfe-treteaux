@@ -2,6 +2,7 @@
     &__item{
         display: inline-block;
         padding: em(7) em(8);
+        margin: 0 em(12);
         border-radius: 100%;
         background-color: color(black);
         position: relative;
@@ -48,6 +49,12 @@
                 @include icon(insta);
                 color: color(white);
             }
+        }
+    }
+
+    @include mq(s, max){
+        &__list{
+            text-align: center;
         }
     }
 }

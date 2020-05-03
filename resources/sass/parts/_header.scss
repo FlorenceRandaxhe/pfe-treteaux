@@ -1,0 +1,73 @@
+.header{
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        padding: em(30) 0;
+    }
+
+    &__content{
+        flex:1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &--show{
+        background-color: color(blue);
+    }
+
+    @include mq(s, max){
+        &__container{
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        &__responsive{
+            position: absolute;
+            right:0;
+            top:em(38);
+        }
+
+        &__lines{
+            display: block;
+            height: 3px;
+            width: 30px;
+            background-color: color(purple);
+            position: relative;
+
+            &:after,
+            &:before{
+                content: '';
+                position: absolute;
+                background-color: color(purple);
+                height: 3px;
+                width: 30px;
+                left:0;
+            }
+
+            &:after{
+                top:-8px;
+            }
+
+            &:before{
+                top: 8px;
+            }
+        }
+
+        &__content{
+            flex-direction: column;
+            align-items:stretch;
+        }
+    }
+
+    @include mq(s, min){
+        &__container{
+            align-items: center;
+        }
+
+        &__responsive{
+            display: none
+        }
+    }
+
+}

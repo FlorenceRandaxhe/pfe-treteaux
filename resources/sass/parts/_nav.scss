@@ -14,10 +14,8 @@
         }
     }
 
-    @include mq(xs, max){
-
+    @include mq(s, max){
         margin: em(40) auto;
-        width: 90%;
 
         &__item{
             padding: em(30);
@@ -27,7 +25,6 @@
         &__link{
             font-size: em(xl);
             color: color(purple);
-            //height: em(80);
             display: block;
             overflow: hidden;
             transition: height 0.3s $easin;
@@ -44,7 +41,7 @@
 
             &--dropdown:after{
                 position: absolute;
-                right:15%;
+                right:10%;
             }
         }
 
@@ -81,7 +78,7 @@
         }
     }
 
-    @include mq(xs, min){
+    @include mq(s, min){
         &__item{
             display: inline-block;
             margin: 0 em(35);

@@ -37,16 +37,23 @@
         right:0;
         background-color: transparent;
         border:none;
+        transition: right 0.2s $easin;
+
         &:after{
             @include icon(arrow);
             font-size: em(xl7);
             color: color(purple);
             cursor: pointer;
         }
+
+        &:hover{
+            right: -6px;
+        }
     }
 
     &--white{
         color: color(white);
+
         &:after{
             font-size: em(xl4);
             position: absolute;

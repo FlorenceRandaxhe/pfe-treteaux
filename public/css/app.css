@@ -304,6 +304,7 @@ a {
   right: 0;
   background-color: transparent;
   border: none;
+  transition: right 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .btn--arrow:after {
@@ -320,6 +321,10 @@ a {
   font-size: 2.625em;
   color: #4F1C28;
   cursor: pointer;
+}
+
+.btn--arrow:hover {
+  right: -6px;
 }
 
 .btn--white {

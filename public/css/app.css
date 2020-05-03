@@ -745,3 +745,68 @@ a {
   opacity: 1;
 }
 
+.social__item {
+  display: inline-block;
+  padding: 0.4375em 0.5em;
+  border-radius: 100%;
+  background-color: #292828;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.social__item:after {
+  content: "";
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: 2px solid #4F1C28;
+  border-radius: 100%;
+  opacity: 0;
+  transition: width 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.social__item:hover {
+  background-color: #4F1C28;
+}
+
+.social__item:hover:after {
+  width: 40px;
+  height: 40px;
+  opacity: 1;
+}
+
+.social__link {
+  font-size: 1em;
+}
+
+.social__link--fb:after {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E907";
+  color: #ffffff;
+}
+
+.social__link--insta:after {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E901";
+  color: #ffffff;
+}
+

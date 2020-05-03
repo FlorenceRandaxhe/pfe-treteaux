@@ -1,0 +1,53 @@
+.social{
+    &__item{
+        display: inline-block;
+        padding: em(7) em(8);
+        border-radius: 100%;
+        background-color: color(black);
+        position: relative;
+        transition: background-color 0.2s $easin;
+
+        &:after{
+            content: '';
+            position:absolute;
+            width: 34px;
+            height: 34px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            border: 2px solid color(purple);
+            border-radius: 100%;
+            opacity: 0;
+            transition: width 0.2s $easin,
+                        height 0.2s $easin,
+                        opacity 0.2s $easin,
+        }
+
+        &:hover{
+            background-color: color(purple);
+
+            &:after{
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+        }
+
+    }
+
+    &__link{
+        font-size: em(m);
+        &--fb{
+            &:after{
+                @include icon(fb);
+                color: color(white);
+            }
+        }
+        &--insta{
+            &:after{
+                @include icon(insta);
+                color: color(white);
+            }
+        }
+    }
+}

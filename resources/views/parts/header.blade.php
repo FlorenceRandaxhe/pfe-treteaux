@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header__logo">
-
+        Les Tréteaux
     </div>
 
     <div class="header__nav">
@@ -13,7 +13,7 @@
         </div>
 
         <div class="header__social">
-
+            @include('parts.social')
         </div>
     </div>
 </header>

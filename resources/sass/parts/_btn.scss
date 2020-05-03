@@ -41,6 +41,18 @@
             @include icon(arrow);
             font-size: em(xl7);
             color: color(purple);
+            cursor: pointer;
+        }
+    }
+
+    &--white{
+        color: color(white);
+        &:after{
+            font-size: em(xl4);
+            position: absolute;
+            top: calc(50% + 26px);
+            right: 0;
+            color: color(white);
         }
     }
 

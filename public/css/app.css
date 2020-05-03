@@ -319,6 +319,19 @@ a {
   content: "\E905";
   font-size: 2.625em;
   color: #4F1C28;
+  cursor: pointer;
+}
+
+.btn--white {
+  color: #ffffff;
+}
+
+.btn--white:after {
+  font-size: 2em;
+  position: absolute;
+  top: calc(50% + 26px);
+  right: 0;
+  color: #ffffff;
 }
 
 .link {
@@ -505,28 +518,27 @@ a {
   width: 100%;
 }
 
-.form__control:not(.form__control--disabled):hover .form__input {
+.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white) {
   opacity: 1;
+}
+
+.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-webkit-input-placeholder {
   color: #4F1C28;
 }
 
-.form__control:not(.form__control--disabled):hover .form__input::-webkit-input-placeholder {
+.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-moz-placeholder {
   color: #4F1C28;
 }
 
-.form__control:not(.form__control--disabled):hover .form__input::-moz-placeholder {
+.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white):-ms-input-placeholder {
   color: #4F1C28;
 }
 
-.form__control:not(.form__control--disabled):hover .form__input:-ms-input-placeholder {
+.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-ms-input-placeholder {
   color: #4F1C28;
 }
 
-.form__control:not(.form__control--disabled):hover .form__input::-ms-input-placeholder {
-  color: #4F1C28;
-}
-
-.form__control:not(.form__control--disabled):hover .form__input::placeholder {
+.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::placeholder {
   color: #4F1C28;
 }
 
@@ -563,6 +575,10 @@ a {
   background-color: transparent;
 }
 
+.form__control--white:after {
+  background-color: #DAE7F2;
+}
+
 .form__error {
   color: #892C2C;
   font-family: "latobold", Playfair, Arial, serif;
@@ -576,6 +592,13 @@ a {
   display: block;
   font-family: "latobold", Playfair, Arial, serif;
   padding-bottom: 0.625em;
+}
+
+.form__label--white {
+  font-family: "latoregular", Playfair, Arial, serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.875em;
 }
 
 .form__input {
@@ -635,34 +658,49 @@ a {
   color: #292828;
 }
 
-.form__input:focus {
+.form__input:focus,
+.form__input:hover {
   border-bottom-color: #4F1C28;
   opacity: 1;
   color: #4F1C28;
 }
 
-.form__input:focus::-webkit-input-placeholder {
+.form__input:focus::-webkit-input-placeholder, .form__input:hover::-webkit-input-placeholder {
   color: #4F1C28;
 }
 
-.form__input:focus::-moz-placeholder {
+.form__input:focus::-moz-placeholder, .form__input:hover::-moz-placeholder {
   color: #4F1C28;
 }
 
-.form__input:focus:-ms-input-placeholder {
+.form__input:focus:-ms-input-placeholder, .form__input:hover:-ms-input-placeholder {
   color: #4F1C28;
 }
 
-.form__input:focus::-ms-input-placeholder {
+.form__input:focus::-ms-input-placeholder, .form__input:hover::-ms-input-placeholder {
   color: #4F1C28;
 }
 
-.form__input:focus::placeholder {
+.form__input:focus::placeholder,
+.form__input:hover::placeholder {
   color: #4F1C28;
 }
 
 .form__input--small {
   font-size: 1.125em;
+}
+
+.form__input--white {
+  border-bottom-color: #ffffff;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.form__input--white:focus,
+.form__input--white:hover {
+  color: #DAE7F2;
+  border-bottom-color: #DAE7F2;
+  opacity: 1;
 }
 
 .nav__link {
@@ -802,6 +840,7 @@ a {
     background-color: #DAE7F2;
     border: 2px solid #4F1C28;
     width: 12.5em;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
@@ -1083,5 +1122,81 @@ a {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.footer {
+  background-color: #4F1C28;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4.375em 0 6.25em;
+}
+
+.footer__bottom {
+  padding: 1.25em 0;
+}
+
+.footer__legal {
+  font-size: 0.875em;
+  margin-right: 2.8571428571em;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.footer__legal:hover,
+.footer__legal:focus {
+  color: #DAE7F2;
+}
+
+.footer__newsletter {
+  width: 31.6749585406%;
+}
+
+.footer__form {
+  margin-top: 2.5em;
+}
+
+.footer__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.25em;
+  color: #ffffff;
+  margin-bottom: 1.5625em;
+}
+
+.footer__item {
+  margin: 1.25em 0;
+  max-width: 9.375em;
+}
+
+.footer__link {
+  line-height: 1.3125em;
+  padding: 0.3125em 0;
+  color: #ffffff;
+  position: relative;
+}
+
+.footer__link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #DAE7F2;
+  transition: width 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.footer__link:hover,
+.footer__link:focus {
+  color: #DAE7F2;
+}
+
+.footer__link:hover:after,
+.footer__link:focus:after {
+  width: 100%;
 }
 

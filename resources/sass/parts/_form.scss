@@ -19,9 +19,9 @@
                 width: 100%;
             }
 
-            .form__input{
+            .form__input:not(.form__input--white){
                 opacity: 1;
-                color: color(purple);
+                //color: color(purple);
 
                 &::placeholder{
                     color: color(purple);
@@ -48,6 +48,12 @@
                 background-color: transparent;
             }
         }
+
+        &--white{
+            &:after{
+                background-color: color(blue);
+            }
+        }
     }
 
     &__error{
@@ -62,7 +68,15 @@
         cursor: pointer;
         display: block;
         @include font(latobold);
-        padding-bottom: em(10)
+        padding-bottom: em(10);
+
+        &--white{
+            @include font(latoregular);
+            color: color(white);
+            text-transform: uppercase;
+            font-size: em(s);
+        }
+
     }
 
     &__input{
@@ -85,7 +99,8 @@
             color: color(black);
         }
 
-        &:focus{
+        &:focus,
+        &:hover{
             border-bottom-color: color(purple);
             opacity: 1;
             color: color(purple);
@@ -97,6 +112,19 @@
 
         &--small{
             font-size: em(l)
+        }
+
+        &--white{
+            border-bottom-color: color(white);
+            color: color(white);
+            opacity: 1;
+
+            &:focus,
+            &:hover{
+                color: color(blue);
+                border-bottom-color: color(blue);
+                opacity: 1;
+            }
         }
     }
 }

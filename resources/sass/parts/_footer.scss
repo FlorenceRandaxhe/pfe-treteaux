@@ -1,0 +1,74 @@
+.footer{
+    background-color: color(purple);
+
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: em(70) 0 em(100);
+    }
+
+    &__bottom{
+        padding: em(20) 0;
+    }
+
+    &__legal{
+        font-size: em(s);
+        margin-right: em(40,s);
+        color: color(white);
+        border-bottom: 1px solid color(white);
+        transition: color 0.2s $easin;
+
+        &:hover,
+        &:focus{
+            color: color(blue);
+        }
+    }
+
+    &__newsletter{
+        width: col(4);
+    }
+
+    &__form{
+        margin-top: em(40)
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl);
+        color: color(white);
+        margin-bottom: em(25)
+    }
+
+    &__item{
+        margin: em(20) 0;
+        max-width: em(150)
+    }
+
+    &__link{
+        line-height: em(21);
+        padding: em(5) 0;
+        color: color(white);
+        position: relative;
+
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: color(blue);
+            transition: width 0.2s $easin;
+        }
+
+        &:hover,
+        &:focus{
+            color: color(blue);
+
+            &:after{
+                width: 100%;
+            }
+        }
+    }
+}

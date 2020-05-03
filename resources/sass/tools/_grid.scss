@@ -10,7 +10,12 @@ $columns_width: ($grid_width - (($grid_columns - 1) * $gutter_width))/$grid_colu
     @return    ($gut * $gutter_width);
 }
 
+@function fixedCol($col){
+    @if $col == 0 { @return 0 }
+    @return ( ( $col * $columns_width ) + ( ( $col - 1 ) * $gutter_width ) );
+}
+
 @function col($col){
-    @if $gut == 0 { @return 0 }
-    @return    ($col * $columns_width);
+    @if $col == 0 { @return 0 }
+    @return    percentage(fixedCol($col) / fixedCol($grid_columns));
 }

@@ -21,7 +21,7 @@
                     <a class="nav__link_sub" href="#">Actualités</a>
                 </li>
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="#">A propos</a>
+                    <a class="nav__link_sub" href="#">À Propos</a>
                 </li>
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="#">Presse</a>

@@ -14,7 +14,7 @@
         }
     }
 
-    @include mq(s, max){
+    @include mq(m, max){
         margin: em(40) auto;
 
         &__item{
@@ -78,10 +78,10 @@
         }
     }
 
-    @include mq(s, min){
+    @include mq(m, min){
         &__item{
             display: inline-block;
-            margin: 0 em(35);
+            margin: 0 em(20);
             position: relative;
 
             &--dropdown{

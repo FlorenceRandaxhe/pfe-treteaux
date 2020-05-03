@@ -53,7 +53,7 @@
         }
     }
 
-    @include mq(s, max){
+    @include mq(m, max){
         &__list{
             text-align: center;
         }

@@ -31,5 +31,18 @@
         }
     }
 
+    &--arrow{
+        position: absolute;
+        top:0;
+        right:0;
+        background-color: transparent;
+        border:none;
+        &:after{
+            @include icon(arrow);
+            font-size: em(xl7);
+            color: color(purple);
+        }
+    }
+
 
 }

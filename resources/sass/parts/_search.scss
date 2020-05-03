@@ -40,13 +40,15 @@
         }
     }
 
-    @include mq(s, max){
+    @include mq(m, max){
+        margin-bottom: em(40);
+
         &__link{
             display: none;
         }
     }
 
-    @include mq(s, min){
+    @include mq(m, min){
         &__container{
             display: none;
         }

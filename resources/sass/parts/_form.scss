@@ -75,6 +75,7 @@
         color: color(black);
         padding: em(5) 0;
         width: 100%;
+        background-color: transparent;
         text-transform: uppercase;
         transition: opacity 0.5s cubic-bezier(.645, .045, .355, 1);
 
@@ -92,6 +93,10 @@
             &::placeholder{
                 color: color(purple);
             }
+        }
+
+        &--small{
+            font-size: em(l)
         }
     }
 }

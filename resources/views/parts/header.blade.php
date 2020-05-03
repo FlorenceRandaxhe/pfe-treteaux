@@ -1,7 +1,7 @@
 <header class="header header--">
     <div class="header__container wrapper">
         <div class="header__logo">
-            Les Tréteaux
+            <a href="{{ route('home') }}">Les Tréteaux</a>
         </div>
 
         <div class="header__responsive">
@@ -10,20 +10,20 @@
             </a>
         </div>
 
-        <div class="header__content">
-            <div class="header__nav">
-                @include('parts.nav')
+
+        <div class="header__nav">
+            @include('parts.nav')
+        </div>
+
+        <div class="header__icons">
+            <div class="header__search">
+                @include('parts.search')
             </div>
 
-            <div class="header__icons">
-                <div class="header__search">
-                    @include('parts.search')
-                </div>
-
-                <div class="header__social">
-                    @include('parts.social')
-                </div>
+            <div class="header__social">
+                @include('parts.social')
             </div>
         </div>
+
     </div>
 </header>

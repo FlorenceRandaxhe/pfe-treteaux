@@ -5,6 +5,12 @@
         padding: em(30) 0;
     }
 
+    &__logo{
+        @include font();
+        font-size: em(xl3);
+        width: 100px;
+    }
+
     &__content{
         flex:1;
         display: flex;
@@ -12,14 +18,36 @@
         align-items: center;
     }
 
-    &--show{
-        background-color: color(blue);
-    }
+    @include mq(m, max){
+        &--show{
+            background-color: color(blue);
 
-    @include mq(s, max){
+            .header__nav,
+            .header__icons{
+                opacity: 1;
+                visibility: visible;
+                position: relative;
+                transform: translateY(0);
+            }
+            .header__container{
+                height: 100vh;
+                overflow-y: scroll;
+            }
+
+        }
+        &__nav,
+        &__icons{
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transform: translateY(20px);
+            transition: transform 0.3s $easin,
+                        opacity 0.3s $easin,
+                        visibility 0.3s $easin,
+        }
         &__container{
             flex-direction: column;
-            height: 100vh;
+
         }
 
         &__responsive{
@@ -60,7 +88,7 @@
         }
     }
 
-    @include mq(s, min){
+    @include mq(m, min){
         &__container{
             align-items: center;
         }

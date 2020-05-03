@@ -298,6 +298,29 @@ a {
   color: #4F1C28;
 }
 
+.btn--arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.btn--arrow:after {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E905";
+  font-size: 2.625em;
+  color: #4F1C28;
+}
+
 .link {
   font-family: "abril_fatfaceregular", Playfair, Arial, serif;
 }
@@ -569,6 +592,7 @@ a {
   color: #292828;
   padding: 0.3125em 0;
   width: 100%;
+  background-color: transparent;
   text-transform: uppercase;
   transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -637,6 +661,10 @@ a {
   color: #4F1C28;
 }
 
+.form__input--small {
+  font-size: 1.125em;
+}
+
 .nav__link {
   font-family: "latobold", Playfair, Arial, serif;
   font-size: 0.875em;
@@ -659,7 +687,7 @@ a {
   margin-left: 0.625em;
 }
 
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 759px) {
   .nav {
     margin: 2.5em auto;
   }
@@ -724,10 +752,10 @@ a {
   }
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 760px) {
   .nav__item {
     display: inline-block;
-    margin: 0 2.1875em;
+    margin: 0 1.25em;
     position: relative;
   }
 
@@ -883,7 +911,7 @@ a {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 759px) {
   .social__list {
     text-align: center;
   }
@@ -937,13 +965,17 @@ a {
   opacity: 1;
 }
 
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 759px) {
+  .search {
+    margin-bottom: 2.5em;
+  }
+
   .search__link {
     display: none;
   }
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 760px) {
   .search__container {
     display: none;
   }
@@ -955,6 +987,12 @@ a {
   padding: 1.875em 0;
 }
 
+.header__logo {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.5em;
+  width: 100px;
+}
+
 .header__content {
   flex: 1;
   display: flex;
@@ -962,14 +1000,35 @@ a {
   align-items: center;
 }
 
-.header--show {
-  background-color: #DAE7F2;
-}
+@media only screen and (max-width: 759px) {
+  .header--show {
+    background-color: #DAE7F2;
+  }
 
-@media only screen and (max-width: 639px) {
+  .header--show .header__nav,
+  .header--show .header__icons {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    transform: translateY(0);
+  }
+
+  .header--show .header__container {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .header__nav,
+  .header__icons {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
   .header__container {
     flex-direction: column;
-    height: 100vh;
   }
 
   .header__responsive {
@@ -1010,7 +1069,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 760px) {
   .header__container {
     align-items: center;
   }

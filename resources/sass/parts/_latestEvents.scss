@@ -1,4 +1,13 @@
 .latestEvents{
+    padding: em(120) 0 em(100);
+
+    &--home{
+        background-color: color(white);
+    }
+
+    &--footer{
+        background-color: color(grey);
+    }
 
     &__title{
         @include font();
@@ -42,8 +51,13 @@
         }
 
         .eventCard{
-            margin: 0 gut(1) 0 em(20);
+            margin-left: em(20);
+//            margin: 0 gut(1) 0 em(20);
             width: col(4);
+
+            &:not(:last-of-type){
+                margin-right: gut(1)
+            }
         }
     }
 }

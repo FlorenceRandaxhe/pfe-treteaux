@@ -1139,6 +1139,7 @@ a {
 
 .footer__top {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   padding: 4.375em 0 6.25em;
@@ -1210,5 +1211,31 @@ a {
 .footer__link:focus:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 1023px) {
+  .footer__newsletter {
+    width: 100%;
+    margin-bottom: 6.25em;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .footer__content {
+    width: 45%;
+    margin: 1.875em 0;
+  }
+
+  .footer__bottom {
+    text-align: center;
+  }
+
+  .footer__legal {
+    display: inline-block;
+  }
+
+  .footer__legal:first-of-type {
+    margin-bottom: 1.25em;
+  }
 }
 

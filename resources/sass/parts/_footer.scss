@@ -3,6 +3,7 @@
 
     &__top{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: flex-start;
         padding: em(70) 0 em(100);
@@ -71,6 +72,31 @@
             &:after{
                 transform: scaleX(1);
                 transform-origin: bottom left;
+            }
+        }
+    }
+
+    @include mq(xl, max){
+        &__newsletter{
+            width: 100%;
+            margin-bottom: em(100);
+        }
+    }
+
+    @include mq(s, max){
+        &__content{
+            width: 45%;
+            margin: em(30) 0;
+        }
+
+        &__bottom{
+            text-align: center;
+        }
+
+        &__legal{
+            display: inline-block;
+            &:first-of-type{
+                margin-bottom: em(20);
             }
         }
     }

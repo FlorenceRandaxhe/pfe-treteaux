@@ -1,5 +1,41 @@
 .search{
+    position: relative;
+
     &__link{
+        @include cover();
+        z-index: 10;
+
+        ~ .search__icon{
+
+            &:after{
+                content: '';
+                position:absolute;
+                width: 34px;
+                height: 34px;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                border: 2px solid color(purple);
+                border-radius: 100%;
+                opacity: 0;
+                transition: width 0.2s $easin,
+                            height 0.2s $easin,
+                            opacity 0.2s $easin,
+            }
+        }
+
+        &:hover ~ .search__icon{
+                background-color: color(purple);
+
+                &:after{
+                    width: 40px;
+                    height: 40px;
+                    opacity: 1;
+                }
+            }
+    }
+
+    &__icon{
         display: inline-block;
         padding: em(7) em(8);
         margin: 0 em(12);
@@ -12,37 +48,14 @@
             @include icon(search);
             color: color(white);
         }
-
-        &:after{
-            content: '';
-            position:absolute;
-            width: 34px;
-            height: 34px;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            border: 2px solid color(purple);
-            border-radius: 100%;
-            opacity: 0;
-            transition: width 0.2s $easin,
-                        height 0.2s $easin,
-                        opacity 0.2s $easin,
-        }
-
-        &:hover{
-            background-color: color(purple);
-
-            &:after{
-                width: 40px;
-                height: 40px;
-                opacity: 1;
-            }
-        }
     }
 
     @include mq(m, max){
         margin-bottom: em(40);
 
+        &__icon,
+        &__close,
+        &__hide,
         &__link{
             display: none;
         }
@@ -50,7 +63,69 @@
 
     @include mq(m, min){
         &__container{
-            display: none;
+            @include cover();
+            visibility:hidden;
+            opacity: 0;
+            background-color:rgba(0,0,0,0.7);
+            z-index: -1;
+            transition: opacity 0.2s $easin;
+
+            &:target{
+                position: fixed;
+                opacity: 1;
+                z-index: 100;
+                visibility: visible;
+
+                .search__modal{
+                    transform: translateY(0);
+                }
+            }
+        }
+        &__hide{
+            position:fixed;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:-1;
+        }
+
+        &__modal{
+            z-index:1;
+            background-color:color(blue);
+            width:100%;
+            padding:em(100);
+            transform: translateY(-50px);
+            transition: transform 0.3s $easin;
+        }
+
+        &__wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__form{
+            width: col(8);
+        }
+
+        &__close{
+            font-size: em(s);
+            color: color(purple);
+            &:before{
+                @include icon(cross);
+                display: inline-block;
+                font-size: em(xs);
+                color: color(purple);
+                margin-right: em(10);
+                transition: transform 0.3s $easin;
+            }
+
+            &:hover:before{
+                transform: rotate(90deg);
+            }
         }
     }
 }

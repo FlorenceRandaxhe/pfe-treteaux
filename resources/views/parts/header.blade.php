@@ -1,4 +1,4 @@
-<header class="header header--">
+<header class="header header--show">
     <div class="header__container wrapper">
         <div class="header__logo">
             <a href="{{ route('home') }}">Les Tréteaux</a>
@@ -10,7 +10,6 @@
                 <span class="header__lines"></span>
             </a>
         </div>
-
 
         <div class="header__nav">
             @include('parts.nav')

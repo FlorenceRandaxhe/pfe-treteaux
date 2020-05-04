@@ -4,7 +4,9 @@
         <div class="latestNews__header">
             <h2 class="latestNews__title">Actualités</h2>
         </div>
-         @endif
+        @else
+            <h2 class="sro">Actualités</h2>
+        @endif
          <p class="latestNews__subTitle">Les dernières actus</p>
         <div class="latestNews__content">
             @foreach($posts as $post)

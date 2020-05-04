@@ -4,7 +4,7 @@
         <form class="form" method="GET" action="#">
             <div class="form__control">
                 <label class="sro" for="search">Mots clés</label>
-                <input type="search" name="search" class="form__input form__input--small" placeholder="Que recherchez-vous ?">
+                <input type="search" name="search" id="search" class="form__input form__input--small" placeholder="Que recherchez-vous ?">
                 <button class="btn btn--arrow"><span class="sro">Rechercher</span></button>
             </div>
         </form>

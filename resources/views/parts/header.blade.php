@@ -6,6 +6,7 @@
 
         <div class="header__responsive">
             <a href="#" class="header__burger">
+                <span class="sro">Navigation</span>
                 <span class="header__lines"></span>
             </a>
         </div>

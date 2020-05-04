@@ -818,12 +818,14 @@ a {
   .nav__link:before {
     position: absolute;
     content: "";
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
     bottom: 0;
     left: 0;
-    height: 5px;
-    width: 0;
     background-color: #DAE7F2;
-    transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   .nav__link:hover {
@@ -831,7 +833,8 @@ a {
   }
 
   .nav__link:hover:before {
-    width: 100%;
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
   .nav__list_sub {
@@ -1188,12 +1191,14 @@ a {
 .footer__link:after {
   content: "";
   position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
   bottom: 0;
   left: 0;
-  height: 2px;
-  width: 0;
   background-color: #DAE7F2;
-  transition: width 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .footer__link:hover,
@@ -1203,6 +1208,7 @@ a {
 
 .footer__link:hover:after,
 .footer__link:focus:after {
-  width: 100%;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 

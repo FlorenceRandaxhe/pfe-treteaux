@@ -104,19 +104,21 @@
             &:before{
                 position: absolute;
                 content: '';
+                width: 100%;
+                transform: scaleX(0);
+                height: 5px;
                 bottom: 0;
                 left: 0;
-                height: 5px;
-                width: 0;
                 background-color: color(blue);
-                transition: width 0.3s $easin;
-
+                transform-origin: bottom right;
+                transition: transform 0.4s $easin2;
             }
 
             &:hover{
                 color: color(purple);
                 &:before{
-                    width: 100%;
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
                 }
             }
         }

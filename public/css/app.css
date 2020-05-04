@@ -1271,11 +1271,23 @@ a {
 }
 
 .eventCard {
-  width: calc(100% / 3);
+  position: relative;
+  width: 31.6749585406%;
+}
+
+.eventCard__link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .eventCard__fig {
   width: 100%;
+  height: 14.375em;
 }
 
 .eventCard__img {
@@ -1283,5 +1295,44 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.eventCard__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.5em;
+  line-height: 1.3333333333em;
+  padding: 0.3333333333em 0;
+}
+
+.eventCard__excerpt {
+  line-height: 1.375em;
+}
+
+.eventCard__type {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.eventCard__date {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background-color: #DAE7F2;
+  padding: 0.9375em 1.125em;
+  border: 3px solid #4F1C28;
+  color: #4F1C28;
+  text-align: center;
+}
+
+.eventCard__day {
+  display: block;
+  font-family: "latoblack", Playfair, Arial, serif;
+  font-size: 2.625em;
+}
+
+.eventCard__month {
+  display: block;
+  font-size: 0.875em;
 }
 

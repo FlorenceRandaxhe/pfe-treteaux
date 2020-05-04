@@ -1,8 +1,14 @@
 .eventCard{
-    width: calc(100% / 3);
+    position: relative;
+    width: col(4);
+
+    &__link{
+        @include cover();
+    }
 
     &__fig{
         width: 100%;
+        height: em(230);
     }
 
     &__img{
@@ -10,4 +16,45 @@
         height: 100%;
         object-fit: cover
     }
+
+    &__title{
+        @include font();
+        font-size: em(xl3);
+        line-height: em(32, xl3);
+        padding: em(8, xl3) 0;
+    }
+
+    &__excerpt{
+        line-height: em(22);
+    }
+
+    &__type{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__date{
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        background-color: color(blue);
+        padding: em(15) em(18);
+        border: 3px solid color(purple);
+        color: color(purple);
+        text-align: center;
+    }
+
+    &__day{
+        display: block;
+        @include font(latoblack);
+        font-size: em(xl7);
+    }
+
+    &__month{
+        display: block;
+        font-size: em(s);
+    }
+
+
 }

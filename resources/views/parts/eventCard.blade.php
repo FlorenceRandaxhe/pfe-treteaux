@@ -1,4 +1,5 @@
 <article class="eventCard">
+    <a class="eventCard__link" href="#"><span class="sro">EN savoir plus sur {{ $event->title }}</span></a>
     <figure class="eventCard__fig">
         <img class="eventCard__img" src="{{ asset('img/' . $event->img) }}">
     </figure>

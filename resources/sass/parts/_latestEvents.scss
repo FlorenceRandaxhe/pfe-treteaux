@@ -1,0 +1,49 @@
+.latestEvents{
+
+    &__title{
+        @include font();
+        font-size: em(xl4)
+    }
+
+    &__year{
+        @include font();
+        font-size: em(xl3);
+        text-align: right;
+        padding: em(23, xl3) 0 em(30, xl3);
+    }
+
+    &__bottom{
+        margin-top: em(50);
+        text-align: right;
+    }
+
+    @include mq(l){
+
+        &__header{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: em(50);
+        }
+
+        &__content{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__title{
+            display: inline-block;
+            font-size: em(xl10);
+        }
+
+        &__year{
+            display: inline-block;
+            text-align: right;
+        }
+
+        .eventCard{
+            margin: 0 gut(1) 0 em(20);
+            width: col(4);
+        }
+    }
+}

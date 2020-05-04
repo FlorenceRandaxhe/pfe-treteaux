@@ -7,7 +7,7 @@ $columns_width: ($grid_width - (($grid_columns - 1) * $gutter_width))/$grid_colu
 
 @function gut($gut){
     @if $gut == 0 { @return 0 }
-    @return    ($gut * $gutter_width);
+    @return  em( ($gut * $gutter_width) );
 }
 
 @function fixedCol($col){

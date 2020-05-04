@@ -1,6 +1,6 @@
 .eventCard{
     position: relative;
-    width: col(4);
+    margin-bottom: gut(2);
 
     &__link{
         @include cover();
@@ -54,6 +54,14 @@
     &__month{
         display: block;
         font-size: em(s);
+    }
+
+    @include mq(l, max){
+        margin-left: em(20);
+    }
+
+    @include mq(l){
+       // margin-left: gut(1) + em(20);
     }
 
 

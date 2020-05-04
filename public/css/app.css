@@ -1272,7 +1272,7 @@ a {
 
 .eventCard {
   position: relative;
-  width: 31.6749585406%;
+  margin-bottom: 3.75em;
 }
 
 .eventCard__link {
@@ -1334,5 +1334,57 @@ a {
 .eventCard__month {
   display: block;
   font-size: 0.875em;
+}
+
+@media only screen and (max-width: 919px) {
+  .eventCard {
+    margin-left: 1.25em;
+  }
+}
+
+.latestEvents__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2em;
+}
+
+.latestEvents__year {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.5em;
+  text-align: right;
+  padding: 0.9583333333em 0 1.25em;
+}
+
+.latestEvents__bottom {
+  margin-top: 3.125em;
+  text-align: right;
+}
+
+@media only screen and (min-width: 920px) {
+  .latestEvents__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.125em;
+  }
+
+  .latestEvents__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .latestEvents__title {
+    display: inline-block;
+    font-size: 4em;
+  }
+
+  .latestEvents__year {
+    display: inline-block;
+    text-align: right;
+  }
+
+  .latestEvents .eventCard {
+    margin: 0 1.875em 0 1.25em;
+    width: 31.6749585406%;
+  }
 }
 

@@ -16,4 +16,3 @@
     $parent: if(type-of($parent) == number, $parent * 1em, value($parent) * 1em);
     @return $size / $parent * 1em;
 }
-

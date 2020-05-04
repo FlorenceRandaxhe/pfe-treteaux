@@ -1,4 +1,4 @@
-<header class="header header--show">
+<header class="header">
     <div class="header__container wrapper">
         <div class="header__logo">
             <a href="{{ route('home') }}">Les Tréteaux</a>

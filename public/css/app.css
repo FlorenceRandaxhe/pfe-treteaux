@@ -1250,8 +1250,26 @@ a {
   font-size: 0.875em;
   margin-right: 2.8571428571em;
   color: #ffffff;
-  border-bottom: 1px solid #ffffff;
-  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+}
+
+.footer__legal:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(1);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer__legal:hover:after,
+.footer__legal:focus:after {
+  transform: scaleX(0);
+  transform-origin: bottom right;
 }
 
 .footer__legal:hover,

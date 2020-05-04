@@ -17,8 +17,26 @@
         font-size: em(s);
         margin-right: em(40,s);
         color: color(white);
-        border-bottom: 1px solid color(white);
-        transition: color 0.2s $easin;
+        position: relative;
+
+        &:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(1);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: color(white);
+            transform-origin: bottom left;
+            transition: transform .3s ease-in-out;
+        }
+
+        &:hover:after,
+        &:focus:after{
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
 
         &:hover,
         &:focus{

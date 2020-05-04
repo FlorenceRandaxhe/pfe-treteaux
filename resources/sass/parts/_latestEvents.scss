@@ -51,11 +51,11 @@
         }
 
         .eventCard{
-            margin-left: em(20);
+            //margin-left: em(20);
             width: col(4);
 
             &:not(:last-of-type){
-                margin-right: gut(1)
+                //margin-right: gut(1)
             }
         }
     }

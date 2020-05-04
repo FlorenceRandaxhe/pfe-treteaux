@@ -3,83 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Season;
+use App\Post;
 use Illuminate\Http\Request;
 
 class SeasonController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __invoke(Season $season)
     {
-        //
-    }
+        $season->load('events');
+        $posts = Post::published()->limit(3)->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        return view('pages.event', [
+            'season' => $season,
+            'posts' => $posts
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Season  $season
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Season $season)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Season  $season
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Season $season)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Season  $season
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Season $season)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Season  $season
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Season $season)
-    {
-        //
     }
 }

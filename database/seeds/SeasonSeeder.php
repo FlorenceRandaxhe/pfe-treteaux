@@ -14,14 +14,14 @@ class SeasonSeeder extends Seeder
     {
         Season::create([
             'year' => '2018-2019',
-            'archived' => false,
+            'archived' => true,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
 
         Season::create([
             'year' => '2019-2020',
-            'archived' => true,
+            'archived' => false,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

@@ -3,7 +3,7 @@
         <div class="latestEvents__header">
             <h2 class="latestEvents__title">Prochainement</h2>
             @if($class === 'home')
-                <p class="latestEvents__year">2019-2020</p>
+                <p class="latestEvents__year">{{ $season->year }}</p>
             @endif
         </div>
         <div class="latestEvents__content">
@@ -14,7 +14,7 @@
             @endforeach
         </div>
         <div class="latestEvents__bottom">
-            <a class="latestEvents__link link link--line" href="#">Voir tout l'agenda</a>
+            <a class="latestEvents__link link link--line" href="/agenda/{{ $season->year }}">Voir tout l'agenda</a>
         </div>
     </div>
 </section>

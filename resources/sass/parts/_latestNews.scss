@@ -1,0 +1,51 @@
+.latestNews{
+    background-color: color(grey);
+    padding: em(100) 0;
+
+    &__container{
+        position: relative;
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl4);
+        position: absolute;
+        top: em(-100, xl4);
+        transform: translateY(-50%);
+        right: 0;
+    }
+
+    &__subTitle{
+        @include font(latobold);
+        font-size: em(m);
+        text-transform: uppercase;
+        padding-bottom: em(5, m);
+    }
+
+    &__bottom{
+        padding-top: em(30);
+    }
+
+    @include mq(l){
+
+        &__content{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__title{
+            font-size: em(xl10);
+            top: em(-100, xl10);
+            transform: translateY(-50%);
+        }
+
+        .newsCard{
+            width: 27%;
+
+            &--big{
+                width: col(5);
+            }
+        }
+    }
+
+}

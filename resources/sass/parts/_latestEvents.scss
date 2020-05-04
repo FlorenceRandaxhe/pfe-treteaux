@@ -22,7 +22,7 @@
     }
 
     &__bottom{
-        margin-top: em(50);
+        margin-top: em(20);
         text-align: right;
     }
 
@@ -52,7 +52,6 @@
 
         .eventCard{
             margin-left: em(20);
-//            margin: 0 gut(1) 0 em(20);
             width: col(4);
 
             &:not(:last-of-type){

@@ -1,5 +1,5 @@
 <section class="latestEvents latestEvents--{{ $class }}">
-    <div class="wrapper">
+    <div class="latestEvents__container wrapper">
         <div class="latestEvents__header">
             <h2 class="latestEvents__title">Prochainement</h2>
             @if($class === 'home')
@@ -8,7 +8,7 @@
         </div>
         <div class="latestEvents__content">
             @foreach($events as $event)
-                @include('parts.EventCard', [
+                @include('parts.eventCard', [
                     'event' => $event,
                 ])
             @endforeach

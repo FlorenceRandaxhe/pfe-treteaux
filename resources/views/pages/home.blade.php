@@ -4,4 +4,7 @@
     @include('partials.latestEvents', [
         'class' => 'home',
     ])
+    @include('partials.latestNews', [
+        'class' => 'home',
+    ])
 @endsection

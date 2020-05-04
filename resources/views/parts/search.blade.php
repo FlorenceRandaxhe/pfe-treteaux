@@ -1,7 +1,7 @@
 <div class="search">
-    <a class="search__link" href="#search"><span class="sro">Rechercher</span></a>
+    <a class="search__link" href="#search_modal"><span class="sro">Rechercher</span></a>
     <span class="search__icon"></span>
-    <div id="search" class="search__container">
+    <div id="search_modal" class="search__container">
         <a href="#" class="search__hide"><span class="sro">Fermer</span></a>
         <div class="search__modal">
             <div class="search__wrapper wrapper">

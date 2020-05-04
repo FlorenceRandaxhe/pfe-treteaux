@@ -17,15 +17,6 @@
             background-color: color(black);
             transition: transform 0.3s $easin;
         }
-
-        &:hover{
-            padding: em(10) em(70) em(10) 0;
-
-            &:before{
-                animation: lineAnim 0.3s $easin;
-                transform: translateX(calc(100% + 20px));
-            }
-        }
     }
 
     &--lineUp{
@@ -50,39 +41,7 @@
 
             &:before{
                 background-color: color(purple);
-                animation: lineAppear 1s $easin;
             }
         }
-    }
-}
-
-@keyframes lineAnim{
-    0%{
-        opacity: 1;
-    }
-    50%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-@keyframes lineAppear{
-    0%{
-        bottom: 30px;
-        height: 40px;
-    }
-    50%{
-        bottom: 30px;
-        height: 0;
-    }
-    70%{
-        bottom: 70px;
-        height: 0;
-    }
-    100%{
-        bottom: 30px;
-        height: 40px;
     }
 }

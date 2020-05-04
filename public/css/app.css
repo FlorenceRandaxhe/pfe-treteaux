@@ -361,16 +361,6 @@ a {
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.link--line:hover {
-  padding: 0.625em 4.375em 0.625em 0;
-}
-
-.link--line:hover:before {
-  -webkit-animation: lineAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-          animation: lineAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transform: translateX(calc(100% + 20px));
-}
-
 .link--lineUp {
   display: inline-block;
   position: relative;
@@ -394,80 +384,6 @@ a {
 
 .link--lineUp:hover:before {
   background-color: #4F1C28;
-  -webkit-animation: lineAppear 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-          animation: lineAppear 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-@-webkit-keyframes lineAnim {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes lineAnim {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes lineAppear {
-  0% {
-    bottom: 30px;
-    height: 40px;
-  }
-
-  50% {
-    bottom: 30px;
-    height: 0;
-  }
-
-  70% {
-    bottom: 70px;
-    height: 0;
-  }
-
-  100% {
-    bottom: 30px;
-    height: 40px;
-  }
-}
-
-@keyframes lineAppear {
-  0% {
-    bottom: 30px;
-    height: 40px;
-  }
-
-  50% {
-    bottom: 30px;
-    height: 0;
-  }
-
-  70% {
-    bottom: 70px;
-    height: 0;
-  }
-
-  100% {
-    bottom: 30px;
-    height: 40px;
-  }
 }
 
 .type {
@@ -1352,5 +1268,20 @@ a {
   .footer__legal:first-of-type {
     margin-bottom: 1.25em;
   }
+}
+
+.eventCard {
+  width: calc(100% / 3);
+}
+
+.eventCard__fig {
+  width: 100%;
+}
+
+.eventCard__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 

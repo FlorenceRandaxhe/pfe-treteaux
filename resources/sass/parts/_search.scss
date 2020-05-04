@@ -9,7 +9,7 @@
         transition: background-color 0.2s $easin;
 
         &:before{
-            @include icon(fb);
+            @include icon(search);
             color: color(white);
         }
 

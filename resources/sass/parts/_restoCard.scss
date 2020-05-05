@@ -1,6 +1,5 @@
 .restoCard{
-    width: col(3, 6);
-    padding: gut(1);
+    padding: em(15);
     margin-bottom: em(70);
     background-color: color(white);
     border: 4px solid color(white);
@@ -38,5 +37,14 @@
         font-size: em(l);
         line-height: em(25,l);
         padding-bottom: em(50, l);
+    }
+
+    @include mq(s){
+        width: 50%;
+        padding: gut(1);
+    }
+
+    @include mq(l){
+        width: col(3, 6);
     }
 }

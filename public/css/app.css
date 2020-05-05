@@ -1810,17 +1810,8 @@ a {
   padding: 6.25em 0 9.375em;
 }
 
-.allRestos__container {
-  display: flex;
-  align-items: flex-start;
-}
-
 .allRestos__intro {
-  width: 40.2155887231%;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 3.125em;
-  padding-bottom: 3.125em;
+  padding-bottom: 6.25em;
 }
 
 .allRestos__title {
@@ -1841,13 +1832,30 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: flex-start;
-  width: 57.2968490879%;
-  margin-top: -1.5625em;
+}
+
+@media only screen and (min-width: 920px) {
+  .allRestos__container {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .allRestos__intro {
+    width: 40.2155887231%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 3.125em;
+    padding-bottom: 3.125em;
+  }
+
+  .allRestos__content {
+    width: 57.2968490879%;
+    margin-top: -1.5625em;
+  }
 }
 
 .restoCard {
-  width: 47.4489795918%;
-  padding: 1.875em;
+  padding: 0.9375em;
   margin-bottom: 4.375em;
   background-color: #ffffff;
   border: 4px solid #ffffff;
@@ -1886,6 +1894,19 @@ a {
   font-size: 1.125em;
   line-height: 1.3888888889em;
   padding-bottom: 2.7777777778em;
+}
+
+@media only screen and (min-width: 640px) {
+  .restoCard {
+    width: 50%;
+    padding: 1.875em;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .restoCard {
+    width: 47.4489795918%;
+  }
 }
 
 .newsletter {

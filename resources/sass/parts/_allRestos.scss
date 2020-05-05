@@ -1,17 +1,12 @@
 .allRestos{
     padding: em(100) 0 em(150);
 
-    &__container{
-        display: flex;
-        align-items: flex-start;
-    }
-
     &__intro{
-        width: col(5);
-        position: -webkit-sticky;
-        position: sticky;
-        top: em(50);
-        padding-bottom: em(50);
+        //width: col(5);
+        //position: -webkit-sticky;
+        //position: sticky;
+        //top: em(50);
+        padding-bottom: em(100);
     }
 
     &__title{
@@ -32,7 +27,26 @@
         justify-content: space-between;
         flex-wrap: wrap;
         align-items: flex-start;
-        width: col(7);
-        margin-top: em(-25);
+    }
+
+    @include mq(l){
+        &__container{
+            display: flex;
+            align-items: flex-start;
+        }
+
+        &__intro{
+            width: col(5);
+            position: -webkit-sticky;
+            position: sticky;
+            top: em(50);
+            padding-bottom: em(50);
+        }
+
+        &__content{
+            width: col(7);
+            margin-top: em(-25);
+        }
+
     }
 }

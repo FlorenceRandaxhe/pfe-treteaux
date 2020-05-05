@@ -1,0 +1,57 @@
+.pagination{
+    margin-top: em(50);
+    text-align: center;
+}
+
+.page-item{
+    display: inline-block;
+    @include font(latoregular);
+    color: color(black);
+    font-size: em(l);
+    padding: em(5, l) em(10, l);
+    margin: 0 em(10, l);
+}
+
+.page-item.active{
+    background-color: color(darkgreen);
+    color: color(white);
+}
+
+.page-item{
+    position: relative;
+    &:first-of-type{
+        .page-link{
+            @include cover();
+            opacity: 0;
+        }
+        &:before{
+            display: inline-block;
+            @include icon(chevron);
+            font-size: em(s, l);
+            transform: rotate(90deg);
+            transition: transform 0.2s $easin;
+        }
+
+        &:hover:not(.disabled):before{
+            transform: rotate(90deg) translateY(5px);
+        }
+    }
+
+    &:last-of-type{
+        .page-link{
+            @include cover();
+            opacity: 0;
+        }
+        &:before{
+            display: inline-block;
+            @include icon(chevron);
+            font-size: em(s, l);
+            transform: rotate(-90deg);
+            transition: transform 0.2s $easin;
+        }
+
+        &:hover:not(.disabled):before{
+            transform: rotate(-90deg) translateY(5px);
+        }
+    }
+}

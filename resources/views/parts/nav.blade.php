@@ -18,7 +18,7 @@
             <a class="nav__link nav__link--dropdown" href="#">La salle</a>
             <ul class="nav__list_sub">
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="#">Actualités</a>
+                    <a class="nav__link_sub" href="{{ route('news') }}">Actualités</a>
                 </li>
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="#">À Propos</a>

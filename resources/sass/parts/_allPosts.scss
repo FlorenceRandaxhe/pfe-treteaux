@@ -1,0 +1,29 @@
+.allPosts{
+    padding: em(70) 0 em(150);
+
+    &__container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @include mq(s){
+        .newsCard{
+            width: col(6);
+
+            &--big{
+                //max-height: em(350)
+            }
+        }
+    }
+
+    @include mq(l){
+        .newsCard{
+            width: col(4);
+
+            &--big{
+                width: col(6);
+            }
+        }
+    }
+}

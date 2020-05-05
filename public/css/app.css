@@ -1272,6 +1272,93 @@ a {
   }
 }
 
+.pagination {
+  margin-top: 3.125em;
+  text-align: center;
+}
+
+.page-item {
+  display: inline-block;
+  font-family: "latoregular", Playfair, Arial, serif;
+  color: #292828;
+  font-size: 1.125em;
+  padding: 0.2777777778em 0.5555555556em;
+  margin: 0 0.5555555556em;
+}
+
+.page-item.active {
+  background-color: #2A4A4F;
+  color: #ffffff;
+}
+
+.page-item {
+  position: relative;
+}
+
+.page-item:first-of-type .page-link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.page-item:first-of-type:before {
+  display: inline-block;
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E903";
+  font-size: 0.7777777778em;
+  transform: rotate(90deg);
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.page-item:first-of-type:hover:not(.disabled):before {
+  transform: rotate(90deg) translateY(5px);
+}
+
+.page-item:last-of-type .page-link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.page-item:last-of-type:before {
+  display: inline-block;
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E903";
+  font-size: 0.7777777778em;
+  transform: rotate(-90deg);
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.page-item:last-of-type:hover:not(.disabled):before {
+  transform: rotate(-90deg) translateY(5px);
+}
+
 .eventCard {
   position: relative;
   margin-bottom: 3.75em;
@@ -1542,6 +1629,32 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 1.25em;
+}
+
+.allPosts {
+  padding: 4.375em 0 9.375em;
+}
+
+.allPosts__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 640px) {
+  .allPosts .newsCard {
+    width: 48.7562189055%;
+  }
+}
+
+@media only screen and (min-width: 920px) {
+  .allPosts .newsCard {
+    width: 31.6749585406%;
+  }
+
+  .allPosts .newsCard--big {
+    width: 48.7562189055%;
+  }
 }
 
 .latestNews {

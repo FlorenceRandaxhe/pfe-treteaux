@@ -14,7 +14,7 @@
         <div class="footer__content">
             <h2 class="footer__title">Réservation</h2>
             <ul class="footer__list">
-                <li class="footer__item"><a class="footer__link" href="#">Agenda</a></li>
+                <li class="footer__item"><a class="footer__link" href="/agenda/{{$season->year}}">Agenda</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Abonnements</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Offre resto</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Contact</a></li>
@@ -24,7 +24,7 @@
         <div class="footer__content">
             <h2 class="footer__title">À Propos</h2>
             <ul class="footer__list">
-                <li class="footer__item"><a class="footer__link" href="#">Actualités</a></li>
+                <li class="footer__item"><a class="footer__link" href="{{ route('news') }}">Actualités</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">La salle</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Presse</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Location</a></li>

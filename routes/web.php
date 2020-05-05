@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController')->name('home');
 Route::get('/agenda/{season}', 'SeasonController');
+Route::get('/actualités', 'PostController')->name('news');

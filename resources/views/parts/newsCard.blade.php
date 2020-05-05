@@ -8,6 +8,6 @@
             <p class="newsCard__type type">{{ $post->tag->name }}</p>
             <h3 class="newsCard__title">{{ $post->title }}</h3>
         </div>
-        <time class="newsCard__date" datetime="{{ $post->created_at->format('d-m-y') }}"><p class="newsCard__day">{{ $post->created_at->format('d') }}</p><p class="newsCard__month">{{ $post->created_at->format('M') }}</p></time>
+        <time class="newsCard__date" datetime="{{ $post->created_at->format('c') }}"><p class="newsCard__day">{{ $post->created_at->isoFormat('DD') }}</p><p class="newsCard__month">{{ $post->created_at->isoFormat('MMM') }}</p></time>
     </div>
 </article>

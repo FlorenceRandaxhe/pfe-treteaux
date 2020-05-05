@@ -1721,7 +1721,7 @@ a {
 
 .allPress__title {
   font-family: "abril_fatfaceregular", Playfair, Arial, serif;
-  font-size: 2em;
+  font-size: 2.25em;
   padding-bottom: 0.9375em;
 }
 
@@ -1804,6 +1804,88 @@ a {
   font-family: "latoregular", Playfair, Arial, serif;
   font-size: 1.125em;
   display: block;
+}
+
+.allRestos {
+  padding: 6.25em 0 9.375em;
+}
+
+.allRestos__container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.allRestos__intro {
+  width: 40.2155887231%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3.125em;
+  padding-bottom: 3.125em;
+}
+
+.allRestos__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2.25em;
+  padding-bottom: 0.9375em;
+}
+
+.allRestos__text {
+  font-size: 1.125em;
+  line-height: 1.6666666667em;
+  padding-bottom: 2.7777777778em;
+  padding-right: 3.8888888889em;
+}
+
+.allRestos__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 57.2968490879%;
+  margin-top: -1.5625em;
+}
+
+.restoCard {
+  width: 47.4489795918%;
+  padding: 1.875em;
+  margin-bottom: 4.375em;
+  background-color: #ffffff;
+  border: 4px solid #ffffff;
+  position: relative;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.restoCard:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #DAE7F2;
+  z-index: -1;
+  transition: top 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), right 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.restoCard:hover {
+  border-color: #292828;
+}
+
+.restoCard:hover:after {
+  top: -20px;
+  right: -20px;
+}
+
+.restoCard__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.875em;
+  padding-bottom: 0.8333333333em;
+}
+
+.restoCard__menu {
+  font-size: 1.125em;
+  line-height: 1.3888888889em;
+  padding-bottom: 2.7777777778em;
 }
 
 .newsletter {

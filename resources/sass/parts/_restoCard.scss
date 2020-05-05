@@ -1,0 +1,42 @@
+.restoCard{
+    width: col(3, 6);
+    padding: gut(1);
+    margin-bottom: em(70);
+    background-color: color(white);
+    border: 4px solid color(white);
+    position: relative;
+    transition: border-color 0.2s $easin;
+
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: color(blue);
+        z-index: -1;
+        transition: top 0.2s $easin,
+                    right 0.2s $easin
+    }
+
+    &:hover{
+        border-color: color(black);
+        &:after{
+            top: -20px;
+            right: -20px;
+        }
+    }
+
+    &__title{
+        @include font();
+        font-size: em(30);
+        padding-bottom: em(25, 30);
+    }
+
+    &__menu{
+        font-size: em(l);
+        line-height: em(25,l);
+        padding-bottom: em(50, l);
+    }
+}

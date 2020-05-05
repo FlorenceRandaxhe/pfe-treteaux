@@ -1,0 +1,38 @@
+.allRestos{
+    padding: em(100) 0 em(150);
+
+    &__container{
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__intro{
+        width: col(5);
+        position: -webkit-sticky;
+        position: sticky;
+        top: em(50);
+        padding-bottom: em(50);
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl5);
+        padding-bottom: em(15);
+    }
+
+    &__text{
+        font-size: em(l);
+        line-height: em(30, l);
+        padding-bottom: em(50, l);
+        padding-right: em(70, l);
+    }
+
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: col(7);
+        margin-top: em(-25);
+    }
+}

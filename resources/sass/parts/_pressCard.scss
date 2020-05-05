@@ -1,0 +1,75 @@
+.pressCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: em(90) 0;
+    position: relative;
+
+    &:after{
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: em(170);
+        height: calc(100% + 20px);
+        background-color: color(grey);
+        z-index: -1;
+        transition: width 0.3s $easin,
+                    background-color 0.3s $easin;
+    }
+
+    &:hover:after{
+        background-color: color(blue);
+        width: em(300);
+    }
+
+    &__link{
+        @include cover();
+    }
+
+    &__content{
+        width: col(10);
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl);
+        line-height: em(32, xl)
+    }
+
+    &__excerpt{
+        line-height: em(26);
+        padding-bottom: em(10)
+    }
+
+    &__source{
+        @include font(latobold);
+    }
+
+    &__date{
+        padding: em(20);
+        width: col(3);
+    }
+
+    &__day{
+        @include font(latoblack);
+        font-size: em(70);
+        float: left;
+        display: block;
+        padding-right: em(10, 70);
+    }
+
+    &__month{
+        @include font(latobold);
+        font-size: em(l);
+        display: block;
+        padding-bottom: em(10);
+        padding-top: em(10);
+    }
+
+    &__year{
+        @include font(latoregular);
+        font-size: em(l);
+        display: block;
+    }
+}

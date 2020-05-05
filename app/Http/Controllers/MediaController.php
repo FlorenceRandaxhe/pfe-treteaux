@@ -3,83 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Media;
+use App\Post;
+use App\Season;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __invoke(Request $request)
     {
-        //
-    }
+        $posts = Post::published()->limit(3)->get();
+        $medias = Media::paginate(3);
+        $season = Season::where('archived', '=', false)->latest()->first();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        //return $season->year;
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        return view('pages.press', [
+            'posts' => $posts,
+            'medias' => $medias,
+            'season' => $season
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Media  $media
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Media $media)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Media  $media
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Media $media)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Media  $media
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Media $media)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Media  $media
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Media $media)
-    {
-        //
     }
 }

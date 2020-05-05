@@ -1,10 +1,11 @@
 @extends('layout')
-@section('title', 'Agenda')
+@section('title', 'Actualités')
 @section('main')
-    <section class="events">
-        @include('partials.allPosts')
-        @include('partials.latestEvents', [
-            'class' => 'footer',
-        ])
-    </section>
+    @include('partials.allPosts')
+    @include('partials.newsletter', [
+        'color' => 'green'
+    ])
+    @include('partials.latestEvents', [
+        'class' => 'footer',
+    ])
 @endsection

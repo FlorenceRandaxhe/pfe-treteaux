@@ -1,3 +1,15 @@
+.pag{
+    &--green{
+        .page-item.active{
+            background-color: color(darkgreen);
+        }
+    }
+    &--blue{
+        .page-item.active{
+            background-color: color(darkblue);
+        }
+    }
+}
 .pagination{
     margin-top: em(50);
     text-align: center;
@@ -13,7 +25,6 @@
 }
 
 .page-item.active{
-    background-color: color(darkgreen);
     color: color(white);
 }
 

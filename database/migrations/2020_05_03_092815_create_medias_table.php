@@ -18,6 +18,7 @@ class CreateMediasTable extends Migration
             $table->string('title');
             $table->text('excerpt');
             $table->text('source');
+            $table->text('url');
             $table->timestamp('published_at');
             $table->timestamps();
         });

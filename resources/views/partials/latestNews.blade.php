@@ -23,7 +23,7 @@
             @endforeach
         </div>
         <div class="latestNews__bottom">
-            <a class="latestNews__link link link--line" href="#">Voir toutes les actus</a>
+            <a class="latestNews__link link link--line" href="{{ route('news') }}">Voir toutes les actus</a>
         </div>
     </div>
 </section>

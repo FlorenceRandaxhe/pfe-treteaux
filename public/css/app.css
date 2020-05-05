@@ -1269,6 +1269,14 @@ a {
   }
 }
 
+.pag--green .page-item.active {
+  background-color: #2A4A4F;
+}
+
+.pag--blue .page-item.active {
+  background-color: #203344;
+}
+
 .pagination {
   margin-top: 3.125em;
   text-align: center;
@@ -1284,7 +1292,6 @@ a {
 }
 
 .page-item.active {
-  background-color: #2A4A4F;
   color: #ffffff;
 }
 
@@ -1629,7 +1636,7 @@ a {
 }
 
 .allPosts {
-  padding: 4.375em 0 9.375em;
+  padding: 6.25em 0 9.375em;
 }
 
 .allPosts__container {
@@ -1704,8 +1711,103 @@ a {
   }
 }
 
+.allPress {
+  padding: 6.25em 0 9.375em;
+}
+
+.allPress__container {
+  padding: 0 6.25em;
+}
+
+.allPress__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2em;
+  padding-bottom: 0.9375em;
+}
+
+.pressCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5.625em 0;
+  position: relative;
+}
+
+.pressCard:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 10.625em;
+  height: calc(100% + 20px);
+  background-color: #f9f9f9;
+  z-index: -1;
+  transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.pressCard:hover:after {
+  background-color: #DAE7F2;
+  width: 18.75em;
+}
+
+.pressCard__link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pressCard__content {
+  width: 82.9187396352%;
+}
+
+.pressCard__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.25em;
+  line-height: 1.6em;
+}
+
+.pressCard__excerpt {
+  line-height: 1.625em;
+  padding-bottom: 0.625em;
+}
+
+.pressCard__source {
+  font-family: "latobold", Playfair, Arial, serif;
+}
+
+.pressCard__date {
+  padding: 1.25em;
+  width: 23.1343283582%;
+}
+
+.pressCard__day {
+  font-family: "latoblack", Playfair, Arial, serif;
+  font-size: 4.375em;
+  float: left;
+  display: block;
+  padding-right: 0.1428571429em;
+}
+
+.pressCard__month {
+  font-family: "latobold", Playfair, Arial, serif;
+  font-size: 1.125em;
+  display: block;
+  padding-bottom: 0.625em;
+  padding-top: 0.625em;
+}
+
+.pressCard__year {
+  font-family: "latoregular", Playfair, Arial, serif;
+  font-size: 1.125em;
+  display: block;
+}
+
 .newsletter {
-  padding: 3.125em 0 12.5em;
+  padding: 2.5em 0 12.5em;
 }
 
 .newsletter__container {
@@ -1722,8 +1824,8 @@ a {
   position: absolute;
   top: -40px;
   right: -40px;
-  width: 200px;
-  height: 200px;
+  width: 12.5em;
+  height: 12.5em;
   background-color: #DAE7F2;
   z-index: -1;
 }
@@ -1733,8 +1835,8 @@ a {
   position: absolute;
   bottom: -20px;
   left: -20px;
-  width: 100px;
-  height: 100px;
+  width: 6.25em;
+  height: 6.25em;
   background-color: #DAE7F2;
   z-index: -1;
 }

@@ -15,7 +15,6 @@ class PostController extends Controller
         $posts = Post::published()->paginate(8);
         $season = Season::where('archived', '=', false)->latest()->first();
         $events = $season->events()->limit(3)->get();
-        //$featured = Event::featured()->get();
 
         return view('pages.post', [
             'posts' => $posts,

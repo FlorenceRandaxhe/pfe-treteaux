@@ -1,5 +1,8 @@
 <div class="nav">
     <ul class="nav__list">
+        <li class="nav__item">
+            <a class="nav__link" href="{{ route('home') }}">Accueil</a>
+        </li>
         <li class="nav__item nav__item--dropdown">
             <a class="nav__link nav__link--dropdown" href="#">Agenda</a>
             <ul class="nav__list_sub">

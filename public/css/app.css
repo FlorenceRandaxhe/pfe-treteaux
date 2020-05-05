@@ -1363,6 +1363,54 @@ a {
   transform: rotate(-90deg) translateY(5px);
 }
 
+.info {
+  position: relative;
+  padding-bottom: 1.25em;
+}
+
+.info--home {
+  background-color: #f9f9f9;
+}
+
+.info:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 7.5em;
+  bottom: -0.3125em;
+  z-index: 0;
+  background-color: #4F1C28;
+}
+
+.info__container {
+  background-color: #DAE7F2;
+  border: 4px solid #4F1C28;
+  text-align: center;
+  max-width: 62.5em;
+  padding: 3.125em 6.0530679934%;
+  z-index: 10;
+}
+
+.info__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2.375em;
+  padding-bottom: 0.6578947368em;
+  color: #4F1C28;
+}
+
+.info__text {
+  font-size: 1.125em;
+  line-height: 1.6666666667em;
+  padding-bottom: 1.6666666667em;
+  color: #4F1C28;
+}
+
+.info__link {
+  font-size: 1.125em;
+  color: #4F1C28;
+}
+
 .eventCard {
   position: relative;
   margin-bottom: 3.75em;

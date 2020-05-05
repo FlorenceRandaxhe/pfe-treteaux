@@ -10,7 +10,7 @@
                     <a class="nav__link_sub" href="#">Abonnements</a>
                 </li>
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="#">Offre resto</a>
+                    <a class="nav__link_sub" href="{{ route('resto') }}">Offre resto</a>
                 </li>
             </ul>
         </li>

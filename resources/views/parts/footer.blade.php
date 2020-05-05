@@ -16,7 +16,7 @@
             <ul class="footer__list">
                 <li class="footer__item"><a class="footer__link" href="/agenda/{{$season->year}}">Agenda</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Abonnements</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Offre resto</a></li>
+                <li class="footer__item"><a class="footer__link" href="{{ route('resto') }}">Offre resto</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Contact</a></li>
             </ul>
         </div>

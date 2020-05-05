@@ -15,8 +15,6 @@ class MediaController extends Controller
         $medias = Media::paginate(3);
         $season = Season::where('archived', '=', false)->latest()->first();
 
-        //return $season->year;
-
         return view('pages.press', [
             'posts' => $posts,
             'medias' => $medias,

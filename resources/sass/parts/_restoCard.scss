@@ -30,6 +30,7 @@
     &__title{
         @include font();
         font-size: em(30);
+        line-height: em(40, 30);
         padding-bottom: em(25, 30);
     }
 

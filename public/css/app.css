@@ -1887,6 +1887,7 @@ a {
 .restoCard__title {
   font-family: "abril_fatfaceregular", Playfair, Arial, serif;
   font-size: 1.875em;
+  line-height: 1.3333333333em;
   padding-bottom: 0.8333333333em;
 }
 

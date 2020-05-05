@@ -300,7 +300,7 @@ a {
 
 .btn--arrow {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
   background-color: transparent;
   border: none;
@@ -319,7 +319,7 @@ a {
   -moz-osx-font-smoothing: grayscale;
   content: "\E906";
   font-size: 2.625em;
-  color: #4F1C28;
+  color: #292828;
   cursor: pointer;
 }
 
@@ -333,9 +333,6 @@ a {
 
 .btn--white:after {
   font-size: 2em;
-  position: absolute;
-  top: calc(50% + 26px);
-  right: 0;
   color: #ffffff;
 }
 
@@ -433,7 +430,7 @@ a {
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #4F1C28;
+  background-color: #292828;
   transition: width 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -446,23 +443,23 @@ a {
 }
 
 .form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-webkit-input-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-moz-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white):-ms-input-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-ms-input-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__control--error .form__input {
@@ -1705,5 +1702,75 @@ a {
   .latestNews .newsCard--big {
     width: 40.2155887231%;
   }
+}
+
+.newsletter {
+  padding: 3.125em 0 12.5em;
+}
+
+.newsletter__container {
+  border: 4px solid #292828;
+  padding: 5em 6.25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.newsletter__container:before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background-color: #DAE7F2;
+  z-index: -1;
+}
+
+.newsletter__container:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background-color: #DAE7F2;
+  z-index: -1;
+}
+
+.newsletter--blue .newsletter__container:before,
+.newsletter--blue .newsletter__container:after {
+  background-color: #DAE7F2;
+}
+
+.newsletter--green .newsletter__container:before,
+.newsletter--green .newsletter__container:after {
+  background-color: #C2E4D4;
+}
+
+.newsletter--pink .newsletter__container:before,
+.newsletter--pink .newsletter__container:after {
+  background-color: #E6C9C9;
+}
+
+.newsletter__content {
+  width: 40.2155887231%;
+}
+
+.newsletter__form {
+  width: 48.7562189055%;
+}
+
+.newsletter__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 3em;
+  padding-bottom: 0.625em;
+}
+
+.newsletter__text {
+  font-size: 1.125em;
+  line-height: 1.5555555556em;
+  letter-spacing: 0.05em;
 }
 

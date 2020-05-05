@@ -33,7 +33,7 @@
 
     &--arrow{
         position: absolute;
-        top:0;
+        bottom:0;
         right:0;
         background-color: transparent;
         border:none;
@@ -42,7 +42,7 @@
         &:after{
             @include icon(arrow);
             font-size: em(xl7);
-            color: color(purple);
+            color: color(black);
             cursor: pointer;
         }
 
@@ -56,9 +56,6 @@
 
         &:after{
             font-size: em(xl4);
-            position: absolute;
-            top: calc(50% + 26px);
-            right: 0;
             color: color(white);
         }
     }

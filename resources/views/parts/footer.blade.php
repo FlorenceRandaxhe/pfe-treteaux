@@ -4,8 +4,8 @@
             <h2 class="footer__title">Newsletter</h2>
             <form class="form footer__form" action="#" method="POST">
                 <div class="form__control form__control--white">
-                    <label class="form__label form__label--white" for="nl_email">Email</label>
-                    <input type="search" name="nl_email" id="nl_email" class="form__input form__input--white form__input--small">
+                    <label class="form__label form__label--white" for="fnl_email">Email</label>
+                    <input type="search" name="fnl_email" id="fnl_email" class="form__input form__input--white form__input--small">
                     <button class="btn btn--arrow btn--white"><span class="sro">Envoyer</span></button>
                 </div>
             </form>

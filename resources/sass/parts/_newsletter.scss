@@ -1,0 +1,75 @@
+.newsletter{
+    padding: em(50) 0 em(200);
+
+    &__container{
+        border: 4px solid color(black);
+        padding: em(80) em(100);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
+            background-color: color(blue);
+            z-index: -1;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background-color: color(blue);
+            z-index: -1;
+        }
+
+    }
+
+    &--blue{
+        .newsletter__container:before,
+        .newsletter__container:after{
+            background-color: color(blue);
+        }
+    }
+
+    &--green{
+        .newsletter__container:before,
+        .newsletter__container:after{
+            background-color: color(green);
+        }
+    }
+
+    &--pink{
+        .newsletter__container:before,
+        .newsletter__container:after{
+            background-color: color(pink);
+        }
+    }
+
+    &__content{
+        width: col(5);
+    }
+    &__form{
+        width: col(6);
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl8);
+        padding-bottom: em(30, xl8)
+    }
+
+    &__text{
+        font-size: em(l);
+        line-height: em(28, l);
+        letter-spacing: 0.05em;
+    }
+}

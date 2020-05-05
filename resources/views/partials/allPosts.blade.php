@@ -16,6 +16,6 @@
         @endforeach
     </div>
     <div class="wrapper">
-            {{ $posts->links() }}
+        {{ $posts->links() }}
     </div>
 </section>

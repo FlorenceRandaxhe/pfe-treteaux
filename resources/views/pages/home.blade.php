@@ -4,6 +4,9 @@
     @include('partials.latestEvents', [
         'class' => 'home',
     ])
+    @include('partials.newsletter', [
+        'color' => 'blue'
+    ])
     @include('partials.latestNews', [
         'class' => 'home',
     ])

@@ -10,7 +10,7 @@
             left: 0;
             height: 2px;
             width: 0;
-            background-color: color(purple);
+            background-color: color(black);
             transition: width 1s cubic-bezier(.645, .045, .355, 1);
         }
 
@@ -24,7 +24,7 @@
                 //color: color(purple);
 
                 &::placeholder{
-                    color: color(purple);
+                    color: color(black);
                 }
             }
         }

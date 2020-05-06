@@ -7,10 +7,13 @@
             </p>
         </div>
         <form class="newsletter__form form" method="POST" action="#">
-            <div class="form__control">
+            <div class="form__control @error('name') form__control--error @enderror">
                 <label class="form__label" for="nl_email">Email</label>
                 <input type="search" name="nl_email" id="nl_email" class="form__input" placeholder="Votre email">
                 <button class="btn btn--arrow"><span class="sro">Envoyer</span></button>
+                @error('email')
+                    <p class="form__error">{{ $message }}</p>
+                @enderror
             </div>
         </form>
     </div>

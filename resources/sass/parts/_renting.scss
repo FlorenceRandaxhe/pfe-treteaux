@@ -19,4 +19,25 @@
         padding-bottom: em(50, l);
         padding-right: em(70, l);
     }
+
+    @include mq(l){
+        &__container{
+            display: flex;
+            align-items: flex-start;
+        }
+
+        &__content{
+            width: col(7)
+        }
+
+        &__intro{
+            width: col(4);
+            margin-right: em(130);
+
+            &--sticky{
+                position: sticky;
+                top: -50px;
+            }
+        }
+    }
 }

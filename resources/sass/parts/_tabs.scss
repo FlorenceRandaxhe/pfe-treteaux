@@ -44,4 +44,8 @@
     &__link{
         @include cover();
     }
+
+    @include mq(l){
+        padding-top: em(20)
+    }
 }

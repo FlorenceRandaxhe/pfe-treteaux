@@ -1,0 +1,37 @@
+.rentingInfo{
+    padding-bottom: em(50);
+
+    &__title{
+        @include font();
+        font-size: em(xl3);
+        padding-bottom: em(40, xl3);
+    }
+
+    &__item{
+        padding-bottom: em(30);
+    }
+
+    &__feature{
+        @include font(latobold);
+        font-size: em(xl);
+        padding-bottom: em(15, xl)
+    }
+
+    &__description,
+    &__info{
+        font-size: em(l);
+        line-height: em(30, l);
+        padding-bottom: em(10, l)
+    }
+
+    @include mq(s){
+        &__item{
+            display: flex;
+            align-items: flex-start;
+        }
+
+        &__feature{
+            padding-right: gut(1)
+        }
+    }
+}

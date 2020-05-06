@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
+use App\Season;
+use App\Event;
+
+class ContactController extends Controller
+{
+    public function index()
+    {
+        $season = Season::where('archived', '=', false)->latest()->first();
+        $events = $season->events()->limit(3)->get();
+
+        return view('pages.contact', [
+            'events' => $events,
+            'season' => $season,
+        ]);
+    }
+
+    public function submit(ContactRequest $request)
+    {
+
+        return redirect()->to(url()->previous() . '#contact')->with('success', true);
+    }
+}

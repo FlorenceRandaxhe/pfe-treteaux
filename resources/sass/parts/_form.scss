@@ -71,6 +71,71 @@
             font-size: em(s);
         }
 
+        &--radio,
+        &--checkbox{
+            @include font();
+            display: inline-block;
+            font-size: em(xl);
+            margin-top: em(20);
+            margin-left: em(35,xl);
+            position: relative;
+            padding:0;
+            opacity: 0.8;
+            transition: color 0.2s $easin;
+
+            &:after{
+                content: "";
+                position: absolute;
+                left: -35px;
+                top: calc(50% - 10px);
+                width: 20px;
+                height: 20px;
+                background-color: color(white);
+                //opacity: 0.8;
+                border: 2px solid color(black);
+                transition: opacity 0.2s $easin,
+                            background-color 0.2s $easin;
+            }
+
+            &:hover{
+                &:after{
+                    opacity: 1;
+                    background-color: color(blue)
+                }
+            }
+        }
+
+        &--checkbox{
+            &:before {
+                @include icon(check);
+                font-size: em(xs2);
+                display: inline-block;
+                font-weight: 900;
+                color: color(white);
+                position: absolute;
+                left: -31px;
+                top: calc(50% - 6px);
+            }
+        }
+
+        &--radio{
+            &:before {
+                content: '';
+                position: absolute;
+                left: -30px;
+                top: calc(50% - 5px);
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+                background-color: color(black)
+            }
+
+            &:after{
+                border-radius: 100%;
+            }
+        }
+
+
     }
 
     &__textarea{
@@ -83,7 +148,7 @@
         @include reset-input-styles();
         @include input-placeholder();
         border-bottom: 2px solid color(black);
-        opacity: 0.6;
+        opacity: 0.8;
         @include font();
         font-size: em(xl3);
         color: color(black);
@@ -127,4 +192,38 @@
             }
         }
     }
+
+    &__radio,
+    &__checkbox{
+        @include hidden();
+
+        &:checked + label{
+            opacity:1;
+            color: color(black);
+        }
+
+        &:checked + label:before{
+            z-index: 2;
+        }
+
+        &:checked + label:after{
+            border-color: color(black);
+        }
+
+        &:focus + label:after{
+            border-color: color(black);
+            box-shadow: 0px 0px 2px color(black);
+        }
+        &:focus + label,
+        &:hover + label{
+            color: color(black);
+        }
+    }
+
+    &__checkbox{
+        &:checked + label:after{
+            background-color: color(black);
+        }
+    }
+
 }

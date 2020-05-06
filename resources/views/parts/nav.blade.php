@@ -35,7 +35,7 @@
             </ul>
         </li>
         <li class="nav__item">
-            <a class="nav__link" href="#">Contact</a>
+            <a class="nav__link" href="{{ route('contact') }}">Contact</a>
         </li>
     </ul>
 </div>

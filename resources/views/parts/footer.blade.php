@@ -5,10 +5,10 @@
             <form class="form footer__form" action="{{ route('newsletter') }}" method="POST">
                 @csrf
                 <div class="form__control form__control--white">
-                    <label class="form__label form__label--white" for="email">Email</label>
-                    <input type="search" name="email" id="email" class="form__input form__input--white form__input--small">
+                    <label class="form__label form__label--white" for="nl_email">Email</label>
+                    <input type="search" name="nl_email" id="nl_email" class="form__input form__input--white form__input--small">
                     <button class="btn btn--arrow btn--white"><span class="sro">Envoyer</span></button>
-                    @error('email')
+                    @error('nl_email')
                         <p class="form__error form__error--white">{{ $message }}</p>
                     @enderror
                 </div>
@@ -21,7 +21,7 @@
                 <li class="footer__item"><a class="footer__link" href="/agenda/{{$season->year}}">Agenda</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Abonnements</a></li>
                 <li class="footer__item"><a class="footer__link" href="{{ route('resto') }}">Offre resto</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Contact</a></li>
+                <li class="footer__item"><a class="footer__link" href="{{ route('contact') }}">Contact</a></li>
             </ul>
         </div>
 

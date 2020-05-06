@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewsletterRequest extends FormRequest
+class ContactRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,16 @@ class NewsletterRequest extends FormRequest
     public function rules()
     {
         return [
-            'nl_email' => 'required|email',
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required'
         ];
     }
 
     protected function getRedirectUrl()
     {
         $url = $this->redirector->getUrlGenerator();
-        return $url->previous() . '#newsletter';
+        return $url->previous() . '#contact';
     }
 }

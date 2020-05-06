@@ -1,13 +1,15 @@
 .allPress{
     padding: em(100) 0 em(150);
 
-    &__container{
-        padding: 0 em(100);
-    }
-
     &__title{
         @include font();
         font-size: em(xl5);
         padding-bottom: em(15);
+    }
+
+    @include mq(xl2){
+        &__container{
+            padding: 0 em(100);
+        }
     }
 }

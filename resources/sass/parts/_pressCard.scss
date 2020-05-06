@@ -1,34 +1,14 @@
 .pressCard{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: em(90) 0;
     position: relative;
 
-    &:after{
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: 0;
-        width: em(170);
-        height: calc(100% + 20px);
-        background-color: color(grey);
-        z-index: -1;
-        transition: width 0.3s $easin,
-                    background-color 0.3s $easin;
-    }
-
-    &:hover:after{
-        background-color: color(blue);
-        width: em(300);
-    }
 
     &__link{
         @include cover();
-    }
-
-    &__content{
-        width: col(10);
     }
 
     &__title{
@@ -47,14 +27,14 @@
     }
 
     &__date{
-        padding: em(20);
-        width: col(3);
+        width: col(6);
+        margin-bottom: em(30);
+        align-self: flex-start;
     }
 
     &__day{
         @include font(latoblack);
         font-size: em(70);
-        float: left;
         display: block;
         padding-right: em(10, 70);
     }
@@ -62,7 +42,6 @@
     &__month{
         @include font(latobold);
         font-size: em(l);
-        display: block;
         padding-bottom: em(10);
         padding-top: em(10);
     }
@@ -70,6 +49,48 @@
     &__year{
         @include font(latoregular);
         font-size: em(l);
-        display: block;
+    }
+
+    @include mq(m){
+        flex-direction: row;
+
+        &__content{
+            margin-left: em(30);
+            width: col(10);
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: em(170);
+            height: calc(100% + 20px);
+            background-color: color(grey);
+            z-index: -1;
+            transition: width 0.3s $easin,
+                        background-color 0.3s $easin;
+        }
+
+        &:hover:after{
+            background-color: color(blue);
+            width: em(300);
+        }
+
+        &__date{
+            padding: em(20);
+            width: col(3);
+            min-width: em(200);
+            margin-bottom: 0;
+            align-self: center;
+        }
+
+        &__day{
+            float: left;
+        }
+
+        &__month{
+            display: block;
+        }
     }
 }

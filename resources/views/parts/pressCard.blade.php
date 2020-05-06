@@ -7,7 +7,8 @@
     </time>
     <div class="pressCard__content">
         <h3 class="pressCard__title">{{ $media->title }}</h3>
-        <p class="pressCard__excerpt">{{ $media->excerpt }}</p>
+        <p class="pressCard__excerpt">
+            {{ Illuminate\Support\Str::limit($media->excerpt, 120)}}</p>
         <p class="pressCard__source">{{ $media->source }}</p>
     </div>
 </article>

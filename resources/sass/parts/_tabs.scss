@@ -4,13 +4,12 @@
     &__item{
         @include font();
         font-size: em(xl);
-        border: 3px solid color(black);
-        padding: em(20, xl) em(30, xl);
+        padding: em(30, xl) em(30, xl);
         position: relative;
         transition: background-color 0.3s $easin;
 
-        &:not(:first-of-type){
-            border-top:none
+        &:not(:first-of-type) a{
+            border-top: none;
         }
 
         &:after{
@@ -23,17 +22,16 @@
             transition: transform 0.3s $easin;
         }
 
-        &:not(.tabs__item--active):hover{
-            background-color: color(blue);
-
-            &:after{
-                transform: translateX(10px);
-            }
+        &:not(.tabs__item--active):hover:after{
+            transform: translateX(10px);
         }
 
         &--active{
-            background-color: color(black);
-            color: color(white);
+            a,
+            &:hover a{
+                background-color: color(black);
+                color: color(white);
+            }
 
             &:after{
                 color: color(white);
@@ -43,14 +41,16 @@
 
     &__link{
         @include cover();
+        padding: em(20, xl) em(30, xl);
+        border: 3px solid color(black);
 
+        &:hover,
         &:focus{
-            z-index: -1;
             background-color: color(blue);
         }
     }
 
     @include mq(l){
-        padding-top: em(20)
+        padding-top: em(20);
     }
 }

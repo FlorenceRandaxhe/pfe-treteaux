@@ -40,12 +40,6 @@
                 background-color: transparent;
             }
         }
-
-        &--white{
-            &:after{
-                background-color: color(blue);
-            }
-        }
     }
 
     &__btnContainer{
@@ -58,6 +52,10 @@
         position: absolute;
         top: 0;
         right: 0;
+
+        &--white{
+            color: color(white);
+        }
     }
 
     &__label{

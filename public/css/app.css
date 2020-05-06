@@ -509,10 +509,6 @@ a {
   background-color: transparent;
 }
 
-.form__control--white:after {
-  background-color: #DAE7F2;
-}
-
 .form__btnContainer {
   text-align: right;
 }
@@ -523,6 +519,10 @@ a {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.form__error--white {
+  color: #ffffff;
 }
 
 .form__label {
@@ -1577,6 +1577,10 @@ a {
 @media only screen and (max-width: 759px) {
   .newsletter {
     overflow: hidden;
+  }
+
+  .newsletter__form {
+    padding-top: 1.875em;
   }
 }
 

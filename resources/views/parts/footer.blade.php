@@ -1,12 +1,16 @@
 <footer class="footer">
     <div class="footer__top wrapper">
-        <div class="footer__newsletter">
+        <div class="footer__newsletter" id="newsletter">
             <h2 class="footer__title">Newsletter</h2>
-            <form class="form footer__form" action="#" method="POST">
+            <form class="form footer__form" action="{{ route('newsletter') }}" method="POST">
+                @csrf
                 <div class="form__control form__control--white">
-                    <label class="form__label form__label--white" for="fnl_email">Email</label>
-                    <input type="search" name="fnl_email" id="fnl_email" class="form__input form__input--white form__input--small">
+                    <label class="form__label form__label--white" for="email">Email</label>
+                    <input type="search" name="email" id="email" class="form__input form__input--white form__input--small">
                     <button class="btn btn--arrow btn--white"><span class="sro">Envoyer</span></button>
+                    @error('email')
+                        <p class="form__error form__error--white">{{ $message }}</p>
+                    @enderror
                 </div>
             </form>
         </div>

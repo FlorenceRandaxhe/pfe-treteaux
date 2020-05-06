@@ -63,6 +63,10 @@
 
     @include mq(m, max){
         overflow: hidden;
+
+        &__form{
+            padding-top: em(30)
+        }
     }
 
     @include mq(m){

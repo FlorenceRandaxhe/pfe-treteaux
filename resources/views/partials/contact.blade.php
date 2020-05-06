@@ -1,14 +1,16 @@
 <section class="contact" id="contact">
-    <div class="wrapper">
+    <div class="contact__container wrapper">
         <h2 class="sro">Formulaire de contact</h2>
         @include('parts.contactForm')
     </div>
 </section>
 
 <section class="contact">
-    <div class="wrapper">
+    <div class="contact__container wrapper">
         <h2 class="sro">Information de contact</h2>
-        @include('parts.contactInfo')
+        <div class="contact__info">
+            @include('parts.contactInfo')
+        </div>
     </div>
 </section>
 

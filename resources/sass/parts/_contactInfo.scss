@@ -1,0 +1,57 @@
+.contactInfo{
+    text-align: center;
+    margin-bottom: em(30);
+    background-color: color(white);
+    border: 4px solid color(black);
+    padding: em(80) em(30) em(30);
+    position: relative;
+    transition: color 0.2s $easin,
+                background-color 0.2s $easin;
+
+    &--pin{
+        &:before{
+            @include icon(pin);
+        }
+    }
+
+    &--phone{
+        &:before{
+            @include icon(phone);
+        }
+    }
+
+    &--mail{
+        &:before{
+            @include icon(mail);
+        }
+    }
+
+    &:before{
+        position: absolute;
+        font-size: em(xl3);
+        top: em(20);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &:hover{
+        background-color: color(black);
+        color: color(white);
+    }
+
+    &__link{
+        @include cover();
+    }
+
+    &__label{
+        @include font();
+        font-size: em(xl2);
+        padding-bottom: em(15, xl2);
+    }
+
+    &__info{
+        text-transform: uppercase;
+        font-size: em(l);
+        line-height: em(22, l);
+    }
+}

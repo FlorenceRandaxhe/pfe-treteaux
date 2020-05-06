@@ -1,0 +1,21 @@
+.contact{
+    padding-top: em(100);
+
+    @include mq(xl){
+        &__container{
+            padding-left: em(100);
+            padding-right: em(100);
+        }
+    }
+
+    @include mq(m){
+        &__info{
+            display: flex;
+            justify-content: space-between;
+
+            .contactInfo{
+                width: col(4)
+            }
+        }
+    }
+}

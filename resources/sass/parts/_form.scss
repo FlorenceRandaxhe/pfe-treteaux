@@ -79,7 +79,8 @@
 
     }
 
-    &__input{
+    &__input,
+    &__textarea{
         @include reset-input-styles();
         @include input-placeholder();
         border-bottom: 2px solid color(black);

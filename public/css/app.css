@@ -270,6 +270,8 @@ a {
   font-family: "abril_fatfaceregular", Playfair, Arial, serif;
   font-size: 1em;
   text-align: center;
+  background-color: transparent;
+  border: none;
 }
 
 .btn--primary {
@@ -521,7 +523,8 @@ a {
   font-size: 0.875em;
 }
 
-.form__input {
+.form__input,
+.form__textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   border: none;
@@ -540,84 +543,94 @@ a {
   transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.form__input:focus {
+.form__input:focus,
+.form__textarea:focus {
   outline: none;
 }
 
-.form__input::-webkit-input-placeholder {
+.form__input::-webkit-input-placeholder, .form__textarea::-webkit-input-placeholder {
   opacity: 0.8;
   -webkit-transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #292828;
 }
 
-.form__input::-moz-placeholder {
+.form__input::-moz-placeholder, .form__textarea::-moz-placeholder {
   opacity: 0.8;
   -moz-transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #292828;
 }
 
-.form__input:-ms-input-placeholder {
+.form__input:-ms-input-placeholder, .form__textarea:-ms-input-placeholder {
   opacity: 0.8;
   -ms-transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #292828;
 }
 
-.form__input::-ms-input-placeholder {
+.form__input::-ms-input-placeholder, .form__textarea::-ms-input-placeholder {
   opacity: 0.8;
   -ms-transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #292828;
 }
 
-.form__input::placeholder {
+.form__input::placeholder,
+.form__textarea::placeholder {
   opacity: 0.8;
   transition: color 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #292828;
 }
 
 .form__input:focus,
-.form__input:hover {
+.form__input:hover,
+.form__textarea:focus,
+.form__textarea:hover {
   border-bottom-color: #4F1C28;
   opacity: 1;
   color: #4F1C28;
 }
 
-.form__input:focus::-webkit-input-placeholder, .form__input:hover::-webkit-input-placeholder {
+.form__input:focus::-webkit-input-placeholder, .form__input:hover::-webkit-input-placeholder, .form__textarea:focus::-webkit-input-placeholder, .form__textarea:hover::-webkit-input-placeholder {
   color: #4F1C28;
 }
 
-.form__input:focus::-moz-placeholder, .form__input:hover::-moz-placeholder {
+.form__input:focus::-moz-placeholder, .form__input:hover::-moz-placeholder, .form__textarea:focus::-moz-placeholder, .form__textarea:hover::-moz-placeholder {
   color: #4F1C28;
 }
 
-.form__input:focus:-ms-input-placeholder, .form__input:hover:-ms-input-placeholder {
+.form__input:focus:-ms-input-placeholder, .form__input:hover:-ms-input-placeholder, .form__textarea:focus:-ms-input-placeholder, .form__textarea:hover:-ms-input-placeholder {
   color: #4F1C28;
 }
 
-.form__input:focus::-ms-input-placeholder, .form__input:hover::-ms-input-placeholder {
+.form__input:focus::-ms-input-placeholder, .form__input:hover::-ms-input-placeholder, .form__textarea:focus::-ms-input-placeholder, .form__textarea:hover::-ms-input-placeholder {
   color: #4F1C28;
 }
 
 .form__input:focus::placeholder,
-.form__input:hover::placeholder {
+.form__input:hover::placeholder,
+.form__textarea:focus::placeholder,
+.form__textarea:hover::placeholder {
   color: #4F1C28;
 }
 
-.form__input--small {
+.form__input--small,
+.form__textarea--small {
   font-size: 1.125em;
 }
 
-.form__input--white {
+.form__input--white,
+.form__textarea--white {
   border-bottom-color: #ffffff;
   color: #ffffff;
   opacity: 1;
 }
 
 .form__input--white:focus,
-.form__input--white:hover {
+.form__input--white:hover,
+.form__textarea--white:focus,
+.form__textarea--white:hover {
   color: #DAE7F2;
   border-bottom-color: #DAE7F2;
   opacity: 1;

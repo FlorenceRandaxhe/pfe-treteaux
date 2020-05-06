@@ -3,6 +3,6 @@
 @section('main')
     @include('partials.renting')
     @include('partials.latestNews', [
-        'class' => 'home',
+        'class' => '',
     ])
 @endsection

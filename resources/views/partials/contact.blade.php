@@ -14,6 +14,9 @@
     </div>
 </section>
 
-<!-- <div class="map">
-    <div id="map"></div>
-</div> -->
+<!-- <div class="contact">
+    <div class="contact__mapContainer">
+        <div class="contact__map" id="map"></div>
+    </div>
+</div>
+ -->

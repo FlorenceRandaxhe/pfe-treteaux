@@ -1,6 +1,15 @@
 .contact{
     padding-top: em(100);
 
+    &__mapContainer{
+        width: 100%
+    }
+
+    &__map{
+        width: 100%;
+        height: em(500);
+    }
+
     @include mq(xl){
         &__container{
             padding-left: em(100);

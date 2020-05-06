@@ -1523,7 +1523,6 @@ a {
 
 .newsletter__container {
   position: relative;
-  overflow: hidden;
 }
 
 .newsletter__container:before {
@@ -1573,6 +1572,12 @@ a {
   font-size: 1.125em;
   line-height: 1.5555555556em;
   letter-spacing: 0.05em;
+}
+
+@media only screen and (max-width: 759px) {
+  .newsletter {
+    overflow: hidden;
+  }
 }
 
 @media only screen and (min-width: 760px) {

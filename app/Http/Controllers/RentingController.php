@@ -30,8 +30,7 @@ class RentingController extends Controller
 
     public function submit(RentingRequest $request)
     {
-        //return $request;
 
-        return redirect()->to('/location' . '#form')->with('success', true);
+        return redirect()->to(url()->previous() . '#form')->with('success', true);
     }
 }

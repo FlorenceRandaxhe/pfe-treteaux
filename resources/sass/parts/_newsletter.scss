@@ -3,7 +3,6 @@
 
     &__container{
         position: relative;
-        overflow: hidden;
 
         &:before{
             content: '';
@@ -60,6 +59,10 @@
         font-size: em(l);
         line-height: em(28, l);
         letter-spacing: 0.05em;
+    }
+
+    @include mq(m, max){
+        overflow: hidden;
     }
 
     @include mq(m){

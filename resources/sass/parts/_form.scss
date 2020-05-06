@@ -7,6 +7,18 @@
         &--error{
             .form__input,
             .form__textarea{
+                //opacity: 1;
+                border-bottom-color: color(error);
+                color: color(error);
+            }
+            .form__input:hover,
+            .form__textarea:hover,
+            .form__input:hover::placeholder,
+            .form__textarea:hover::placeholder,
+            .form__input:focus,
+            .form__textarea:focus,
+            .form__input:focus::placeholder,
+            .form__textarea:focus::placeholder{
                 opacity: 1;
                 border-bottom-color: color(error);
                 color: color(error);

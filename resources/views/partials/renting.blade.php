@@ -10,7 +10,7 @@
     </div>
 </section>
 
-<section class="renting">
+<section class="renting" id="form">
     <div class="renting__container wrapper">
         <div class="renting__intro">
             <h2 class="renting__title">Demande de location</h2>

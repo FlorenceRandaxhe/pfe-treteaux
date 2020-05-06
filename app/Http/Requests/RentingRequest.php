@@ -24,10 +24,17 @@ class RentingRequest extends FormRequest
     public function rules()
     {
         return [
-            'r_name' => 'required|max:255',
-            'r_email' => 'required|email|max:255',
-            'r_date' => 'required|max:255',
-            'r_message' => 'required'
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'date' => 'required|max:255',
+            'message' => 'required'
         ];
     }
+
+    protected function getRedirectUrl()
+    {
+        $url = $this->redirector->getUrlGenerator();
+        return $url->previous() . '#form';
+    }
+
 }

@@ -437,6 +437,42 @@ a {
 
 .form__control--error .form__input,
 .form__control--error .form__textarea {
+  border-bottom-color: #892C2C;
+  color: #892C2C;
+}
+
+.form__control--error .form__input:hover::-webkit-input-placeholder, .form__control--error .form__textarea:hover::-webkit-input-placeholder, .form__control--error .form__input:focus::-webkit-input-placeholder, .form__control--error .form__textarea:focus::-webkit-input-placeholder {
+  opacity: 1;
+  border-bottom-color: #892C2C;
+  color: #892C2C;
+}
+
+.form__control--error .form__input:hover::-moz-placeholder, .form__control--error .form__textarea:hover::-moz-placeholder, .form__control--error .form__input:focus::-moz-placeholder, .form__control--error .form__textarea:focus::-moz-placeholder {
+  opacity: 1;
+  border-bottom-color: #892C2C;
+  color: #892C2C;
+}
+
+.form__control--error .form__input:hover:-ms-input-placeholder, .form__control--error .form__textarea:hover:-ms-input-placeholder, .form__control--error .form__input:focus:-ms-input-placeholder, .form__control--error .form__textarea:focus:-ms-input-placeholder {
+  opacity: 1;
+  border-bottom-color: #892C2C;
+  color: #892C2C;
+}
+
+.form__control--error .form__input:hover::-ms-input-placeholder, .form__control--error .form__textarea:hover::-ms-input-placeholder, .form__control--error .form__input:focus::-ms-input-placeholder, .form__control--error .form__textarea:focus::-ms-input-placeholder {
+  opacity: 1;
+  border-bottom-color: #892C2C;
+  color: #892C2C;
+}
+
+.form__control--error .form__input:hover,
+.form__control--error .form__textarea:hover,
+.form__control--error .form__input:hover::placeholder,
+.form__control--error .form__textarea:hover::placeholder,
+.form__control--error .form__input:focus,
+.form__control--error .form__textarea:focus,
+.form__control--error .form__input:focus::placeholder,
+.form__control--error .form__textarea:focus::placeholder {
   opacity: 1;
   border-bottom-color: #892C2C;
   color: #892C2C;

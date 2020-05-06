@@ -1,0 +1,39 @@
+.heroBasic{
+    margin: em(70) auto 0;
+    padding-bottom: em(40);
+    text-align: center;
+
+    &--grey{
+        background-color: color(grey)
+    }
+
+    &--green{
+        background-color: color(green)
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl5);
+        transform: translateY(em(-16, xl5));
+    }
+
+    &__intro{
+        font-size: em(l);
+        line-height: em(25, l);
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    @include mq(m){
+        margin: em(80) auto 0;
+
+        &__title{
+            font-size: em(xl12);
+            transform: translateY(em(-36, xl12));
+        }
+
+        &__intro{
+            max-width: em(500);
+        }
+    }
+}

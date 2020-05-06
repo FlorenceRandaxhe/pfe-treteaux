@@ -1731,6 +1731,48 @@ a {
   }
 }
 
+.heroBasic {
+  margin: 4.375em auto 0;
+  padding-bottom: 2.5em;
+  text-align: center;
+}
+
+.heroBasic--grey {
+  background-color: #f9f9f9;
+}
+
+.heroBasic--green {
+  background-color: #C2E4D4;
+}
+
+.heroBasic__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2.25em;
+  transform: translateY(-0.4444444444em);
+}
+
+.heroBasic__intro {
+  font-size: 1.125em;
+  line-height: 1.3888888889em;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 760px) {
+  .heroBasic {
+    margin: 5em auto 0;
+  }
+
+  .heroBasic__title {
+    font-size: 4.5em;
+    transform: translateY(-0.5em);
+  }
+
+  .heroBasic__intro {
+    max-width: 31.25em;
+  }
+}
+
 .eventCard {
   position: relative;
   margin-bottom: 3.75em;
@@ -2004,7 +2046,7 @@ a {
 }
 
 .allPosts {
-  padding: 6.25em 0 9.375em;
+  padding: 2.5em 0 9.375em;
 }
 
 .allPosts__container {

@@ -1,5 +1,13 @@
 .link{
     @include font();
+    font-size: em(m);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &--big{
+        font-size: em(xl);
+    }
 
     &--line{
         display: inline-block;

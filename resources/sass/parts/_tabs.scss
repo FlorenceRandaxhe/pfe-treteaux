@@ -43,6 +43,11 @@
 
     &__link{
         @include cover();
+
+        &:focus{
+            z-index: -1;
+            background-color: color(blue);
+        }
     }
 
     @include mq(l){

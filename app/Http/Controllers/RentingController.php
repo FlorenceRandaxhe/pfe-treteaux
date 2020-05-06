@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Season;
 use App\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\RentingRequest;
+
 
 class RentingController extends Controller
 {
@@ -14,7 +16,7 @@ class RentingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function index(Request $request)
     {
         $season = Season::where('archived', '=', false)->latest()->first();
         $posts = Post::published()->limit(3)->get();
@@ -23,5 +25,13 @@ class RentingController extends Controller
             'season' => $season,
             'posts' => $posts
         ]);
+    }
+
+
+    public function submit(RentingRequest $request)
+    {
+        return $request;
+
+        return redirect()->to('/location');
     }
 }

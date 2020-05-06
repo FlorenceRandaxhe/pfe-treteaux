@@ -30,7 +30,7 @@
                     <a class="nav__link_sub" href="{{ route('media') }}">Presse</a>
                 </li>
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="#">Location</a>
+                    <a class="nav__link_sub" href="{{ route('renting') }}">Location</a>
                 </li>
             </ul>
         </li>

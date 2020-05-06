@@ -245,6 +245,7 @@ body {
 a {
   color: #292828;
   text-decoration: none;
+  outline: none;
 }
 
 .sro {
@@ -340,6 +341,14 @@ a {
 
 .link {
   font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.link--big {
+  font-size: 1.25em;
 }
 
 .link--line {
@@ -423,70 +432,34 @@ a {
 
 .form__control {
   position: relative;
+  margin-bottom: 3.75em;
 }
 
-.form__control:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #292828;
-  transition: width 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.form__control:not(.form__control--disabled):hover:after {
-  width: 100%;
-}
-
-.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white) {
-  opacity: 1;
-}
-
-.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-webkit-input-placeholder {
-  color: #292828;
-}
-
-.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-moz-placeholder {
-  color: #292828;
-}
-
-.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white):-ms-input-placeholder {
-  color: #292828;
-}
-
-.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::-ms-input-placeholder {
-  color: #292828;
-}
-
-.form__control:not(.form__control--disabled):hover .form__input:not(.form__input--white)::placeholder {
-  color: #292828;
-}
-
-.form__control--error .form__input {
+.form__control--error .form__input,
+.form__control--error .form__textarea {
   opacity: 1;
   border-bottom-color: #892C2C;
   color: #892C2C;
 }
 
-.form__control--error .form__input::-webkit-input-placeholder {
+.form__control--error .form__input::-webkit-input-placeholder, .form__control--error .form__textarea::-webkit-input-placeholder {
   color: #892C2C;
 }
 
-.form__control--error .form__input::-moz-placeholder {
+.form__control--error .form__input::-moz-placeholder, .form__control--error .form__textarea::-moz-placeholder {
   color: #892C2C;
 }
 
-.form__control--error .form__input:-ms-input-placeholder {
+.form__control--error .form__input:-ms-input-placeholder, .form__control--error .form__textarea:-ms-input-placeholder {
   color: #892C2C;
 }
 
-.form__control--error .form__input::-ms-input-placeholder {
+.form__control--error .form__input::-ms-input-placeholder, .form__control--error .form__textarea::-ms-input-placeholder {
   color: #892C2C;
 }
 
-.form__control--error .form__input::placeholder {
+.form__control--error .form__input::placeholder,
+.form__control--error .form__textarea::placeholder {
   color: #892C2C;
 }
 
@@ -499,6 +472,10 @@ a {
 
 .form__control--white:after {
   background-color: #DAE7F2;
+}
+
+.form__btnContainer {
+  text-align: right;
 }
 
 .form__error {
@@ -521,6 +498,11 @@ a {
   color: #ffffff;
   text-transform: uppercase;
   font-size: 0.875em;
+}
+
+.form__textarea {
+  resize: none;
+  overflow: auto;
 }
 
 .form__input,
@@ -587,32 +569,32 @@ a {
 .form__input:hover,
 .form__textarea:focus,
 .form__textarea:hover {
-  border-bottom-color: #4F1C28;
+  border-bottom-color: #292828;
   opacity: 1;
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__input:focus::-webkit-input-placeholder, .form__input:hover::-webkit-input-placeholder, .form__textarea:focus::-webkit-input-placeholder, .form__textarea:hover::-webkit-input-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__input:focus::-moz-placeholder, .form__input:hover::-moz-placeholder, .form__textarea:focus::-moz-placeholder, .form__textarea:hover::-moz-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__input:focus:-ms-input-placeholder, .form__input:hover:-ms-input-placeholder, .form__textarea:focus:-ms-input-placeholder, .form__textarea:hover:-ms-input-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__input:focus::-ms-input-placeholder, .form__input:hover::-ms-input-placeholder, .form__textarea:focus::-ms-input-placeholder, .form__textarea:hover::-ms-input-placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__input:focus::placeholder,
 .form__input:hover::placeholder,
 .form__textarea:focus::placeholder,
 .form__textarea:hover::placeholder {
-  color: #4F1C28;
+  color: #292828;
 }
 
 .form__input--small,
@@ -1487,6 +1469,11 @@ a {
   height: 100%;
 }
 
+.tabs__link:focus {
+  z-index: -1;
+  background-color: #DAE7F2;
+}
+
 @media only screen and (min-width: 920px) {
   .tabs {
     padding-top: 1.25em;
@@ -2128,7 +2115,6 @@ a {
   font-size: 1.125em;
   line-height: 1.6666666667em;
   padding-bottom: 2.7777777778em;
-  padding-right: 3.8888888889em;
 }
 
 @media only screen and (min-width: 920px) {

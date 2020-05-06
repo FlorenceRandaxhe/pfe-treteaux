@@ -2,40 +2,17 @@
 
     &__control{
         position: relative;
-
-        &:after{
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 2px;
-            width: 0;
-            background-color: color(black);
-            transition: width 1s cubic-bezier(.645, .045, .355, 1);
-        }
-
-        &:not(&--disabled):hover{
-            &:after{
-                width: 100%;
-            }
-
-            .form__input:not(.form__input--white){
-                opacity: 1;
-                //color: color(purple);
-
-                &::placeholder{
-                    color: color(black);
-                }
-            }
-        }
+        margin-bottom: em(60);
 
         &--error{
-            .form__input{
+            .form__input,
+            .form__textarea{
                 opacity: 1;
                 border-bottom-color: color(error);
                 color: color(error);
             }
-            .form__input::placeholder{
+            .form__input::placeholder,
+            .form__textarea::placeholder{
                 color: color(error);
             }
         }
@@ -54,6 +31,10 @@
                 background-color: color(blue);
             }
         }
+    }
+
+    &__btnContainer{
+        text-align: right
     }
 
     &__error{
@@ -79,6 +60,11 @@
 
     }
 
+    &__textarea{
+        resize: none;
+        overflow: auto;
+    }
+
     &__input,
     &__textarea{
         @include reset-input-styles();
@@ -102,12 +88,12 @@
 
         &:focus,
         &:hover{
-            border-bottom-color: color(purple);
+            border-bottom-color: color(black);
             opacity: 1;
-            color: color(purple);
+            color: color(black);
 
             &::placeholder{
-                color: color(purple);
+                color: color(black);
             }
         }
 

@@ -27,7 +27,7 @@
                 <li class="footer__item"><a class="footer__link" href="{{ route('news') }}">Actualités</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">La salle</a></li>
                 <li class="footer__item"><a class="footer__link" href="{{ route('media') }}">Presse</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Location</a></li>
+                <li class="footer__item"><a class="footer__link" href="{{route('renting') }}">Location</a></li>
             </ul>
         </div>
 

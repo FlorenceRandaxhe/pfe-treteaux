@@ -1,0 +1,47 @@
+.tabs{
+    margin-bottom: em(50);
+
+    &__item{
+        @include font();
+        font-size: em(xl);
+        border: 3px solid color(black);
+        padding: em(20, xl) em(30, xl);
+        position: relative;
+        transition: background-color 0.3s $easin;
+
+        &:not(:first-of-type){
+            border-top:none
+        }
+
+        &:after{
+            position: absolute;
+            @include icon(arrow);
+            font-size: em(xl);
+            font-weight: 900;
+            top: calc(50% - 12px);
+            right: em(30, xl);
+            transition: transform 0.3s $easin;
+        }
+
+        &:not(.tabs__item--active):hover{
+            background-color: color(blue);
+
+            &:after{
+                transform: translateX(10px);
+            }
+        }
+
+        &--active{
+            background-color: color(black);
+            color: color(white);
+
+            &:after{
+                color: color(white);
+            }
+        }
+    }
+
+    &__link{
+        @include cover();
+    }
+}

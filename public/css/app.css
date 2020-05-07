@@ -2179,7 +2179,7 @@ a {
 .featuredEvents__link {
   display: inline-block;
   margin-top: 1.875em;
-  margin-bottom: 1.875em;
+  margin-bottom: 1.25em;
 }
 
 .featuredEvents__fig {
@@ -2271,10 +2271,6 @@ a {
 
   .featuredEvents__text {
     line-height: 1.6666666667em;
-  }
-
-  .featuredEvents__link {
-    margin-bottom: 3.125em;
   }
 
   .featuredEvents__control:after {

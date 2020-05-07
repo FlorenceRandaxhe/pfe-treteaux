@@ -1777,7 +1777,6 @@ a {
 }
 
 .heroBasic {
-  margin: 4.375em auto 0;
   padding-bottom: 2.5em;
   text-align: center;
 }
@@ -1788,6 +1787,34 @@ a {
 
 .heroBasic--green {
   background-color: #C2E4D4;
+}
+
+.heroBasic--banner {
+  margin: 16.875em auto 0;
+}
+
+.heroBasic--banner .heroBasic__fig {
+  margin-top: -12.5em;
+}
+
+.heroBasic--banner .heroBasic__title {
+  transform: translateY(0);
+  padding-top: 0.5555555556em;
+  padding-bottom: 0.5555555556em;
+}
+
+.heroBasic__fig {
+  width: 80%;
+  margin: 0 auto;
+  height: 20em;
+  border: 4px solid #292828;
+}
+
+.heroBasic__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .heroBasic__title {
@@ -1815,6 +1842,19 @@ a {
 
   .heroBasic__intro {
     max-width: 31.25em;
+  }
+
+  .heroBasic--banner {
+    margin: 16.875em auto 0;
+  }
+
+  .heroBasic--banner .heroBasic__fig {
+    margin-top: -12.5em;
+  }
+
+  .heroBasic--banner .heroBasic__title {
+    padding-top: 0.2777777778em;
+    padding-bottom: 0.2777777778em;
   }
 }
 

@@ -4,7 +4,9 @@
     @include('partials.heroBasic', [
         'color' => 'green',
         'title' => 'Actualités',
-        'intro' => 'Retrouver toutes les actualités de la salle des tréteaux, des spectacles et des artistes.'
+        'intro' => 'Retrouver toutes les actualités de la salle des tréteaux, des spectacles et des artistes.',
+        'type' => '',
+        'img' => ''
     ])
     @include('partials.allPosts')
     @include('partials.newsletter', [

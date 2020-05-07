@@ -6,38 +6,159 @@
     }
 
     &__link{
-
+        @include font(latobold);
+        font-size: em(s);
+        text-transform: uppercase;
     }
 
-    &__item{
-        padding: em(20);
-        position: relative;
+    &__link_sub{
+        @include font(latoregular);
+        font-size: em(s);
+        text-transform: uppercase;
     }
 
-    &__list_sub{
-        position: absolute;
-        padding: 0;
-        border: none;
-        height: 1px;
-        width: 1px;
-        overflow: hidden;
-        clip: rect(1px 1px 1px 1px);
-        clip: rect(1px, 1px, 1px, 1px);
-    }
+    @include mq(m, max){
+        margin: em(50) 0;
 
-    &__item{
-        &:hover, &:focus, &:focus-within{
-            & .nav__list_sub{
+        &__list{
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        &__item{
+            padding: em(20) em(15);
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid transparentize(color(purple), 0.8);
+
+            &--dropdown{
                 position: relative;
-                width: auto;
-                height: auto;
-                padding: 1.25em 0.5em;
-                border-radius: 0.25em;
-                overflow: visible;
-                top: 100%;
-                left: 0;
+                &:after{
+                    right: em(15);
+                    top: 20px;
+                    position: absolute;
+                    @include icon(chevron);
+                }
+            }
+        }
 
+        &__link{
+            font-size: em(l);
+            color: color(purple);
+        }
+
+        &__list_sub{
+            margin-top: em(15);
+        }
+
+        &__item_sub{
+            padding: em(10);
+        }
+
+        &--js{
+            .nav__list_sub{
+                position: absolute;
+                opacity:0;
+                visibility:0;
+
+                &--show{
+                    position: relative;
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
     }
+
+    @include mq(m){
+        &__link{
+            position: relative;
+            padding: em(5);
+            transition: color 0.3s $easin;
+
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 5px;
+                bottom: -5px;
+                left: 0;
+                background-color: color(blue);
+                transform-origin: bottom right;
+                transition: transform 0.4s $easin;
+            }
+
+            &:hover{
+                color: color(purple);
+
+                &:after {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+
+        }
+
+        &__link_sub{
+
+            &:after{
+                @include icon(arrow);
+                display: inline-block;
+                font-size: em(xl);
+                margin-left: em(15, xl);
+                font-weight: bold;
+                transition: transform 0.2s $easin;
+            }
+
+            &:hover, &:focus{
+                font-weight: bold;
+
+                &:after{
+                    transform: translateX(10px);
+                }
+            }
+        }
+
+        &__item{
+            padding: 0 em(30);
+            position: relative;
+        }
+
+        &__item_sub{
+            padding: em(10);
+        }
+
+        &__list_sub{
+            position: absolute;
+            top: calc(100% + 5px);
+            left:50%;
+            width: auto;
+            height: 1px;
+            min-width: em(230);
+            background-color: color(blue);
+            border: 3px solid color(purple);
+            opacity: 0;
+            transform: translateY(-10px) translateX(-50%);
+            overflow: hidden;
+            //transition: transform 0.3s $easin, opacity 0.1s $easin;
+        }
+
+        &__item{
+            &:hover, &:focus, &:focus-within{
+                & .nav__list_sub{
+                    padding: em(15);
+                    opacity: 1;
+                    height: auto;
+                    overflow: visible;
+                    transform: translateY(0) translateX(-50%);
+
+                }
+            }
+        }
+    }
+
+
 }
+
+

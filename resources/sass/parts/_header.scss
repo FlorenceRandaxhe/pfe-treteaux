@@ -49,6 +49,10 @@
             }
         }
 
+        &__nav{
+            flex:1;
+        }
+
         &__nav,
         &__icons{
             opacity: 0;

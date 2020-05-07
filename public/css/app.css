@@ -785,33 +785,170 @@ a {
   align-items: center;
 }
 
-.nav__item {
-  padding: 1.25em;
-  position: relative;
+.nav__link {
+  font-family: "latobold", Playfair, Arial, serif;
+  font-size: 0.875em;
+  text-transform: uppercase;
 }
 
-.nav__list_sub {
-  position: absolute;
-  padding: 0;
-  border: none;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
+.nav__link_sub {
+  font-family: "latoregular", Playfair, Arial, serif;
+  font-size: 0.875em;
+  text-transform: uppercase;
 }
 
-.nav__item:hover .nav__list_sub,
-.nav__item:focus .nav__list_sub,
-.nav__item:focus-within .nav__list_sub {
-  position: relative;
-  width: auto;
-  height: auto;
-  padding: 1.25em 0.5em;
-  border-radius: 0.25em;
-  overflow: visible;
-  top: 100%;
-  left: 0;
+@media only screen and (max-width: 759px) {
+  .nav {
+    margin: 3.125em 0;
+  }
+
+  .nav__list {
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .nav__item {
+    padding: 1.25em 0.9375em;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(79, 28, 40, 0.2);
+  }
+
+  .nav__item--dropdown {
+    position: relative;
+  }
+
+  .nav__item--dropdown:after {
+    right: 0.9375em;
+    top: 20px;
+    position: absolute;
+    font-family: "icomoon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\E903";
+  }
+
+  .nav__link {
+    font-size: 1.125em;
+    color: #4F1C28;
+  }
+
+  .nav__list_sub {
+    margin-top: 0.9375em;
+  }
+
+  .nav__item_sub {
+    padding: 0.625em;
+  }
+
+  .nav--js .nav__list_sub {
+    position: absolute;
+    opacity: 0;
+    visibility: 0;
+  }
+
+  .nav--js .nav__list_sub--show {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .nav__link {
+    position: relative;
+    padding: 0.3125em;
+    transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .nav__link:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 5px;
+    bottom: -5px;
+    left: 0;
+    background-color: #DAE7F2;
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .nav__link:hover {
+    color: #4F1C28;
+  }
+
+  .nav__link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .nav__link_sub:after {
+    font-family: "icomoon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\E906";
+    display: inline-block;
+    font-size: 1.25em;
+    margin-left: 0.75em;
+    font-weight: bold;
+    transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .nav__link_sub:hover,
+  .nav__link_sub:focus {
+    font-weight: bold;
+  }
+
+  .nav__link_sub:hover:after,
+  .nav__link_sub:focus:after {
+    transform: translateX(10px);
+  }
+
+  .nav__item {
+    padding: 0 1.875em;
+    position: relative;
+  }
+
+  .nav__item_sub {
+    padding: 0.625em;
+  }
+
+  .nav__list_sub {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    width: auto;
+    height: 1px;
+    min-width: 14.375em;
+    background-color: #DAE7F2;
+    border: 3px solid #4F1C28;
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+    overflow: hidden;
+  }
+
+  .nav__item:hover .nav__list_sub,
+  .nav__item:focus .nav__list_sub,
+  .nav__item:focus-within .nav__list_sub {
+    padding: 0.9375em;
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+    transform: translateY(0) translateX(-50%);
+  }
 }
 
 .social__item {
@@ -1099,6 +1236,10 @@ a {
 
   .header--show .header__responsive {
     right: 5%;
+  }
+
+  .header__nav {
+    flex: 1;
   }
 
   .header__nav,

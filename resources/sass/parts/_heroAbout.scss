@@ -1,0 +1,49 @@
+.heroAbout{
+    margin: em(60) auto em(45);
+
+    &__title{
+        @include font();
+        font-size: em(xl5);
+        line-height: em(44, xl5);
+        text-align: right;
+        margin-bottom: em(-16, xl5);
+        margin-right: em(10, xl5)
+    }
+
+    &__fig{
+        width: 100%;
+        height: em(450);
+        position: relative;
+        z-index: -1;
+
+        &:after{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top:-25px;
+            right: -25px;
+            background-color: color(blue);
+            z-index: -10;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 4px solid color(black);
+    }
+
+    @include mq(m){
+        &__title{
+            font-size: em(xl12);
+            line-height: em(76, xl12);
+        }
+
+        &__fig:after{
+            top: -50px;
+            right: -50px;
+        }
+    }
+}

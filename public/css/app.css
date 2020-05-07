@@ -1866,6 +1866,57 @@ a {
   }
 }
 
+.heroAbout {
+  margin: 3.75em auto 2.8125em;
+}
+
+.heroAbout__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2.25em;
+  line-height: 1.2222222222em;
+  text-align: right;
+  margin-bottom: -0.4444444444em;
+  margin-right: 0.2777777778em;
+}
+
+.heroAbout__fig {
+  width: 100%;
+  height: 28.125em;
+  position: relative;
+  z-index: -1;
+}
+
+.heroAbout__fig:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -25px;
+  right: -25px;
+  background-color: #DAE7F2;
+  z-index: -10;
+}
+
+.heroAbout__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 4px solid #292828;
+}
+
+@media only screen and (min-width: 760px) {
+  .heroAbout__title {
+    font-size: 4.5em;
+    line-height: 1.0555555556em;
+  }
+
+  .heroAbout__fig:after {
+    top: -50px;
+    right: -50px;
+  }
+}
+
 .heroEvents {
   margin: 3.125em auto 0;
   display: flex;

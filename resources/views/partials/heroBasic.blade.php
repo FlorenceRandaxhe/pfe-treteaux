@@ -5,7 +5,7 @@
                 <img class="heroBasic__img" src="{{ asset('img/' . $img) }}">
             </figure>
         @endif
-        <h1 class="heroBasic__title">{{ $title }}</h1>
+        <h1 class="heroBasic__title">{{ $title }} <span class="sro">- Les Tréteaux</span></h1>
         @if($intro)
             <p class="heroBasic__intro">{{ $intro }}</p>
         @endif

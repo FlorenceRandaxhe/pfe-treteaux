@@ -1,6 +1,6 @@
 <header class="header">
     <div class="heroEvents wrapper">
-        <h1 class="heroEvents__title">Agenda</h1>
+        <h1 class="heroEvents__title">Agenda <span class="sro">- Les tréteaux</span></h1>
 
         <div aria-haspopup="true" class="heroEvents__dropdown">
             <div class="heroEvents__current">

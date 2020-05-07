@@ -1,0 +1,63 @@
+.hero{
+    margin: em(70) auto 0;
+    width: 100vw;
+
+    display: flex;
+    position: relative;
+    //justify-content: center;
+
+
+    &__content{
+        padding: em(40) 5% em(65);
+        background-color: color(blue);
+        width: 90%;
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl5);
+        line-height: em(44, xl5);
+        padding-bottom: em(15, xl5);
+    }
+
+    &__text{
+        font-size: em(l);
+        line-height: em(25, l);
+        padding-bottom: em(40, l)
+    }
+
+    &__fig{
+        position: absolute;
+        top:em(-30);
+        width: 100%;
+        height: 100%;
+        max-height: em(480);
+        z-index: -1;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        max-height: em(480);
+        object-fit: cover;
+    }
+
+    @include mq(m){
+        &__content{
+            max-width: 55vw;
+        }
+
+        &__title{
+            font-size: em(xl12);
+            line-height: em(76, xl12);
+            padding-bottom: em(15, xl12);
+        }
+
+        &__text{
+            line-height: em(30, l);
+            padding-bottom: em(70, l)
+        }
+    }
+
+
+}

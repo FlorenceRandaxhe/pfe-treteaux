@@ -1918,6 +1918,66 @@ a {
   }
 }
 
+.hero {
+  margin: 4.375em auto 0;
+  width: 100vw;
+  display: flex;
+  position: relative;
+}
+
+.hero__content {
+  padding: 2.5em 5% 4.0625em;
+  background-color: #DAE7F2;
+  width: 90%;
+}
+
+.hero__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2.25em;
+  line-height: 1.2222222222em;
+  padding-bottom: 0.4166666667em;
+}
+
+.hero__text {
+  font-size: 1.125em;
+  line-height: 1.3888888889em;
+  padding-bottom: 2.2222222222em;
+}
+
+.hero__fig {
+  position: absolute;
+  top: -1.875em;
+  width: 100%;
+  height: 100%;
+  max-height: 30em;
+  z-index: -1;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  max-height: 30em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 760px) {
+  .hero__content {
+    max-width: 55vw;
+  }
+
+  .hero__title {
+    font-size: 4.5em;
+    line-height: 1.0555555556em;
+    padding-bottom: 0.2083333333em;
+  }
+
+  .hero__text {
+    line-height: 1.6666666667em;
+    padding-bottom: 3.8888888889em;
+  }
+}
+
 .eventCard {
   position: relative;
   margin-bottom: 3.75em;

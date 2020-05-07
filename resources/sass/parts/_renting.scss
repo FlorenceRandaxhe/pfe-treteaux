@@ -20,9 +20,9 @@
     }
 
     &__content{
-        &--js{
-            margin-top: em(80);
+        margin-top: em(80);
 
+        &--js{
             .rentingInfo{
                 opacity: 0;
                 visibility: hidden;

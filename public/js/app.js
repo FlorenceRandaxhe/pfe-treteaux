@@ -367,6 +367,7 @@ var Tabs = /*#__PURE__*/function () {
     value: function setEvent() {
       var _this = this;
 
+      this.el.querySelector('.renting__intro').classList.remove('renting__intro--sticky');
       this.el.querySelector('.renting__content').classList.add('renting__content--js');
       this.tabLinks.forEach(function (tablink) {
         _this.setDefaultTab(tablink);

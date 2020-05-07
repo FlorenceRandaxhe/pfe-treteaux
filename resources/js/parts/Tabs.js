@@ -12,6 +12,7 @@ export default class Tabs{
     }
 
    setEvent(){
+    this.el.querySelector('.renting__intro').classList.remove('renting__intro--sticky');
         this.el.querySelector('.renting__content').classList.add('renting__content--js');
         this.tabLinks.forEach( tablink => {
             this.setDefaultTab(tablink);

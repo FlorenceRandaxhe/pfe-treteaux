@@ -6,7 +6,7 @@
         <div class="featuredEvents__slide">
 
             <figure class="featuredEvents__fig">
-                <img class="featuredEvents__img" src="{{ asset('img/' . $event->img) }}">
+                <img class="featuredEvents__img" src="{{ asset('img/' . $event->img) }}" alt="{{ $event->title }}">
             </figure>
 
             <div class="featuredEvents__container">

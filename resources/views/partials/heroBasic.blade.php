@@ -2,7 +2,7 @@
     <div class="wrapper heroBasic heroBasic--{{ $color }} @if($img) heroBasic--banner @endif">
         @if($img)
             <figure class="heroBasic__fig">
-                <img class="heroBasic__img" src="{{ asset('img/' . $img) }}">
+                <img class="heroBasic__img" src="{{ asset('img/' . $img) }}" alt="{{ $alt }}">
             </figure>
         @endif
         <h1 class="heroBasic__title">{{ $title }} <span class="sro">- Les Tréteaux</span></h1>

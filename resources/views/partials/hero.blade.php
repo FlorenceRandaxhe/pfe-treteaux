@@ -1,7 +1,7 @@
 <header class="header">
     <div class="hero hero--{{ $class }}">
         <figure class="hero__fig">
-            <img class="hero__img" src="{{ asset('img/' . $img) }}">
+            <img class="hero__img" src="{{ asset('img/' . $img) }}" alt="{{ $alt }}">
         </figure>
         <div class="hero__container hero__container--{{ $color }}">
 

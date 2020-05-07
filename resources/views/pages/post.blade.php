@@ -6,7 +6,8 @@
         'title' => 'Actualités',
         'intro' => 'Retrouver toutes les actualités de la salle des tréteaux, des spectacles et des artistes.',
         'type' => '',
-        'img' => ''
+        'img' => '',
+        'alt' => ''
     ])
     @include('partials.allPosts')
     @include('partials.newsletter', [

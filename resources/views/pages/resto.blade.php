@@ -7,6 +7,7 @@
         'title' => 'Profitez d\'un  repas avant votre spectacle',
         'text' => 'Profitez d\'un succulent repas dans les restaurants du centre de Visé, à deux pas de la salle de spectacle, avant de venir apprécier l\'un de nos spectacles à prix réduit.',
         'img' => 'img.jpg',
+        'alt' => 'resto',
         'url' => '',
         'icon' => '',
         'label' => ''

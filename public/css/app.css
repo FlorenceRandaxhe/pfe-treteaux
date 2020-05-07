@@ -1961,7 +1961,7 @@ a {
 }
 
 .hero__container {
-  padding: 3.125em 5% 4.6875em;
+  padding: 3.125em 5%;
   width: 90%;
   display: flex;
   align-items: center;
@@ -1989,7 +1989,11 @@ a {
 .hero__text {
   font-size: 1.125em;
   line-height: 1.3888888889em;
-  padding-bottom: 2.2222222222em;
+}
+
+.hero__text + a {
+  display: inline-block;
+  margin-top: 1.875em;
 }
 
 .hero__fig {
@@ -2013,7 +2017,7 @@ a {
   .hero__container {
     min-height: 31.25em;
     max-width: 55vw;
-    padding: 3.75em 6.25em 5.3125em;
+    padding: 3.75em 6.25em;
   }
 
   .hero__content {
@@ -2033,7 +2037,11 @@ a {
 
   .hero__text {
     line-height: 1.6666666667em;
-    padding-bottom: 3.8888888889em;
+  }
+
+  .hero__text + a {
+    display: inline-block;
+    margin-top: 3.125em;
   }
 }
 

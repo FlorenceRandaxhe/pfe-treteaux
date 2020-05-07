@@ -33,6 +33,14 @@
         }
     }
 
+    &--download{
+        position: relative;
+        &:after{
+            margin-left: em(20);
+            @include icon(download);
+        }
+    }
+
     &--arrow{
         position: absolute;
         bottom:0;

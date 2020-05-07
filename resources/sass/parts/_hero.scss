@@ -1,16 +1,47 @@
 .hero{
-    margin: em(70) auto 0;
-    width: 100vw;
-
-    display: flex;
+    margin: em(80) auto 0;
+    width: 100%;
     position: relative;
-    //justify-content: center;
 
+    &--left{
+        .hero__container{
+            margin-right: auto;
+            justify-content: flex-end;
+        }
 
-    &__content{
-        padding: em(40) 5% em(65);
-        background-color: color(blue);
-        width: 90%;
+        .hero__fig{
+            right: 0;
+        }
+    }
+
+    &--right{
+        .hero__container{
+            margin-left: auto;
+            justify-content: flex-start;
+        }
+
+        .hero__fig{
+            left: 0;
+        }
+    }
+
+    &__container{
+        padding: em(50) 5% em(75); // mobile & left
+        width: 90%; // mobile
+        display: flex;
+        align-items: center;
+
+        &--blue{
+            background-color: color(blue);
+        }
+
+        &--pink{
+            background-color: color(pink);
+        }
+
+        &--green{
+            background-color: color(green);
+        }
     }
 
     &__title{
@@ -29,7 +60,7 @@
     &__fig{
         position: absolute;
         top:em(-30);
-        width: 100%;
+        width: 90%;
         height: 100%;
         max-height: em(480);
         z-index: -1;
@@ -43,14 +74,25 @@
     }
 
     @include mq(m){
+        &__container{
+            min-height: em(500);
+            max-width: 55vw;
+            padding: em(60) em(100) em(85); // mobile & left
+        }
+
         &__content{
+            width: em(600);
+        }
+
+        &__fig{
+            top: em(-50);
             max-width: 55vw;
         }
 
         &__title{
             font-size: em(xl12);
             line-height: em(76, xl12);
-            padding-bottom: em(15, xl12);
+            padding-bottom: em(25, xl12);
         }
 
         &__text{

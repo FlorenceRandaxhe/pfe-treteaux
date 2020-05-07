@@ -310,6 +310,24 @@ a {
   color: #4F1C28;
 }
 
+.btn--download {
+  position: relative;
+}
+
+.btn--download:after {
+  margin-left: 1.25em;
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E907";
+}
+
 .btn--arrow {
   position: absolute;
   bottom: 0;
@@ -1919,16 +1937,46 @@ a {
 }
 
 .hero {
-  margin: 4.375em auto 0;
-  width: 100vw;
-  display: flex;
+  margin: 5em auto 0;
+  width: 100%;
   position: relative;
 }
 
-.hero__content {
-  padding: 2.5em 5% 4.0625em;
-  background-color: #DAE7F2;
+.hero--left .hero__container {
+  margin-right: auto;
+  justify-content: flex-end;
+}
+
+.hero--left .hero__fig {
+  right: 0;
+}
+
+.hero--right .hero__container {
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.hero--right .hero__fig {
+  left: 0;
+}
+
+.hero__container {
+  padding: 3.125em 5% 4.6875em;
   width: 90%;
+  display: flex;
+  align-items: center;
+}
+
+.hero__container--blue {
+  background-color: #DAE7F2;
+}
+
+.hero__container--pink {
+  background-color: #E6C9C9;
+}
+
+.hero__container--green {
+  background-color: #C2E4D4;
 }
 
 .hero__title {
@@ -1947,7 +1995,7 @@ a {
 .hero__fig {
   position: absolute;
   top: -1.875em;
-  width: 100%;
+  width: 90%;
   height: 100%;
   max-height: 30em;
   z-index: -1;
@@ -1962,14 +2010,25 @@ a {
 }
 
 @media only screen and (min-width: 760px) {
+  .hero__container {
+    min-height: 31.25em;
+    max-width: 55vw;
+    padding: 3.75em 6.25em 5.3125em;
+  }
+
   .hero__content {
+    width: 37.5em;
+  }
+
+  .hero__fig {
+    top: -3.125em;
     max-width: 55vw;
   }
 
   .hero__title {
     font-size: 4.5em;
     line-height: 1.0555555556em;
-    padding-bottom: 0.2083333333em;
+    padding-bottom: 0.3472222222em;
   }
 
   .hero__text {

@@ -10,11 +10,15 @@ class SeasonController extends Controller
 {
     public function __invoke(Season $season)
     {
-        $season->load('events');
+        $latestSeason = Season::where('archived', '=', false)->latest()->first();
+        $latestSeason->load('events');
+        $allSeasons = Season::all()->where('year', '!=', $season->year);
         $posts = Post::published()->limit(3)->get();
 
         return view('pages.event', [
+            'latestSeason' => $latestSeason,
             'season' => $season,
+            'allSeasons' => $allSeasons,
             'posts' => $posts
         ]);
 

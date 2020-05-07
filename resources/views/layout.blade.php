@@ -27,10 +27,7 @@
     </head>
 
     <body class="body">
-        @include('parts.header')
-
         @yield('main')
-
         @include('parts.footer')
     </body>
 </html>

@@ -1,4 +1,5 @@
-<div class="nav">
+<nav class="nav">
+    <h2 class="sro">Navigation principale</h2>
     <ul class="nav__list">
         <li class="nav__item">
             <a class="nav__link" href="{{ route('home') }}">Accueil</a>
@@ -7,7 +8,7 @@
             <a class="nav__link nav__link--dropdown" href="#">Agenda</a>
             <ul class="nav__list_sub">
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="/agenda/{{ $season->year }}">La saison</a>
+                    <a class="nav__link_sub" href="/agenda/{{ $latestSeason->year }}">La saison</a>
                 </li>
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="#">Abonnements</a>
@@ -38,4 +39,4 @@
             <a class="nav__link" href="{{ route('contact') }}">Contact</a>
         </li>
     </ul>
-</div>
+</nav>

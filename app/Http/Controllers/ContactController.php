@@ -11,12 +11,12 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $season = Season::where('archived', '=', false)->latest()->first();
+        $latestSeason = Season::where('archived', '=', false)->latest()->first();
         $events = $season->events()->limit(3)->get();
 
         return view('pages.contact', [
             'events' => $events,
-            'season' => $season,
+            'latestSeason' => $latestSeason,
         ]);
     }
 

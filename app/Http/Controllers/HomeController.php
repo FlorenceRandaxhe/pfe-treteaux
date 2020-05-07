@@ -25,7 +25,7 @@ class HomeController extends Controller
         return view('pages.home', [
             'posts' => $posts,
             'events' => $events,
-            'season' => $season,
+            'latestSeason' => $latestSeason,
             'featured' => $featured
         ]);
 

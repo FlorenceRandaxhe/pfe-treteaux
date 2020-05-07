@@ -1,6 +1,8 @@
 @extends('layout')
 @section('title', 'Accueil')
 @section('main')
+    @include('partials.heroHome')
+    @include('partials.featuredEvents')
     @include('partials.latestEvents', [
         'class' => 'home',
     ])

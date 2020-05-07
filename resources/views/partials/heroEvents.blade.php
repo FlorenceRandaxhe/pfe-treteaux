@@ -2,8 +2,8 @@
     <div class="heroEvents wrapper">
         <h1 class="heroEvents__title">Agenda</h1>
 
-        <div class="heroEvents">
-            <p class="heroEvents__current">{{ $season->year }}</p>
+        <div class="heroEvents__dropdown">
+            <a href="/agenda/{{ $latestSeason->year }}" class="heroEvents__current">{{ $season->year }}</a>
 
             <ul class="heroEvents__list">
                 @foreach($allSeasons as $allSeason)

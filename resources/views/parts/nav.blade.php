@@ -4,9 +4,9 @@
         <li class="nav__item">
             <a class="nav__link" href="{{ route('home') }}">Accueil</a>
         </li>
-        <li class="nav__item nav__item--dropdown">
-            <a class="nav__link nav__link--dropdown" href="#">Agenda</a>
-            <ul class="nav__list_sub">
+        <li aria-haspopup="true" class="nav__item nav__item--dropdown">
+            <p class="nav__link nav__link--dropdown">Agenda</p>
+            <ul aria-label="submenu" class="nav__list_sub">
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="/agenda/{{ $latestSeason->year }}">La saison</a>
                 </li>
@@ -18,9 +18,9 @@
                 </li>
             </ul>
         </li>
-        <li class="nav__item nav__item--dropdown">
-            <a class="nav__link nav__link--dropdown" href="#">La salle</a>
-            <ul class="nav__list_sub">
+        <li aria-haspopup="true" class="nav__item nav__item--dropdown">
+            <p class="nav__link nav__link--dropdown">La salle</p>
+            <ul aria-label="submenu" class="nav__list_sub">
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="{{ route('news') }}">Actualités</a>
                 </li>
@@ -40,3 +40,4 @@
         </li>
     </ul>
 </nav>
+

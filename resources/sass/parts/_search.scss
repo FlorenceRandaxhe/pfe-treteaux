@@ -24,7 +24,8 @@
             }
         }
 
-        &:hover ~ .search__icon{
+        &:hover ~ .search__icon,
+        &:focus ~ .search__icon{
                 background-color: color(purple);
 
                 &:after{

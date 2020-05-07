@@ -797,7 +797,7 @@ a {
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 759px) {
+@media only screen and (max-width: 919px) {
   .nav {
     margin: 3.125em 0;
   }
@@ -860,7 +860,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 920px) {
   .nav__link {
     position: relative;
     padding: 0.3125em;
@@ -880,11 +880,13 @@ a {
     transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
-  .nav__link:hover {
+  .nav__link:hover,
+  .nav__link:focus {
     color: #4F1C28;
   }
 
-  .nav__link:hover:after {
+  .nav__link:hover:after,
+  .nav__link:focus:after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
@@ -953,15 +955,19 @@ a {
 
 .social__item {
   display: inline-block;
-  padding: 0.4375em 0.5em;
   margin: 0 0.75em;
+}
+
+.social__link {
+  padding: 0.5em 0.5625em;
   border-radius: 100%;
+  font-size: 1em;
   background-color: #292828;
   position: relative;
   transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.social__item:after {
+.social__link:before {
   content: "";
   position: absolute;
   width: 34px;
@@ -976,18 +982,16 @@ a {
   transition: width 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.social__item:hover {
+.social__link:hover,
+.social__link:focus {
   background-color: #4F1C28;
 }
 
-.social__item:hover:after {
-  width: 40px;
-  height: 40px;
+.social__link:hover:before,
+.social__link:focus:before {
+  width: 42px;
+  height: 42px;
   opacity: 1;
-}
-
-.social__link {
-  font-size: 1em;
 }
 
 .social__link--fb:after {
@@ -1053,11 +1057,13 @@ a {
   transition: width 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.search__link:hover ~ .search__icon {
+.search__link:hover ~ .search__icon,
+.search__link:focus ~ .search__icon {
   background-color: #4F1C28;
 }
 
-.search__link:hover ~ .search__icon:after {
+.search__link:hover ~ .search__icon:after,
+.search__link:focus ~ .search__icon:after {
   width: 40px;
   height: 40px;
   opacity: 1;
@@ -1209,7 +1215,7 @@ a {
   align-items: center;
 }
 
-@media only screen and (max-width: 759px) {
+@media only screen and (max-width: 919px) {
   .header--show .header__logo a {
     color: #4F1C28;
   }
@@ -1292,7 +1298,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 920px) {
   .header__container {
     align-items: center;
   }
@@ -1830,36 +1836,33 @@ a {
   top: calc(50% - 8px);
 }
 
-.heroEvents__current:focus ~ .heroEvents__list {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 .heroEvents__dropdown {
   position: relative;
-  cursor: pointer;
 }
 
-.heroEvents__dropdown:hover .heroEvents__list {
+.heroEvents__dropdown:hover .heroEvents__list,
+.heroEvents__dropdown:focus .heroEvents__list,
+.heroEvents__dropdown:focus-within .heroEvents__list {
+  height: auto;
   opacity: 1;
-  visibility: visible;
+  height: auto;
+  overflow: visible;
   transform: translateY(0);
 }
 
 .heroEvents__list {
   position: absolute;
+  height: 1px;
+  background-color: #DAE7F2;
+  border: 3px solid #4F1C28;
+  opacity: 0;
+  overflow: hidden;
   top: 100%;
   right: -0.9375em;
   width: 15.625em;
-  opacity: 0;
-  visibility: hidden;
-  background-color: #DAE7F2;
-  border: 3px solid #4F1C28;
   transform: translateY(-10px);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
   z-index: 20;
-  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .heroEvents__item {
@@ -1894,7 +1897,8 @@ a {
   transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.heroEvents__link:hover:after {
+.heroEvents__link:hover:after,
+.heroEvents__link:focus:after {
   transform: translateX(15px);
   opacity: 1;
 }

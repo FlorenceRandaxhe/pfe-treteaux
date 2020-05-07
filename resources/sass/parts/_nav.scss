@@ -17,7 +17,7 @@
         text-transform: uppercase;
     }
 
-    @include mq(m, max){
+    @include mq(l, max){
         margin: em(50) 0;
 
         &__list{
@@ -70,7 +70,7 @@
         }
     }
 
-    @include mq(m){
+    @include mq(l){
         &__link{
             position: relative;
             padding: em(5);
@@ -89,7 +89,7 @@
                 transition: transform 0.4s $easin;
             }
 
-            &:hover{
+            &:hover, &:focus{
                 color: color(purple);
 
                 &:after {

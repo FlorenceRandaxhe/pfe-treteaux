@@ -2,10 +2,12 @@
     <div class="heroEvents wrapper">
         <h1 class="heroEvents__title">Agenda</h1>
 
-        <div class="heroEvents__dropdown">
-            <a href="/agenda/{{ $latestSeason->year }}" class="heroEvents__current">{{ $season->year }}</a>
+        <div aria-haspopup="true" class="heroEvents__dropdown">
+            <div class="heroEvents__current">
+                <a href="/agenda/{{ $latestSeason->year }}" class="heroEvents__currentLink">{{ $season->year }}</a>
+            </div>
 
-            <ul class="heroEvents__list">
+            <ul aria-label="submenu" class="heroEvents__list">
                 @foreach($allSeasons as $allSeason)
                 <li class="heroEvents__item">
                     <a class="heroEvents__link" href="/agenda/{{ $allSeason->year }}">{{ $allSeason->year }}</a>

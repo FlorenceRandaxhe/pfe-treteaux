@@ -21,7 +21,7 @@
         align-items: center;
     }
 
-    @include mq(m, max){
+    @include mq(l, max){
         &--show{
             .header__logo a{
                 color: color(purple);
@@ -103,7 +103,7 @@
         }
     }
 
-    @include mq(m, min){
+    @include mq(l, min){
         &__container{
             align-items: center;
         }

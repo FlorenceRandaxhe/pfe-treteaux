@@ -1,14 +1,18 @@
 .social{
     &__item{
         display: inline-block;
-        padding: em(7) em(8);
         margin: 0 em(12);
+    }
+
+    &__link{
+        padding: em(8) em(9);
         border-radius: 100%;
+        font-size: em(m);
         background-color: color(black);
         position: relative;
         transition: background-color 0.2s $easin;
 
-        &:after{
+        &:before{
             content: '';
             position:absolute;
             width: 34px;
@@ -25,20 +29,15 @@
                         opacity 0.2s $easin,
         }
 
-        &:hover{
+        &:hover, &:focus{
             background-color: color(purple);
 
-            &:after{
-                width: 40px;
-                height: 40px;
+            &:before{
+                width: 42px;
+                height: 42px;
                 opacity: 1;
             }
         }
-
-    }
-
-    &__link{
-        font-size: em(m);
         &--fb{
             &:after{
                 @include icon(fb);

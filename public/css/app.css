@@ -396,6 +396,14 @@ a {
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.link--blue {
+  color: #DAE7F2;
+}
+
+.link--blue:before {
+  background-color: #DAE7F2;
+}
+
 .link--lineUp {
   display: inline-block;
   position: relative;
@@ -2082,6 +2090,231 @@ a {
   .hero__text + a {
     display: inline-block;
     margin-top: 3.125em;
+  }
+}
+
+.featuredEvents {
+  margin: 5em auto 0;
+  width: 100%;
+  position: relative;
+}
+
+.featuredEvents__container {
+  padding: 3.125em 5% 1.875em;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  justify-content: flex-start;
+  background-color: #4F1C28;
+}
+
+.featuredEvents__title {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2.25em;
+  line-height: 1.2222222222em;
+  padding-bottom: 0.4166666667em;
+  padding-top: 0.8333333333em;
+  color: #DAE7F2;
+}
+
+.featuredEvents__text {
+  font-size: 1.125em;
+  line-height: 1.3888888889em;
+  color: #DAE7F2;
+}
+
+.featuredEvents__link {
+  display: inline-block;
+  margin-top: 1.875em;
+  margin-bottom: 1.875em;
+}
+
+.featuredEvents__fig {
+  position: absolute;
+  top: -1.875em;
+  width: 90%;
+  height: 100%;
+  max-height: 30em;
+  z-index: -1;
+  left: 0;
+}
+
+.featuredEvents__img {
+  width: 100%;
+  height: 100%;
+  max-height: 30em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.featuredEvents__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featuredEvents__control {
+  border-radius: 100%;
+  padding: 0.875em 0.90625em;
+  transition: background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.featuredEvents__control:after {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E906";
+  display: inline-block;
+  font-size: 1.125em;
+  color: #DAE7F2;
+}
+
+.featuredEvents__control:hover {
+  background-color: rgba(218, 231, 242, 0.3);
+}
+
+.featuredEvents__control--previous:after {
+  transform: rotate(180deg);
+}
+
+.featuredEvents__control--previous:hover:after {
+  -webkit-animation: animButtonPrevious 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+          animation: animButtonPrevious 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.featuredEvents__control--next:hover:after {
+  -webkit-animation: animButtonNext 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+          animation: animButtonNext 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@media only screen and (min-width: 760px) {
+  .featuredEvents__container {
+    min-height: 31.25em;
+    max-width: 55vw;
+    padding: 3.75em 6.25em 2.5em;
+  }
+
+  .featuredEvents__content {
+    width: 37.5em;
+  }
+
+  .featuredEvents__fig {
+    top: -3.125em;
+    max-width: 55vw;
+  }
+
+  .featuredEvents__title {
+    font-size: 4.5em;
+    line-height: 1.0555555556em;
+    padding-bottom: 0.3472222222em;
+    padding-top: 0.5555555556em;
+  }
+
+  .featuredEvents__text {
+    line-height: 1.6666666667em;
+  }
+
+  .featuredEvents__link {
+    margin-bottom: 3.125em;
+  }
+
+  .featuredEvents__control:after {
+    font-size: 1.5em;
+  }
+}
+
+@-webkit-keyframes animButtonNext {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  33% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  66% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animButtonNext {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  33% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  66% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animButtonPrevious {
+  0% {
+    transform: rotate(180deg) translateX(0);
+    opacity: 1;
+  }
+
+  33% {
+    transform: rotate(180deg) translateX(20px);
+    opacity: 0;
+  }
+
+  66% {
+    transform: rotate(180deg) translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(180deg) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animButtonPrevious {
+  0% {
+    transform: rotate(180deg) translateX(0);
+    opacity: 1;
+  }
+
+  33% {
+    transform: rotate(180deg) translateX(20px);
+    opacity: 0;
+  }
+
+  66% {
+    transform: rotate(180deg) translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(180deg) translateX(0);
+    opacity: 1;
   }
 }
 

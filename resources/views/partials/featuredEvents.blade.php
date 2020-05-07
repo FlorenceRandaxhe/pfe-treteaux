@@ -11,6 +11,7 @@
 
             <div class="featuredEvents__container">
                 <div class="featuredEvents__content">
+                    <p class="type type--outline-blue">{{ $event->type->name }}</p>
                     <h3 class="featuredEvents__title">
                         {{ $event->title }}
                     </h3>
@@ -19,8 +20,12 @@
                         {{ $event->intro }}
                     </p>
 
-                    <a class="featuredEvents__link link link--line" href="{{ $event->slug }}">Plus d'infos<span class="sro"> sur {{ $event->title }}</span></a>
+                    <a class="featuredEvents__link link link--line link--blue" href="{{ $event->slug }}">Plus d'infos<span class="sro"> sur {{ $event->title }}</span></a>
 
+                    <div class="featuredEvents__controls">
+                        <a href="#" class="featuredEvents__control featuredEvents__control--previous"><span class="sro">Précédent</span></a>
+                        <a href="#" class="featuredEvents__control featuredEvents__control--next"><span class="sro">Suivant</span></a>
+                    </div>
                 </div>
             </div>
 

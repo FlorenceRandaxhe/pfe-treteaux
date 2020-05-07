@@ -27,6 +27,14 @@
         }
     }
 
+    &--blue{
+        color: color(blue);
+
+        &:before{
+            background-color: color(blue)
+        }
+    }
+
     &--lineUp{
         display: inline-block;
         position: relative;

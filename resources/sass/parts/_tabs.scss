@@ -43,10 +43,15 @@
         @include cover();
         padding: em(20, xl) em(30, xl);
         border: 3px solid color(black);
+        transition: background-color 0.2s $easin;
 
-        &:hover,
-        &:focus{
+        &:hover{
             background-color: color(blue);
+        }
+
+        &:focus{
+            background-color: color(black);
+            color: color(white);
         }
     }
 

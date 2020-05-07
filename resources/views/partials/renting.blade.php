@@ -1,5 +1,5 @@
 <section class="renting">
-    <div class="renting__container wrapper">
+    <div class="renting__container renting__tab wrapper">
         <div class="renting__intro renting__intro--sticky">
             <h2 class="renting__title">Infos pratiques</h2>
             @include('parts.tabs')

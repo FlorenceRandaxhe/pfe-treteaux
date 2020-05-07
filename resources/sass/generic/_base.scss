@@ -21,8 +21,17 @@ body{
     -moz-osx-font-smoothing: grayscale;
     @include font(latoregular);
     color: color(black);
-
 }
+
+.layout{
+    position: relative;
+    z-index: -1;
+
+    &--scrollblock {
+        overflow: hidden;
+    }
+}
+
 
 a {
     color: color(black);

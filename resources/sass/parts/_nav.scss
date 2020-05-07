@@ -1,43 +1,58 @@
 .nav{
+
     &__link{
         @include font(latobold);
         font-size: em(s);
         text-transform: uppercase;
         letter-spacing: em(1, s);
-
-        &--dropdown{
-            &:after{
-                @include icon(chevron);
-                font-size: em(s);
-                margin-left: em(10);
-            }
-        }
     }
 
     @include mq(m, max){
-        margin: em(40) auto;
+        margin: em(29) auto;
 
-        &__item{
-            padding: em(30);
-            border-bottom: 1px solid transparentize(color(purple), 0.8);
-        }
+        &--js{
+            //min-height: 50vh;
 
-        &__link{
-            font-size: em(xl);
-            color: color(purple);
-            display: block;
-            overflow: hidden;
-            transition: height 0.3s $easin;
+            .nav__item{
+                padding: em(20) em(15);
+            }
+            .nav__link{
+                font-size: em(xl);
 
-            &:focus{
-                height: 100%;
+                &--dropdown{
+                    &:after{
+                        @include icon(chevron);
+                        font-size: em(s);
+                        margin-left: em(10);
+                    }
+                }
+            }
 
-                + .nav__list_sub{
+            .nav__list_sub{
+                position: absolute;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.2s $easin;
+                            //visibility 0.2s $easin;
+
+                &--show{
                     position: relative;
                     opacity:1;
                     visibility: visible;
                 }
             }
+        }
+
+        &__item{
+            padding: em(15) em(10);
+            border-bottom: 1px solid transparentize(color(purple), 0.8);
+        }
+
+        &__link{
+            font-size: em(m);
+            color: color(purple);
+            display: block;
+            transition: height 0.3s $easin;
 
             &--dropdown:after{
                 position: absolute;
@@ -46,23 +61,18 @@
         }
 
         &__list_sub{
-            margin-top: em(30);
-            position: absolute;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s $easin,
-                        visibility 0.2s $easin;
+            margin-top: em(20);
         }
 
         &__item_sub{
-            margin: em(20) em(10);
+            margin: em(15);
         }
 
         &__link_sub{
-            font-size: em(l);
+            font-size: em(m);
             text-transform: uppercase;
             color: color(purple);
-            padding: em(20) em(30);
+            padding: em(15) em(30);
             position: relative;
 
             &:before{
@@ -84,7 +94,9 @@
             margin: 0 em(20);
             position: relative;
 
+
             &--dropdown{
+
                 &:hover{
                     .nav__list_sub{
                         opacity: 1;
@@ -100,6 +112,14 @@
             position: relative;
             padding: em(10);
             transition: color 0.3s $easin;
+
+            &--dropdown{
+                &:after{
+                    @include icon(chevron);
+                    font-size: em(s);
+                    margin-left: em(10);
+                }
+            }
 
             &:before{
                 position: absolute;
@@ -121,6 +141,8 @@
                     transform-origin: bottom left;
                 }
             }
+
+
         }
 
         &__list_sub{

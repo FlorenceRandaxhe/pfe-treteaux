@@ -19,6 +19,26 @@
         padding-bottom: em(50, l);
     }
 
+    &__content{
+        &--js{
+            margin-top: em(80);
+
+            .rentingInfo{
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                transition: opacity 0.5s $easin;
+
+                &--active{
+                    opacity: 1;
+                    visibility: visible;
+                    position: relative;
+
+                }
+            }
+        }
+    }
+
     @include mq(l){
         &__container{
             display: flex;

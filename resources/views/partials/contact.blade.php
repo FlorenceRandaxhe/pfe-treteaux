@@ -14,9 +14,8 @@
     </div>
 </section>
 
-<!-- <div class="contact">
-    <div class="contact__mapContainer">
-        <div class="contact__map" id="map"></div>
+<div class="contact">
+    <div class="contact__mapContainer" data-lat="50.737120" data-lng="5.693863">
+        <div class="contact__map" id='map' style='width: 100%; height: 550px;'></div>
     </div>
 </div>
- -->

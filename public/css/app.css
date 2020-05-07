@@ -242,6 +242,15 @@ body {
   color: #292828;
 }
 
+.layout {
+  position: relative;
+  z-index: -1;
+}
+
+.layout--scrollblock {
+  overflow: hidden;
+}
+
 a {
   color: #292828;
   text-decoration: none;
@@ -777,47 +786,57 @@ a {
   letter-spacing: 0.0714285714em;
 }
 
-.nav__link--dropdown:after {
-  font-family: "icomoon";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\E903";
-  font-size: 0.875em;
-  margin-left: 0.625em;
-}
-
 @media only screen and (max-width: 759px) {
   .nav {
-    margin: 2.5em auto;
+    margin: 1.8125em auto;
+  }
+
+  .nav--js .nav__item {
+    padding: 1.25em 0.9375em;
+  }
+
+  .nav--js .nav__link {
+    font-size: 1.25em;
+  }
+
+  .nav--js .nav__link--dropdown:after {
+    font-family: "icomoon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\E903";
+    font-size: 0.875em;
+    margin-left: 0.625em;
+  }
+
+  .nav--js .nav__list_sub {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .nav--js .nav__list_sub--show {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav__item {
-    padding: 1.875em;
+    padding: 0.9375em 0.625em;
     border-bottom: 1px solid rgba(79, 28, 40, 0.2);
   }
 
   .nav__link {
-    font-size: 1.25em;
+    font-size: 1em;
     color: #4F1C28;
     display: block;
-    overflow: hidden;
     transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-
-  .nav__link:focus {
-    height: 100%;
-  }
-
-  .nav__link:focus + .nav__list_sub {
-    position: relative;
-    opacity: 1;
-    visibility: visible;
   }
 
   .nav__link--dropdown:after {
@@ -826,22 +845,18 @@ a {
   }
 
   .nav__list_sub {
-    margin-top: 1.875em;
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    margin-top: 1.25em;
   }
 
   .nav__item_sub {
-    margin: 1.25em 0.625em;
+    margin: 0.9375em;
   }
 
   .nav__link_sub {
-    font-size: 1.125em;
+    font-size: 1em;
     text-transform: uppercase;
     color: #4F1C28;
-    padding: 1.25em 1.875em;
+    padding: 0.9375em 1.875em;
     position: relative;
   }
 
@@ -875,6 +890,21 @@ a {
     position: relative;
     padding: 0.625em;
     transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .nav__link--dropdown:after {
+    font-family: "icomoon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\E903";
+    font-size: 0.875em;
+    margin-left: 0.625em;
   }
 
   .nav__link:before {
@@ -1209,7 +1239,14 @@ a {
 
 @media only screen and (max-width: 759px) {
   .header--show {
+    height: 100vh;
+    overflow-y: scroll;
     background-color: #DAE7F2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
   }
 
   .header--show .header__nav,
@@ -1222,7 +1259,6 @@ a {
 
   .header--show .header__container {
     height: 100vh;
-    overflow-y: scroll;
   }
 
   .header__nav,
@@ -1231,7 +1267,6 @@ a {
     visibility: hidden;
     position: absolute;
     transform: translateY(20px);
-    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   .header__container {
@@ -1617,11 +1652,16 @@ a {
   height: 100%;
   padding: 1em 1.5em;
   border: 3px solid #292828;
+  transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.tabs__link:hover,
-.tabs__link:focus {
+.tabs__link:hover {
   background-color: #DAE7F2;
+}
+
+.tabs__link:focus {
+  background-color: #292828;
+  color: #ffffff;
 }
 
 @media only screen and (min-width: 920px) {
@@ -2364,6 +2404,23 @@ a {
   padding-bottom: 2.7777777778em;
 }
 
+.renting__content--js {
+  margin-top: 5em;
+}
+
+.renting__content--js .rentingInfo {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.renting__content--js .rentingInfo--active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
 @media only screen and (min-width: 920px) {
   .renting__container {
     display: flex;
@@ -2432,11 +2489,6 @@ a {
   width: 100%;
 }
 
-.contact__map {
-  width: 100%;
-  height: 31.25em;
-}
-
 @media only screen and (min-width: 1024px) {
   .contact__container {
     padding-left: 6.25em;
@@ -2475,7 +2527,7 @@ a {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\E909";
+  content: "\E915";
 }
 
 .contactInfo--phone:before {

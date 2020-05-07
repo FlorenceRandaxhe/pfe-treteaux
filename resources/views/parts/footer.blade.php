@@ -29,7 +29,7 @@
             <h2 class="footer__title">À Propos</h2>
             <ul class="footer__list">
                 <li class="footer__item"><a class="footer__link" href="{{ route('news') }}">Actualités</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">La salle</a></li>
+                <li class="footer__item"><a class="footer__link" href="{{ route('about') }}">La salle</a></li>
                 <li class="footer__item"><a class="footer__link" href="{{ route('media') }}">Presse</a></li>
                 <li class="footer__item"><a class="footer__link" href="{{route('renting') }}">Location</a></li>
             </ul>

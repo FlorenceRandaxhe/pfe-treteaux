@@ -4,7 +4,9 @@
     @include('partials.heroBasic', [
         'color' => 'grey',
         'title' => 'Contact',
-        'intro' => 'Une question sur un de nos spectacles ? N’hésitez pas à nous contacter, nous reviendrons vers vous le plus rappidement possible'
+        'intro' => 'Une question sur un de nos spectacles ? N’hésitez pas à nous contacter, nous reviendrons vers vous le plus rappidement possible',
+        'img' => '',
+        'type' => ''
     ])
     @include('partials.contact')
     @include('partials.latestEvents', [

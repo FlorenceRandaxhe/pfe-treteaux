@@ -955,6 +955,7 @@ a {
   }
 
   .nav__list_sub {
+    z-index: 100;
     position: absolute;
     top: calc(100% + 5px);
     left: 50%;

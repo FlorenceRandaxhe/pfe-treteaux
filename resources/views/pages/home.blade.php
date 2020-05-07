@@ -16,7 +16,7 @@
         'class' => 'home',
         'title' => 'Les Tréteaux',
         'text' => 'Ancienne salle de gymnastique de l’Athénée de Visé, la salle de spectacle Les Tréteaux a accueilli pendant près de 30 ans un grand nombre de manifestations dans une salle vétuste, à peine aménagée pour le milieu du spectacle.',
-        'url' => '#',
+        'url' => 'about',
         'label' => 'Plus d’info',
     ])
 @endsection

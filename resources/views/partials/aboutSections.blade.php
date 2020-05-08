@@ -1,0 +1,5 @@
+@include('parts.aboutIntro')
+@include('parts.aboutSalle')
+@include('parts.aboutPoly')
+@include('parts.aboutFoyer')
+@include('parts.aboutServices')

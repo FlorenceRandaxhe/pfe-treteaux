@@ -4,6 +4,7 @@
     @include('partials.heroAbout', [
         'alt' => 'Facade des Tréteaux'
     ])
+    @include('partials.aboutSections')
     @include('partials.newsletter', [
         'color' => 'blue'
     ])

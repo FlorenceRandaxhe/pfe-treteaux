@@ -1,5 +1,6 @@
 .newsletter{
-    padding: em(40) 0 em(200);
+    padding: em(60) 0 em(30);
+    margin-bottom: em(120);
 
     &__container{
         position: relative;
@@ -70,6 +71,31 @@
     }
 
     @include mq(m){
+
+        position: relative;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: -50px;
+            width: em(200);
+            height: em(200);
+            background-image: url('../../img/patternPlus-big.png');
+            z-index: -10;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: -25px;
+            width: em(100);
+            height: em(100);
+            background-image: url('../../img/patternLine-small.png');
+            z-index: -10;
+        }
+
         &__container{
             display: flex;
             justify-content: space-between;

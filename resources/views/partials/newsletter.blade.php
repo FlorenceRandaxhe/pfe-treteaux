@@ -1,5 +1,5 @@
-<section class="newsletter newsletter--{{$color}}" id="newsletter">
-    <div class="newsletter__container wrapper">
+<section class="wrapper newsletter newsletter--{{$color}}" id="newsletter">
+    <div class="newsletter__container">
         <div class="newsletter__content">
             <h2 class="newsletter__title">Restez-en contact</h2>
             <p class="newsletter__text">

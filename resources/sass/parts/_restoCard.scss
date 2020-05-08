@@ -40,6 +40,10 @@
         padding-bottom: em(50, l);
     }
 
+    &__link{
+        @include cover();
+    }
+
     @include mq(s){
         width: 50%;
         padding: gut(1);

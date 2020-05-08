@@ -18,12 +18,36 @@
         &:before{
             content: '';
             position: absolute;
-            top: 50%;
+            top: calc(50% - 1px);
             left: 0;
             height: 2px;
             width: 60px;
+            border-radius: 2px;
             background-color: color(black);
-            transition: transform 0.3s $easin;
+            transition: left 0.3s $easin;
+        }
+
+        &:after{
+            position: absolute;
+            display: inline-block;
+            transform: rotate(-90deg);
+            @include icon(chevron);
+            opacity: 0;
+            right: 0;
+            top: calc(50% - 8px);
+            transition: opacity 0.3s $easin
+        }
+
+        &:hover{
+            padding-right: 90px;
+            padding-left:0;
+            &:before{
+                animation: opacity 0.3s $easin;
+                left: calc(100% - 64px);
+            }
+            &:after{
+                opacity:1;
+            }
         }
     }
 
@@ -59,5 +83,22 @@
                 background-color: color(purple);
             }
         }
+    }
+}
+
+@keyframes opacity{
+    0%{
+        opacity: 1;
+    }
+
+    33%{
+        opacity: 0;
+    }
+    66%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
     }
 }

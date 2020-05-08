@@ -72,21 +72,27 @@
 
     @include mq(l){
         &__link{
-            position: relative;
             padding: em(5);
             transition: color 0.3s $easin;
 
-            &:after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 5px;
-                bottom: -5px;
-                left: 0;
-                background-color: color(blue);
-                transform-origin: bottom right;
-                transition: transform 0.4s $easin;
+            &--dropdown{
+                cursor: pointer;
+            }
+
+            &:not(.nav__link--dropdown){
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 5px;
+                    bottom: -5px;
+                    left: 0;
+                    background-color: color(blue);
+                    transform-origin: bottom right;
+                    transition: transform 0.4s $easin;
+                }
             }
 
             &:hover, &:focus{
@@ -101,6 +107,7 @@
         }
 
         &__link_sub{
+            display: block;
 
             &:after{
                 @include icon(arrow);
@@ -121,7 +128,7 @@
         }
 
         &__item{
-            padding: 0 em(30);
+            padding: em(20) em(30);
             position: relative;
         }
 
@@ -132,17 +139,17 @@
         &__list_sub{
             z-index: 100;
             position: absolute;
-            top: calc(100% + 5px);
+            top: calc(100% - 10px);
             left:50%;
             width: auto;
             height: 1px;
-            min-width: em(230);
+            min-width: em(200);
             background-color: color(blue);
-            border: 3px solid color(purple);
             opacity: 0;
             transform: translateY(-10px) translateX(-50%);
             overflow: hidden;
-            //transition: transform 0.3s $easin, opacity 0.1s $easin;
+            box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 32px rgba(17,17,26,0.05);
+            transition: transform 0.3s $easin, opacity 0.1s $easin, border 0s;
         }
 
         &__item{
@@ -152,6 +159,7 @@
                     opacity: 1;
                     height: auto;
                     overflow: visible;
+                    border: 3px solid color(purple);
                     transform: translateY(0) translateX(-50%);
 
                 }

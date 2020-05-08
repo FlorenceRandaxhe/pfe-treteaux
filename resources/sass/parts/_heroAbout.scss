@@ -1,12 +1,12 @@
 .heroAbout{
-    margin: em(60) auto em(45);
+    margin: em(70) auto em(45);
 
     &__title{
         @include font();
         font-size: em(xl5);
         line-height: em(44, xl5);
         text-align: right;
-        margin-bottom: em(-16, xl5);
+        margin-bottom: em(10, xl5);
         margin-right: em(10, xl5)
     }
 

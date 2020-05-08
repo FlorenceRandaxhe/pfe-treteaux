@@ -7,31 +7,6 @@
             margin-bottom: em(60);
         }
 
-        &--error{
-            .form__input,
-            .form__textarea{
-                //opacity: 1;
-                border-bottom-color: color(error);
-                color: color(error);
-            }
-            .form__input:hover,
-            .form__textarea:hover,
-            .form__input:hover::placeholder,
-            .form__textarea:hover::placeholder,
-            .form__input:focus,
-            .form__textarea:focus,
-            .form__input:focus::placeholder,
-            .form__textarea:focus::placeholder{
-                opacity: 1;
-                border-bottom-color: color(error);
-                color: color(error);
-            }
-            .form__input::placeholder,
-            .form__textarea::placeholder{
-                color: color(error);
-            }
-        }
-
         &--disabled{
             .form__input,
             .form__label{
@@ -40,7 +15,81 @@
                 background-color: transparent;
             }
         }
+
+        &--error{
+            input, textarea{
+                border-color: color(error)
+            }
+            input::placeholder, textarea::placeholder{
+                color: color(error);
+            }
+        }
     }
+
+    &__label:not(.form__label--checkbox){
+        @include font(latobold);
+        position: absolute;
+        top: -20px;
+        left: 0;
+        opacity: 1;
+        transition: top 0.2s $easin, opacity 0.2s $easin;
+    }
+
+    &__input,
+    &__textarea{
+        @include reset-input-styles();
+        @include input-placeholder();
+        @include font();
+        font-size: em(xl2);
+        text-transform: uppercase;
+        color: color(black);
+
+        border-bottom: 2px solid transparentize(color(black), 0.4);
+        padding: em(5) 0;
+        width: 100%;
+        background-color: transparent;
+        transition: border-bottom 0.2s $easin;
+
+        &:placeholder-shown + label{
+            top: 0;
+            opacity:0;
+        }
+
+        &:not(:placeholder-shown) + label{
+            top:-15px;
+            opacity:1;
+        }
+
+        &::placeholder{
+            transition: color 0.2s $easin;
+        }
+
+        &:focus,
+        &:hover{
+            border-bottom: 2px solid transparentize(color(black), 0);
+
+            &::placeholder{
+                color: color(black);
+            }
+        }
+
+        &--small{
+            font-size: em(l)
+        }
+
+        &--white{
+            border-bottom: 2px solid transparentize(color(white), 0.4);
+            color: color(white);
+
+            &:hover, &:focus{
+                border-bottom: 2px solid transparentize(color(white), 0);
+            }
+        }
+    }
+
+
+
+//*****************************************
 
     &__btnContainer{
         text-align: right
@@ -58,17 +107,15 @@
         }
     }
 
+    &__textarea{
+        resize: none;
+        overflow: auto;
+    }
+
     &__label{
-        cursor: pointer;
-        display: block;
-        @include font(latobold);
-        padding-bottom: em(10);
 
         &--white{
-            @include font(latoregular);
             color: color(white);
-            text-transform: uppercase;
-            font-size: em(s);
         }
 
         &--radio,
@@ -91,7 +138,6 @@
                 width: 20px;
                 height: 20px;
                 background-color: color(white);
-                //opacity: 0.8;
                 border: 2px solid color(black);
                 transition: opacity 0.2s $easin,
                             background-color 0.2s $easin;
@@ -135,62 +181,6 @@
             }
         }
 
-
-    }
-
-    &__textarea{
-        resize: none;
-        overflow: auto;
-    }
-
-    &__input,
-    &__textarea{
-        @include reset-input-styles();
-        @include input-placeholder();
-        border-bottom: 2px solid color(black);
-        opacity: 0.8;
-        @include font();
-        font-size: em(xl3);
-        color: color(black);
-        padding: em(5) 0;
-        width: 100%;
-        background-color: transparent;
-        text-transform: uppercase;
-        transition: opacity 0.5s cubic-bezier(.645, .045, .355, 1);
-
-        &::placeholder{
-            opacity: 0.8;
-            transition: color 0.5s cubic-bezier(.645, .045, .355, 1);
-            color: color(black);
-        }
-
-        &:focus,
-        &:hover{
-            border-bottom-color: color(black);
-            opacity: 1;
-            color: color(black);
-
-            &::placeholder{
-                color: color(black);
-            }
-        }
-
-        &--small{
-            font-size: em(l)
-        }
-
-        &--white{
-            border-bottom-color: color(white);
-            color: color(white);
-            opacity: 1;
-
-            &:focus,
-            &:hover{
-                color: color(blue);
-                border-bottom-color: color(blue);
-                opacity: 1;
-            }
-        }
     }
 
     &__radio,

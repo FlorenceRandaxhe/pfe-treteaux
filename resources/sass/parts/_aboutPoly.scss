@@ -1,0 +1,111 @@
+.aboutPoly{
+    position: relative;
+    padding-bottom: em(80);
+    padding-top: em(30);
+
+    &:after{
+        content:'';
+        position: absolute;
+        background-color: color(darkblue);
+        left:0;
+        top: -10px;
+        height: em(200);
+        width: 90%;
+        z-index: -1;
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl4);
+        line-height: em(35, xl4);
+        padding-bottom: em(25, xl4);
+        color: color(white);
+    }
+
+    &__subTitle{
+        @include font(latobold);
+        font-size: em(xl);
+        color: color(white);
+        line-height: em(30, xl);
+        margin-right: col(2)
+    }
+
+    &__text{
+        font-size: em(l);
+        line-height: em(28, l);
+        padding-top: em(60, l);
+        padding-bottom: em(50, l);
+    }
+
+    &__fig{
+        width: 100%;
+        height: em(450);
+        position: relative;
+
+        &:after{
+            position: absolute;
+            content: '';
+            background-image: url('../../img/patternLine-small.png');
+            top: -20px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            z-index: -1;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include mq(m){
+        padding-top: em(40);
+
+        &:after{
+            width: 50%;
+        }
+
+        &__container{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__content{
+            width: 50%;
+            margin-right: col(1);
+        }
+
+        &__title{
+            font-size: em(xl7);
+            line-height: em(35, xl7);
+            padding-bottom: em(25, xl7)
+        }
+
+        &__subTitle{
+
+        }
+
+        &__text{
+            padding-top: em(150, l);
+            padding-bottom: 0;
+        }
+
+        &__fig{
+            height: auto;
+            width: em(350);
+        }
+    }
+
+    @include mq(xl2, min){
+        &:after{
+            top:-20px;
+            height: em(230);
+        }
+        &__container{
+            padding-left: em(100);
+            padding-right: em(100);
+        }
+    }
+}

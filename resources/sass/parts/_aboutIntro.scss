@@ -1,0 +1,45 @@
+.aboutIntro{
+    padding-bottom: em(200);
+    position: relative;
+
+    &:after{
+        position: absolute;
+        content: '';
+        height: 100px;
+        width: 3px;
+        left: 50%;
+        bottom: 70px;
+        background-color: color(black);
+    }
+
+
+    &__title{
+        @include font();
+        font-size: em(xl4);
+        line-height: em(35, xl4);
+        text-align: center;
+        padding-bottom: em(40, xl4)
+    }
+
+    &__text{
+        font-size: em(l);
+        line-height: em(28, l);
+        text-align: center;
+    }
+
+    @include mq(m){
+        &__container{
+            padding: 0 em(100);
+        }
+    }
+
+    @include mq(xl){
+
+        &__title{
+            font-size: em(xl7);
+            line-height: em(55, xl7);
+            text-align: center;
+            padding-bottom: em(60, xl7)
+        }
+    }
+}

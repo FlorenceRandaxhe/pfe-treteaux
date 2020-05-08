@@ -1,5 +1,5 @@
 <section class="aboutPoly">
-    <div class="wrapper">
+    <div class="aboutPoly__container wrapper">
         <div class="aboutPoly__content">
             <h2 class="aboutPoly__title">Salle polyvalente</h2>
             <p class="aboutPoly__subTitle">Idéale pour l’organisation de conférences ou de concerts intimistes</p>

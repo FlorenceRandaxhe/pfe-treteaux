@@ -3,6 +3,18 @@
     width: 100%;
     position: relative;
 
+
+    &:after{
+        position: absolute;
+        content: '';
+        background-image: url('../../img/patternDot-big.png');
+        top:em(-30);
+        width: 100%;
+        height: 100%;
+        max-height: em(480);
+        z-index: -10;
+    }
+
     &--left{
         .hero__container{
             margin-right: auto;
@@ -11,6 +23,10 @@
 
         .hero__fig{
             right: 0;
+        }
+
+        &:after{
+            right:0;
         }
     }
 
@@ -22,6 +38,10 @@
 
         .hero__fig{
             left: 0;
+        }
+
+        &:after{
+            left:0;
         }
     }
 
@@ -92,6 +112,11 @@
         &__fig{
             top: em(-50);
             max-width: 55vw;
+        }
+
+        &:after{
+            top: em(-15);
+            max-width: 58vw;
         }
 
         &__title{

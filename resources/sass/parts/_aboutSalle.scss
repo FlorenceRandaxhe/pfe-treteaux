@@ -1,0 +1,118 @@
+.aboutSalle{
+
+    position: relative;
+
+    &:after{
+        content:'';
+        position: absolute;
+        background-color: color(grey);
+        z-index: -1;
+    }
+
+    &__container{
+        padding-bottom: em(100);
+        padding-top: em(130);
+    }
+
+
+    &__title{
+        @include font();
+        font-size: em(xl4);
+        line-height: em(35, xl4);
+        padding-bottom: em(25, xl4);
+        z-index: 10;
+    }
+
+    &__text{
+        font-size: em(l);
+        line-height: em(28, l);
+    }
+
+    &__fig{
+        width: 100%;
+        height: em(450);
+        z-index: 10;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    @include mq(m, max){
+
+        &:after{
+            top:0;
+            left:0;
+            width: 100%;
+            height: 80%;
+        }
+
+        &__svg{
+            display:none;
+        }
+
+        &__container{
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        &__fig{
+            margin-top: em(50)
+        }
+    }
+
+    @include mq(m, min){
+        margin-bottom: em(150);
+
+        &:after{
+            top:0;
+            right:0;
+            width: 70vw;
+            height: 100%;
+        }
+
+        &__svg{
+            fill: #fff;
+            position: absolute;
+            top: 70px;
+            left: 450px;
+            max-width:100%;
+            overflow:hidden;
+            z-index:0;
+        }
+
+        &__container{
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+        }
+
+        &__content{
+            width: col(7);
+            margin-left: col(1);
+            padding-top: em(80)
+        }
+
+        &__title{
+            font-size: em(xl7);
+            line-height: em(35, xl7);
+            padding-bottom: em(25, xl7)
+        }
+
+        &__fig{
+            height: auto;
+            width: em(350);
+        }
+    }
+
+    @include mq(xl2, min){
+        &__container{
+            padding-left: em(100);
+            padding-right: em(100);
+        }
+    }
+}

@@ -1,0 +1,105 @@
+.aboutFoyer{
+    background-color: color(grey);
+    padding: em(50) 0;
+    position: relative;
+    margin-bottom: em(80);
+
+    &__title{
+        @include font();
+        font-size: em(xl4);
+        line-height: em(35, xl4);
+        padding-bottom: em(25, xl4);
+    }
+
+    &__subTitle{
+        @include font();
+        font-size: em(xl);
+        line-height: em(30, xl);
+        margin: 0 auto;
+        width: 90%;
+        padding-bottom: em(20, xl)
+    }
+
+    &__content{
+        position: absolute;
+        top: calc(50% + 40px);
+        left:50%;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: color(white);
+        border: 3px solid color(black);
+        box-shadow: 10px 10px color(black);
+        margin: 0 auto;
+        width: 70%;
+        padding: em(20);
+        z-index: 10;
+    }
+
+    &__text{
+        font-size: em(l);
+        line-height: em(28, l);
+    }
+
+    &__fig{
+        width: 100%;
+        height: em(450);
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include mq(m){
+        padding: em(100) 0;
+        margin-bottom: em(120);
+        margin-top: em(120);
+
+        &__container{
+            max-width: em($grid_width);
+            width: 90%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        &__title{
+            font-size: em(xl7);
+            line-height: em(35, xl7);
+            padding-bottom: em(25, xl7)
+        }
+
+        &__content{
+            top: calc(50% + 25px);
+            left: 100%;
+            transform: translateX(-100%) translateY(-50%);
+            width: em(300);
+            padding: em(40);
+        }
+
+        &__fig{
+            height: em(600);
+            width: col(10);
+            position: relative;
+
+            &:after{
+                position: absolute;
+                content: 'Foyer';
+                font-size: em(150);
+                @include font();
+                color: color(white);
+                bottom: -30px;
+                left: 10px;
+            }
+        }
+
+        &__subTitle{
+            margin:0;
+        }
+    }
+
+    @include mq(xl2, min){
+        &__content{
+            padding: em(70) em(50);
+        }
+    }
+}

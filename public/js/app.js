@@ -99,13 +99,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_Nav_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts/Nav.js */ "./resources/js/parts/Nav.js");
 /* harmony import */ var _parts_Dropdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts/Dropdown.js */ "./resources/js/parts/Dropdown.js");
 /* harmony import */ var _parts_Tabs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./parts/Tabs.js */ "./resources/js/parts/Tabs.js");
+/* harmony import */ var _parts_Text_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./parts/Text.js */ "./resources/js/parts/Text.js");
+
 
 
 
 
 var nav = new _parts_Nav_js__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('.header'));
 var dropdown = new _parts_Dropdown_js__WEBPACK_IMPORTED_MODULE_2__["default"](document.querySelector('.nav'));
-var tab = new _parts_Tabs_js__WEBPACK_IMPORTED_MODULE_3__["default"](document.querySelector('.renting__tab'));
+
+if (document.querySelector('.aboutSalle')) {
+  var text = new _parts_Text_js__WEBPACK_IMPORTED_MODULE_4__["default"](document.querySelector('.aboutSalle'));
+}
+
+if (document.querySelector('.renting__tab')) {
+  var tab = new _parts_Tabs_js__WEBPACK_IMPORTED_MODULE_3__["default"](document.querySelector('.renting__tab'));
+}
 
 if (document.querySelector('.contact__mapContainer')) {
   var map = new _parts_Map_js__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelector('.contact__mapContainer'));
@@ -402,6 +411,69 @@ var Tabs = /*#__PURE__*/function () {
   }]);
 
   return Tabs;
+}();
+
+
+
+/***/ }),
+
+/***/ "./resources/js/parts/Text.js":
+/*!************************************!*\
+  !*** ./resources/js/parts/Text.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Text; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Text = /*#__PURE__*/function () {
+  function Text(el) {
+    _classCallCheck(this, Text);
+
+    this.el = el;
+    this.getElements();
+    this.setEvents();
+  }
+
+  _createClass(Text, [{
+    key: "getElements",
+    value: function getElements() {
+      this.textPath = this.el.querySelector('#text-path');
+    }
+  }, {
+    key: "setEvents",
+    value: function setEvents() {
+      var _this = this;
+
+      console.log('test');
+      window.addEventListener('scroll', function (e) {
+        return _this.onScroll();
+      });
+    }
+  }, {
+    key: "updatePath",
+    value: function updatePath(offset) {
+      this.textPath.setAttribute('startOffset', offset);
+    }
+  }, {
+    key: "onScroll",
+    value: function onScroll() {
+      var _this2 = this;
+
+      requestAnimationFrame(function () {
+        _this2.updatePath(window.scrollY - 1200);
+      });
+    }
+  }]);
+
+  return Text;
 }();
 
 

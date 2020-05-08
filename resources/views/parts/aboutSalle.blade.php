@@ -2,7 +2,7 @@
     <div class="aboutSalle__container wrapper">
         @include('svg.text')
         <figure class="aboutSalle__fig">
-            <img class="aboutSalle__img" src="{{ asset('img/img.jpg') }}">
+            <img class="aboutSalle__img" src="{{ asset('img/salle.jpg') }}">
         </figure>
 
         <div class="aboutSalle__content">

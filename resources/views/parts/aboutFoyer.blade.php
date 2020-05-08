@@ -2,7 +2,7 @@
     <div class="aboutFoyer__container">
         <p class="aboutFoyer__subTitle">L’endroit idéal pour partager un verre avant ou après les spectacles.</p>
         <figure class="aboutFoyer__fig">
-            <img class="aboutFoyer__img" src="{{ asset('img/img.jpg') }}">
+            <img class="aboutFoyer__img" src="{{ asset('img/foyer.jpg') }}">
         </figure>
         <div class="aboutFoyer__content">
             <h2 class="aboutFoyer__title">Le Foyer</h2>

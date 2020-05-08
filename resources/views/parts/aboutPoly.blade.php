@@ -9,7 +9,7 @@
         </div>
 
         <figure class="aboutPoly__fig">
-            <img class="aboutPoly__img" src="{{ asset('img/img.jpg') }}">
+            <img class="aboutPoly__img" src="{{ asset('img/poly.jpg') }}">
         </figure>
     </div>
 </section>

@@ -40,7 +40,7 @@ class PostSeeder extends Seeder
             'title' => 'Inauguration des Tréteaux',
             'slug' => 'inauguration-des-tréteaux',
             'content' => 'content',
-            'img' => 'event-2.jpg.jpg',
+            'img' => 'event-2.jpg',
             'published_at' => now(),
             'tag_id' => 3,
             'deleted_at' => null,

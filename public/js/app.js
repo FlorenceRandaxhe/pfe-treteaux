@@ -248,6 +248,7 @@ var Map = /*#__PURE__*/function () {
   }, {
     key: "initMap",
     value: function initMap() {
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZmxvcmVuY2VyYW5kYXhoZSIsImEiOiJjazl3ZmJ2azMwOGI5M2d1aGRldHlxMjJmIn0.l9b5ADWDn7OQ1D7Obndf0g';
       this.map = new mapboxgl.Map({
         container: this.mapContent,
         center: {
@@ -422,6 +423,8 @@ var RestoModal = /*#__PURE__*/function () {
       e.preventDefault();
       document.querySelector('body').classList.add('layout--scrollblock');
       this.modals[i].classList.add('restoInfo--show');
+      this.createMap(this.modals[i]);
+      this.initMap(this.modals[i]);
     }
   }, {
     key: "closeModal",
@@ -429,6 +432,69 @@ var RestoModal = /*#__PURE__*/function () {
       e.preventDefault();
       this.modals[i].classList.remove('restoInfo--show');
       document.querySelector('body').classList.remove('layout--scrollblock');
+      this.removeMap(this.modals[i]);
+    }
+  }, {
+    key: "createMap",
+    value: function createMap(modal) {
+      this.mapContent = document.createElement('div');
+      this.mapContent.setAttribute('class', 'restoInfo__map');
+      this.mapContent.setAttribute('style', 'width: 100%; height: 300px');
+      modal.querySelector('.restoInfo__container').appendChild(this.mapContent);
+    }
+  }, {
+    key: "removeMap",
+    value: function removeMap(modal) {
+      modal.querySelector('.restoInfo__container').removeChild(this.mapContent);
+    }
+  }, {
+    key: "initMap",
+    value: function initMap(modal) {
+      var _this2 = this;
+
+      this.lat = parseFloat(modal.getAttribute('data-lat'));
+      this.lng = parseFloat(modal.getAttribute('data-lng'));
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZmxvcmVuY2VyYW5kYXhoZSIsImEiOiJjazl3ZmJ2azMwOGI5M2d1aGRldHlxMjJmIn0.l9b5ADWDn7OQ1D7Obndf0g';
+      this.map = new mapboxgl.Map({
+        container: this.mapContent,
+        center: {
+          lat: this.lat,
+          lng: this.lng
+        },
+        zoom: 15,
+        style: 'mapbox://styles/florencerandaxhe/ck9oamfii0uix1iliyo6zezeg'
+      });
+      this.geojson = {
+        type: 'FeatureCollection',
+        features: [{
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [5.693863, 50.737120]
+          },
+          properties: {
+            title: 'Les Tréteaux - Centre Culturel de Visé',
+            description: 'Visé',
+            color: 'pink'
+          }
+        }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [this.lng, this.lat]
+          },
+          properties: {
+            title: 'Restaurant',
+            description: 'Visé',
+            color: 'purple'
+          }
+        }]
+      };
+      this.geojson.features.forEach(function (marker) {
+        _this2.mark = document.createElement('div');
+        _this2.mark.className = 'restoInfo__marker restoInfo__marker--' + marker.properties.color;
+        new mapboxgl.Marker(_this2.mark).setLngLat(marker.geometry.coordinates).addTo(_this2.map);
+      });
     }
   }]);
 

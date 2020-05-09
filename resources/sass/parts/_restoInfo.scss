@@ -109,6 +109,26 @@
         }
     }
 
+    &__map{
+        margin-top: em(20);
+    }
+
+    &__marker {
+        background-size: cover;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &--purple{
+            background-color: color(purple);
+        }
+
+        &--pink{
+            background-color: color(pink);
+        }
+    }
+
     @include mq(m){
 
         &__container{

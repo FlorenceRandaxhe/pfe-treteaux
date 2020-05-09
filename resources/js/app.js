@@ -1,4 +1,4 @@
-import SmoothScroll from 'smooth-scroll';
+//import SmoothScroll from 'smooth-scroll';
 import Map from './parts/Map.js';
 import Nav from './parts/Nav.js';
 import Dropdown from './parts/Dropdown.js';
@@ -11,7 +11,7 @@ import Reveal from './parts/Reveal.js';
 document.body.classList.add('body--js');
 
 let reveal = new Reveal(document.querySelector('body'))
-let scroll = new SmoothScroll('[data-scroll]');
+//let scroll = new SmoothScroll('[data-scroll]');
 
 
 let nav = new Nav(document.querySelector('.header'));

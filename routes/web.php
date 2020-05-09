@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController')->name('home');
 Route::get('/agenda/{season}', 'SeasonController');
 Route::get('/actualités', 'PostController')->name('news');
+Route::get('/actualités/{post}', 'PostController@show')->name('singleNews');
 Route::get('/presse-et-media', 'MediaController')->name('media');
 Route::get('/offre-resto', 'RestoController')->name('resto');
 Route::get('/contact', 'ContactController@index')->name('contact');

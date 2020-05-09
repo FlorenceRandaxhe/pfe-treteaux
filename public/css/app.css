@@ -4384,3 +4384,107 @@ a {
   }
 }
 
+.singlePost {
+  margin: 3.75em 0 10.625em;
+}
+
+.singlePost__date {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+}
+
+@media only screen and (min-width: 920px) {
+  .singlePost__container {
+    padding: 0 10.625em;
+  }
+}
+
+.wysiwyg {
+  padding-bottom: 1.25em;
+  border-bottom: 3px solid #292828;
+}
+
+.wysiwyg h1 {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2.25em;
+  line-height: 0.8333333333em;
+  padding-bottom: 0.5555555556em;
+  padding-top: 0.8333333333em;
+}
+
+.wysiwyg h2 {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 2em;
+  line-height: 0.9375em;
+  padding-bottom: 0.625em;
+  padding-top: 0.9375em;
+}
+
+.wysiwyg h4 {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  padding-bottom: 0.8333333333em;
+  padding-top: 1.25em;
+}
+
+.wysiwyg h5 {
+  font-family: "abril_fatfaceregular", Playfair, Arial, serif;
+  font-size: 1.375em;
+  line-height: 1.3636363636em;
+  padding-bottom: 0.9090909091em;
+  padding-top: 1.3636363636em;
+}
+
+.wysiwyg p {
+  font-size: 1em;
+  line-height: 1.75em;
+  padding-bottom: 1.25em;
+}
+
+.wysiwyg a {
+  position: relative;
+}
+
+.wysiwyg a:after {
+  position: absolute;
+  content: "";
+  height: 8px;
+  bottom: -2px;
+  left: 50%;
+  width: 100%;
+  background-color: #C2E4D4;
+  z-index: -1;
+  transform: translateX(-50%);
+  transition: height 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), width 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.wysiwyg a:hover:after {
+  height: 20px;
+  width: 105%;
+}
+
+.wysiwyg em {
+  font-family: "latoitalic", Playfair, Arial, serif;
+}
+
+.wysiwyg strong {
+  font-family: "latobold", Playfair, Arial, serif;
+}
+
+.wysiwyg img {
+  width: 100%;
+  margin: 2.5em 0;
+  border: 3px solid #292828;
+  position: relative;
+}
+
+.wysiwyg img:after {
+  position: absolute;
+  content: "";
+  top: 1.25em;
+  right: 1.25em;
+  width: 300px;
+  height: 300px;
+  background-image: url(/images/patternPlus-big.png?0fca58c4e99dac3e2c1f2616208f0404);
+}
+

@@ -1,0 +1,13 @@
+.singlePost{
+    margin: em(60) 0 em(170);
+
+    &__date{
+        @include font();
+    }
+
+    @include mq(l){
+        &__container{
+            padding: 0 em(170);
+        }
+    }
+}

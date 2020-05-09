@@ -1,5 +1,5 @@
 <article class="newsCard @if($class) newsCard--{{$class}} @endif">
-    <a class="newsCard__link" href="#"><span class="sro">Lire l'article&nbsp;: {{ $post->title }}</span></a>
+    <a class="newsCard__link" href="{{ route('news') }}/{{ $post->slug }}"><span class="sro">Lire l'article&nbsp;: {{ $post->title }}</span></a>
     <figure class="newsCard__fig">
         <img class="newsCard__img" src="{{ asset('img/' . $post->img) }}" alt="{{ $post->title }}">
     </figure>

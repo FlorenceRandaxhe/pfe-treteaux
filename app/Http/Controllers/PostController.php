@@ -24,4 +24,16 @@ class PostController extends Controller
 
     }
 
+    public function show(Post $post){
+
+        $latestSeason = Season::where('archived', '=', false)->latest()->first();
+        $events = $latestSeason->events()->limit(3)->get();
+
+        return view('pages.singleNews', [
+            'post' => $post,
+            'events' => $events,
+            'latestSeason' => $latestSeason
+        ]);
+    }
+
 }

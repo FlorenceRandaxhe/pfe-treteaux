@@ -16,7 +16,6 @@ class ContactController extends Controller
 
         return view('pages.contact', [
             'events' => $events,
-            'latestSeason' => $latestSeason,
         ]);
     }
 

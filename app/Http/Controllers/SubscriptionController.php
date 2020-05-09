@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
 use App\Season;
-use App\Event;
 
-class HomeController extends Controller
+class SubscriptionController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -17,16 +15,11 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $posts = Post::published()->limit(3)->get();
         $latestSeason = Season::where('archived', '=', false)->latest()->first();
         $events = $latestSeason->events()->limit(3)->get();
-        $featured = Event::featured()->get();
 
-        return view('pages.home', [
-            'posts' => $posts,
+        return view('pages.subscription', [
             'events' => $events,
-            'featured' => $featured
         ]);
-
     }
 }

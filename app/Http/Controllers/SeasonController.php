@@ -16,7 +16,6 @@ class SeasonController extends Controller
         $posts = Post::published()->limit(3)->get();
 
         return view('pages.event', [
-            'latestSeason' => $latestSeason,
             'season' => $season,
             'allSeasons' => $allSeasons,
             'posts' => $posts

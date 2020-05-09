@@ -13,12 +13,10 @@ class RestoController extends Controller
     {
         $posts = Post::published()->limit(3)->get();
         $restos = Resto::all();
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
 
         return view('pages.resto', [
             'posts' => $posts,
             'restos' => $restos,
-            'latestSeason' => $latestSeason
         ]);
 
     }

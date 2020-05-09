@@ -4,7 +4,7 @@
 
         <div aria-haspopup="true" class="heroEvents__dropdown">
             <div class="heroEvents__current">
-                <a href="/agenda/{{ $latestSeason->year }}" class="heroEvents__currentLink">{{ $season->year }}</a>
+                <a href="/agenda/{{ $latestSeason }}" class="heroEvents__currentLink">{{ $season->year }}</a>
             </div>
 
             <ul aria-label="submenu" class="heroEvents__list">

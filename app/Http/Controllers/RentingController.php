@@ -18,11 +18,9 @@ class RentingController extends Controller
      */
     public function index(Request $request)
     {
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
         $posts = Post::published()->limit(3)->get();
 
         return view('pages.renting', [
-            'latestSeason' => $latestSeason,
             'posts' => $posts
         ]);
     }

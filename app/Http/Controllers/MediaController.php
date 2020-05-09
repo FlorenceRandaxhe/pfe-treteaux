@@ -13,12 +13,10 @@ class MediaController extends Controller
     {
         $posts = Post::published()->limit(3)->get();
         $medias = Media::paginate(3);
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
 
         return view('pages.press', [
             'posts' => $posts,
             'medias' => $medias,
-            'latestSeason' => $latestSeason
         ]);
 
     }

@@ -20,7 +20,6 @@ class AboutController extends Controller
 
         return view('pages.about', [
             'events' => $events,
-            'latestSeason' => $latestSeason
         ]);
 
     }

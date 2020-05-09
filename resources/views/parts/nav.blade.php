@@ -8,10 +8,10 @@
             <p class="nav__link nav__link--dropdown">Agenda</p>
             <ul aria-label="submenu" class="nav__list_sub">
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="/agenda/{{ $latestSeason->year }}">La saison</a>
+                    <a class="nav__link_sub" href="/agenda/{{ $latestSeason }}">La saison</a>
                 </li>
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="#">Abonnements</a>
+                    <a class="nav__link_sub" href="{{ route('subscription') }}">Abonnements</a>
                 </li>
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="{{ route('resto') }}">Offre resto</a>

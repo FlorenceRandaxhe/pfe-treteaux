@@ -19,7 +19,6 @@ class PostController extends Controller
         return view('pages.post', [
             'posts' => $posts,
             'events' => $events,
-            'latestSeason' => $latestSeason
         ]);
 
     }
@@ -32,7 +31,6 @@ class PostController extends Controller
         return view('pages.singleNews', [
             'post' => $post,
             'events' => $events,
-            'latestSeason' => $latestSeason
         ]);
     }
 

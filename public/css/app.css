@@ -1221,18 +1221,26 @@ a {
 
 @media only screen and (min-width: 760px) {
   .search__container {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     width: 100%;
     height: 100%;
     visibility: hidden;
     opacity: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: -1;
-    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .search__container--show {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+  }
+
+  .search__container--show .search__modal {
+    transform: translateY(0);
   }
 
   .search__container:target {
@@ -3137,19 +3145,34 @@ a {
 }
 
 .restoInfo {
-  position: fixed;
-  display: none;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 100;
-  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.restoInfo--show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.restoInfo--show .restoInfo__container {
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .restoInfo:target {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.restoInfo:target .restoInfo__container {
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .restoInfo__hide {
@@ -3162,16 +3185,47 @@ a {
   height: 100%;
 }
 
+.restoInfo__close {
+  font-family: "latobold", Playfair, Arial, serif;
+  text-align: right;
+  display: block;
+  position: absolute;
+  top: 1.25em;
+  right: 1.25em;
+}
+
+.restoInfo__close:before {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\E914";
+  font-size: 0.75em;
+  margin-right: 0.8333333333em;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.restoInfo__close:hover:before {
+  transform: rotate(90deg);
+}
+
 .restoInfo__container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-40%);
   background-color: #ffffff;
-  padding: 2.5em;
+  padding: 1.25em;
   width: 90%;
   max-width: 50em;
   z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .restoInfo__title {
@@ -3179,35 +3233,32 @@ a {
   font-size: 1.875em;
   line-height: 1.3333333333em;
   padding-bottom: 0.8333333333em;
-  width: 60%;
+  padding-top: 1.3333333333em;
 }
 
 .restoInfo__menu {
   font-size: 1.125em;
   line-height: 1.3888888889em;
-  padding-bottom: 2.7777777778em;
-  width: 60%;
 }
 
 .restoInfo__text {
+  padding-top: 1.875em;
+  padding-bottom: 1.25em;
   font-family: "latobold", Playfair, Arial, serif;
-  display: inline;
 }
 
 .restoInfo__link {
-  position: absolute;
-  right: 2.5em;
+  margin-top: 1.25em;
+  margin-bottom: 1.875em;
 }
 
 .restoInfo__price {
+  position: relative;
   font-family: "abril_fatfaceregular", Playfair, Arial, serif;
   font-size: 2.25em;
-  display: inline;
+  display: inline-block;
   background-color: #DAE7F2;
   padding: 0.2777777778em 0.5555555556em 0.6944444444em 0.6944444444em;
-  position: absolute;
-  right: 1.1111111111em;
-  top: 1.1111111111em;
 }
 
 .restoInfo__price:after {
@@ -3218,6 +3269,39 @@ a {
   right: -10px;
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (min-width: 760px) {
+  .restoInfo__container {
+    padding: 1.25em 2.5em 2.5em;
+  }
+
+  .restoInfo__menu {
+    padding-bottom: 2.7777777778em;
+  }
+
+  .restoInfo__text {
+    padding-bottom: 0;
+  }
+
+  .restoInfo__link {
+    position: absolute;
+    right: 2.5em;
+  }
+
+  .restoInfo__price {
+    position: absolute;
+    right: 1.1111111111em;
+    top: 2.2222222222em;
+  }
+
+  .restoInfo__title {
+    width: 60%;
+  }
+
+  .restoInfo__menu {
+    width: 60%;
+  }
 }
 
 .renting:first-of-type {

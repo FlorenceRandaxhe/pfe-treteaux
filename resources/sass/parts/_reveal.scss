@@ -1,0 +1,33 @@
+.body--js{
+
+    .featuredEvents__container{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .featuredEvents__fig{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    .hero__container{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .hero__fig{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    .reveal{
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.89s $easin3, transform 0.89s $easin3;
+
+        &--visible{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

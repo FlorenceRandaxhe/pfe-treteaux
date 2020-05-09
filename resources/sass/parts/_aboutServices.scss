@@ -4,8 +4,20 @@
     &__article{
         text-align: center;
         padding: em(60) em(40);
-        border: 4px solid color(black);
-        margin-bottom: em(30)
+
+        margin-bottom: em(30);
+
+        &:first-of-type{
+            @include border-drawing(color(black), color(blue), 4px);
+        }
+
+        &:nth-child(2){
+            @include border-drawing(color(black), color(pink), 4px);
+        }
+
+        &:last-of-type{
+            @include border-drawing(color(black), color(green), 4px);
+        }
     }
 
     &__title{

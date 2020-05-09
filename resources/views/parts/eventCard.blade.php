@@ -7,4 +7,7 @@
     <p class="eventCard__excerpt">{{ $event->intro }}</p>
     <time class="eventCard__date" datetime="{{ $event->created_at->format('c') }}"><p class="eventCard__day">{{ $event->created_at->isoFormat('DD') }}</p><p class="eventCard__month">{{ $event->created_at->isoFormat('MMM') }}</p></time>
     <p class="eventCard__type type type--fill">{{ $event->type->name }}</p>
+    <p class="eventCard__plus">
+        <span>Plus d'infos</span>
+    </p>
 </article>

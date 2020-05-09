@@ -1,4 +1,4 @@
-<section class="aboutPoly">
+<section class="aboutPoly reveal">
     <div class="aboutPoly__container wrapper">
         <div class="aboutPoly__content">
             <h2 class="aboutPoly__title">Salle polyvalente</h2>

@@ -1,4 +1,4 @@
-<section class="aboutFoyer">
+<section class="aboutFoyer reveal">
     <div class="aboutFoyer__container">
         <p class="aboutFoyer__subTitle">L’endroit idéal pour partager un verre avant ou après les spectacles.</p>
         <figure class="aboutFoyer__fig">

@@ -6,11 +6,57 @@
         .eventCard__img{
             transform: scale(1.2);
         }
+
+        .eventCard__plus{
+            opacity: 1;
+            span:before{
+                width: 100%;
+            }
+        }
     }
 
     &__link{
         @include cover();
         z-index: 1;
+    }
+
+    &__plus{
+        opacity: 0;
+        position: absolute;
+        top: em(215);
+        right:em(-8);
+        transition: opacity 0.4s $easin;
+        z-index: 10;
+
+        span{
+            @include font();
+            color: color(purple);
+            padding: em(5) em(10);
+            position: relative;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: color(pink);
+                height: 100%;
+                width: 0px;
+                z-index: -1;
+                transition: width 0.4s $easin2;
+            }
+
+            &:after{
+                @include icon(arrow);
+                position: relative;
+                top: em(2, xl);
+                left: 0;
+                display: inline-block;
+                font-size: em(xl);
+                font-weight: bold;
+                margin-left: em(10, xl);
+            }
+        }
+
     }
 
     &__fig{
@@ -24,7 +70,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.3s $easin;
+        transition: transform 0.6s $easin3;
     }
 
     &__title{
@@ -103,6 +149,17 @@
 
             .eventCard__type{
                 right: calc(50% - 19px);
+            }
+
+            .eventCard__plus{
+                top: calc(100% - 30px);
+                right: calc(50% - 30px);
+
+                span{
+                    font-size: em(xl);
+                    padding: em(5, xl) em(10, xl);
+                    position: relative;
+                }
             }
         }
     }

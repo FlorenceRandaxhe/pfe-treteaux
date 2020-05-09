@@ -1,13 +1,9 @@
 .link{
     @include font();
-    font-size: em(m);
+    font-size: em(xl);
     background-color: transparent;
     border: none;
     cursor: pointer;
-
-    &--big{
-        font-size: em(xl);
-    }
 
     &--line{
         display: inline-block;
@@ -31,10 +27,11 @@
             position: absolute;
             display: inline-block;
             transform: rotate(-90deg);
+            font-size: em(m, 16);
             @include icon(chevron);
             opacity: 0;
-            right: 0;
-            top: calc(50% - 8px);
+            right: -1px;
+            top: calc(50% - 10px);
             transition: opacity 0.3s $easin
         }
 

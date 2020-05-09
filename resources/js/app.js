@@ -1,10 +1,17 @@
+import SmoothScroll from 'smooth-scroll';
 import Map from './parts/Map.js';
 import Nav from './parts/Nav.js';
 import Dropdown from './parts/Dropdown.js';
 import Tab from './parts/Tabs.js';
 import Text from './parts/Text.js';
 import RestoModal from './parts/RestoModal.js';
-import SearchModal from './parts/SearchModal.js'
+import SearchModal from './parts/SearchModal.js';
+import Reveal from './parts/Reveal.js';
+
+document.body.classList.add('body--js');
+
+let reveal = new Reveal(document.querySelector('body'))
+let scroll = new SmoothScroll('[data-scroll]');
 
 
 let nav = new Nav(document.querySelector('.header'));

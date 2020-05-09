@@ -15,7 +15,7 @@
                 </p>
 
                 @if($url)
-                    <a class="hero__link btn btn--primary @if($icon) btn--{{ $icon }} @endif" href="{{ $url }}">{{ $label }}</a>
+                    <a data-scroll class="hero__link btn btn--primary @if($icon) btn--{{ $icon }} @endif" href="{{ $url }}">{{ $label }}</a>
                 @endif
             </div>
 

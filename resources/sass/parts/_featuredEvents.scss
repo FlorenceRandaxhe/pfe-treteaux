@@ -9,10 +9,31 @@
         background-image: url('../../img/patternDot-big.png');
         top:em(-30);
         left: 0;
+        opacity: 0;
         width: 100%;
         height: 100%;
         max-height: em(480);
         z-index: -10;
+    }
+
+    &--visible{
+
+        &:after{
+            opacity:1;
+            animation: revealUp 0.8s $easin3;
+        }
+
+        .featuredEvents__container{
+            transition: opacity 0.8s $easin3, transform 0.8s $easin3;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .featuredEvents__fig{
+            transition: opacity 0.8s $easin3, transform 0.8s $easin3;
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     &__container{
@@ -145,43 +166,5 @@
                 font-size: em(xl3);
             }
         }
-    }
-}
-
-@keyframes animButtonNext{
-    0%{
-        transform:translateX(0);
-        opacity:1
-    }
-    33%{
-        transform:translateX(20px);
-        opacity:0
-    }
-    66%{
-        transform:translateX(-20px);
-        opacity:0
-    }
-    100%{
-        transform:translateX(0);
-        opacity:1
-    }
-}
-
-@keyframes animButtonPrevious{
-    0%{
-        transform:rotate(180deg) translateX(0);
-        opacity:1
-    }
-    33%{
-        transform:rotate(180deg) translateX(20px);
-        opacity:0
-    }
-    66%{
-        transform:rotate(180deg) translateX(-20px);
-        opacity:0
-    }
-    100%{
-        transform:rotate(180deg) translateX(0);
-        opacity:1
     }
 }

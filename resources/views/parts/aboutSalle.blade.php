@@ -1,4 +1,4 @@
-<section class="aboutSalle">
+<section class="aboutSalle reveal">
     <div class="aboutSalle__container wrapper">
         @include('svg.text')
         <figure class="aboutSalle__fig">

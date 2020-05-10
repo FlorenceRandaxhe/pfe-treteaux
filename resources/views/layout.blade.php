@@ -26,7 +26,7 @@
         @endif
     </head>
 
-    <body class="body">
+    <body class="body body--nojs">
         @yield('main')
         @include('parts.footer')
     </body>

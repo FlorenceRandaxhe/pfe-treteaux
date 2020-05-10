@@ -8,7 +8,7 @@
         'img' => '',
         'type' => ''
     ])
-    @include('partials.subscriptionSection')
+    <!-- @include('partials.subscriptionSection') -->
     @include('partials.latestEvents', [
         'class' => 'footer',
     ])

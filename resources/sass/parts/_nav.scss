@@ -9,6 +9,10 @@
         @include font(latobold);
         font-size: em(s);
         text-transform: uppercase;
+
+        &--dropdown{
+            cursor: pointer;
+        }
     }
 
     &__link_sub{
@@ -17,61 +21,81 @@
         text-transform: uppercase;
     }
 
+    &__back{
+        @include font(latobold);
+        font-size: em(xs);
+        text-transform: uppercase;
+        position: absolute;
+        top:0;
+        right: 5%;
+
+        &:before{
+            @include icon(arrow);
+            display: inline-block;
+            font-size: em(l);
+            margin-right: em(10, l);
+            transform: rotate(180deg);
+        }
+    }
+
     @include mq(l, max){
-        margin: em(50) 0;
+        height: 80%;
 
         &__list{
-            justify-content: flex-start;
+            text-align: center;
             flex-direction: column;
+            height: 100%;
         }
 
         &__item{
-            padding: em(20) em(15);
+            padding: em(10);
             display: block;
             width: 100%;
-            border-bottom: 1px solid transparentize(color(purple), 0.8);
-
-            &--dropdown{
-                position: relative;
-                &:after{
-                    right: em(15);
-                    top: 20px;
-                    position: absolute;
-                    @include icon(chevron);
-                }
-            }
         }
 
         &__link{
-            font-size: em(l);
             color: color(purple);
         }
 
-        &__list_sub{
-            margin-top: em(15);
+        &__link_sub{
+            color: color(purple);
+            @include font(latobold);
         }
 
         &__item_sub{
             padding: em(10);
         }
 
-        &--js{
-            .nav__list_sub{
+        &__list_sub{
+
+            &--js{
+                padding: em(70) 0;
+                background-color: color(blue);
+                top: 0;
+                width: 100%;
+                height: calc(100vh - 200px);
                 position: absolute;
                 opacity:0;
-                visibility:0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                left: 100vw;
+                transition: left 0.3s $easin, opacity 0.3s $easin;
+            }
 
-                &--show{
-                    position: relative;
-                    opacity: 1;
-                    visibility: visible;
-                }
+            &--show{
+                opacity: 1;
+                left: 0;
             }
         }
     }
 
     @include mq(l){
+        &__back{
+            display: none;
+        }
         &__link{
+            font-size: em(s, l);
             padding: em(5);
             transition: color 0.3s $easin;
 
@@ -161,7 +185,6 @@
                     overflow: visible;
                     border: 3px solid color(purple);
                     transform: translateY(0) translateX(-50%);
-
                 }
             }
         }

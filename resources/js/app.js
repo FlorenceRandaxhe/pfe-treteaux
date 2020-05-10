@@ -1,4 +1,3 @@
-//import SmoothScroll from 'smooth-scroll';
 import Map from './parts/Map.js';
 import Nav from './parts/Nav.js';
 import Dropdown from './parts/Dropdown.js';
@@ -8,14 +7,16 @@ import RestoModal from './parts/RestoModal.js';
 import SearchModal from './parts/SearchModal.js';
 import Reveal from './parts/Reveal.js';
 
+document.body.classList.remove('body--nojs');
 document.body.classList.add('body--js');
 
-let reveal = new Reveal(document.querySelector('body'))
-//let scroll = new SmoothScroll('[data-scroll]');
-
+let reveal = new Reveal(document.querySelector('body'));
 
 let nav = new Nav(document.querySelector('.header'));
-let dropdown = new Dropdown(document.querySelector('.nav'));
+document.querySelectorAll('.nav__item--dropdown').forEach(drop => {
+    console.log(drop.className)
+    let dropdown = new Dropdown(drop);
+})
 let search = new SearchModal(document.querySelector('.search'));
 
 

@@ -49,3 +49,20 @@ a {
     position: relative;
     margin: 0 auto;
 }
+
+
+.body{
+    &--nojs{
+        .nav__link--dropdown{
+            display: none;
+        }
+        .nav__item--dropdown{
+            padding: 0;
+        }
+    }
+    &--js{
+        .nav__item{
+            font-size: em(l);
+        }
+    }
+}

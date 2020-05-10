@@ -4,42 +4,51 @@ export default class Dropdown{
         this.isVisible = false;
         this.el = el;
         this.getElements();
+        this.createElements()
         this.setEvents();
     }
 
     getElements(){
-        this.dropdown = this.el.querySelectorAll('.nav__item--dropdown');
+        this.dropdown = this.el.querySelector('.nav__link--dropdown');
         this.isMobile = document.documentElement.clientWidth < 760;
     }
 
-    setEvents() {
-        this.el.classList.add('nav--js');
-        for (let i = 0; i < this.dropdown.length; i++) {
-            this.dropdown[i].querySelector('.nav__link--dropdown').addEventListener('click', (event) => this.dropdownToggle(event, i));
-        }
+    createElements() {
+        //if(this.isMobile) return;
+        this.back = document.createElement('a');
+        this.back.setAttribute('class', 'nav__back');
+        this.back.setAttribute('href', '#');
+        this.back.innerHTML = 'Retour';
+        this.el.querySelector('.nav__list_sub').insertBefore(this.back, this.el.querySelector('.nav__list_sub').querySelector('.nav__item_sub'));
     }
 
-    dropdownToggle(event, i){
-        event.preventDefault();
+    setEvents() {
+        this.el.querySelector('.nav__list_sub').classList.add('nav__list_sub--js')
+        this.dropdown.addEventListener('click', (e) => this.dropdownToggle(e))
+        this.back.addEventListener('click', (e) => this.dropdownToggle(e))
+    }
+
+    dropdownToggle(e){
+        e.preventDefault();
         if(!this.isMobile) return;
 
         if(this.isVisible){
-            this.hideNav(i);
+            this.hideNav();
         }
 
         else{
-            this.showNav(i);
+            this.showNav();
         }
     }
 
-    hideNav(i){
+    hideNav(){
         this.isVisible = false;
-        this.dropdown[i].querySelector('.nav__list_sub').classList.remove('nav__list_sub--show');
+        this.el.querySelector('.nav__list_sub').classList.remove('nav__list_sub--show');
     }
 
-    showNav(i){
+    showNav(){
         this.isVisible = true;
-        this.dropdown[i].querySelector('.nav__list_sub').classList.add('nav__list_sub--show');
+        this.el.querySelector('.nav__list_sub').classList.add('nav__list_sub--show');
     }
 
 

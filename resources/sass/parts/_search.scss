@@ -51,7 +51,7 @@
         }
     }
 
-    @include mq(m, max){
+    @include mq(l, max){
         margin-bottom: em(40);
 
         &__icon,
@@ -62,7 +62,7 @@
         }
     }
 
-    @include mq(m, min){
+    @include mq(l, min){
         &__container{
             position: fixed;
             top:0;

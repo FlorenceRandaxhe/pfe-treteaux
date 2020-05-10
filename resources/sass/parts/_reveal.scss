@@ -28,6 +28,14 @@
         &--visible{
             opacity: 1;
             transform: translateY(0);
+
         }
     }
+
+
+    .aboutIntro:after{
+        height: 0px;
+        transition: height 0.5s $easin;
+    }
+
 }

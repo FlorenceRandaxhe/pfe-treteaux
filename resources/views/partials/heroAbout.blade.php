@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="heroAbout wrapper">
+    <div class="heroAbout wrapper reveal">
         <h1 class="heroAbout__title">La salle <span class="sro">- Les Tréteaux</span></h1>
 
         <figure class="heroAbout__fig">

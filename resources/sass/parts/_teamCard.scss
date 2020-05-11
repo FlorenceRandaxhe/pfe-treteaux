@@ -1,0 +1,141 @@
+.teamCard{
+    margin: em(50) em(15);
+
+    &__name{
+        @include font();
+        font-size: em(l);
+        line-height: em(25, l);
+        padding-top: em(6, l)
+    }
+
+    &__job{
+        @include font(latobold);
+        padding-top: em(5);
+        padding-bottom: em(7);
+    }
+
+    &__fig{
+        position: relative;
+        width: 280px;
+        height: 280px;
+
+        &:after, &:before{
+            content: '';
+            position: absolute;
+        }
+
+        &:hover img{
+            filter: grayscale(0%);
+        }
+    }
+
+    &__img{
+        filter: grayscale(100%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.2s $easin;
+    }
+
+    &:nth-child(6n + 1){
+        transition-delay: 0.4s;
+        .teamCard__fig:after{
+            top: em(-20);
+            left: em(-20);
+            width: 100%;
+            height: 100%;
+            border: 4px solid color(black);
+        }
+    }
+
+    &:nth-child(6n + 2){
+        transition-delay: 0.3s;
+        display:flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+
+        .teamCard__text{
+            text-align: right;
+        }
+
+        .teamCard__fig:after{
+            top: em(-10);
+            left: em(-10);
+            width: 50px;
+            height: 50px;
+            background-color: color(pink);
+        }
+
+        .teamCard__fig:before{
+            bottom: em(-10);
+            right: em(-10);
+            width: 100px;
+            height: 100px;
+            background-image: url('../../img/patternLine-small.png');
+            z-index: -1;
+        }
+    }
+
+    &:nth-child(6n + 3){
+        transition-delay: 0.2s;
+
+        .teamCard__fig:after{
+            bottom: em(-20);
+            right: em(-20);
+            width: 100%;
+            height: 100%;
+            background-color: color(green);
+            z-index: -1;
+        }
+    }
+
+    &:nth-child(6n + 4){
+        transition-delay: 0.2s;
+
+        .teamCard__fig:before{
+            top: em(-20);
+            left: em(-20);
+            width: 100%;
+            height: 100%;
+            background-image: url('../../img/patternPlus-big.png');
+            z-index: -1;
+        }
+    }
+
+    &:nth-child(6n + 5){
+        transition-delay: 0.4s;
+        display:flex;
+        flex-direction: column-reverse;
+
+        .teamCard__fig:after{
+            top: em(-20);
+            left: em(-20);
+            width: 100%;
+            height: 100%;
+            background-color: color(blue);
+            z-index: -1;
+        }
+    }
+
+    &:nth-child(6n + 6){
+        transition-delay: 0.3s;
+        .teamCard__fig:after{
+            top: em(-20);
+            right: em(-20);
+            width: 100%;
+            height: 100%;
+            border: 4px solid color(black);
+            z-index: -1;
+        }
+
+        .teamCard__fig:before{
+            bottom: em(-20);
+            left: em(-20);
+            width: 100%;
+            height: 100%;
+            background-color: color(grey);
+            z-index: -1;
+        }
+    }
+
+}

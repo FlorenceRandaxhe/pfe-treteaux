@@ -11,7 +11,6 @@ export default class Text{
     }
 
     setEvents(){
-        console.log('test')
         window.addEventListener('scroll', (e) => this.onScroll())
     }
 
@@ -24,8 +23,9 @@ export default class Text{
         this.updatePath(window.scrollY - 1200);
       });
     }
-
-
 }
 
 
+if (document.querySelector('.aboutSalle')) {
+    let text = new Text(document.querySelector('.aboutSalle'));
+}

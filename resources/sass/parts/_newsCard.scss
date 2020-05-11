@@ -29,10 +29,10 @@
         z-index: 10;
     }
 
-    &:hover .newsCard__fig:before{
+    &:hover .newsCard__fig:before, &:focus .newsCard__fig:before{
         opacity: 0.6;
     }
-    &:hover:after{
+    &:hover:after, &:focus:after{
         width: 250px;
         height: 250px;
     }
@@ -67,7 +67,7 @@
         }
     }
 
-    &:hover{
+    &:hover, &:focus{
         .newsCard__img{
             transform: scale(1.2);
         }

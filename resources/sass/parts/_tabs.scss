@@ -28,7 +28,7 @@
 
         &--active{
             a,
-            &:hover a{
+            &:hover a, &:focus a{
                 background-color: color(black);
                 color: color(white);
             }
@@ -50,8 +50,8 @@
         }
 
         &:focus{
-            background-color: color(black);
-            color: color(white);
+            background-color: color(blue);
+            color: color(black);
         }
     }
 

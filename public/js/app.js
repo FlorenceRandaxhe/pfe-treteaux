@@ -119,6 +119,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_RestoModal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./parts/RestoModal.js */ "./resources/js/parts/RestoModal.js");
 /* harmony import */ var _parts_SearchModal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./parts/SearchModal.js */ "./resources/js/parts/SearchModal.js");
 /* harmony import */ var _parts_Reveal_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./parts/Reveal.js */ "./resources/js/parts/Reveal.js");
+/* harmony import */ var _parts_Slider_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./parts/Slider.js */ "./resources/js/parts/Slider.js");
+
 
 
 
@@ -131,27 +133,10 @@ document.body.classList.remove('body--nojs');
 document.body.classList.add('body--js');
 var reveal = new _parts_Reveal_js__WEBPACK_IMPORTED_MODULE_7__["default"](document.querySelector('body'));
 var nav = new _parts_Nav_js__WEBPACK_IMPORTED_MODULE_1__["default"](document.querySelector('.header'));
+var search = new _parts_SearchModal_js__WEBPACK_IMPORTED_MODULE_6__["default"](document.querySelector('.search'));
 document.querySelectorAll('.nav__item--dropdown').forEach(function (drop) {
-  console.log(drop.className);
   var dropdown = new _parts_Dropdown_js__WEBPACK_IMPORTED_MODULE_2__["default"](drop);
 });
-var search = new _parts_SearchModal_js__WEBPACK_IMPORTED_MODULE_6__["default"](document.querySelector('.search'));
-
-if (document.querySelector('.aboutSalle')) {
-  var text = new _parts_Text_js__WEBPACK_IMPORTED_MODULE_4__["default"](document.querySelector('.aboutSalle'));
-}
-
-if (document.querySelector('.renting__tab')) {
-  var tab = new _parts_Tabs_js__WEBPACK_IMPORTED_MODULE_3__["default"](document.querySelector('.renting__tab'));
-}
-
-if (document.querySelector('.contact__mapContainer')) {
-  var map = new _parts_Map_js__WEBPACK_IMPORTED_MODULE_0__["default"](document.querySelector('.contact__mapContainer'));
-}
-
-if (document.querySelector('.allRestos')) {
-  var resto = new _parts_RestoModal_js__WEBPACK_IMPORTED_MODULE_5__["default"](document.querySelector('.allRestos'));
-}
 
 /***/ }),
 
@@ -300,6 +285,10 @@ var Map = /*#__PURE__*/function () {
 }();
 
 
+
+if (document.querySelector('.contact__mapContainer')) {
+  var map = new Map(document.querySelector('.contact__mapContainer'));
+}
 
 /***/ }),
 
@@ -544,6 +533,10 @@ var RestoModal = /*#__PURE__*/function () {
 
 
 
+if (document.querySelector('.allRestos')) {
+  var resto = new RestoModal(document.querySelector('.allRestos'));
+}
+
 /***/ }),
 
 /***/ "./resources/js/parts/Reveal.js":
@@ -573,9 +566,6 @@ var Reveal = /*#__PURE__*/function () {
     this.el = el;
     this.inview = in_view__WEBPACK_IMPORTED_MODULE_0___default()('.hero').on('enter', function (el) {
       return el.classList.add('hero--visible');
-    });
-    this.inview = in_view__WEBPACK_IMPORTED_MODULE_0___default()('.featuredEvents').on('enter', function (el) {
-      return el.classList.add('featuredEvents--visible');
     });
     this.inview = in_view__WEBPACK_IMPORTED_MODULE_0___default()('.reveal').on('enter', function (el) {
       return el.classList.add('reveal--visible');
@@ -668,6 +658,127 @@ var SearchModal = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./resources/js/parts/Slider.js":
+/*!**************************************!*\
+  !*** ./resources/js/parts/Slider.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Slider; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Slider = /*#__PURE__*/function () {
+  function Slider(el) {
+    _classCallCheck(this, Slider);
+
+    this.el = el;
+    this.current = 0;
+    this.getElements();
+    this.createElements();
+    this.setEvents();
+    this.gotoNum(this.current);
+  }
+
+  _createClass(Slider, [{
+    key: "getElements",
+    value: function getElements() {
+      this.slides = this.el.querySelectorAll(".featuredEvents__slide");
+    }
+  }, {
+    key: "createElements",
+    value: function createElements() {
+      // next & prev buttons
+      this.div = document.createElement('div');
+      this.div.setAttribute('class', 'featuredEvents__controls');
+      this.next = document.createElement('a');
+      this.spanNext = document.createElement('span');
+      this.spanNext.innerHTML = "Suivant";
+      this.spanNext.setAttribute('class', 'sro');
+      this.next.setAttribute('href', '#');
+      this.next.setAttribute('class', 'featuredEvents__control featuredEvents__control--next');
+      this.prev = document.createElement('a');
+      this.spanPrev = document.createElement('span');
+      this.spanPrev.innerHTML = "Précédent";
+      this.spanPrev.setAttribute('class', 'sro');
+      this.prev.setAttribute('href', '#');
+      this.prev.setAttribute('class', 'featuredEvents__control featuredEvents__control--previous');
+      this.el.appendChild(this.div);
+      this.div.appendChild(this.prev);
+      this.div.appendChild(this.next);
+      this.prev.appendChild(this.spanPrev);
+      this.next.appendChild(this.spanNext);
+    }
+  }, {
+    key: "setEvents",
+    value: function setEvents() {
+      var _this = this;
+
+      this.prev.addEventListener('click', function (e) {
+        return _this.prevSlide(e);
+      });
+      this.next.addEventListener('click', function (e) {
+        return _this.nextSlide(e);
+      });
+    }
+  }, {
+    key: "prevSlide",
+    value: function prevSlide(e) {
+      if (e) e.preventDefault();
+      var ref = this.gotoPrev();
+      this.gotoNum(ref);
+    }
+  }, {
+    key: "nextSlide",
+    value: function nextSlide(e) {
+      if (e) e.preventDefault();
+      var ref = this.gotoNext();
+      this.gotoNum(ref);
+    }
+  }, {
+    key: "gotoPrev",
+    value: function gotoPrev() {
+      var previousRef = this.current - 1;
+      if (previousRef < 0) return this.slides.length - 1;
+      return previousRef;
+    }
+  }, {
+    key: "gotoNext",
+    value: function gotoNext() {
+      var nextRef = this.current + 1;
+      if (nextRef >= this.slides.length) return 0;
+      return nextRef;
+    }
+  }, {
+    key: "gotoNum",
+    value: function gotoNum(number) {
+      this.current = number;
+
+      for (var i = 0; i < this.slides.length; i++) {
+        this.slides[i].classList.remove("featuredEvents__slide--active");
+      }
+
+      this.slides[this.current].classList.add("featuredEvents__slide--active");
+    }
+  }]);
+
+  return Slider;
+}();
+
+
+
+if (document.querySelector('.featuredEvents__wrapper')) {
+  var slider = new Slider(document.querySelector('.featuredEvents__wrapper'));
+}
+
+/***/ }),
+
 /***/ "./resources/js/parts/Tabs.js":
 /*!************************************!*\
   !*** ./resources/js/parts/Tabs.js ***!
@@ -744,6 +855,10 @@ var Tabs = /*#__PURE__*/function () {
 
 
 
+if (document.querySelector('.renting__tab')) {
+  var tab = new Tab(document.querySelector('.renting__tab'));
+}
+
 /***/ }),
 
 /***/ "./resources/js/parts/Text.js":
@@ -781,7 +896,6 @@ var Text = /*#__PURE__*/function () {
     value: function setEvents() {
       var _this = this;
 
-      console.log('test');
       window.addEventListener('scroll', function (e) {
         return _this.onScroll();
       });
@@ -806,6 +920,10 @@ var Text = /*#__PURE__*/function () {
 }();
 
 
+
+if (document.querySelector('.aboutSalle')) {
+  var text = new Text(document.querySelector('.aboutSalle'));
+}
 
 /***/ }),
 

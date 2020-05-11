@@ -23,9 +23,9 @@ class CreateEventsTable extends Migration
             $table->text('distribution')->nullable();
             $table->text('info')->nullable();
             $table->timestamp('date');
-            $table->json('details');
-            $table->json('gallery')->nullable();
-            $table->json('press')->nullable();
+            $table->text('details');
+            $table->text('gallery')->nullable();
+            $table->text('press')->nullable();
             $table->boolean('featured')->default(false);
             $table->boolean('resto')->default(false);
             $table->foreignId('type_id')->constrained()->onDelete('cascade');

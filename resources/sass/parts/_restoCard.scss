@@ -19,7 +19,7 @@
                     right 0.2s $easin
     }
 
-    &:hover{
+    &:hover, &:focus{
         border-color: color(black);
         &:after{
             top: -20px;

@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PostSeeder::class);
         $this->call(MediaSeeder::class);
         $this->call(RestoSeeder::class);
+        $this->call(TeamSeeder::class);
     }
 }

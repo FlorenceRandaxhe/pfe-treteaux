@@ -45,3 +45,8 @@ export default class Tabs{
     }
 
 }
+
+
+if (document.querySelector('.renting__tab')) {
+    let tab = new Tab(document.querySelector('.renting__tab'));
+}

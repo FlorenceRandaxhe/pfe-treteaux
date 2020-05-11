@@ -72,7 +72,7 @@
                         background-color 0.3s $easin;
         }
 
-        &:hover:after{
+        &:hover:after, &:focus:after{
             background-color: color(blue);
             width: em(300);
         }

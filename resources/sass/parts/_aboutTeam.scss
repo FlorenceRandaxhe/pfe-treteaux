@@ -1,0 +1,26 @@
+.aboutTeam{
+    padding-bottom: em(120);
+
+    &__content{
+        padding-top: em(50);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl4);
+        line-height: em(35, xl4);
+    }
+
+
+    @include mq(m){
+        &__title{
+            font-size: em(xl7);
+            line-height: em(35, xl7);
+            padding-bottom: em(25, xl7)
+        }
+    }
+}

@@ -34,7 +34,7 @@
         transform: translateX(-50%);
     }
 
-    &:hover{
+    &:hover, &:focus{
         background-color: color(black);
         color: color(white);
     }

@@ -51,7 +51,7 @@
             transition: height 0.2s $easin, width 0.2s $easin;
         }
 
-        &:hover:after{
+        &:hover:after, &:focus:after{
             height: 20px;
             width:105%;
         }
@@ -61,7 +61,7 @@
         @include font(latoitalic);
     }
     strong{
-        @include font(latobold)
+        @include font(latobold);
     }
     img{
         width: 100%;

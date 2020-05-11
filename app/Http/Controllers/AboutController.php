@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Season;
+use App\Team;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -17,9 +18,11 @@ class AboutController extends Controller
     {
         $latestSeason = Season::where('archived', '=', false)->latest()->first();
         $events = $latestSeason->events()->limit(3)->get();
+        $teams = Team::all();
 
         return view('pages.about', [
             'events' => $events,
+            'teams' => $teams,
         ]);
 
     }

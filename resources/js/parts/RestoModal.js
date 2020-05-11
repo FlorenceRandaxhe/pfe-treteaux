@@ -108,3 +108,7 @@ export default class RestoModal{
         });
     }
 }
+
+if (document.querySelector('.allRestos')) {
+    let resto = new RestoModal(document.querySelector('.allRestos'));
+}

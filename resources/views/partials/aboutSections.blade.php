@@ -2,4 +2,5 @@
 @include('parts.aboutSalle')
 @include('parts.aboutPoly')
 @include('parts.aboutFoyer')
+@include('parts.aboutTeam')
 @include('parts.aboutServices')

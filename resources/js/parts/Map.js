@@ -27,7 +27,8 @@ export default class Map{
              .setLngLat({lat: this.lat, lng: this.lng})
              .addTo(this.map);
     }
-
 }
 
-
+if (document.querySelector('.contact__mapContainer')) {
+    let map = new Map(document.querySelector('.contact__mapContainer'));
+}

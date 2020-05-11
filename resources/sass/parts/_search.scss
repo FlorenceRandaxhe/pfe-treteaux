@@ -138,7 +138,7 @@
                 transition: transform 0.3s $easin;
             }
 
-            &:hover:before{
+            &:hover:before, &:focus:before{
                 transform: rotate(90deg);
             }
         }

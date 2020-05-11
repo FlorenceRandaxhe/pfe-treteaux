@@ -9,7 +9,6 @@
         background-image: url('../../img/patternDot-big.png');
         top:em(-30);
         left: 0;
-        opacity: 0;
         width: 100%;
         height: 100%;
         max-height: em(480);
@@ -18,33 +17,81 @@
 
     &--visible{
 
-        &:after{
+            .featuredEvents__fig{
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &:before{
+                animation: revealRight 1s $easin3;
+            }
+            .featuredEvents__content{
+                transform: translateY(0);
+            }
+
+            .featuredEvents__container, .featuredEvents__content{
+                opacity: 1;
+                visibility: visible;
+            }
+    }
+
+    &__slide{
+        position: absolute;
+
+        &:before{
+            content: '';
+            position: absolute;
+            background-color: color(blue);
             opacity:1;
-            animation: revealUp 0.8s $easin3;
+            width: 0px;
+            //max-width: 55vw;
+            height: em(350);
+            //max-height: em(480);
+            //top:em(-50);
+            top: em(-30);
+            left: 0;
+            z-index: -1;
         }
 
-        .featuredEvents__container{
-            transition: opacity 0.8s $easin3, transform 0.8s $easin3;
+        &--active{
+            position: relative;
             opacity: 1;
-            transform: translateY(0);
-        }
+            visibility: visible;
 
-        .featuredEvents__fig{
-            transition: opacity 0.8s $easin3, transform 0.8s $easin3;
-            opacity: 1;
-            transform: translateY(0);
+            &:before{
+                animation: revealRight 1s $easin3;
+            }
+
+            .featuredEvents__content{
+                transform: translateY(0);
+            }
+
+            .featuredEvents__container, .featuredEvents__content, .featuredEvents__fig{
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 
     &__container{
         padding: em(50) 5% em(30);
         width: 90%;
+        height: em(350);
         display: flex;
         align-items: center;
         margin-left: auto;
         justify-content: flex-start;
         background-color: color(purple);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0s;
+    }
 
+    &__content{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-30px);
+        transition: opacity 1s $easin3, transform 1s $easin3, visibility 1s $easin3;
     }
 
     &__title{
@@ -71,11 +118,14 @@
     &__fig{
         position: absolute;
         top:em(-30);
-        width: 90%;
-        height: 100%;
-        max-height: em(480);
-        z-index: -1;
+        width: 100vw;
+        height: em(350);
+        z-index: -2;
         left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.2s $easin3, opacity 0.2s $easin3;
+        transition-delay: 0.7s;
     }
 
     &__img{
@@ -89,6 +139,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width:80%;
+        position: absolute;
+        bottom: em(10);
+        left: 15%;
     }
 
     &__control{
@@ -103,7 +157,7 @@
             color: color(blue);
         }
 
-        &:hover{
+        &:hover, &:focus{
             background-color: transparentize(color(blue), 0.7);
         }
 
@@ -112,13 +166,13 @@
                 transform: rotate(180deg);
             }
 
-            &:hover:after{
+            &:hover:after, &:focus:after{
                 animation:animButtonPrevious 0.7s $easin;
             }
         }
 
         &--next{
-            &:hover:after{
+            &:hover:after, &:focus:after{
                 animation:animButtonNext 0.7s $easin;
             }
         }
@@ -135,9 +189,27 @@
             width: em(600);
         }
 
+        &__controls{
+            bottom: em(20);
+            left: 43vw;
+            padding: 0 em(100);
+            width: 55vw;
+            max-width: em(850)
+
+        }
+
+        &__slide{
+            &:before{
+                max-width: 55vw;
+                height: em(480);
+                top:em(-50);
+            }
+        }
+
         &__fig{
             top: em(-50);
-            max-width: 55vw;
+            width: 55vw;
+            height: em(480);
         }
 
         &:after{

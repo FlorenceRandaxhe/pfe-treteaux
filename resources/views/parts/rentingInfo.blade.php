@@ -19,6 +19,7 @@
                 </p>
             </li>
         </ul>
+        <a href="" class="link link--line">Télécharger le plan de la salle</a>
     </div>
 </section>
 

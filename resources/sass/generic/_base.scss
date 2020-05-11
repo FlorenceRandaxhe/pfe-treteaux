@@ -53,11 +53,13 @@ a {
 
 .body{
     &--nojs{
-        .nav__link--dropdown{
-            display: none;
-        }
-        .nav__item--dropdown{
-            padding: 0;
+        @include mq(l, max){
+            .nav__link--dropdown{
+                display: none;
+            }
+            .nav__item--dropdown{
+                padding: 0;
+            }
         }
     }
     &--js{

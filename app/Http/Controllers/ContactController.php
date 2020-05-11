@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 use App\Season;
 use App\Event;
 
@@ -21,7 +23,7 @@ class ContactController extends Controller
 
     public function submit(ContactRequest $request)
     {
-
+        Mail::to(env('CONTACT_EMAIL'))->send(new ContactMail($request));
         return redirect()->to(url()->previous() . '#contact')->with('success', true);
     }
 }

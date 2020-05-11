@@ -856,7 +856,7 @@ var Tabs = /*#__PURE__*/function () {
 
 
 if (document.querySelector('.renting__tab')) {
-  var tab = new Tab(document.querySelector('.renting__tab'));
+  var tab = new Tabs(document.querySelector('.renting__tab'));
 }
 
 /***/ }),

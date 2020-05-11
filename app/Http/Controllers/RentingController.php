@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Season;
 use App\Post;
+use App\Mail\RentingMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Http\Requests\RentingRequest;
 
@@ -29,6 +31,7 @@ class RentingController extends Controller
     public function submit(RentingRequest $request)
     {
 
+        Mail::to(env('CONTACT_EMAIL'))->send(new RentingMail($request));
         return redirect()->to(url()->previous() . '#form')->with('success', true);
     }
 }

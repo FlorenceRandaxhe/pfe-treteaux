@@ -10,8 +10,8 @@
             &:after{
                 content: '';
                 position:absolute;
-                width: 34px;
-                height: 34px;
+                width: 36px;
+                height: 36px;
                 top: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
@@ -29,8 +29,8 @@
                 background-color: color(purple);
 
                 &:after{
-                    width: 40px;
-                    height: 40px;
+                    width: 42px;
+                    height: 42px;
                     opacity: 1;
                 }
             }
@@ -38,7 +38,7 @@
 
     &__icon{
         display: inline-block;
-        padding: em(7) em(8);
+        padding: em(8) em(9);
         margin: 0 em(12);
         border-radius: 100%;
         background-color: color(black);

@@ -1,22 +1,25 @@
 @extends('layout')
-@section('title', 'Accueil')
+@section('title', Page::title())
 @section('main')
     @include('partials.heroHome')
-    @include('partials.featuredEvents')
-    @include('partials.latestEvents', [
-        'class' => 'home',
-    ])
-    @include('partials.newsletter', [
-        'color' => 'blue'
-    ])
-    @include('partials.latestNews', [
-        'class' => 'home',
-    ])
-    @include('partials.info', [
-        'class' => 'home',
-        'title' => 'Les Tréteaux',
-        'text' => 'Ancienne salle de gymnastique de l’Athénée de Visé, la salle de spectacle Les Tréteaux a accueilli pendant près de 30 ans un grand nombre de manifestations dans une salle vétuste, à peine aménagée pour le milieu du spectacle.',
-        'url' => 'about',
-        'label' => 'Plus d’info',
-    ])
+    <main class="main">
+        @include('partials.featuredEvents')
+        @include('partials.infoSection')
+        @include('partials.latestEvents', [
+            'class' => 'home',
+        ])
+        @include('partials.newsletter', [
+            'color' => 'blue'
+        ])
+        @include('partials.latestNews', [
+            'class' => 'home',
+        ])
+        @include('partials.info', [
+            'class' => 'home',
+            'title' => Page::get('infoTitle'),
+            'text' => Page::get('infoContent'),
+            'url' => 'about',
+            'label' => Page::get('infoLabel'),
+        ])
+    </main>
 @endsection

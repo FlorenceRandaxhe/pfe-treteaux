@@ -1,12 +1,10 @@
 <section class="allRestos">
     <div class="allRestos__container wrapper">
         <div class="allRestos__intro">
-            <h2 class="allRestos__title">Les restaurants</h2>
-            <p class="allRestos__text">
-                Nous vous proposons les offres suivantes : <br>
-                Les réservations pour ces formules se feront uniquement au guichet du Centre Culturel (du lundi au vendredi de 8h30 à 17h00). Payement par carte bancaire.
-            </p>
-            <a href="#" class="btn btn--primary">Voir les spectacles concernés</a>
+            <h2 class="allRestos__title">{{ Page::get('restoTitle') }}</h2>
+            <div class="allRestos__text wysiwyg">
+                @markdown {{ Page::get('restoIntro') }} @endmarkdown
+            </div>
         </div>
         <div class="allRestos__content">
             @foreach($restos as $resto)
@@ -14,4 +12,5 @@
             @endforeach
         </div>
     </div>
+    @include('parts.restoEvent')
 </section>

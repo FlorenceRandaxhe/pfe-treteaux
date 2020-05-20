@@ -1,6 +1,6 @@
 <section class="allPosts">
     <div class="wrapper">
-        <h2 class="sro">Toutes les actus</h2>
+        <h2 class="sro">Toutes les actualités</h2>
         <div class="allPosts__container">
             @foreach($posts as $post)
                 @if ($loop->index === 0 || $loop->index === 1)

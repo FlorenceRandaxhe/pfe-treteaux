@@ -1,3 +1,4 @@
+@if(count($posts) >= 1)
 <section class="latestNews latestNews--{{ $class }}">
     <div class="latestNews__container wrapper">
         @if($class === 'home')
@@ -23,7 +24,8 @@
             @endforeach
         </div>
         <div class="latestNews__bottom">
-            <a class="latestNews__link link link--line" href="{{ route('news') }}">Voir toutes les actus</a>
+            <a class="latestNews__link link link--line" href="{{ route('post') }}">Voir toutes les actus</a>
         </div>
     </div>
 </section>
+@endif

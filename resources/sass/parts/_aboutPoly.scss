@@ -39,7 +39,7 @@
 
     &__fig{
         width: 100%;
-        height: em(450);
+        height: em(350);
         position: relative;
 
         &:after{
@@ -60,7 +60,7 @@
         object-fit: cover;
     }
 
-    @include mq(m){
+    @include mq(l){
         padding-top: em(40);
 
         &:after{

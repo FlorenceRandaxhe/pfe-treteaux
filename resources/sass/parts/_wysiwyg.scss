@@ -1,83 +1,154 @@
 .wysiwyg{
-    padding-bottom: em(20);
-    border-bottom: 3px solid color(black);
+    @include font(latoregular);
+
+    &--news{
+        a{
+            position: relative;
+
+            &:after{
+                position: absolute;
+                content: '';
+                height: 8px;
+                bottom: -2px;
+                left: 50%;
+                width: 100%;
+                background-color: color(green);
+                z-index:-1;
+                transform: translateX(-50%);
+                transition: height 0.2s $easin, width 0.2s $easin;
+            }
+
+            &:hover:after, &:focus:after{
+                height: 20px;
+                width:105%;
+            }
+
+        }
+        img{
+            width: 100%;
+            max-height: em(350);
+            margin: em(40) 0;
+            border: 3px solid color(black);
+            position: relative;
+
+            &:after{
+                position: absolute;
+                content: '';
+                top: em(20);
+                right: em(20);
+                width: 300px;
+                height: 300px;
+                background-image: url('../../img/patternPlus-big.png');
+            }
+        }
+    }
+
+    &--event{
+
+    }
+
+    &--small{
+        * {
+            & + p,
+            & + img,
+            & + table,
+            & + ul,
+            & + ol,
+            & + blockquote,
+            & + h1,
+            & + h2,
+            & + h3,
+            & + h4,
+            & + h5,
+            & + h6 {
+                margin-top: em(10,m);
+            }
+        }
+
+        p + ol,
+        p + ul,
+        p ~ p{
+            margin-top: em(10,m);
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6{
+        @include font();
+    }
 
     h1{
-        @include font();
         font-size: em(xl5);
         line-height: em(30, xl5);
-        padding-bottom: em(20, xl5);
-        padding-top: em(30, xl5);
     }
     h2{
-        @include font();
         font-size: em(xl4);
         line-height: em(30, xl4);
-        padding-bottom: em(20, xl4);
-        padding-top: em(30, xl4);
     }
     h4{
-        @include font();
         font-size: em(xl3);
         line-height: em(30, xl3);
-        padding-bottom: em(20, xl3);
-        padding-top: em(30, xl3);
     }
     h5{
-        @include font();
         font-size: em(xl2);
         line-height: em(30, xl2);
-        padding-bottom: em(20, xl2);
-        padding-top: em(30, xl2);
     }
+
     p{
         font-size: em(m);
         line-height: em(28, m);
-        padding-bottom: em(20, m);
     }
-    a{
-        position: relative;
 
-        &:after{
-            position: absolute;
-            content: '';
-            height: 8px;
-            bottom: -2px;
-            left: 50%;
-            width: 100%;
-            background-color: color(green);
-            z-index:-1;
-            transform: translateX(-50%);
-            transition: height 0.2s $easin, width 0.2s $easin;
+    * {
+        & + p,
+        & + img,
+        & + table,
+        & + ul,
+        & + ol,
+        & + blockquote,
+        & + h1,
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: em(20,m);
         }
-
-        &:hover:after, &:focus:after{
-            height: 20px;
-            width:105%;
-        }
-
     }
+
+    p + ol,
+    p + ul,
+    p ~ p{
+        margin-top: em(20,m);
+    }
+
     em{
         @include font(latoitalic);
     }
     strong{
         @include font(latobold);
     }
-    img{
-        width: 100%;
-        margin: em(40) 0;
-        border: 3px solid color(black);
-        position: relative;
 
-        &:after{
-            position: absolute;
-            content: '';
-            top: em(20);
-            right: em(20);
-            width: 300px;
-            height: 300px;
-            background-image: url('../../img/patternPlus-big.png');
+    ol,
+    ul{
+        li{
+            padding: 0 0 0 em(20);
+            position: relative;
+            line-height: em(20);
+            margin-bottom: em(24);
+
+            &:before {
+                position: absolute;
+                content: '';
+                top: 10px;
+                left: 0;
+                width: 6px;
+                height: 6px;
+                background-color: color(purple);
+                display: inline-block;
+                transform: rotate(45deg);
+            }
         }
     }
+
 
 }

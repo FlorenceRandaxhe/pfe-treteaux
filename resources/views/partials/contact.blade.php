@@ -1,7 +1,13 @@
 <section class="contact" id="contact">
     <div class="contact__container wrapper">
         <h2 class="sro">Formulaire de contact</h2>
-        @include('parts.contactForm')
+        @if(session()->has('success'))
+            @include('parts.success', [
+                'message' =>'Votre message a bien été envoyé. Nous reviendrons vers vous le plus rapidement possible'
+            ])
+        @else
+            @include('parts.contactForm')
+        @endif
     </div>
 </section>
 
@@ -15,7 +21,7 @@
 </section>
 
 <div class="contact">
-    <div class="contact__mapContainer" data-lat="50.737120" data-lng="5.693863">
+    <div class="contact__mapContainer" data-lat="{{ Page::get('lat') }}" data-lng="{{ Page::get('lng') }}">
         <div class="contact__map" id='map' style='width: 100%; height: 550px;'></div>
     </div>
 </div>

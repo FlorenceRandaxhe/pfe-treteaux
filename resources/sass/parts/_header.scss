@@ -16,8 +16,8 @@
 
     @include mq(l, max){
 
-        // common *************************************************
-        transition: background-color 0.3s $easin;
+        // common ************************************
+        transition: background-color 0.6s $easin;
 
         &__icons{
             margin-top: em(10);
@@ -30,12 +30,17 @@
             right: 0;
         }
 
-        &__lines{
+        &__input{
+            @include hidden();
+        }
+
+        &__lines, &__label{
             display: block;
             height: 3px;
             width: 30px;
             background-color: color(purple);
             position: relative;
+            z-index: 110;
 
             &:after,
             &:before{
@@ -48,10 +53,12 @@
             }
 
             &:after{
+                transition: transform 0.3s $easin;
                 top:-8px;
             }
 
             &:before{
+                transition: transform 0.3s $easin;
                 top: 8px;
             }
         }
@@ -82,6 +89,17 @@
                 background-color: color(blue);
                 top: 100px;
             }
+            .header__lines{
+                height: 0;
+
+                &:before{
+                    transform: rotate(45deg) translateX(-5px) translateY(-6px)
+                }
+
+                &:after{
+                    transform: rotate(-45deg) translateX(-5px) translateY(6px);
+                }
+            }
 
 
         }
@@ -104,7 +122,7 @@
             align-items: center;
         }
 
-        &__input, &__burger{
+        &__input, &__burger, &__label{
             display: none
         }
 

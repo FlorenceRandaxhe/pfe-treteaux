@@ -1,0 +1,115 @@
+.eventGallery{
+    padding: em(80) 0;
+    background-color: color(purple);
+    overflow: hidden;
+
+    &__title{
+        @include font();
+        font-size: em(xl5);
+        padding-bottom: em(20, xl5);
+        color: color(white);
+    }
+
+    &__content{
+        padding-bottom: em(20);
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__fig{
+        min-width: 360px;
+        height: 300px;
+        margin-right: em(30);
+        overflow: hidden;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.4s $easin3;
+
+        &:hover, &:focus{
+            transform: scale(1.1);
+        }
+    }
+
+    &__controls{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto em(-30);
+    }
+
+    &__control{
+        position: relative;
+        padding: em(22);
+        border-radius: 100%;
+        background-color: transparentize(color(blue), 0.7);
+        transition: background-color 0.3s $easin;
+
+        &:hover, &:focus{
+            background-color: transparentize(color(blue), 0.4);
+        }
+
+        &--next{
+            right: 0;
+            animation: slideLeft 0.4s ease-in-out;
+            &:before{
+                @include icon('arrow');
+                font-size: em(xl);
+                color: color(white);
+                position: absolute;
+                top: calc(50% - 9px);
+                left: calc(50% - 9px);
+                transition: color 0.3s $easin;
+            }
+        }
+        &--prev{
+            left: 0;
+            animation: slideRight 0.4s ease-in-out;
+            &:before{
+                @include icon('arrow');
+                font-size: em(xl);
+                color: color(white);
+                position: absolute;
+                transform: rotate(180deg);
+                top: calc(50% - 9px);
+                left: calc(50% - 9px);
+                transition: color 0.3s $easin;
+            }
+        }
+
+        &--next:hover:before,
+        &--prev:hover:before,
+        &--next:focus:before,
+        &--prev:focus:before{
+            color: color(grey);
+        }
+    }
+
+    @include mq(xl){
+        &__container{
+            box-sizing: content-box;
+            display: flex;
+            width: calc(100vw - 71px);
+            padding: 2rem 0;
+        }
+
+        &__title{
+            width: 300px;
+        }
+
+        &__titleWrapper{
+            flex: 0 0 320px;
+        }
+    }
+}

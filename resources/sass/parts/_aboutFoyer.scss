@@ -30,7 +30,7 @@
         box-shadow: 10px 10px color(black);
         margin: 0 auto;
         width: 70%;
-        padding: em(20);
+        padding: 5%;
         z-index: 10;
     }
 
@@ -50,7 +50,7 @@
         object-fit: cover;
     }
 
-    @include mq(m){
+    @include mq(l){
         padding: em(100) 0;
         margin-bottom: em(120);
         margin-top: em(120);

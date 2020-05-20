@@ -1,8 +1,8 @@
 <section class="renting">
     <div class="renting__container renting__tab wrapper">
         <div class="renting__intro renting__intro--sticky">
-            <h2 class="renting__title">Infos pratiques</h2>
-            @include('parts.tabs')
+            <h2 class="renting__title">{{ Page::get('roomTitle') }}</h2>
+                @include('parts.tabs')
         </div>
         <div class="renting__content">
             @include('parts.rentingInfo')
@@ -13,11 +13,17 @@
 <section class="renting" id="form">
     <div class="renting__container wrapper">
         <div class="renting__intro">
-            <h2 class="renting__title">Demande de location</h2>
-            <p class="renting__text">Les prix des locations ne sont pas fixes et dépendent de vos besoins techniques. <br> Les Tréteaux ne louent pas la salle pour des événements privés.</p>
+            <h2 class="renting__title">{{Page::get('formTitle')}}</h2>
+            <p class="renting__text">{{Page::get('intro')}}</p>
         </div>
         <div class="renting__content">
-            @include('parts.rentingForm')
+            @if(session()->has('success'))
+                @include('parts.success',  [
+                    'message' => 'Votre demande a bien été envoyée. Nous reviendrons vers vous le plus rapidement possible'
+                ])
+            @else
+                @include('parts.rentingForm')
+            @endif
         </div>
     </div>
 </section>

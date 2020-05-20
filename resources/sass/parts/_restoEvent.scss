@@ -1,0 +1,121 @@
+.restoEvent{
+
+    &__heading{
+        @include font();
+        line-height: em(30, xl);
+        font-size: em(xl);
+        padding-bottom: em(20);
+    }
+
+    &__item{
+        padding: em(15) 0;
+        //margin: em(10) 0;
+        position: relative;
+    }
+
+    &__link{
+        @include cover();
+    }
+
+    &__event{
+        @include font();
+        font-size: em(l);
+        line-height: em(20, l);
+        padding-bottom: em(5);
+    }
+
+    &--js{
+        position: fixed;
+        top:0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(0,0,0,0.7);
+
+        transition: opacity 0.4s $easin3, visibility 0.4s $easin3;
+
+        .restoEvent__modal{
+            background-color: color(white);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            padding: 15% 5% 5% 5%;
+            transform: translateY(100vh);
+            transition: transform 0.4s $easin3;
+        }
+
+        .restoEvent__close{
+            @include font(latobold);
+            position: absolute;
+            top: 5%;
+            right: 5%;
+
+            &:before{
+                @include icon(cross);
+                display: inline-block;
+                margin-right: em(10, xs);
+                font-size: em(xs);
+                transition: transform 0.3s $easin;
+            }
+
+            &:hover:before, &:focus:before{
+                transform: rotate(90deg);
+            }
+        }
+
+        .restoEvent__item{
+            border-bottom: 1px solid color(grey)
+        }
+    }
+
+    &--active{
+        z-index: 110;
+        opacity: 1;
+        visibility: visible;
+
+        .restoEvent__modal{
+            transform: translateY(0);
+        }
+    }
+
+    @include mq(m){
+        &--js{
+
+            .restoEvent__modal{
+                top:0;
+                width: em(460);
+                height: 100%;
+                padding: em(80) em(35);
+                transform: translateX(-100vh);
+                transition: transform 0.4s $easin3;
+                overflow-y: auto;
+            }
+
+            .restoEvent__item{
+                border-radius: 5px;
+                padding: em(15);
+                transition: background-color 0.4s $easin3;
+                &:hover{
+                    background-color: color(blue)
+                }
+            }
+
+        }
+
+        &--active{
+            z-index: 110;
+            opacity: 1;
+            visibility: visible;
+
+            .restoEvent__modal{
+                transform: translateX(0);
+            }
+        }
+    }
+
+}

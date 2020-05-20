@@ -1,0 +1,45 @@
+.eventInfo{
+    max-width: 500px;
+    padding: em(30);
+    box-shadow: 0px 4px 52px rgba(41, 40, 40, 0.17);
+    margin-bottom: em(50);
+
+
+    &__btn{
+        width: 100%;
+    }
+
+    &__item{
+        padding: em(10) 0;
+        border-bottom: 1px solid color(grey);
+    }
+
+    &__label{
+        @include font(latobold);
+        padding-bottom: em(10)
+    }
+
+    &__content{
+        li{
+            margin-bottom: em(8);
+            position: relative;
+            padding-left: em(10);
+
+            &:before{
+                position: absolute;
+                content: '';
+                height: 4px;
+                width: 4px;
+                border-radius: 100%;
+                background-color: color(purple);
+                top: calc(50% - 2px);
+                left: 0;
+            }
+        }
+    }
+    @include mq(m){
+        position: sticky;
+        top: em(50);
+        min-width: 400px;
+    }
+}

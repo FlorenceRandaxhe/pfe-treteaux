@@ -27,7 +27,10 @@ class ContactRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'message' => 'required'
+            'message' => 'required',
+            'my_name'   => 'honeypot',
+            'my_time'   => 'required|honeytime:5'
+
         ];
     }
 

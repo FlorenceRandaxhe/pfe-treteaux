@@ -8,7 +8,7 @@
             <p class="nav__link nav__link--dropdown">Agenda</p>
             <ul aria-label="submenu" class="nav__list_sub">
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="/agenda/{{ $latestSeason }}">La saison</a>
+                    <a class="nav__link_sub" href="{{ route('agenda', ['season' => $latestSeason]) }}">La saison</a>
                 </li>
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="{{ route('subscription') }}">Abonnements</a>
@@ -22,7 +22,7 @@
             <p class="nav__link nav__link--dropdown">La salle</p>
             <ul aria-label="submenu" class="nav__list_sub">
                 <li class="nav__item_sub">
-                    <a class="nav__link_sub" href="{{ route('news') }}">Actualités</a>
+                    <a class="nav__link_sub" href="{{ route('post') }}">Actualités</a>
                 </li>
                 <li class="nav__item_sub">
                     <a class="nav__link_sub" href="{{ route('about') }}">À Propos</a>

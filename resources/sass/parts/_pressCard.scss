@@ -72,9 +72,18 @@
                         background-color 0.3s $easin;
         }
 
-        &:hover:after, &:focus:after{
-            background-color: color(blue);
-            width: em(300);
+        &--blue{
+            &:hover:after, &:focus:after{
+                background-color: color(blue);
+                width: em(300);
+            }
+        }
+
+        &--pink{
+            &:hover:after, &:focus:after{
+                background-color: color(pink);
+                width: em(300);
+            }
         }
 
         &__date{

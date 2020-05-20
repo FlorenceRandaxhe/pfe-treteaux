@@ -40,8 +40,8 @@
         @include reset-input-styles();
         @include input-placeholder();
         @include font();
-        font-size: em(xl2);
-        text-transform: uppercase;
+        font-size: em(xl3);
+        //text-transform: uppercase;
         color: color(black);
 
         border-bottom: 2px solid transparentize(color(black), 0.4);
@@ -74,7 +74,7 @@
         }
 
         &--small{
-            font-size: em(m)
+            font-size: em(l)
         }
 
         &--white{
@@ -214,6 +214,49 @@
         &:checked + label:after{
             background-color: color(black);
         }
+    }
+
+
+    /**********************************/
+
+    &__select{
+        @include reset-input-styles();
+        @include input-placeholder();
+        border: 1px solid color(darkgrey);
+        border-radius: 3px;
+        padding: em(8) em(10);
+        @include font(latoregular);
+        font-size: em(m);
+        width: 75px;
+        cursor: pointer;
+        transition: border-color 0.3s $easin;
+
+        &:hover, &:focus{
+            border-color: color(black);
+        }
+
+    }
+
+    &__select_wrapper{
+        position: relative;
+
+        &:after{
+            position: absolute;
+            @include icon(chevron);
+            color: color(darkgrey);
+            font-size: em(s);
+            font-weight: 300;
+            top: calc(50% - 6px);
+            right: 10px;
+            transition: color 0.3s $easin;
+        }
+
+        &:hover, &:focus{
+            &:after{
+                color: color(black);
+            }
+        }
+
     }
 
 }

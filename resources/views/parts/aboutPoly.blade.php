@@ -1,15 +1,15 @@
 <section class="aboutPoly reveal">
     <div class="aboutPoly__container wrapper">
         <div class="aboutPoly__content">
-            <h2 class="aboutPoly__title">Salle polyvalente</h2>
-            <p class="aboutPoly__subTitle">Idéale pour l’organisation de conférences ou de concerts intimistes</p>
-            <p class="aboutPoly__text">
-                La salle Polyvalente se situe au 1er étage et peut accueillir jusque 100 personnes. Elle dispose d’un écran de projection et peut être utilisée en configuration assise ou debout.Elle est également fréquemment utilisée pour offrir un espace de préparation avant les spectacles de grands groupes artistiques tels que les troupes de danse, les chorales ou l’académie.
-            </p>
+            <h2 class="aboutPoly__title">{{ Page::get('polyTitle') }}</h2>
+            <p class="aboutPoly__subTitle">{{ Page::get('polyIntro') }}</p>
+            <div class="aboutPoly__text wysiwyg">
+                @markdown {{ Page::get('polyContent') }} @endmarkdown
+            </div>
         </div>
 
         <figure class="aboutPoly__fig">
-            <img class="aboutPoly__img" src="{{ asset('img/poly.jpg') }}">
+            <img class="aboutPoly__img" src="{{ asset('storage/' . Page::get('polyImg')) }}" alt="{{ Page::get('polyTitle') }}">
         </figure>
     </div>
 </section>

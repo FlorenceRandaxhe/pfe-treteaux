@@ -9,11 +9,13 @@
         'img' => $post->img,
         'alt' => $post->title
     ])
-    @include('partials.singlePost')
-    @include('partials.newsletter', [
-        'color' => 'green'
-    ])
-    @include('partials.latestEvents', [
-        'class' => 'footer',
-    ])
+    <main class="main">
+        @include('partials.singlePost')
+        @include('partials.newsletter', [
+            'color' => 'green'
+        ])
+        @include('partials.latestNews', [
+            'class' => '',
+        ])
+    </main>
 @endsection

@@ -1,4 +1,4 @@
-<section class="info @if($class) info--{{$class}} @endif">
+<section class="info{{ $class ? ' info--' . $class : ''}}">
     <div class="info__container wrapper">
         <h2 class="info__title">{{ $title }}</h2>
         <p class="info__text">{{ $text }}</p>

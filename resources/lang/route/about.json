@@ -1,0 +1,66 @@
+{
+    "title": "La salle",
+    "created_at": "2020-05-12 10:00:00",
+    "updated_at": "2020-05-13 11:20:03",
+    "attributes": {
+        "heroTitle": "Locaux ou ext\u00e9rieurs, amateurs ou professionnels, ils sont nombreux \u00e0 avoir \u00e9cum\u00e9 la sc\u00e8ne des Tr\u00e9teaux.",
+        "heroIntro": "Ancienne salle de gymnastique de l\u2019Ath\u00e9n\u00e9e de Vis\u00e9, la salle de spectacle Les Tr\u00e9teaux a accueilli pendant pr\u00e8s de 30 ans un grand nombre de manifestations dans une salle v\u00e9tuste, \u00e0 peine am\u00e9nag\u00e9e pour le milieu du spectacle.  C\u2019est donc tout naturellement que Les Tr\u00e9teaux ont \u00e9t\u00e9 choisi quand la Ville a voulu se doter d\u2019une structure adapt\u00e9e aux performances sc\u00e9niques. Apr\u00e8s 2 ans de r\u00e9novation et une modification compl\u00e8te des lieux, la salle de spectacle Les Tr\u00e9teaux nouvelle g\u00e9n\u00e9ration a ouvert ses portes le 30 janvier 2019. Artistes renomm\u00e9s et talents locaux se succ\u00e9deront dans ce nouvel \u00e9crin du Centre Culturel, pour le plus grand plaisir et le confort des spectateurs ainsi que des artistes.",
+        "heroBanner": "iSKepy03W9kv2OpOdzjHjl87mJNs0zFY9V8rRpkN.jpeg",
+        "salleTitle": "La salle",
+        "salleContent": "Dans un espace de 518m\u00b2, la salle de spectacle dispose d\u2019une sc\u00e8ne amovible de 6 m\u00e8tres de profondeur sur 8 m\u00e8tres de large. Elle peut \u00eatre prolong\u00e9 de 3,5 m\u00e8tres dans sa configuration la plus haute en utilisant l\u2019ancienne sc\u00e8ne fixe. La hauteur de la sc\u00e8ne est variable, pouvant faire varier la hauteur sous plafond entre 4 et 5 m\u00e8tres.\n\nDiff\u00e9rents types de spectacles peuvent \u00eatre programm\u00e9s en adaptant la disposition de la salle. Un gradin modulable de maximum 193 places assises ainsi qu\u2019un parterre de 128 places portent la capacit\u00e9 maximale de la salle \u00e0 321 places assises. Elle peut \u00e9galement \u00eatre utilis\u00e9e en configuration d\u00e9bout avec un capacit\u00e9 maximale de 600 personnes.",
+        "salleImg": "y41XAe81i1Q1GaAgaBCMkYVJHbUZ0rpEtXcTRYbt.jpeg",
+        "polyTitle": "Salle polyvalente",
+        "polyIntro": "Id\u00e9ale pour l\u2019organisation de conf\u00e9rences ou de concerts intimistes",
+        "polyContent": "La salle Polyvalente se situe au 1er \u00e9tage et peut accueillir jusque 100 personnes. Elle dispose d\u2019un \u00e9cran de projection et peut \u00eatre utilis\u00e9e en configuration assise ou debout.Elle est \u00e9galement fr\u00e9quemment utilis\u00e9e pour offrir un espace de pr\u00e9paration avant les spectacles de grands groupes artistiques tels que les troupes de danse, les chorales ou l\u2019acad\u00e9mie.",
+        "polyImg": "UadoiZj6bQBRUM3m0NrwAg2Lo8GP2p6mHoIqe0Og.jpeg",
+        "foyerTitle": "Le foyer",
+        "foyerIntro": "L\u2019endroit id\u00e9al pour partager un verre avant ou apr\u00e8s les spectacles.",
+        "foyerContent": "Compos\u00e9 d\u2019un bar, d\u2019un vestiaire, d\u2019un espace billetterie et d\u2019un espace comprenant 20 tables et 80 chaises, le Foyer  se r\u00e9partit sur une superficie de 187m\u00b2.",
+        "foyerImg": "31K60i2b3RnyvGg1XUyWuhTYkj5j4AMjUc7SRtwJ.jpeg",
+        "resto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, mi, nulla bibendum diam felis. Quis amet nulla faucibus vel sollicitudin vel vivamus. Sapien tincidunt sit laoreet diam adipiscing. Pellentesque elementum felis, enim adipiscing tellus. Tellus amet sit facilisis enim laoreet at non eu.",
+        "bar": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, mi, nulla bibendum diam felis. Quis amet nulla faucibus vel sollicitudin vel vivamus. Sapien tincidunt sit laoreet diam adipiscing. Pellentesque elementum felis, enim adipiscing tellus. Tellus amet sit facilisis enim laoreet at non eu.",
+        "vestiaire": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, mi, nulla bibendum diam felis. Quis amet nulla faucibus vel sollicitudin vel vivamus. Sapien tincidunt sit laoreet diam adipiscing. Pellentesque elementum felis, enim adipiscing tellus. Tellus amet sit facilisis enim laoreet at non eu.",
+        "meta_title": "A propos",
+        "meta_og_title": "A propos",
+        "meta_twitter_title": "A propos",
+        "meta_description": "Locaux ou ext\u00e9rieurs, amateurs ou professionnels, ils sont nombreux \u00e0 avoir \u00e9cum\u00e9 la sc\u00e8ne des Tr\u00e9teaux.",
+        "meta_og_description": "Locaux ou ext\u00e9rieurs, amateurs ou professionnels, ils sont nombreux \u00e0 avoir \u00e9cum\u00e9 la sc\u00e8ne des Tr\u00e9teaux.",
+        "meta_twitter_description": "Locaux ou ext\u00e9rieurs, amateurs ou professionnels, ils sont nombreux \u00e0 avoir \u00e9cum\u00e9 la sc\u00e8ne des Tr\u00e9teaux.",
+        "services": [
+            {
+                "layout": "service",
+                "key": "rptNFdzKvLJi0Dah",
+                "attributes": {
+                    "icone": "bar",
+                    "servicetitle": "Bar",
+                    "servicecontent": "Le bar ouvre 1h avant le d\u00e9but du spectacle.\n\n1\u20ac le jeton\n",
+                    "serviceTitle": "Bar",
+                    "serviceContent": "Le bar des Tr\u00e9teaux ouvre 1h avant le spectacle, 1 jeton co\u00fbte 1\u20ac"
+                }
+            },
+            {
+                "layout": "service",
+                "key": "iDBz61GdweJMOzYU",
+                "attributes": {
+                    "icone": "resto",
+                    "servicetitle": "Restauration",
+                    "servicecontent": "Les Tr\u00e9teaux n'offre pas de restauration mais nous vous proposont une offre repas-spectacle. \n\nProfitez d'un succulent repas dans les restaurants du centre de Vis\u00e9, \u00e0 deux pas de la salle de spectacle, avant de venir appr\u00e9cier l'un de nos spectacles \u00e0 prix r\u00e9duit.",
+                    "serviceTitle": "Restauration",
+                    "serviceContent": "Les Tr\u00e9teaux ne propose pas de restauration mais poss\u00e8de une offre repas-spectacle. \n\nProfitez d'un succulent repas dans les restaurants du centre de Vis\u00e9, \u00e0 deux pas de la salle de spectacle, avant de venir appr\u00e9cier l'un de nos spectacles \u00e0 prix r\u00e9duit.\n"
+                }
+            },
+            {
+                "layout": "service",
+                "key": "8M4nq72zyJhz26c0",
+                "attributes": {
+                    "icone": "vestiaire",
+                    "servicetitle": "Vestiaire",
+                    "servicecontent": "Un vestiaire surveill\u00e9 est mis \u00e0 votre diposition pendant le spectacle au prix de 1\u20ac par manteaux ",
+                    "serviceTitle": "Vestiaire",
+                    "serviceContent": "Un vestiaire est mis \u00e0 disposition pendant les spectacles au prix de 1\u20ac par manteaux"
+                }
+            }
+        ],
+        "teamTitle": "Notre \u00e9quipe"
+    }
+}

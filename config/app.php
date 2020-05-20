@@ -162,6 +162,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        App\Providers\NovaServiceProvider::class,
+        Whitecube\NovaPage\NovaPageServiceProvider::class,
+        Watson\Active\ActiveServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -175,6 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Msurguy\Honeypot\HoneypotServiceProvider::class,
 
     ],
 
@@ -227,6 +232,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Honeypot' => Msurguy\Honeypot\HoneypotFacade::class,
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Page' => Whitecube\NovaPage\NovaPageFacade::class,
+        'Active' => Watson\Active\Facades\Active::class
 
     ],
 

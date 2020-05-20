@@ -1,3 +1,5 @@
+var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+
 export default class Map{
 
     constructor(el) {

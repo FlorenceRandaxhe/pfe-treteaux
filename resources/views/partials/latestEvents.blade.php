@@ -1,3 +1,4 @@
+@if(count($events) >= 1)
 <section class="latestEvents latestEvents--{{ $class }}">
     <div class="latestEvents__container wrapper">
         <div class="latestEvents__header">
@@ -14,7 +15,8 @@
             @endforeach
         </div>
         <div class="latestEvents__bottom">
-            <a class="latestEvents__link link link--line" href="/agenda/{{ $latestSeason }}">Voir tout l'agenda</a>
+            <a class="latestEvents__link link link--line" href="{{ route('agenda', ['season' => $latestSeason]) }}">Voir tout l'agenda</a>
         </div>
     </div>
 </section>
+@endif

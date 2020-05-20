@@ -1,0 +1,46 @@
+.breadcrumb{
+    padding: em(30) 0;
+    margin-left: em(30);
+
+    &__item{
+        display: inline-block;
+        margin-right: em(20);
+
+        &:not(:last-of-type):after{
+            @include icon(chevron);
+            margin-left: em(18);
+            display: inline-block;
+            transform: rotate(-90deg);
+            color: color(darkgrey);
+            font-size: em(xs);
+        }
+
+        &--current a{
+            color: color(black);
+        }
+
+        a{
+            transition: color 0.3s $easin;
+        }
+
+        a:hover{
+            color: color(black);
+        }
+    }
+
+    &__text{
+        display: inline-block;
+        @include font(latobold);
+        color: color(darkgrey);
+    }
+
+    @include mq(l, max){
+        &__item{
+            display: none;
+
+            &--current{
+                display: block;
+            }
+        }
+    }
+}

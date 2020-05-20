@@ -17,16 +17,8 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $posts = Post::published()->limit(3)->get();
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
-        $events = $latestSeason->events()->limit(3)->get();
-        $featured = Event::featured()->get();
-
         return view('pages.home', [
-            'posts' => $posts,
-            'events' => $events,
-            'featured' => $featured
+            'featured' => Event::featured()->get()
         ]);
-
     }
 }

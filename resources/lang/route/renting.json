@@ -1,0 +1,55 @@
+{
+    "title": "Location des Tr\u00e9teaux",
+    "created_at": "2020-05-12 10:00:00",
+    "updated_at": "2020-05-19 16:01:43",
+    "attributes": {
+        "heroIntro": "Envie d'organiser une activit\u00e9 chez nous ? Il est possible de louer notre salle. Pour toute information, prenez contact avec nous via le formulaire ci-dessous.",
+        "roomTitle": "Infos pratiques",
+        "roomInfos": "[]",
+        "formTitle": "Demande de location",
+        "intro": "Les prix des locations ne sont pas fixes et d\u00e9pendent de vos besoins techniques.\nLes Tr\u00e9teaux ne louent pas la salle pour des \u00e9v\u00e9nements priv\u00e9s",
+        "image": "jDYdTHLwX1muUN49kd8Jr9fZ1YfmwH6K0n3dUHJl.jpeg",
+        "meta_title": "Location des Tr\u00e9teaux",
+        "meta_og_title": "Location des Tr\u00e9teaux",
+        "meta_twitter_title": "Location des Tr\u00e9teaux",
+        "meta_description": "Envie d'organiser une activit\u00e9 chez nous ? Il est possible de louer notre salle. Pour toute information, prenez contact avec nous",
+        "meta_og_description": "Envie d'organiser une activit\u00e9 chez nous ? Il est possible de louer notre salle. Pour toute information, prenez contact avec nous",
+        "meta_twitter_description": "Envie d'organiser une activit\u00e9 chez nous ? Il est possible de louer notre salle. Pour toute information, prenez contact avec nous",
+        "rooms": [
+            {
+                "layout": "room",
+                "key": "Kfw6xYyHp77RqRb4",
+                "attributes": {
+                    "roomName": "La salle",
+                    "roomContent": "**Sc\u00e8ne**\n\nLargeur : 8 m\u00e8tres\nProfondeur : 6 m\u00e8tres en normal, 9,5 m\u00e8tres en prolong\u00e9 (largeur de 6 m\u00e8tres entre les 2 sc\u00e8nes)\n\nHauteur sous grill : 4 m\u00e8tres en hauteur maximale, 5 m\u00e8tres au sol\n\nAccessible aux personnes \u00e0 mobilit\u00e9 r\u00e9duite.\n\n**Jauge**\n\n321 places assises\n\n600 places debouts",
+                    "roomLabel": "T\u00e9l\u00e9charger le plan de salle",
+                    "roomFile": "3yzpObPvYYTviaa4P1XiK4vjlTmpyupEnB4ZhddP.pdf"
+                }
+            },
+            {
+                "layout": "room",
+                "key": "vgeNiXwxJWKDiGay",
+                "attributes": {
+                    "roomName": "Salle polyvalente",
+                    "roomContent": "**Mat\u00e9riel**\n\nEcran de projection\n\n**Jauge**\n\n100 personnes\n\nPeut \u00eatre utilis\u00e9e comme espace de pr\u00e9paration avant les spectacles pour les grands groupes",
+                    "roomLabel": ""
+                }
+            },
+            {
+                "layout": "room",
+                "key": "aW2tV1rzDClOpRVJ",
+                "attributes": {
+                    "roomName": "Le foyer",
+                    "roomContent": "**Superficie**\n\n187m\u00b2\n\n**Jauge**\n\n20 tables\n\n80 chaises\n\nCompos\u00e9e d'un bar, d'un vestiaire et d'un espace billetterie",
+                    "roomLabel": ""
+                }
+            }
+        ],
+        "polyName": null,
+        "polyContent": null,
+        "polyLabel": null,
+        "foyerName": null,
+        "foyerContent": null,
+        "foyerLabel": null
+    }
+}

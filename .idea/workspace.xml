@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ccd973a5-58c9-48d2-b64d-b2b3a757b0ef" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AboutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AboutController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MediaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MediaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RentingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RentingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SeasonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SeasonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ContactRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ContactRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/NewsletterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/NewsletterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RentingRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RentingRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/banner-about.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/banner-about.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/img/banner-about.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/img/banner-about.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_btn.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_btn.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_heroAbout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_heroAbout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_latestEvents.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_latestEvents.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_pressCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_pressCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_teamCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_teamCard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/parts/_wysiwyg.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/parts/_wysiwyg.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/press.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/press.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/renting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/renting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/resto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/resto.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/singleNews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/singleNews.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/allPress.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/allPress.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/featuredEvents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/featuredEvents.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/hero.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/hero.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/newsletter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/newsletter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/renting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/renting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/contactForm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/contactForm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/eventCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/eventCard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/pressCard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/pressCard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/rentingForm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/rentingForm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1060" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ccd973a5-58c9-48d2-b64d-b2b3a757b0ef" name="Default Changelist" comment="" />
+      <created>1589263351878</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589263351878</updated>
+      <workItem from="1589263360106" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1920573" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3285528" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3294271" />
+    </layout>
+  </component>
+</project>

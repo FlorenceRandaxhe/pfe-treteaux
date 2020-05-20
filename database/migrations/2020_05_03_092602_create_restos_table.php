@@ -15,12 +15,14 @@ class CreateRestosTable extends Migration
     {
         Schema::create('restos', function (Blueprint $table) {
             $table->id();
+            $table->integer('order');
             $table->string('name');
             $table->text('menu');
             $table->string('price');
             $table->string('url');
-            $table->string('lat');
-            $table->string('lng');
+            $table->string('address');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->string('distance');
             $table->timestamps();
         });

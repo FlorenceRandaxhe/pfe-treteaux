@@ -19,7 +19,7 @@
         @include font(latoblack);
         color: color(purple);
         border: 3px solid color(purple);
-        padding: em(8) em(20);
+        padding: em(8, 16) em(20, 16);
     }
 
     &--outline-blue{

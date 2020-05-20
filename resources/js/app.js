@@ -7,6 +7,12 @@ import RestoModal from './parts/RestoModal.js';
 import SearchModal from './parts/SearchModal.js';
 import Reveal from './parts/Reveal.js';
 import Slider from './parts/Slider.js';
+import InfoSection from './parts/InfoSection.js';
+import Cookie from './parts/Cookies.js';
+import OpenLightbox from './parts/OpenLightbox.js';
+import GalleryScroll from './parts/GalleryScroll.js'
+import EventListModal from './parts/EventListModal.js'
+import Seats from './parts/Seats.js'
 
 document.body.classList.remove('body--nojs');
 document.body.classList.add('body--js');

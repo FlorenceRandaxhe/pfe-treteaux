@@ -1,0 +1,20 @@
+{
+    "title": "Offre resto",
+    "created_at": "2020-05-12 10:00:00",
+    "updated_at": "2020-05-14 11:27:21",
+    "attributes": {
+        "heroIntro": "Profitez d'un succulent repas dans les restaurants du centre de Vis\u00e9, \u00e0 deux pas de la salle de spectacle, avant de venir appr\u00e9cier l'un de nos spectacles \u00e0 prix r\u00e9duit.",
+        "image": "G7B5nuGisXUFxNjmanspjXAL7FA9uayh6mU5dkG7.jpeg",
+        "restoTitle": "Les restaurants",
+        "restoIntro": "Nous vous proposons les offres suivantes :\n\nLes r\u00e9servations pour ces formules se feront uniquement au guichet du Centre Culturel (du lundi au vendredi de 8h30 \u00e0 17h00). Payement par carte bancaire.",
+        "infoTitle": "Int\u00e9ress\u00e9 par nos formules de repas-spectacle",
+        "infoContent": "Vous poss\u00e9dez un restaurant \u00e0 Vis\u00e9 ? Si vous \u00eates int\u00e9ress\u00e9 par nos formules de repas-spectacle n\u2019h\u00e9siter pas \u00e0 nous contacter",
+        "infoLabel": "Nous contacter",
+        "meta_title": "Offre resto",
+        "meta_og_title": "Offre resto",
+        "meta_twitter_title": "Profitez d'un succulent repas dans les restaurants du centre de Vis\u00e9, \u00e0 deux pas de la salle de spectacle, avant de venir appr\u00e9cier l'un de nos spectacles \u00e0 prix r\u00e9duit.",
+        "meta_description": "Profitez d'un succulent repas dans les restaurants du centre de Vis\u00e9, \u00e0 deux pas de la salle de spectacle, avant de venir appr\u00e9cier l'un de nos spectacles \u00e0 prix r\u00e9duit.",
+        "meta_og_description": "Profitez d'un succulent repas dans les restaurants du centre de Vis\u00e9, \u00e0 deux pas de la salle de spectacle, avant de venir appr\u00e9cier l'un de nos spectacles \u00e0 prix r\u00e9duit.",
+        "meta_twitter_description": "Profitez d'un succulent repas dans les restaurants du centre de Vis\u00e9, \u00e0 deux pas de la salle de spectacle, avant de venir appr\u00e9cier l'un de nos spectacles \u00e0 prix r\u00e9duit."
+    }
+}

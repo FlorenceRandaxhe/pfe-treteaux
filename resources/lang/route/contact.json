@@ -1,0 +1,16 @@
+{
+    "title": "Contact",
+    "created_at": "2020-05-12 10:00:00",
+    "updated_at": "2020-05-12 18:32:20",
+    "attributes": {
+        "heroIntro": "Une question sur un de nos spectacles ? N\u2019h\u00e9sitez pas \u00e0 nous contacter, nous reviendrons vers vous le plus rapidement possible",
+        "lat": "50.737120",
+        "lng": "5.693863",
+        "meta_title": "Contact",
+        "meta_og_title": "Contact",
+        "meta_twitter_title": "Contact",
+        "meta_description": "Une question sur un de nos spectacles ? N\u2019h\u00e9sitez pas \u00e0 nous contacter, nous reviendrons vers vous le plus rapidement possible",
+        "meta_og_description": "Une question sur un de nos spectacles ? N\u2019h\u00e9sitez pas \u00e0 nous contacter, nous reviendrons vers vous le plus rapidement possible",
+        "meta_twitter_description": "Une question sur un de nos spectacles ? N\u2019h\u00e9sitez pas \u00e0 nous contacter, nous reviendrons vers vous le plus rapidement possible"
+    }
+}

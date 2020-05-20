@@ -10,7 +10,7 @@ export default class Dropdown{
 
     getElements(){
         this.dropdown = this.el.querySelector('.nav__link--dropdown');
-        this.isMobile = document.documentElement.clientWidth < 760;
+        this.isMobile = document.documentElement.clientWidth < 920;
     }
 
     createElements() {

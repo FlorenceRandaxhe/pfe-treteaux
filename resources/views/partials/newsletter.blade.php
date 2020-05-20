@@ -6,9 +6,13 @@
                 Une fois par mois, découvrez nos nouveaux spectacles, actualité, concours en vous abonnant à notre newsletter
             </p>
         </div>
+        @if(session('success'))
+                <p class="newsletter__success">Merci pour votre inscription!</p>
+        @else
         <form class="newsletter__form form" method="POST" action="{{ route('newsletter') }}">
             @csrf
-            <div class="form__control @error('email') form__control--error @enderror">
+            {!! Honeypot::generate('my_name', 'my_time') !!}
+            <div class="form__control @error('email')form__control--error @enderror">
                 <label class="form__label" for="email">Email</label>
                 <input type="email" name="email" id="email" class="form__input" placeholder="Votre email">
                 <button type="submit" class="btn btn--arrow"><span class="sro">Envoyer</span></button>
@@ -17,5 +21,6 @@
                 @enderror
             </div>
         </form>
+        @endif
     </div>
 </section>

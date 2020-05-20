@@ -77,6 +77,7 @@
 
         &--pink{
             background-color: color(pink);
+            color: color(purple);
         }
 
         &--green{
@@ -102,6 +103,10 @@
 
     }
 
+    &__type{
+        margin-bottom: em(40);
+    }
+
     &__fig{
         position: absolute;
         top:em(-30);
@@ -121,7 +126,7 @@
     @include mq(m){
         &__container{
             min-height: em(500);
-            max-width: 55vw;
+            max-width: 75vw;
             padding: em(60) em(100); // mobile & left
         }
 
@@ -154,4 +159,13 @@
             }
         }
     }
+
+    @include mq (l){
+        &__container{
+            min-height: em(500);
+            max-width: 55vw;
+            padding: em(60) em(100); // mobile & left
+        }
+    }
+
 }

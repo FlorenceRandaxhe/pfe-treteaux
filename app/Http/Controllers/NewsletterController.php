@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\NewsletterRequest;
+use Newsletter;
 
 class NewsletterController extends Controller
 {
@@ -15,8 +16,9 @@ class NewsletterController extends Controller
      */
     public function __invoke(NewsletterRequest $request)
     {
+        $result = Newsletter::subscribe($request->email);
 
-        return redirect()->to(url()->previous() . '#newsletter')->with('success', true);
+        return redirect()->to(url()->previous() . '#newsletter')->with('success', $result);
 
     }
 }

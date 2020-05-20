@@ -1,0 +1,19 @@
+.success{
+    width: 100%;
+    padding: em(60);
+    background-color: color(green);
+
+    &__text{
+        @include font();
+        font-size: em(xl);
+        line-height: em(30, xl);
+        text-align: center;
+    }
+
+    @include mq(m){
+        &__text{
+            font-size: em(xl5);
+            line-height: em(45, xl5);
+        }
+    }
+}

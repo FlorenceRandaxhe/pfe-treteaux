@@ -1,0 +1,37 @@
+.distriCard{
+    width: em(150);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-bottom: em(40);
+    margin-left: em(30);
+    margin-right: em(30);
+
+
+    &__fig{
+        border-radius: 100%;
+        height: 150px;
+        width: 150px;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    &__name{
+        @include font();
+        font-size: em(l);
+        padding-top: em(10, l);
+        padding-bottom: em(10, l);
+    }
+
+    @include mq(m){
+        margin-left: 0;
+        margin-right: em(45);
+    }
+
+
+}

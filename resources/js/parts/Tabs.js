@@ -21,10 +21,9 @@ export default class Tabs{
    }
 
    setDefaultTab(tablink){
-        if (tablink.dataset.tab === "salle") {
-            tablink.classList.add("tabs__item--active");
-        }
-        document.querySelector("#salle").classList.add("rentingInfo--active");
+        this.tabLinks[0].classList.add("tabs__item--active");
+        this.tabContents[0].classList.add("rentingInfo--active");
+
    }
 
     openTabs(e, tablink) {

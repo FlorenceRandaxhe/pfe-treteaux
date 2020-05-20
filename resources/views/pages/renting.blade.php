@@ -1,19 +1,25 @@
 @extends('layout')
-@section('title', 'Location des Tréteaux')
+@section('title', Page::title())
 @section('main')
     @include('partials.hero', [
         'class' => 'left',
         'color' => 'blue',
-        'title' => 'Location des Tréteaux',
-        'text' => 'Envie d\'organiser une activité chez nous ? Il est possible de louer notre salle. Pour toute information, prenez contact avec nous via le formulaire ci-dessous.',
-        'img' => 'foyer.jpg',
-        'alt' => 'renting',
+        'type' => '',
+        'title' => Page::title(),
+        'text' => Page::get('heroIntro'),
+        'img' => Page::get('image'),
+        'isEvent' => false,
+        'btnType' => 'primary',
+        'alt' => Page::get('heroIntro'),
+        'file' => false,
         'url' => '#form',
         'icon' => '',
         'label' => 'Réserver les Tréteaux'
     ])
-    @include('partials.renting')
-    @include('partials.latestNews', [
-        'class' => '',
-    ])
+    <main class="main">
+        @include('partials.renting')
+        @include('partials.latestNews', [
+            'class' => '',
+        ])
+    </main>
 @endsection

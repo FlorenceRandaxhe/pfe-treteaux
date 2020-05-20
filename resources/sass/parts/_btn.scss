@@ -4,6 +4,7 @@
     text-align: center;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 
     &--primary{
         display: inline-block;
@@ -44,6 +45,7 @@
         z-index: 1;
         overflow: hidden;
         text-transform: uppercase;
+        letter-spacing: 1px;
         color:color(blue);
         font-size: em(l, m);
         background-color: color(purple);
@@ -110,6 +112,32 @@
             font-size: em(xl4);
             color: color(white);
         }
+    }
+
+    &--booking{
+        @include font(latobold);
+        color: color(white);
+        font-size: em(m);
+        padding: em(15) em(40);
+        transition: color 0.3s $easin, background-color 0.3s $easin;
+    }
+    &--back{
+        color: color(black);
+        //background-color: color(error);
+        border: 2px solid color(border);
+            &:hover{
+                background-color: color(border);
+                //color: color(white);
+            }
+    }
+
+    &--next{
+        background-color: color(black);
+        border: 2px solid color(black);
+            &:hover{
+                background-color: transparent;
+                color: color(black);
+            }
     }
 
 

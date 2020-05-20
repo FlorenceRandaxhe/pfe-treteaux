@@ -1,15 +1,17 @@
 @extends('layout')
-@section('title', 'Contact')
+@section('title', Page::title())
 @section('main')
     @include('partials.heroBasic', [
         'color' => 'grey',
-        'title' => 'Contact',
-        'intro' => 'Une question sur un de nos spectacles ? N’hésitez pas à nous contacter, nous reviendrons vers vous le plus rappidement possible',
+        'title' => Page::title(),
+        'intro' => Page::get('heroIntro'),
         'img' => '',
         'type' => ''
     ])
-    @include('partials.contact')
-    @include('partials.latestEvents', [
-        'class' => 'footer',
-    ])
+    <main class="main">
+        @include('partials.contact')
+        @include('partials.latestEvents', [
+            'class' => 'footer',
+        ])
+    </main>
 @endsection

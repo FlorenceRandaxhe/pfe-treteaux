@@ -63,28 +63,33 @@
     }
 
     @include mq(m, max){
-        overflow: hidden;
 
+        &__container{
+            &:before{
+                top: -15px;
+                right: -15px;
+            }
+
+            &:after{
+                bottom: -20px;
+                left: -20px;
+            }
+        }
         &__form{
             padding-top: em(30)
         }
     }
-
     @include mq(m){
-
-        position: relative;
-
         &:before{
             content: '';
             position: absolute;
-            top: 10px;
-            right: -50px;
+            top: 20px;
+            right: -30px;
             width: em(200);
             height: em(200);
             background-image: url('../../img/patternPlus-big.png');
             z-index: -10;
         }
-
         &:after{
             content: '';
             position: absolute;
@@ -95,7 +100,6 @@
             background-image: url('../../img/patternLine-small.png');
             z-index: -10;
         }
-
         &__container{
             display: flex;
             justify-content: space-between;
@@ -104,8 +108,29 @@
             border: 4px solid color(black);
 
             &:before{
-                top: -40px;
-                right: -40px;
+                top: -25px;
+                right: -25px;
+            }
+
+            &:after{
+                bottom: -20px;
+                left: -20px;
+            }
+        }
+    }
+    @include mq(l){
+
+        position: relative;
+
+        &:before{
+            top: 20px;
+            right: -40px;
+        }
+
+        &__container{
+            &:before{
+                top: -30px;
+                right: -30px;
             }
 
             &:after{

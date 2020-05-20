@@ -1,0 +1,70 @@
+.alert{
+    padding: em(20);
+
+    &__error{
+        @include font(latobold);
+        background-color: rgba(137, 44, 44, 0.2);
+        border: 2px solid color(error);
+        color: color(error);
+    }
+
+    &__takenSeat,
+    &__totalSeat,
+    &__amountSeat {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 110;
+        background-color: rgba(0,0,0,0.3);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s $easin3, visibility 0.3s $easin3;
+
+        &--show{
+            visibility: visible;
+            opacity: 1;
+
+            .alert__content{
+                transform: translateX(0);
+            }
+        }
+    }
+
+
+    &__content{
+        background-color: color(white);
+        position: absolute;
+        top: em(40);
+        right: em(40);
+        max-width: em(400);
+        padding: em(70) em(30) em(30);
+        font-size: em(l);
+        line-height: em(30, l);
+        border: 3px solid color(black);
+        transform: translateX(100px);
+        transition: transform 0.3s $easin3;
+    }
+
+    &__close{
+        display: block;
+        position: absolute;
+        top: em(20);
+        right: em(20);
+        text-align: right;
+        @include font(latobold);
+
+        &:before{
+            @include icon(cross);
+            font-size: em(xs);
+            margin-right: em(10);
+            display: inline-block;
+            transition: transform 0.3s $easin;
+        }
+
+        &:hover:before{
+            transform: rotate(90deg);
+        }
+    }
+}

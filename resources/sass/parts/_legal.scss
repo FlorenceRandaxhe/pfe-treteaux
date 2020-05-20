@@ -1,0 +1,15 @@
+.legal{
+    margin: em(130) 0;
+
+    @include mq(m){
+        &__container{
+            padding: 0 em(100)
+        }
+    }
+
+    @include mq(l){
+        &__container{
+            padding: 0 em(170)
+        }
+    }
+}

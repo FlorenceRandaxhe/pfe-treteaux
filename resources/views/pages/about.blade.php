@@ -1,14 +1,19 @@
 @extends('layout')
-@section('title', 'La salle')
+@section('title', Page::title())
 @section('main')
     @include('partials.heroAbout', [
-        'alt' => 'Facade des Tréteaux'
+        'title' => Page::title(),
+        'img' => Page::get('heroBanner'),
+        'alt' => Page::title()
     ])
-    @include('partials.aboutSections')
-    @include('partials.newsletter', [
-        'color' => 'blue'
-    ])
-    @include('partials.latestEvents', [
-        'class' => 'footer',
-    ])
+    <main class="main">
+        @include('partials.aboutSections')
+        @include('partials.newsletter', [
+            'color' => 'blue'
+        ])
+        @include('partials.latestEvents', [
+            'class' => 'footer',
+        ])
+    </main>
+
 @endsection

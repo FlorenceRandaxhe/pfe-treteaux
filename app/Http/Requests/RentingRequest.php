@@ -27,7 +27,10 @@ class RentingRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'date' => 'required',
-            'message' => 'required'
+            'message' => 'required',
+            'my_name'   => 'honeypot',
+            'my_time'   => 'required|honeytime:5'
+
         ];
     }
 

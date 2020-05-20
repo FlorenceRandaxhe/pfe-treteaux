@@ -15,11 +15,6 @@ class SubscriptionController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
-        $events = $latestSeason->events()->limit(3)->get();
-
-        return view('pages.subscription', [
-            'events' => $events,
-        ]);
+        return view('pages.subscription');
     }
 }

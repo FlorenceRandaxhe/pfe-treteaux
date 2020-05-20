@@ -1,0 +1,36 @@
+.eventContent{
+    padding-top: em(100);
+
+
+    &__section{
+        margin-bottom: em(100)
+    }
+
+    &__distri{
+        padding-top: em(50);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__title{
+        @include font();
+        font-size: em(xl5);
+        padding-bottom: em(20, xl5)
+    }
+
+    @include mq(m){
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        &__container{
+            max-width: col(7)
+        }
+
+        &__distri{
+            justify-content: flex-start;
+        }
+    }
+}

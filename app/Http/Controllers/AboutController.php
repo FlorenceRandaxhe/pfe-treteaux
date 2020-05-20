@@ -16,13 +16,8 @@ class AboutController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
-        $events = $latestSeason->events()->limit(3)->get();
-        $teams = Team::all();
-
         return view('pages.about', [
-            'events' => $events,
-            'teams' => $teams,
+            'teams' => Team::ordered()->get()
         ]);
 
     }

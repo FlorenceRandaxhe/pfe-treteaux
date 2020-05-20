@@ -1,0 +1,171 @@
+.lightbox{
+    background-color:rgba(0,0,0,0.9);
+    z-index: 10;
+    padding: 0 em(20);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: appear 0.3s ease-in-out;
+
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: em(20) 0;
+    }
+
+    &__close{
+        display: block;
+        position: relative;
+        height: em(20);
+        width: em(20);
+        transition: transform 0.2s $easin;
+
+        &:hover, &:focus{
+            transform: rotate(90deg);
+        }
+
+        &:before,
+        &:after{
+            content: '';
+            display: block;
+            background-color: color(white);
+            width: 100%;
+            height: em(2);
+            position: absolute;
+            transition: transform .3s $easin;
+        }
+        &:before{
+            transform: rotate(-45deg);
+            bottom: em(10);
+        }
+
+        &:after{
+            transform: rotate(45deg);
+            bottom: em(10);
+        }
+    }
+
+    &__content{
+        margin: 0 auto;
+        position: relative;
+        width: 80vw;
+        height: calc(100vh - 75px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__slides{
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s $easin3;
+        width: 100%;
+        height: calc(100vh - 75px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--current{
+            opacity: 1;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        @include cover();
+        object-fit: cover;
+    }
+
+    &__control{
+        position: absolute;
+        top: calc(50% - 27px);
+        padding:em(25);
+        border-radius: 100%;
+        background-color: transparentize(color(blue), 0.7);
+        transition: background-color 0.3s $easin;
+
+        &:hover, &:focus{
+            background-color: transparentize(color(blue), 0.4);
+        }
+
+        &--next{
+            z-index: 20;
+            right: 0;
+            animation: slideLeft 0.4s ease-in-out;
+            &:before{
+                @include icon('arrow');
+                font-size: em(xl);
+                color: color(white);
+                position: absolute;
+                top: calc(50% - 9px);
+                left: calc(50% - 9px);
+                transition: color 0.3s $easin;
+            }
+        }
+        &--prev{
+            z-index: 20;
+            left: 0;
+            animation: slideRight 0.4s ease-in-out;
+            &:before{
+                @include icon('arrow');
+                font-size: em(xl);
+                color: color(white);
+                position: absolute;
+                transform: rotate(180deg);
+                top: calc(50% - 9px);
+                left: calc(50% - 9px);
+                transition: color 0.3s $easin;
+            }
+        }
+
+        &--next:hover:before,
+        &--prev:hover:before,
+        &--next:focus:before,
+        &--prev:focus:before{
+            color: color(grey);
+        }
+    }
+    @include mq(s){
+        padding: 0 em(40);
+        &__control--next{
+            margin-right: em(40);
+        }
+        &__control--prev{
+            margin-left: em(40);
+        }
+    }
+ }
+
+@keyframes appear{
+    0%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1
+    }
+}
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1
+    }
+}

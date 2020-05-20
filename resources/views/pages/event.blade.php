@@ -1,9 +1,13 @@
 @extends('layout')
-@section('title', 'Agenda')
+@section('title', Page::title())
 @section('main')
-    @include('partials.heroEvents')
-    @include('partials.allEvents')
-    @include('partials.latestNews', [
-        'class' => '',
+    @include('partials.heroEvents', [
+        'title' => Page::title()
     ])
+    <main class="main">
+        @include('partials.allEvents')
+        @include('partials.latestNews', [
+            'class' => '',
+        ])
+    </main>
 @endsection

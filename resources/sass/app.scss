@@ -17,7 +17,10 @@
 @import 'parts/animations';
 @import 'parts/reveal';
 @import 'parts/btn';
+@import 'parts/tooltip';
 @import 'parts/link';
+@import 'parts/alert';
+@import 'parts/breadcrumb';
 @import 'parts/type';
 @import 'parts/form';
 @import 'parts/nav';
@@ -29,11 +32,18 @@
 @import 'parts/info';
 @import 'parts/tabs';
 @import 'parts/newsletter';
+
 @import 'parts/heroBasic';
 @import 'parts/heroAbout';
 @import 'parts/heroEvents';
+@import 'parts/heroBooking';
 @import 'parts/hero';
+
 @import 'parts/featuredEvents';
+@import 'parts/success';
+@import 'parts/infoSection';
+@import 'parts/cookies';
+@import 'parts/lightbox';
 
 @import 'parts/EventCard';
 @import 'parts/allEvents';
@@ -49,6 +59,7 @@
 @import 'parts/allRestos';
 @import 'parts/restoCard';
 @import 'parts/restoInfo';
+@import 'parts/restoEvent';
 
 @import 'parts/renting';
 @import 'parts/rentingInfo';
@@ -67,4 +78,12 @@
 @import 'parts/singlePost';
 @import 'parts/wysiwyg';
 
+@import 'parts/eventPress';
+@import 'parts/eventContent';
+@import 'parts/eventGallery';
+@import 'parts/eventDistri';
+@import 'parts/eventInfo';
 
+@import 'parts/legal';
+
+@import 'parts/booking';

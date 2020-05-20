@@ -30,7 +30,7 @@
 
     &__fig{
         width: 100%;
-        height: em(450);
+        height: em(350);
         z-index: 10;
     }
 
@@ -41,7 +41,7 @@
     }
 
 
-    @include mq(m, max){
+    @include mq(l, max){
 
         &:after{
             top:0;
@@ -64,7 +64,7 @@
         }
     }
 
-    @include mq(m, min){
+    @include mq(l, min){
         margin-bottom: em(150);
 
         &:after{

@@ -3,14 +3,10 @@
         <a href="{{ route('home') }}">Les Tréteaux</a>
     </div>
 
-    <input type="checkbox" name="" class="header__input">
-        <a href="#" class="header__burger">
-            <span class="sro">Navigation</span>
-            <span class="header__lines"></span>
-        </a>
+    <label class="header__label" for="menu"><span class="sro">Menu</span></label>
+    <input type="checkbox" name="menu" id="menu" class="header__input">
+
     <div class="header__responsive">
-
-
         <div class="header__nav">
             @include('parts.nav')
         </div>

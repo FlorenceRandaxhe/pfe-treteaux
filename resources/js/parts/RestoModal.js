@@ -1,3 +1,5 @@
+var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+
 export default class RestoModal{
 
     constructor(el) {
@@ -7,56 +9,50 @@ export default class RestoModal{
     }
 
     getElements(){
-        this.links = this.el.querySelectorAll('.restoCard__link');
-        this.modals = this.el.querySelectorAll('.restoInfo');
-        this.overlay =this.el.querySelectorAll('.restoInfo__hide');
-        this.close =this.el.querySelectorAll('.restoInfo__close');
+        this.links = this.el.querySelector('.restoCard__link');
+        this.modals = this.el.querySelector('.restoInfo');
+        this.overlay =this.el.querySelector('.restoInfo__hide');
+        this.close =this.el.querySelector('.restoInfo__close');
     }
 
     setEvents(){
-        for (let i = 0; i < this.links.length; i++) {
-            this.links[i].addEventListener('click', (e) => this.openModal(e, i))
-        }
-
-        for (let i = 0; i < this.overlay.length; i++) {
-            this.overlay[i].addEventListener('click', (e) => this.closeModal(e, i))
-        }
-
-        for (let i = 0; i < this.close.length; i++) {
-            this.close[i].addEventListener('click', (e) => this.closeModal(e, i))
-        }
+        this.links.addEventListener('click', (e) => this.openModal(e))
+        this.overlay.addEventListener('click', (e) => this.closeModal(e))
+        this.close.addEventListener('click', (e) => this.closeModal(e))
     }
 
-    openModal(e, i){
+    openModal(e){
         e.preventDefault();
         document.querySelector('body').classList.add('layout--scrollblock');
-        this.modals[i].classList.add('restoInfo--show');
-        this.createMap(this.modals[i])
-        this.initMap(this.modals[i]);
+        this.modals.classList.add('restoInfo--show');
+        this.createMap()
+        this.initMap();
 
     }
 
-    closeModal(e, i){
+    closeModal(e){
         e.preventDefault();
-        this.modals[i].classList.remove('restoInfo--show');
+        this.modals.classList.remove('restoInfo--show');
         document.querySelector('body').classList.remove('layout--scrollblock');
-        this.removeMap(this.modals[i]);
+        this.removeMap();
     }
 
-    createMap(modal){
+    createMap(){
         this.mapContent = document.createElement('div');
         this.mapContent.setAttribute('class','restoInfo__map');
         this.mapContent.setAttribute('style', 'width: 100%; height: 200px');
-        modal.querySelector('.restoInfo__container').appendChild(this.mapContent)
+        this.modals.querySelector('.restoInfo__container').appendChild(this.mapContent)
     }
 
-    removeMap(modal){
-        modal.querySelector('.restoInfo__container').removeChild(this.mapContent);
+    removeMap(){
+        setTimeout(() => {
+            this.modals.querySelector('.restoInfo__container').removeChild(this.mapContent);
+        }, 500);
     }
 
-    initMap(modal) {
-        this.lat = parseFloat(modal.getAttribute('data-lat'));
-        this.lng = parseFloat(modal.getAttribute('data-lng'));
+    initMap() {
+        this.lat = parseFloat(this.modals.getAttribute('data-lat'));
+        this.lng = parseFloat(this.modals.getAttribute('data-lng'));
 
         mapboxgl.accessToken = 'pk.eyJ1IjoiZmxvcmVuY2VyYW5kYXhoZSIsImEiOiJjazl3ZmJ2azMwOGI5M2d1aGRldHlxMjJmIn0.l9b5ADWDn7OQ1D7Obndf0g';
 
@@ -109,6 +105,10 @@ export default class RestoModal{
     }
 }
 
+
 if (document.querySelector('.allRestos')) {
-    let resto = new RestoModal(document.querySelector('.allRestos'));
+
+    document.querySelectorAll('.restoCard').forEach(resto => {
+        let modal = new RestoModal(resto);
+    })
 }

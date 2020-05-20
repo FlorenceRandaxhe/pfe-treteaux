@@ -1,5 +1,6 @@
 <form class="form" method="POST" action="{{ route('rentingSubmit') }}">
     @csrf
+    {!! Honeypot::generate('my_name', 'my_time') !!}
     <div class="form__control form__control--margin @error('name') form__control--error @enderror">
         <input type="text" name="name" id="name" class="form__input" placeholder="Votre nom" value="{{ old('name') }}">
         <label class="form__label" for="name">Votre nom</label>

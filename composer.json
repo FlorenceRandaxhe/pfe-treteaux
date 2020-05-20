@@ -6,14 +6,29 @@
         "framework",
         "laravel"
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
+        "graham-campbell/markdown": "^12.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
-        "laravel/tinker": "^2.0"
+        "laravel/nova": "~3.0",
+        "laravel/tinker": "^2.0",
+        "msurguy/honeypot": "^1.1",
+        "optimistdigital/nova-sortable": "^1.4",
+        "spatie/eloquent-sortable": "^3.8",
+        "spatie/laravel-newsletter": "^4.8",
+        "watson/active": "^5.0",
+        "whitecube/nova-flexible-content": "^0.2.2",
+        "whitecube/nova-page": "^0.2.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -39,6 +54,9 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+         "files": [
+            "app/Helpers.php"
         ]
     },
     "autoload-dev": {

@@ -12,25 +12,15 @@ class PostController extends Controller
 
     public function __invoke(Request $request)
     {
-        $posts = Post::published()->paginate(8);
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
-        $events = $latestSeason->events()->limit(3)->get();
-
         return view('pages.post', [
-            'posts' => $posts,
-            'events' => $events,
+            'posts' => Post::published()->paginate(8)
         ]);
-
     }
 
-    public function show(Post $post){
-
-        $latestSeason = Season::where('archived', '=', false)->latest()->first();
-        $events = $latestSeason->events()->limit(3)->get();
-
+    public function show(Post $post)
+    {
         return view('pages.singleNews', [
-            'post' => $post,
-            'events' => $events,
+            'post' => $post
         ]);
     }
 

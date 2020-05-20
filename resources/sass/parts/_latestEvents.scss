@@ -11,7 +11,8 @@
 
     &__title{
         @include font();
-        font-size: em(xl4)
+        font-size: em(xl4);
+        padding-bottom: em(50, xl4);
     }
 
     &__year{
@@ -37,12 +38,13 @@
 
         &__content{
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
         }
 
         &__title{
             display: inline-block;
             font-size: em(xl10);
+            padding-bottom: 0;
         }
 
         &__year{
@@ -51,11 +53,11 @@
         }
 
         .eventCard{
-            //margin-left: em(20);
+            //margin-left: em(30);
             width: col(4);
 
             &:not(:last-of-type){
-                //margin-right: gut(1)
+                margin-right: gut(1)
             }
         }
     }

@@ -1,5 +1,12 @@
 .teamCard{
     margin: em(50) em(15);
+    position: relative;
+
+    &:hover{
+        .teamCard__contact{
+            opacity: 1;
+        }
+    }
 
     &__name{
         @include font();
@@ -12,12 +19,39 @@
         @include font(latobold);
         padding-top: em(5);
         padding-bottom: em(7);
+        line-height: em(20)
+    }
+
+    &__text{
+        width: em(280);
+    }
+
+    &__contact{
+        position: absolute;
+        content: '';
+        left:0;
+        right: 0;
+        width: em(280);
+        height: auto;
+        opacity: 0;
+        padding:em(20);
+        background-color: transparentize(color(black), 0.2);
+        transition: opacity 0.3s $easin;
+    }
+
+    &__link{
+        color: color(white);
+        @include font(latoregular);
+        display: block;
+        padding: em(10);
+        letter-spacing: 1px;
+        z-index:100;
     }
 
     &__fig{
         position: relative;
-        width: 280px;
-        height: 280px;
+        width: em(280);
+        height: em(280);
 
         &:after, &:before{
             content: '';
@@ -38,7 +72,12 @@
     }
 
     &:nth-child(6n + 1){
-        transition-delay: 0.4s;
+        transition-delay: 0.2s;
+
+        .teamCard__contact{
+            top: 0;
+        }
+
         .teamCard__fig:after{
             top: em(-20);
             left: em(-20);
@@ -49,10 +88,14 @@
     }
 
     &:nth-child(6n + 2){
-        transition-delay: 0.3s;
+        transition-delay: 0.1s;
         display:flex;
         flex-direction: column-reverse;
         align-items: flex-end;
+
+        .teamCard__contact{
+            bottom: 0;
+        }
 
         .teamCard__text{
             text-align: right;
@@ -77,7 +120,10 @@
     }
 
     &:nth-child(6n + 3){
-        transition-delay: 0.2s;
+
+        .teamCard__contact{
+            top: 0;
+        }
 
         .teamCard__fig:after{
             bottom: em(-20);
@@ -90,7 +136,10 @@
     }
 
     &:nth-child(6n + 4){
-        transition-delay: 0.2s;
+
+        .teamCard__contact{
+            top: 0;
+        }
 
         .teamCard__fig:before{
             top: em(-20);
@@ -103,9 +152,13 @@
     }
 
     &:nth-child(6n + 5){
-        transition-delay: 0.4s;
+        transition-delay: 0.2s;
         display:flex;
         flex-direction: column-reverse;
+
+        .teamCard__contact{
+            bottom: 0;
+        }
 
         .teamCard__fig:after{
             top: em(-20);
@@ -118,7 +171,12 @@
     }
 
     &:nth-child(6n + 6){
-        transition-delay: 0.3s;
+
+        .teamCard__contact{
+            top: 0;
+        }
+
+        transition-delay: 0.1s;
         .teamCard__fig:after{
             top: em(-20);
             right: em(-20);

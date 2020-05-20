@@ -5,10 +5,10 @@
         <a href="#" class="search__hide"><span class="sro">Fermer</span></a>
         <div class="search__modal">
             <div class="search__wrapper wrapper">
-                <form class="search__form form" method="GET" action="#">
+                <form class="search__form form" method="GET" action="/search">
                     <div class="form__control">
-                        <label class="sro" for="search">Que cherchez-vous ?</label>
-                        <input type="search" name="search" id="search" class="form__input form__input--small" placeholder="Que cherchez-vous ?">
+                        <label class="sro" for="q">Que cherchez-vous ?</label>
+                        <input type="search" name="q" id="q" class="form__input form__input--small" placeholder="Que cherchez-vous ?">
                         <button class="btn btn--arrow"><span class="sro">Rechercher</span></button>
                     </div>
                 </form>

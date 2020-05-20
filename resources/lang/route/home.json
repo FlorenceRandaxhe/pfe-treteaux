@@ -1,0 +1,24 @@
+{
+    "title": "Centre Culturel de Vis\u00e9 - Les Tr\u00e9teaux",
+    "created_at": "2020-05-12 10:00:00",
+    "updated_at": "2020-05-14 10:29:16",
+    "attributes": {
+        "infoTitle": "Les Tr\u00e9teaux",
+        "infoContent": "Ancienne salle de gymnastique de l\u2019Ath\u00e9n\u00e9e de Vis\u00e9, la salle de spectacle Les Tr\u00e9teaux a accueilli pendant pr\u00e8s de 30 ans un grand nombre de manifestations dans une salle v\u00e9tuste, \u00e0 peine am\u00e9nag\u00e9e pour le milieu du spectacle.",
+        "infoLabel": "En savoir plus",
+        "meta_title": "Centre Culturel de Vis\u00e9 - Les Tr\u00e9teaux",
+        "meta_og_title": "Centre Culturel de Vis\u00e9 - Les Tr\u00e9teaux",
+        "meta_twitter_title": "Centre Culturel de Vis\u00e9 - Les Tr\u00e9teaux",
+        "meta_description": "Centre Culturel de Vis\u00e9 - Les Tr\u00e9teaux",
+        "meta_og_description": "Centre Culturel de Vis\u00e9 - Les Tr\u00e9teaux",
+        "meta_twitter_description": "Centre Culturel de Vis\u00e9 - Les Tr\u00e9teaux",
+        "title": "Accueil",
+        "displayAlert": false,
+        "alertTitle": "Info Covid-19",
+        "alertContent": "Face \u00e0 la crise du coronavirus et \u00e0 l'incertitude dans laquelle se trouve le milieu de la culture, l'\u00e9quipe des Tr\u00e9teaux a choisi de travailler avec optimisme sans pour autant n\u00e9gliger la s\u00e9curit\u00e9 de tous \ud83d\ude37\ud83d\udc4d!\n\nSuivant les recommandations des pouvoirs publics, notre saison 2019-2020 est donc malheureusement officiellement termin\u00e9e.",
+        "alertType": "info",
+        "Post": "annulation-de-spectacleS3",
+        "linkAlert": "annulation-de-spectacles",
+        "labelAlert": "En savoir plus"
+    }
+}

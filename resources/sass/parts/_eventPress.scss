@@ -1,0 +1,25 @@
+.eventPress{
+    padding: em(150) 0 em(60);
+
+    &__title{
+        @include font();
+        font-size: em(xl5);
+
+    }
+
+    @include mq(xl){
+        &__container{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start
+        }
+
+        &__title{
+            width: col(4);
+        }
+
+        &__content > .pressCard{
+            margin-top: 0
+        }
+    }
+}

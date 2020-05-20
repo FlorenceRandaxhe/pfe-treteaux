@@ -1,8 +1,9 @@
 .singlePost{
-    margin: em(60) 0 em(170);
+    margin: em(60) 0 em(100);
 
     &__date{
         @include font();
+        margin-bottom: em(40);
     }
 
     @include mq(l){

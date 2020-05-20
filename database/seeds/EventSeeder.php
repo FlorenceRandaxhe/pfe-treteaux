@@ -24,11 +24,11 @@ Il revient cette fois-ci avec son tout nouveau quartet. Entouré du bugliste bre
 
 Ce nouveau projet s\'inscrit dans la lignée mélodique de Gehenot, alternant mélodies fortes, grooves ancrés, et swings élégants.',
 
-            'distribution' => '[{"key": "2kyVEXqj4fuCPsph", "layout": "people", "attributes": {"img": "OqVRRsVYf1cjwgXZOvaJPbygaQGyuSfflZOgGkuH.jpeg", "name": "Igor Gehenot", "role": "Piano"}}, {"key": "kwfdTqxlTcYPeFvN", "layout": "people", "attributes": {"name": "Alex Tassel", "role": "Flugelhorn"}}, {"key": "9eDT0kISLUgx3FSo", "layout": "people", "attributes": {"name": "Victor Nyberg", "role": "Double bass"}}, {"key": "gkJBbWL0zasLh23Y", "layout": "people", "attributes": {"name": "Jerome Klein", "role": "Batterie"}}]',
-            'details' => '[{"key": "b9EQfagyF2QFPuv3", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "zv2P6oQHjPhs3C52", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}, {"key": "A1S3KAIzadQoNyo5", "layout": "block", "attributes": {"text": "Salle des Tréteaux", "title": "Lieu"}}, {"key": "sPnprnacdRKAK76r", "layout": "block", "attributes": {"text": "- adultes : 17€ \n- senior : 15€\n- enfant : 14€\n- étudiant : 15€", "title": "Prix"}}]',
+            'distribution' => '[{"key": "KBCjguAxO5qfDBKI", "layout": "people", "attributes": {"name": "Renée Blanche", "role": "Guitare solo"}}, {"key": "8u6X0765FbhdO5jG", "layout": "people", "attributes": {"name": "Arnaud Rosoux", "role": "Guitare Rythmique"}}, {"key": "ZV1bPfUx5QKNZ1vl", "layout": "people", "attributes": {"name": "Jacky Colleau", "role": "Contrebasse"}}]',
+            'details' => '[{"key": "zGxE5IbDnRxfszzE", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "STzP9RTD4Hd7ajBG", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}]',
             'gallery' => '[{"key": "q6vLEY33nlXRDzBy", "layout": "photo", "attributes": {"alt": "Igor qui joue du piano", "photo": "ylv0VZVbmBVqLySIyPEu9FYmErlOVAkipU6IamAW.jpeg"}}, {"key": "U7K5uUSy7XTyuh1d", "layout": "photo", "attributes": {"alt": "Igor", "photo": "jfM1jUSF7Qs6y4Z293M6ZuQbbEt5THPQcgJbcGln.jpeg"}}, {"key": "q3ghHNWZeo8YXHvS", "layout": "photo", "attributes": {"alt": "Igor", "photo": "64nQLZvDoNa9jP1QDrZBr3dTPd0pGOjOYQPAZmb1.jpeg"}}, {"key": "Fzbhhwt81ZM52sr9", "layout": "photo", "attributes": {"alt": "Igor", "photo": "5OZWX3KGaYPzm8KFLoQV5e8yuGxl8wLPq5oB4o0W.jpeg"}}]',
             'press' => '[{"key": "WHFIMYuxvqHfkZt0", "layout": "press", "attributes": {"url": "https://www.rtbf.be/culture/article/detail_cursiv-de-igor-gehenot-de-la-musique-tout-simplement?id=10423659", "title": "\"Cursiv\" de Igor Gehenot, de la Musique tout simplement !", "source": "RTBF", "excerpt": "Igor Gehenot est né à Liège en 1989. Une mère pianiste, un père dessinateur, Igor commence le piano à 6 ans. Bercé par Bach et Stravinsky, Passionné de Hip Hop et de funk, Igor s’intéressera ensuite au jazz avec la découverte de Bill Evans, Keith Jarrett, McCoy Tyner, Chick Corea …", "published_at": "2020-02-11 00:00:00"}}, {"key": "DFDBSyxnic72n9gh", "layout": "press", "attributes": {"url": "https://plus.lesoir.be/275916/article/2020-01-28/igor-gehenot-cursiv", "title": "Igor Gehenot Cursiv", "source": "Le Soir", "excerpt": "C’est un album d’amitié. Igor l’avoue : il était « out » en arrivant au studio d’Alex. Il n’avait plus rien écrit depuis un an. ", "published_at": "2020-02-12 00:00:00"}}]',
-            'date' => '2020-06-18 17:30:00',
+            'date' => now(),
             'featured' => true,
             'resto' => true,
             'type_id' => 1,
@@ -38,7 +38,7 @@ Ce nouveau projet s\'inscrit dans la lignée mélodique de Gehenot, alternant m�
             'updated_at' => now(),
             'seats' => '',
             'seating' => true,
-            'prices' => '[]',
+            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
         ]);
 
         Event::create([
@@ -57,11 +57,11 @@ Comment les gitans vont-ils l\'accueillir ? Comment Frollo va-t-il réagir ? Com
 
 L\'homme est-il un monstre ou le monstre un homme ?',
 
-            'distribution' => '[]',
-            'details' => '[{"key": "b9EQfagyF2QFPuv3", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "zv2P6oQHjPhs3C52", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}, {"key": "A1S3KAIzadQoNyo5", "layout": "block", "attributes": {"text": "Salle des Tréteaux", "title": "Lieu"}}, {"key": "sPnprnacdRKAK76r", "layout": "block", "attributes": {"text": "- adultes : 17€ \n- senior : 15€\n- enfant : 14€\n- étudiant : 15€", "title": "Prix"}}]',
+            'distribution' => '[{"key": "KBCjguAxO5qfDBKI", "layout": "people", "attributes": {"name": "Renée Blanche", "role": "Guitare solo"}}, {"key": "8u6X0765FbhdO5jG", "layout": "people", "attributes": {"name": "Arnaud Rosoux", "role": "Guitare Rythmique"}}, {"key": "ZV1bPfUx5QKNZ1vl", "layout": "people", "attributes": {"name": "Jacky Colleau", "role": "Contrebasse"}}]',
+            'details' => '[{"key": "zGxE5IbDnRxfszzE", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "STzP9RTD4Hd7ajBG", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}]',
             'gallery' => '[{"key": "q6vLEY33nlXRDzBy", "layout": "photo", "attributes": {"alt": "Igor qui joue du piano", "photo": "ylv0VZVbmBVqLySIyPEu9FYmErlOVAkipU6IamAW.jpeg"}}, {"key": "U7K5uUSy7XTyuh1d", "layout": "photo", "attributes": {"alt": "Igor", "photo": "jfM1jUSF7Qs6y4Z293M6ZuQbbEt5THPQcgJbcGln.jpeg"}}, {"key": "q3ghHNWZeo8YXHvS", "layout": "photo", "attributes": {"alt": "Igor", "photo": "64nQLZvDoNa9jP1QDrZBr3dTPd0pGOjOYQPAZmb1.jpeg"}}, {"key": "Fzbhhwt81ZM52sr9", "layout": "photo", "attributes": {"alt": "Igor", "photo": "5OZWX3KGaYPzm8KFLoQV5e8yuGxl8wLPq5oB4o0W.jpeg"}}]',
-            'press' => '[]',
-            'date' => '2020-05-03 18:33:01',
+            'press' => '[{"key": "WHFIMYuxvqHfkZt0", "layout": "press", "attributes": {"url": "https://www.rtbf.be/culture/article/detail_cursiv-de-igor-gehenot-de-la-musique-tout-simplement?id=10423659", "title": "\"Cursiv\" de Igor Gehenot, de la Musique tout simplement !", "source": "RTBF", "excerpt": "Igor Gehenot est né à Liège en 1989. Une mère pianiste, un père dessinateur, Igor commence le piano à 6 ans. Bercé par Bach et Stravinsky, Passionné de Hip Hop et de funk, Igor s’intéressera ensuite au jazz avec la découverte de Bill Evans, Keith Jarrett, McCoy Tyner, Chick Corea …", "published_at": "2020-02-11 00:00:00"}}, {"key": "DFDBSyxnic72n9gh", "layout": "press", "attributes": {"url": "https://plus.lesoir.be/275916/article/2020-01-28/igor-gehenot-cursiv", "title": "Igor Gehenot Cursiv", "source": "Le Soir", "excerpt": "C’est un album d’amitié. Igor l’avoue : il était « out » en arrivant au studio d’Alex. Il n’avait plus rien écrit depuis un an. ", "published_at": "2020-02-12 00:00:00"}}]',
+            'date' => now(),
             'featured' => true,
             'resto' => true,
             'type_id' => 2,
@@ -71,7 +71,7 @@ L\'homme est-il un monstre ou le monstre un homme ?',
             'updated_at' => now(),
             'seats' => '',
             'seating' => true,
-            'prices' => '[]',
+            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
         ]);
 
         Event::create([
@@ -88,9 +88,9 @@ Les musiciens aiment parler au public avec un humour de bon aloi et apportent tr
 
             'distribution' => '[{"key": "KBCjguAxO5qfDBKI", "layout": "people", "attributes": {"name": "Renée Blanche", "role": "Guitare solo"}}, {"key": "8u6X0765FbhdO5jG", "layout": "people", "attributes": {"name": "Arnaud Rosoux", "role": "Guitare Rythmique"}}, {"key": "ZV1bPfUx5QKNZ1vl", "layout": "people", "attributes": {"name": "Jacky Colleau", "role": "Contrebasse"}}]',
             'details' => '[{"key": "zGxE5IbDnRxfszzE", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "STzP9RTD4Hd7ajBG", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}]',
-            'gallery' => '[]',
-            'press' => '[]',
-            'date' => '2020-07-06 10:00:00',
+            'gallery' => '[{"key": "q6vLEY33nlXRDzBy", "layout": "photo", "attributes": {"alt": "Igor qui joue du piano", "photo": "ylv0VZVbmBVqLySIyPEu9FYmErlOVAkipU6IamAW.jpeg"}}, {"key": "U7K5uUSy7XTyuh1d", "layout": "photo", "attributes": {"alt": "Igor", "photo": "jfM1jUSF7Qs6y4Z293M6ZuQbbEt5THPQcgJbcGln.jpeg"}}, {"key": "q3ghHNWZeo8YXHvS", "layout": "photo", "attributes": {"alt": "Igor", "photo": "64nQLZvDoNa9jP1QDrZBr3dTPd0pGOjOYQPAZmb1.jpeg"}}, {"key": "Fzbhhwt81ZM52sr9", "layout": "photo", "attributes": {"alt": "Igor", "photo": "5OZWX3KGaYPzm8KFLoQV5e8yuGxl8wLPq5oB4o0W.jpeg"}}]',
+            'press' => '[{"key": "WHFIMYuxvqHfkZt0", "layout": "press", "attributes": {"url": "https://www.rtbf.be/culture/article/detail_cursiv-de-igor-gehenot-de-la-musique-tout-simplement?id=10423659", "title": "\"Cursiv\" de Igor Gehenot, de la Musique tout simplement !", "source": "RTBF", "excerpt": "Igor Gehenot est né à Liège en 1989. Une mère pianiste, un père dessinateur, Igor commence le piano à 6 ans. Bercé par Bach et Stravinsky, Passionné de Hip Hop et de funk, Igor s’intéressera ensuite au jazz avec la découverte de Bill Evans, Keith Jarrett, McCoy Tyner, Chick Corea …", "published_at": "2020-02-11 00:00:00"}}, {"key": "DFDBSyxnic72n9gh", "layout": "press", "attributes": {"url": "https://plus.lesoir.be/275916/article/2020-01-28/igor-gehenot-cursiv", "title": "Igor Gehenot Cursiv", "source": "Le Soir", "excerpt": "C’est un album d’amitié. Igor l’avoue : il était « out » en arrivant au studio d’Alex. Il n’avait plus rien écrit depuis un an. ", "published_at": "2020-02-12 00:00:00"}}]',
+            'date' => now(),
             'featured' => true,
             'resto' => true,
             'type_id' => 1,
@@ -100,7 +100,7 @@ Les musiciens aiment parler au public avec un humour de bon aloi et apportent tr
             'updated_at' => now(),
             'seats' => '',
             'seating' => true,
-            'prices' => '[]',
+            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
         ]);
 
         Event::create([
@@ -115,11 +115,11 @@ Il revient cette fois-ci avec son tout nouveau quartet. Entouré du bugliste bre
 
 Ce nouveau projet s\'inscrit dans la lignée mélodique de Gehenot, alternant mélodies fortes, grooves ancrés, et swings élégants.',
 
-            'distribution' => '[{"key": "2kyVEXqj4fuCPsph", "layout": "people", "attributes": {"img": "OqVRRsVYf1cjwgXZOvaJPbygaQGyuSfflZOgGkuH.jpeg", "name": "Igor Gehenot", "role": "Piano"}}, {"key": "kwfdTqxlTcYPeFvN", "layout": "people", "attributes": {"name": "Alex Tassel", "role": "Flugelhorn"}}, {"key": "9eDT0kISLUgx3FSo", "layout": "people", "attributes": {"name": "Victor Nyberg", "role": "Double bass"}}, {"key": "gkJBbWL0zasLh23Y", "layout": "people", "attributes": {"name": "Jerome Klein", "role": "Batterie"}}]',
-            'details' => '[{"key": "b9EQfagyF2QFPuv3", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "zv2P6oQHjPhs3C52", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}, {"key": "A1S3KAIzadQoNyo5", "layout": "block", "attributes": {"text": "Salle des Tréteaux", "title": "Lieu"}}, {"key": "sPnprnacdRKAK76r", "layout": "block", "attributes": {"text": "- adultes : 17€ \n- senior : 15€\n- enfant : 14€\n- étudiant : 15€", "title": "Prix"}}]',
-            'gallery' => '[{"key": "b9EQfagyF2QFPuv3", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "zv2P6oQHjPhs3C52", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}, {"key": "A1S3KAIzadQoNyo5", "layout": "block", "attributes": {"text": "Salle des Tréteaux", "title": "Lieu"}}, {"key": "sPnprnacdRKAK76r", "layout": "block", "attributes": {"text": "- adultes : 17€ \n- senior : 15€\n- enfant : 14€\n- étudiant : 15€", "title": "Prix"}}]',
+            'distribution' => '[{"key": "KBCjguAxO5qfDBKI", "layout": "people", "attributes": {"name": "Renée Blanche", "role": "Guitare solo"}}, {"key": "8u6X0765FbhdO5jG", "layout": "people", "attributes": {"name": "Arnaud Rosoux", "role": "Guitare Rythmique"}}, {"key": "ZV1bPfUx5QKNZ1vl", "layout": "people", "attributes": {"name": "Jacky Colleau", "role": "Contrebasse"}}]',
+            'details' => '[{"key": "zGxE5IbDnRxfszzE", "layout": "block", "attributes": {"text": "2h30", "title": "Durée"}}, {"key": "STzP9RTD4Hd7ajBG", "layout": "block", "attributes": {"text": "Tous public", "title": "Public"}}]',
+            'gallery' => '[{"key": "q6vLEY33nlXRDzBy", "layout": "photo", "attributes": {"alt": "Igor qui joue du piano", "photo": "ylv0VZVbmBVqLySIyPEu9FYmErlOVAkipU6IamAW.jpeg"}}, {"key": "U7K5uUSy7XTyuh1d", "layout": "photo", "attributes": {"alt": "Igor", "photo": "jfM1jUSF7Qs6y4Z293M6ZuQbbEt5THPQcgJbcGln.jpeg"}}, {"key": "q3ghHNWZeo8YXHvS", "layout": "photo", "attributes": {"alt": "Igor", "photo": "64nQLZvDoNa9jP1QDrZBr3dTPd0pGOjOYQPAZmb1.jpeg"}}, {"key": "Fzbhhwt81ZM52sr9", "layout": "photo", "attributes": {"alt": "Igor", "photo": "5OZWX3KGaYPzm8KFLoQV5e8yuGxl8wLPq5oB4o0W.jpeg"}}]',
             'press' => '[{"key": "WHFIMYuxvqHfkZt0", "layout": "press", "attributes": {"url": "https://www.rtbf.be/culture/article/detail_cursiv-de-igor-gehenot-de-la-musique-tout-simplement?id=10423659", "title": "\"Cursiv\" de Igor Gehenot, de la Musique tout simplement !", "source": "RTBF", "excerpt": "Igor Gehenot est né à Liège en 1989. Une mère pianiste, un père dessinateur, Igor commence le piano à 6 ans. Bercé par Bach et Stravinsky, Passionné de Hip Hop et de funk, Igor s’intéressera ensuite au jazz avec la découverte de Bill Evans, Keith Jarrett, McCoy Tyner, Chick Corea …", "published_at": "2020-02-11 00:00:00"}}, {"key": "DFDBSyxnic72n9gh", "layout": "press", "attributes": {"url": "https://plus.lesoir.be/275916/article/2020-01-28/igor-gehenot-cursiv", "title": "Igor Gehenot Cursiv", "source": "Le Soir", "excerpt": "C’est un album d’amitié. Igor l’avoue : il était « out » en arrivant au studio d’Alex. Il n’avait plus rien écrit depuis un an. ", "published_at": "2020-02-12 00:00:00"}}]',
-            'date' => '2020-06-18 17:30:00',
+            'date' => now(),
             'featured' => true,
             'resto' => true,
             'type_id' => 1,
@@ -129,7 +129,7 @@ Ce nouveau projet s\'inscrit dans la lignée mélodique de Gehenot, alternant m�
             'updated_at' => now(),
             'seats' => '',
             'seating' => true,
-            'prices' => '[]',
+            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
         ]);
 
     }

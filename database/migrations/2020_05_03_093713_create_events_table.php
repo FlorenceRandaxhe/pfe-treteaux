@@ -21,20 +21,21 @@ class CreateEventsTable extends Migration
             $table->string('img');
             $table->string('alt');
             $table->text('description');
+            $table->json('prices');
+            $table->json('seats');
             $table->json('distribution');
-            $table->timestamp('date');
             $table->json('details');
             $table->json('gallery');
             $table->json('press');
-            $table->json('prices');
             $table->boolean('featured')->default(false);
             $table->boolean('resto')->default(false);
             $table->boolean('seating')->default(true);
-            $table->json('seats');
-            $table->foreignId('type_id')->constrained()->onDelete('cascade');
-            $table->foreignId('season_id')->constrained()->onDelete('cascade');
-            $table->softDeletes();
+            $table->dateTime('date');
             $table->timestamps();
+            $table->softDeletes();
+            $table->foreignId('season_id')->constrained()->onDelete('cascade');
+            $table->foreignId('type_id')->constrained()->onDelete('cascade');
+
         });
     }
 

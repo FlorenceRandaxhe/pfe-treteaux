@@ -14,11 +14,15 @@ class NewsletterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(NewsletterRequest $request)
+    public function submit(NewsletterRequest $request)
     {
-        $result = Newsletter::subscribe($request->email);
-
+        $result = Newsletter::subscribe($request->nl_email);
         return redirect()->to(url()->previous() . '#newsletter')->with('success', $result);
+    }
 
+    public function submitFooter(NewsletterRequest $request)
+    {
+        $result = Newsletter::subscribe($request->nlf_email);
+        return redirect()->to(url()->previous() . '#newsletter')->with('success', $result);
     }
 }

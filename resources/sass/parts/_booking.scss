@@ -45,7 +45,7 @@
         padding: em(40) 0;
     }
 
-    &__label:hover{
+    &__label:hover, &__label:focus{
         .tooltip__text{
             opacity: 1;
             visibility: visible;

@@ -8,10 +8,7 @@
                     'title' => $media->title,
                     'excerpt' => $media->excerpt,
                     'source' => $media->source,
-                    'date' => $media->published_at->format('c'),
-                    'day' => $media->published_at->isoFormat('DD'),
-                    'month' => $media->published_at->isoFormat('MMM'),
-                    'year' => $media->published_at->isoFormat('Y'),
+                    'date' => $media->published_at,
                     'url' => $media->url
                 ])
             @endforeach

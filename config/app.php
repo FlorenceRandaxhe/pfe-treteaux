@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Brussels',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,7 @@ return [
         App\Providers\NovaServiceProvider::class,
         Whitecube\NovaPage\NovaPageServiceProvider::class,
         Watson\Active\ActiveServiceProvider::class,
+        \Custom\Theme\ThemeServiceProvider::class,
 
 
         /*

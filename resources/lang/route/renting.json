@@ -1,7 +1,7 @@
 {
     "title": "Location des Tr\u00e9teaux",
     "created_at": "2020-05-12 10:00:00",
-    "updated_at": "2020-05-19 16:01:43",
+    "updated_at": "2020-05-24 21:31:01",
     "attributes": {
         "heroIntro": "Envie d'organiser une activit\u00e9 chez nous ? Il est possible de louer notre salle. Pour toute information, prenez contact avec nous via le formulaire ci-dessous.",
         "roomTitle": "Infos pratiques",
@@ -18,30 +18,103 @@
         "rooms": [
             {
                 "layout": "room",
-                "key": "Kfw6xYyHp77RqRb4",
+                "key": "uu23LJ6dXTn7Xecv",
                 "attributes": {
                     "roomName": "La salle",
-                    "roomContent": "**Sc\u00e8ne**\n\nLargeur : 8 m\u00e8tres\nProfondeur : 6 m\u00e8tres en normal, 9,5 m\u00e8tres en prolong\u00e9 (largeur de 6 m\u00e8tres entre les 2 sc\u00e8nes)\n\nHauteur sous grill : 4 m\u00e8tres en hauteur maximale, 5 m\u00e8tres au sol\n\nAccessible aux personnes \u00e0 mobilit\u00e9 r\u00e9duite.\n\n**Jauge**\n\n321 places assises\n\n600 places debouts",
-                    "roomLabel": "T\u00e9l\u00e9charger le plan de salle",
-                    "roomFile": "3yzpObPvYYTviaa4P1XiK4vjlTmpyupEnB4ZhddP.pdf"
+                    "description": [
+                        {
+                            "layout": "feature",
+                            "key": "XPMkWv1islvsHi07",
+                            "attributes": {
+                                "featureName": "Sc\u00e8ne",
+                                "featureContent": "Largeur : 8 m\u00e8tres\n\nProfondeur : 6 m\u00e8tres en normal, 9,5 m\u00e8tres en prolong\u00e9 (largeur de 6 m\u00e8tres entre les 2 sc\u00e8nes)\n\nHauteur sous grill : 4 m\u00e8tres en hauteur maximale, 5 m\u00e8tres au sol\n"
+                            }
+                        },
+                        {
+                            "layout": "feature",
+                            "key": "Ywt4G2HLQcXJZ2bI",
+                            "attributes": {
+                                "featureName": "Accessibilit\u00e9",
+                                "featureContent": "Accessible aux personnes \u00e0 mobilit\u00e9 r\u00e9duite.\n"
+                            }
+                        },
+                        {
+                            "layout": "feature",
+                            "key": "cZXBLGsOi387GLS8",
+                            "attributes": {
+                                "featureName": "Jauge",
+                                "featureContent": "- 321 places assises\n- 600 places debouts"
+                            }
+                        }
+                    ],
+                    "download": [
+                        {
+                            "layout": "file",
+                            "key": "5I78d8WEp4wrxYCv",
+                            "attributes": {
+                                "roomFile": "choEpwSsuZGX5Y6ybfwAgelk37B9AEeYW9qxJW3I.pdf",
+                                "roomLabel": "Plan de salle"
+                            }
+                        }
+                    ],
+                    "roomGallery": [],
+                    "roomNote": "Liste du mat\u00e9riel lumi\u00e8re et son sur demande"
                 }
             },
             {
                 "layout": "room",
-                "key": "vgeNiXwxJWKDiGay",
+                "key": "JdZtzItBc8DtHfl3",
                 "attributes": {
                     "roomName": "Salle polyvalente",
-                    "roomContent": "**Mat\u00e9riel**\n\nEcran de projection\n\n**Jauge**\n\n100 personnes\n\nPeut \u00eatre utilis\u00e9e comme espace de pr\u00e9paration avant les spectacles pour les grands groupes",
-                    "roomLabel": ""
+                    "description": [
+                        {
+                            "layout": "feature",
+                            "key": "fVqofgDx09YSnUj6",
+                            "attributes": {
+                                "featureName": "Mat\u00e9riels",
+                                "featureContent": "Ecran de projection"
+                            }
+                        },
+                        {
+                            "layout": "feature",
+                            "key": "C2SnEFfYTzn6SlAz",
+                            "attributes": {
+                                "featureName": "Jauge",
+                                "featureContent": "100 personnes"
+                            }
+                        }
+                    ],
+                    "download": [],
+                    "roomGallery": [],
+                    "roomNote": "Peut \u00eatre utilis\u00e9e pour comme espace de pr\u00e9paration avant les spectacles de grands groupes"
                 }
             },
             {
                 "layout": "room",
-                "key": "aW2tV1rzDClOpRVJ",
+                "key": "GmVunBtKkDJEIa9Z",
                 "attributes": {
                     "roomName": "Le foyer",
-                    "roomContent": "**Superficie**\n\n187m\u00b2\n\n**Jauge**\n\n20 tables\n\n80 chaises\n\nCompos\u00e9e d'un bar, d'un vestiaire et d'un espace billetterie",
-                    "roomLabel": ""
+                    "description": [
+                        {
+                            "layout": "feature",
+                            "key": "zruYElzy0siZd5we",
+                            "attributes": {
+                                "featureName": "Jauge",
+                                "featureContent": "- 20 tables\n- 80 chaises"
+                            }
+                        },
+                        {
+                            "layout": "feature",
+                            "key": "konCbPmSHIbWzfS0",
+                            "attributes": {
+                                "featureName": "Superficie",
+                                "featureContent": "187m\u00b2"
+                            }
+                        }
+                    ],
+                    "download": [],
+                    "roomGallery": [],
+                    "roomNote": "Compos\u00e9 d\u2019un bar, d\u2019un vestiaire, d\u2019un espace billetterie"
                 }
             }
         ],
@@ -50,6 +123,7 @@
         "polyLabel": null,
         "foyerName": null,
         "foyerContent": null,
-        "foyerLabel": null
+        "foyerLabel": null,
+        "heroAlt": "Le bar du foyer"
     }
 }

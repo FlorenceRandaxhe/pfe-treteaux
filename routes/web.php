@@ -30,7 +30,7 @@ Route::get('/actualites', 'PostController')
     ->template(\App\Nova\Templates\Post::class)
     ->name('post');
 
-Route::get('/actualités/{post}', 'PostController@show')
+Route::get('/actualites/{post}', 'PostController@show')
     ->name('singleNews');
 
 Route::get('/presse-et-media', 'MediaController')
@@ -63,8 +63,11 @@ Route::post('/contactForm', 'ContactController@submit')
 Route::post('/locationForm', 'RentingController@submit')
         ->name('rentingSubmit');
 
-Route::post('/newsletter', 'NewsletterController')
+Route::post('/newsletter', 'NewsletterController@submit')
         ->name('newsletter');
+
+Route::post('/newsletterFooter', 'NewsletterController@submitFooter')
+        ->name('newsletterFooter');
 
 Route::get('/rgpd', 'legalController@rgpd')
     ->template(\App\Nova\Templates\Rgpd::class)
@@ -87,5 +90,11 @@ Route::get('/placement/{event}', 'BookingController@seat')
 Route::post('/chooseSeats/{event}', 'BookingController@chooseSeats')
     ->name('chooseSeats');
 
-Route::get('/confirmation/{event}', 'BookingController@confirm')
-    ->name('confirm');
+Route::get('/panier/{event}', 'BookingController@cart')
+    ->name('cart');
+
+Route::post('/emptyCart/{event}', 'BookingController@emptyCart')
+    ->name('emptyCart');
+
+Route::get('/payment/{event}', 'BookingController@payment')
+    ->name('payment');

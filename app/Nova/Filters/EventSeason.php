@@ -47,9 +47,4 @@ class EventSeason extends Filter
         return Season::pluck('id', 'year')->toArray();
     }
 
-    public function default()
-    {
-        return Season::where('archived', '=', false)->latest()->first();
-    }
-
 }

@@ -5,13 +5,14 @@
                 <p class="footer__success">Merci pour votre inscription!</p>
             @else
             <h2 class="footer__title">Newsletter</h2>
-            <form class="form footer__form" action="{{ route('newsletter') }}" method="POST">
+            <form class="form footer__form" action="{{ route('newsletterFooter') }}" method="POST">
                 @csrf
+                {!! Honeypot::generate('my_name', 'my_time') !!}
                 <div class="form__control form__control--white">
-                    <label class="form__label form__label--white" for="nl_email">Email</label>
-                    <input type="search" name="email" class="form__input form__input--white form__input--small">
-                    <button class="btn btn--arrow btn--white"><span class="sro">Envoyer</span></button>
-                    @error('email')
+                    <label class="form__label form__label--white" for="nlf_email">Email</label>
+                    <input type="email" id="nlf_email" name="nlf_email" class="form__input form__input--white form__input--small">
+                    <button type="submit" class="btn btn--arrow btn--white"><span class="sro">Envoyer</span></button>
+                    @error('nlf_email')
                         <p class="form__error form__error--white">{{ $message }}</p>
                     @enderror
                 </div>
@@ -41,10 +42,10 @@
 
         <div class="footer__content">
             <h2 class="footer__title">Contact</h2>
-            <ul class="footer__list">
-                <li class="footer__item"><a target="_blank" class="footer__link" href="https://maps.google.com/?ll={{ Page::get('lat') }},{{ Page::get('lng') }}">{{ Page::option('contact')->address }}</a></li>
-                <li class="footer__item"><a class="footer__link" href="mailto:{{ Page::option('contact')->email }}">{{ Page::option('contact')->email }}</a></li>
-                <li class="footer__item"><a class="footer__link" href="tel:{{ phone(Page::option('contact')->phone) }}">{{ Page::option('contact')->phone }}</a></li>
+            <ul class="footer__list" itemscope itemtype="https://schema.org/Place">
+                <li class="footer__item" itemprop="address"><a target="_blank" class="footer__link" href="https://maps.google.com/?ll={{ Page::option('contact')->lat }},{{ Page::option('contact')->lng }}">{{ Page::option('contact')->address }}</a></li>
+                <li class="footer__item" itemprop="email"><a class="footer__link" href="mailto:{{ Page::option('contact')->email }}">{{ Page::option('contact')->email }}</a></li>
+                <li class="footer__item" itemprop="telephone"><a class="footer__link" href="tel:{{ phone(Page::option('contact')->phone) }}">{{ Page::option('contact')->phone }}</a></li>
             </ul>
         </div>
 
@@ -61,7 +62,17 @@
         </div>
     </div>
     <div class="footer__bottom wrapper">
-        <a class="footer__legal" href="{{ route('legal') }}">Conditions générales de vente</a>
-        <a class="footer__legal" href="{{ route('rgpd') }}">Politique de confidentialité</a>
+        <div class="footer__legals">
+            <a class="footer__legal" href="{{ route('legal') }}">Conditions générales de vente</a>
+            <a class="footer__legal" href="{{ route('rgpd') }}">Politique de confidentialité</a>
+        </div>
+       <div class="footer__credit">
+            <a target="_blank" href="https://florence-randaxhe.com/">
+                <span class="sro">Design et développement par Florence Randaxhe</span>
+                <svg class="footer__logo" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 125 190" width="15" height="22">
+                    <g><g><path fill="#fff" d="M44,113.9c0,10,0,24.73,0,34.78L7,185.66V113.9H44L78.82,77.81H7V41.33L44,6h70.35L79.46,41.07H44c0,17.36,0,19.38,0,36.74Z"/></g></g>
+                </svg>
+            </a>
+       </div>
     </div>
 </footer>

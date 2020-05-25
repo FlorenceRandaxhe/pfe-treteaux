@@ -1,0 +1,21 @@
+:root {
+  --primary: rgb(126, 71, 84, 1);
+  --primary-dark: rgb(79, 28, 40, 1);
+  --primary-70: rgba(79, 28, 40, 0.7);
+  --primary-50: rgba(79, 28, 40, 0.5);
+  --primary-30: rgba(79, 28, 40, 0.3);
+  --primary-10: rgba(79, 28, 40, 0.1);
+  --logo: rgb(79, 28, 40, 1);
+  --sidebar-icon: #DAE7F2;
+}
+
+.content{
+  background-color: #F9F9F9;
+}
+.bg-20{
+  background-color: #f4f7fa;
+}
+
+.bg-grad-sidebar {
+  background: rgb(79, 28, 40, 0.9);
+}

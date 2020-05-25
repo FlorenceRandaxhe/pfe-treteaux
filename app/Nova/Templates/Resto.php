@@ -39,6 +39,11 @@ class Resto extends Template {
                 ->deletable(false)
                 ->creationRules('required')
                 ->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
+
+            Text::make('Description de l\'image', 'heroAlt')
+                ->rules('required')
+                ->help('Une brève description de ce qu\'il se trouve/se passe dans l\'image, c\'est utile pour le référencement du site.')
+                ->hideFromIndex(),
         ];
     }
 

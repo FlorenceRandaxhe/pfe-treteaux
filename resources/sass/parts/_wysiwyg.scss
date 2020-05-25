@@ -131,10 +131,10 @@
     ol,
     ul{
         li{
-            padding: 0 0 0 em(20);
+            padding: 0 0 0 em(20, m);
             position: relative;
-            line-height: em(20);
-            margin-bottom: em(24);
+            line-height: em(20, m);
+            margin-bottom: em(20, m);
 
             &:before {
                 position: absolute;

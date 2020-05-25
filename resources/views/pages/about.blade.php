@@ -4,7 +4,7 @@
     @include('partials.heroAbout', [
         'title' => Page::title(),
         'img' => Page::get('heroBanner'),
-        'alt' => Page::title()
+        'alt' => Page::get('heroAlt')
     ])
     <main class="main">
         @include('partials.aboutSections')

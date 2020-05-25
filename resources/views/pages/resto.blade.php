@@ -10,7 +10,7 @@
         'img' => Page::get('image'),
         'isEvent' => false,
         'btnType' => '',
-        'alt' => Page::title(),
+        'alt' => Page::get('heroAlt'),
         'file' => false,
         'url' => '',
         'icon' => '',

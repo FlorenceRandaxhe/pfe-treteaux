@@ -1,6 +1,6 @@
 <div class="teamCard reveal">
     <figure class="teamCard__fig">
-        <img class="teamCard__img" src="{{ asset('storage/' . $team->img) }}">
+        <img class="teamCard__img" src="{{ asset('storage/' . $team->img) }}" alt="Photo de {{ $team->name }}">
     </figure>
 
     @if($team->phone || $team->email)

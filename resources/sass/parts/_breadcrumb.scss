@@ -23,7 +23,7 @@
             transition: color 0.3s $easin;
         }
 
-        a:hover{
+        a:hover, a:focus{
             color: color(black);
         }
     }

@@ -9,7 +9,7 @@
                     <div class="form__control">
                         <label class="sro" for="q">Que cherchez-vous ?</label>
                         <input type="search" name="q" id="q" class="form__input form__input--small" placeholder="Que cherchez-vous ?">
-                        <button class="btn btn--arrow"><span class="sro">Rechercher</span></button>
+                        <button type="submit" class="btn btn--arrow"><span class="sro">Rechercher</span></button>
                     </div>
                 </form>
                 <a class="search__close" href="#">Fermer</a>

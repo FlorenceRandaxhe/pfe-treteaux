@@ -94,7 +94,7 @@
 
     &__text{
         font-size: em(l);
-        line-height: em(25, l);
+        line-height: em(20, l);
 
         + a{
             display: inline-block;
@@ -121,6 +121,16 @@
         height: 100%;
         max-height: em(480);
         object-fit: cover;
+    }
+
+    &__date{
+        margin-top: em(20);
+        font-size: em(l);
+
+        &:before{
+            @include icon(calendar);
+            margin-right: em(10);
+        }
     }
 
     @include mq(m){

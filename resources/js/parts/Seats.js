@@ -11,18 +11,16 @@ export default class Seats{
         this.checkboxDisabled = this.el.querySelectorAll('.seat__checkbox[disabled]');
         this.checkbox = this.el.querySelectorAll('.seat__checkbox:not(:disabled)');
         this.circles = this.el.querySelectorAll('.circle');
-        this.takenSeat = this.el.querySelector('.alert__takenSeat');
-        this.totalSeat = this.el.querySelector('.alert__totalSeat');
-        this.amountSeat = this.el.querySelector('.alert__amountSeat');
+        this.takenSeat = this.el.querySelector('.alert__taken');
+        this.totalSeat = this.el.querySelector('.alert__total');
         this.closeTaken = this.el.querySelector('.alert__close--taken');
         this.closeTotal = this.el.querySelector('.alert__close--total');
-        this.closeAmount = this.el.querySelector('.alert__close--amount');
-        this.max = this.el.querySelector('.booking__svg').dataset.max;
-        this.btn = this.el.querySelector('.booking__next');
+        this.max = this.el.querySelector('.bSeats__svg').dataset.max;
+        this.btn = this.el.querySelector('.bSeats__next');
     }
 
     setEvents(){
-        this.el.querySelector('.booking__check').classList.add('sro');
+        //this.el.querySelector('.booking__check').classList.add('sro');
         for (let i = 0; i < this.circles.length; i++) {
             this.circles[i].addEventListener('click', () => this.toggleSeat(this.circles[i]));
         }
@@ -30,16 +28,22 @@ export default class Seats{
             this.showTakenSeat(this.checkboxDisabled[i])
         }
         this.closeTaken.addEventListener('click', (e) => this.hideTakenSeatAlert(e))
-        this.takenSeat.addEventListener('click', (e) => this.hideTakenSeatAlert(e))
+        //this.takenSeat.addEventListener('click', (e) => this.hideTakenSeatAlert(e))
         this.closeTotal.addEventListener('click', (e) => this.hideTotalSeatAlert(e))
-        this.closeAmount.addEventListener('click', (e) => this.hideAmountSeatAlert(e))
         this.totalSeat.addEventListener('click', (e) => this.eventBodyClick(e))
-        this.amountSeat.addEventListener('click', (e) => this.eventBodyClick(e))
-
 
 
         for (let i = 0; i < this.checkbox.length; i++) {
             this.showTakenSeat(this.checkbox[i])
+        };
+
+        for (let i = 0; i < this.circles.length; i++) {
+            this.circles[i].addEventListener('click', (e) => {
+                if(this.circles[i].hasAttribute('data-occup')){
+                    this.showTakenSeatAlert()
+                    return;
+                }
+            })
         }
 
         this.btn.addEventListener('click', (e) => this.checkAmoutOfSeats(e))
@@ -95,43 +99,31 @@ export default class Seats{
         this.sum = parseInt(this.max) + 1;
         if (this.selected.length < parseInt(this.max)) {
             e.preventDefault();
-            this.showAmountSeatAlert();
+            this.showTotalSeatAlert();
         } else {
             return;
         }
     }
 
     showTakenSeatAlert(){
-        this.takenSeat.classList.add('alert__takenSeat--show');
-        this.visible = true;
+        this.takenSeat.classList.add('alert--show');
         document.querySelector('body').classList.add('layout--scrollblock');
     }
 
     hideTakenSeatAlert(e) {
         e.preventDefault();
-        this.takenSeat.classList.remove('alert__takenSeat--show');
+        this.takenSeat.classList.remove('alert--show');
         document.querySelector('body').classList.remove('layout--scrollblock');
     }
 
     showTotalSeatAlert(){
-        this.totalSeat.classList.add('alert__totalSeat--show');
+        this.totalSeat.classList.add('alert--show');
         document.querySelector('body').classList.add('layout--scrollblock');
     }
 
     hideTotalSeatAlert(e) {
         e.preventDefault();
-        this.totalSeat.classList.remove('alert__totalSeat--show');
-        document.querySelector('body').classList.remove('layout--scrollblock');
-    }
-
-    showAmountSeatAlert(){
-        this.amountSeat.classList.add('alert__amountSeat--show');
-        document.querySelector('body').classList.add('layout--scrollblock');
-    }
-
-    hideAmountSeatAlert(e) {
-        e.preventDefault();
-        this.amountSeat.classList.remove('alert__amountSeat--show');
+        this.totalSeat.classList.remove('alert--show');
         document.querySelector('body').classList.remove('layout--scrollblock');
     }
 
@@ -143,8 +135,8 @@ export default class Seats{
         ) {
             return;
         }
+        this.hideTakenSeatAlert(e);
         this.hideTotalSeatAlert(e);
-        this.hideAmountSeatAlert(e);
     }
 }
 

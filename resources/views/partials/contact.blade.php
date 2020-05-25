@@ -13,7 +13,7 @@
 
 <section class="contact">
     <div class="contact__container wrapper">
-        <h2 class="sro">Information de contact</h2>
+        <h2 class="sro">Informations de contact</h2>
         <div class="contact__info">
             @include('parts.contactInfo')
         </div>
@@ -21,7 +21,7 @@
 </section>
 
 <div class="contact">
-    <div class="contact__mapContainer" data-lat="{{ Page::get('lat') }}" data-lng="{{ Page::get('lng') }}">
+    <div class="contact__mapContainer" data-lat="{{ Page::option('contact')->lat }}" data-lng="{{ Page::option('contact')->lng }}">
         <div class="contact__map" id='map' style='width: 100%; height: 550px;'></div>
     </div>
 </div>

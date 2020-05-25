@@ -1,0 +1,79 @@
+.bCat{
+    padding: em(30) 0 em(70);
+
+    &__title{
+        @include font(latobold);
+        font-size: em(xl);
+        padding-bottom: em(20, xl);
+    }
+
+    &__heading, &__control{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__heading{
+        padding: em(20, l) 0;
+        font-size: em(l);
+        @include font(latobold);
+    }
+
+    &__control{
+        padding: em(15) 0;
+        border-bottom: 1px solid color(border);
+    }
+
+    &__label{
+        width:40%;
+        text-transform: uppercase;
+        font-size: em(s);
+        letter-spacing: 1px;
+    }
+
+    &__price{
+        @include font(latobold);
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: space-between;
+        padding: em(40) 0;
+    }
+
+    &__label:hover, &__label:focus{
+        .tooltip__text{
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) translateX(10px);
+        }
+    }
+
+    &__text{
+        @include font(latoregular);
+        font-size: em(m);
+        color: color(error);
+        padding-bottom: em(20, m);
+    }
+
+    &__bold{
+        @include font(latobold);
+    }
+
+    @include mq(m){
+
+        &__head{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__control{
+            padding: em(15);
+        }
+
+        &__heading{
+            padding: em(20, l) em(15, l);
+        }
+    }
+}

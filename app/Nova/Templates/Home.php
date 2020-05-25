@@ -35,6 +35,8 @@ class Home extends Template {
     protected function aboutFields()
     {
         return [
+            Heading::make('Petite section "à propos des Tréteaux" dans le bas de la page'),
+
             Text::make('Title', 'infoTitle')
                 ->rules('required'),
 
@@ -42,6 +44,7 @@ class Home extends Template {
                 ->rules('required'),
 
             Text::make('Label', 'infoLabel')
+                ->help('Texte pour le lien vers la page "à propos"')
                 ->rules('required')
         ];
     }
@@ -62,7 +65,7 @@ class Home extends Template {
             Select::make('Type d\'info', 'alertType')->options([
                 'info' => 'Info (bleu)',
                 'alert' => 'Alerte (rouge)'
-            ]),
+            ])->rules('required'),
 
             Select::make('Page', 'linkAlert')->options(
                 Post::pluck('title', 'slug')->toArray()
@@ -71,6 +74,7 @@ class Home extends Template {
                 ->displayUsingLabels(),
 
             Text::make('Label', 'labelAlert')
+                ->rules('required_with:linkAlert')
                 ->help('Texte du lien')
         ];
     }

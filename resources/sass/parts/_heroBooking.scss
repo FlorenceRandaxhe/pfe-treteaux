@@ -23,6 +23,10 @@
         }
     }
 
+    &__seating{
+        margin-top: em(10);
+    }
+
     &__item{
         padding: em(20) 0;
         border-bottom: 1px solid color(border);
@@ -75,10 +79,15 @@
             display: inline-block;
             transform: rotate(180deg);
             margin-right: em(10);
+            transition: transform 0.3s $easin;
         }
 
-        &:hover{
+        &:hover, &:focus{
             color: color(black);
+
+            &:before{
+                transform: translateX(-10px) rotate(180deg);
+            }
         }
     }
 

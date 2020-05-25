@@ -6,4 +6,4 @@ mix.js('resources/js/app.js', 'public/js')
     .copy('resources/fonts', 'public/fonts')
     .copy('resources/img', 'public/img')
     .copy('resources/icons', 'public/icons')
-    .copy('resources/favicon', 'public/favicon')
+    .copy('resources/favicon', 'public/favicon');

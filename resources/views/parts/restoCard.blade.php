@@ -4,7 +4,7 @@
         @markdown {{ $resto->menu }} @endmarkdown
     </div>
     <a href="#{{ $resto->id }}" class="restoCard__link"><span class="sro">Plus d'infos sur l'offre</span></a>
-    <p class="link">Plus d'infos</p>
+    <p class="link">Plus d'infos<span class="sro"> sur {{ $resto->name }}</span></p>
 
     @include('parts.restoInfo')
 </section>

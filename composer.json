@@ -10,6 +10,10 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Theme"
         }
     ],
     "license": "MIT",
@@ -28,7 +32,8 @@
         "spatie/laravel-newsletter": "^4.8",
         "watson/active": "^5.0",
         "whitecube/nova-flexible-content": "^0.2.2",
-        "whitecube/nova-page": "^0.2.4"
+        "whitecube/nova-page": "^0.2.4",
+        "custom/theme": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -55,7 +60,7 @@
             "database/seeds",
             "database/factories"
         ],
-         "files": [
+        "files": [
             "app/Helpers.php"
         ]
     },

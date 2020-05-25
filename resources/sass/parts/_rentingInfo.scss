@@ -11,27 +11,67 @@
         padding-bottom: em(30);
     }
 
-    &__feature{
+    &__label{
         @include font(latobold);
-        font-size: em(xl);
-        padding-bottom: em(15, xl)
+        line-height: em(25);
+        padding-bottom: em(15)
     }
 
-    &__description,
-    &__info{
-        font-size: em(l);
-        line-height: em(30, l);
-        padding-bottom: em(10, l)
+    &__note{
+        line-height: em(25)
+    }
+
+    &__links{
+        margin-top: em(30);
+    }
+
+    &__link{
+        margin-right: em(15);
+        position: relative;
+
+        &:before{
+            display: inline-block;
+            @include icon(download);
+            margin-right: em(10);
+            transition: transform 0.2s $easin;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 28px;
+            height: 6px;
+            width: 0;
+            transition: width 0.3s $easin;
+            background-color: color(blue);
+            z-index: -1;
+        }
+
+        &:hover, &:focus{
+            color: color(purple);
+
+            &:before{
+                transform: translateY(3px);
+            }
+
+            &:after{
+                width: calc(100% - 28px);
+            }
+        }
+
     }
 
     @include mq(s){
         &__item{
             display: flex;
             align-items: flex-start;
+            justify-content: flex-start;
         }
 
-        &__feature{
-            padding-right: gut(1)
+        &__label{
+            min-width: em(150);
         }
+
     }
 }

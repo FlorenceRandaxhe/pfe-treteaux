@@ -16,7 +16,7 @@
         'icon' => '',
         'label' => 'Réservez des places'
     ])
-    <main class="main">
+    <main class="main" itemscope itemtype="https://schema.org/Event">
         @include('partials.eventContent')
         @include('partials.eventGallery')
         @include('partials.eventPress')

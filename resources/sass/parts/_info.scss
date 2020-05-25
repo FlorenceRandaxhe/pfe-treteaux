@@ -43,5 +43,25 @@
     &__link{
         font-size: em(l);
         color: color(purple);
+        position: relative;
+
+        &:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background-color: color(purple);
+            transform-origin: bottom right;
+            transition: transform 0.4s $easin2;
+        }
+
+        &:hover:after,
+        &:focus:after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
 }

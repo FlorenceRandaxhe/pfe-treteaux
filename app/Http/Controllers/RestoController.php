@@ -13,7 +13,7 @@ class RestoController extends Controller
 
         return view('pages.resto', [
             'restos' => Resto::ordered()->get(),
-            'events' => Event::where('resto', '=', true)->get()
+            'events' => Event::resto()->get()
         ]);
 
     }

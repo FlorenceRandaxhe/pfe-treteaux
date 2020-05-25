@@ -5,25 +5,33 @@
         'back' => route('singleEvent', ['season' => $event->season->year, 'event' => $event->slug]),
     ])
     <main class="main" id="main">
-        <section class="booking">
-            <div class="booking__container wrapper">
-                <h2 class="booking__title">Choisissez le nombre de places et leur catégorie</h2>
+        <section class="bCat">
+            <div class="bCat__container wrapper">
+                <div class="bCat__head">
+                    <h2 class="bCat__title">Choisissez le nombre de places et leur catégorie</h2>
+                    @if($seatsLeft < 402)
+                        <p class="bCat__text"><em class="bCat__bold">Attention&nbsp;!</em> Il ne reste plus que <em class="bCat__bold">{{ $seatsLeft }} place(s)</em> pour ce spectacle</p>
+                    @endif
+                </div>
+
                 @if(session('status'))
                     <div class="alert alert__error">
                         {{ session('status') }}
                     </div>
                 @endif
-                <div class="booking__content">
-                    <form class="booking__form" action="{{ route('category', ['event' => $event->slug]) }}" method="post">
+
+
+                <div class="bCat__content">
+                    <form class="bCat__form" action="{{ route('category', ['event' => $event->slug]) }}" method="post">
                         @csrf
-                        <div class="booking__heading">
+                        <div class="bCat__heading">
                             <p>Tarif</p>
                             <p>Place(s)</p>
                         </div>
                         @foreach($event->prices as $key => $value)
                         @if($value)
-                            <div class="booking__control">
-                                <div class="booking__label">
+                            <div class="bCat__control">
+                                <div class="bCat__label">
                                     <label for="{{ Str::snake($key) }}">{{ $key }}</label>
                                      @if($key === 'enfant')
                                         @include('parts.tooltip', ['text' => 'Moins de 18 ans'])
@@ -33,9 +41,9 @@
                                         @include('parts.tooltip', ['text' => 'Votre carte d\'étudiant pourra vous être demandée à l\'entrée de la salle'])
                                     @endif
                                 </div>
-                                <p class="booking__price">{{ $value }}€</p>
+                                <p class="bCat__price">{{ $value }}€</p>
                                 <div class="form__select_wrapper">
-                                    <select class="booking__select form__select" name="{{ Str::snake($key) }}" id="{{ Str::snake($key) }}">
+                                    <select class="bCat__select form__select" name="{{ Str::snake($key) }}" id="{{ Str::snake($key) }}">
                                         <option value=""> - </option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -53,9 +61,9 @@
                         @endif
                         @endforeach
 
-                        <div class="booking__btn">
+                        <div class="bCat__btn">
                             <a class="btn btn--booking btn--back" href="{{ route('singleEvent', ['season' => $event->season->year, 'event' => $event->slug]) }}">Retour</a>
-                            <button class="btn btn--booking btn--next" type="submit">Suivant</a>
+                            <button class="btn btn--booking btn--next" type="submit">Suivant</button>
                         </div>
                     </form>
                 </div>

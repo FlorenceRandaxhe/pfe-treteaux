@@ -94,6 +94,12 @@
         }
     }
 
+    &__bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     @include mq(xl, max){
         &__newsletter{
             width: 100%;
@@ -109,13 +115,13 @@
 
         &__bottom{
             text-align: center;
+            flex-direction: column;
         }
 
         &__legal{
             display: inline-block;
-            &:first-of-type{
-                margin-bottom: em(20);
-            }
+            margin-bottom: em(20);
+            margin-right: 0;
         }
     }
 }

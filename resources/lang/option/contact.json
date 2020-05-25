@@ -1,10 +1,12 @@
 {
     "title": "contact",
     "created_at": "2020-05-12 16:50:27",
-    "updated_at": "2020-05-17 20:39:02",
+    "updated_at": "2020-05-22 13:12:46",
     "attributes": {
         "address": "Rue du Coll\u00e8ge 31 4600 Vis\u00e9",
         "phone": "+324 374 85 50",
-        "email": "culture@vise.be"
+        "email": "culture@vise.be",
+        "lat": "50.737120",
+        "lng": "5.693863"
     }
 }

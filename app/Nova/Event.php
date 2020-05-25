@@ -72,20 +72,22 @@ class Event extends Resource
                 ->help('Si la saison souhaitée n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Type de spectacle" présent dans la barre latérale'),
 
             BelongsTo::make('Type')
+                ->hideFromIndex()
                 ->help('Si le type de spectacle souhaité n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Type de spectacle" présent dans la barre latérale'),
 
             Text::make('Titre du spectacle', 'title')
                 ->rules('required'),
 
             Text::make('Slug', 'slug')
-                ->rules('required', 'max:255')
+                ->rules('required', 'max:255', 'alpha_dash')
                 ->creationRules('unique:events,slug')
                 ->updateRules('unique:events,slug,{{resourceId}}')
                 ->hideFromIndex()
                 ->help('Mot clef unique relatif à la page actuelle. Il ne peut contenir que des caractères simples (lettre de a-z, pas d\'espaces, d\'accents ou autres) Par exemple, pour un post "Nous embauchons !", le slug pourrait être "nous-embauchons", la page serait alors accessible via le lien: www.votre-site.be/posts/<strong>nous-embauchons</strong>'),
 
             Textarea::make('Intro', 'intro')
-                ->rules('required')
+                ->help('Maximum 160 characters.')
+                ->rules('required', 'max:160')
                 ->hideFromIndex(),
 
             Image::make('Image', 'img')
@@ -100,7 +102,8 @@ class Event extends Resource
                 ->hideFromIndex(),
 
             Markdown::make('Description', 'description')
-                 ->rules('required')
+                ->rules('required')
+                ->stacked()
                 ->hideFromIndex(),
 
         ];
@@ -110,22 +113,30 @@ class Event extends Resource
     {
         return [
             DateTime::make('Date du spectacle', 'date')
-                ->rules('required')
-                ,
+                ->rules('required'),
 
-            KeyValue::make('Prix', 'prices')
-                ->help('<strong>Indiquer simplement le prix</strong>, il n\'est pas nécessaire d\'ajouter "€"')
+            KeyValue::make('Prix', 'prices', function (){
+                return $this->prices ?? [
+                    'adulte' => '0',
+                    'etudiant' => '0',
+                    'senior' => '0',
+                    'enfant' => '0'
+                ];
+            })
+                ->disableEditingKeys()
+                ->disableAddingRows()
+                ->disableDeletingRows()
+                ->help('<strong>Indiquer simplement le prix en chiffre</strong>, il ne faut pas ajouter le "€"')
                 ->keyLabel('Tarif')
                 ->valueLabel('Prix')
-                ->disableEditingKeys()
-                ->disableDeletingRows()
-                ->rules('json'),
+                ->rules('required', 'json'),
 
 
             Select::make('Placement', 'seating')->options([
                 '1' => 'Choix des places lors de la réservation',
                 '0' => 'Placement libre'
             ])->displayUsingLabels()
+            ->rules('required')
             ->hideFromIndex(),
 
 
@@ -141,15 +152,16 @@ class Event extends Resource
                 ->hideFromIndex()
                 ->button('Ajouter un détail')
                 ->addLayout('Détail/info', 'block', [
+                    Select::make('Icone', 'icon')->options([
+                        'pin' => 'Lieu',
+                        'public' => 'Public',
+                        'time' => 'horloge'
+                    ])->displayUsingLabels(),
                     Text::make('Titre', 'title'),
-                    Markdown::make('Contenu', 'text'),
-                ]),
+                    Text::make('Contenu', 'text'),
+                ])
+                ->help('Cette section est affichée à droite du contenu principale. Attention, la date et le prix y sont inclus automatiquement'),
 
-            // KeyValue::make('seats')
-            //     ->disableEditingKeys()
-            //     ->disableAddingRows()
-            //     ->disableDeletingRows()
-            //     ->rules('json'),
         ];
     }
 
@@ -176,7 +188,18 @@ class Event extends Resource
         return [
             Flexible::make('Presse', 'press')
                 ->button('Ajouter un article de presse')
-                ->addLayout(\App\Nova\Flexible\Layouts\PressLayout::class),
+                ->addLayout('Article de presse', 'press', [
+                    Text::make('Titre de l\'article', 'title')
+                        ->rules('required'),
+
+                    Text::make('Lien vers l\'article', 'url')
+                        ->rules('required'),
+
+                    Textarea::make('Extrait de l\'article', 'excerpt')
+                        ->rules('required'),
+
+                    Text::make('Source', 'source')
+                        ->rules('required'),]),
         ];
     }
 

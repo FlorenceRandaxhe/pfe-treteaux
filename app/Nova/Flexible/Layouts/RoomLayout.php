@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\File;
 use Whitecube\NovaFlexibleContent\Layouts\Layout;
+use Whitecube\NovaFlexibleContent\Flexible;
 
 class RoomLayout extends Layout
 {
@@ -23,7 +24,7 @@ class RoomLayout extends Layout
      *
      * @var string
      */
-    protected $title = 'RoomLayout';
+    protected $title = 'Espace';
 
     /**
      * Get the fields displayed by the layout.
@@ -34,18 +35,40 @@ class RoomLayout extends Layout
     {
         return [
             Text::make('Titre', 'roomName')
-                ->rules('required'),
+                        ->rules('required'),
 
-            Markdown::make('Contenu', 'roomContent')
-                ->rules('required'),
+            Flexible::make('Description', 'description')
+                ->button('Ajouter une caractéristique')
+                ->addLayout('Caractéristique', 'feature', [
+                    Text::make('Nom', 'featureName')
+                        ->rules('required'),
 
-            File::make('fichier', 'roomFile')
-                ->help('Par exemple: plan de salle'),
+                    Markdown::make('Contenu', 'featureContent')
+                        ->rules('required'),
+                ]),
 
-            Text::make('Label', 'roomLabel')
-                ->help('Texte qui apparapitra sur le boutton de téléchargement'),
+            Flexible::make('Téléchargement', 'download')
+                ->button('Ajouter un fichier à télécharger')
+                ->addLayout('Fichier', 'file', [
+
+                    File::make('fichier', 'roomFile')
+                        ->deletable(false)
+                        ->creationRules('required')
+                        ->help('Par exemple: plan de salle, facultatif'),
+
+                    Text::make('Label', 'roomLabel')
+                        ->rules('required')
+                        ->help('Intitulé du lien'),
+                ]),
+
+            Textarea::make('Notes', 'roomNote'),
 
         ];
+    }
+
+    public function getItemsAttribute()
+    {
+        return $this->flexible('rooms');
     }
 
 }

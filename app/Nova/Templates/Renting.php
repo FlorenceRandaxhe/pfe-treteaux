@@ -28,7 +28,7 @@ class Renting extends Template {
     {
         return [
             new Panel('Intro', $this->heroFields()),
-            new Panel('Les salles', $this->roomFields()),
+            new Panel('Les espaces', $this->roomFields()),
             new Panel('Location', $this->formFields()),
             new MetaPanel('Données meta')
         ];
@@ -44,6 +44,11 @@ class Renting extends Template {
                 ->deletable(false)
                 ->creationRules('required')
                 ->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.'),
+
+            Text::make('Description de l\'image', 'heroAlt')
+                ->rules('required')
+                ->help('Une brève description de ce qu\'il se trouve/se passe dans l\'image, c\'est utile pour le référencement du site.')
+                ->hideFromIndex(),
         ];
     }
 
@@ -53,10 +58,12 @@ class Renting extends Template {
             Text::make('Titre', 'roomTitle')
                 ->rules('required'),
 
-            Flexible::make('Description des salles', 'rooms')
-                ->button('Ajouter une salle')
-                ->addLayout(\App\Nova\Flexible\Layouts\RoomLayout::class),
-
+            Flexible::make('Description des espaces', 'rooms')
+                ->limit(5)
+                ->confirmRemove($label = 'Voulez-vous vraiment supprimer ce contenu ?', $yes = 'Supprimer', $no = 'Annuler')
+                ->stacked()
+                ->button('Ajouter un espace')
+                ->addLayout(\App\Nova\Flexible\Layouts\RoomLayout::class)
         ];
     }
 

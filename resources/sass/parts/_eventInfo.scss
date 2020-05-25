@@ -11,15 +11,72 @@
 
     &__item{
         padding: em(10) 0;
-        border-bottom: 1px solid color(grey);
+
+        &:not(:last-of-type){
+            border-bottom: 1px solid color(grey);
+        }
+    }
+
+    &__itemSub{
+        margin-left: em(40);
+        padding: em(5) 0;
+        position: relative;
+
+        &:before{
+            content:'';
+            position: absolute;
+            height: 4px;
+            width: 4px;
+            top: calc(50% - 2px);
+            left: -10px;
+            border-radius: 100%;
+            background-color: color(purple)
+        }
     }
 
     &__label{
         @include font(latobold);
-        padding-bottom: em(10)
+        padding-bottom: em(10);
+        padding-left: em(30);
+        position: relative;
+        &:before{
+            position: absolute;
+            left: 0;
+
+        }
+        &--price:before{
+            @include icon(dollar);
+            font-weight: bold;
+            margin-right: em(10)
+        }
+
+        &--time:before{
+            @include icon(time);
+            font-weight: bold;
+            margin-right: em(10)
+        }
+
+        &--public:before{
+            @include icon(users);
+            font-weight: bold;
+            margin-right: em(10)
+        }
+
+        &--date:before{
+            @include icon(calendar);
+            font-weight: bold;
+            margin-right: em(10)
+        }
+
+        &--pin:before{
+            @include icon(pin);
+            font-weight: bold;
+            margin-right: em(10)
+        }
     }
 
     &__content{
+        margin-left: em(30);
         li{
             margin-bottom: em(8);
             position: relative;

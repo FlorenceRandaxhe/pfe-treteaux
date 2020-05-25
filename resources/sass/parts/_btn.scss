@@ -125,7 +125,8 @@
         color: color(black);
         //background-color: color(error);
         border: 2px solid color(border);
-            &:hover{
+            &:hover, &:focus{
+                outline: none;
                 background-color: color(border);
                 //color: color(white);
             }
@@ -134,7 +135,8 @@
     &--next{
         background-color: color(black);
         border: 2px solid color(black);
-            &:hover{
+            &:hover, &:focus{
+                outline: none;
                 background-color: transparent;
                 color: color(black);
             }

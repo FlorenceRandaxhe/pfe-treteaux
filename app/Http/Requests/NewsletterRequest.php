@@ -24,10 +24,18 @@ class NewsletterRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'required|email',
+            'nl_email' => 'required|email',
             'my_name'   => 'honeypot',
             'my_time'   => 'required|honeytime:5'
 
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nl_email.required' => 'Ce champs est obligatoire',
+            'nl_email.email'  => 'Veulliez entrer une adresse email valide',
         ];
     }
 

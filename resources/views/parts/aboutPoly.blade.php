@@ -7,7 +7,6 @@
                 @markdown {{ Page::get('polyContent') }} @endmarkdown
             </div>
         </div>
-
         <figure class="aboutPoly__fig">
             <img class="aboutPoly__img" src="{{ asset('storage/' . Page::get('polyImg')) }}" alt="{{ Page::get('polyTitle') }}">
         </figure>

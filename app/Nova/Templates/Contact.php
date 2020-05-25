@@ -22,7 +22,6 @@ class Contact extends Template {
     {
         return [
             new Panel('Intro', $this->heroFields()),
-            new Panel('Address', $this->mapFields()),
             new MetaPanel('Données meta')
         ];
     }
@@ -35,17 +34,6 @@ class Contact extends Template {
         ];
     }
 
-    protected function mapFields()
-    {
-        return [
-            Text::make('Latitude', 'lat')->hideFromIndex()
-                ->rules('required'),
-
-            Text::make('Longitude', 'lng')->hideFromIndex()
-                ->rules('required'),
-
-        ];
-    }
     /**
      * Get the cards available for the request.
      *

@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Query\Expression;
+
 
 class CreateEventsTable extends Migration
 {
@@ -21,8 +23,8 @@ class CreateEventsTable extends Migration
             $table->string('img');
             $table->string('alt');
             $table->text('description');
-            $table->json('prices');
-            $table->json('seats');
+            $table->json('prices')->nullable();
+            $table->json('seats')->nullable();
             $table->json('distribution');
             $table->json('details');
             $table->json('gallery');
@@ -30,11 +32,11 @@ class CreateEventsTable extends Migration
             $table->boolean('featured')->default(false);
             $table->boolean('resto')->default(false);
             $table->boolean('seating')->default(true);
-            $table->dateTime('date');
+            $table->timestamp('date');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreignId('season_id')->constrained()->onDelete('cascade');
-            $table->foreignId('type_id')->constrained()->onDelete('cascade');
+            $table->foreignId('season_id')->references('id')->on('seasons')->onDelete('cascade');
+            $table->foreignId('type_id')->references('id')->on('types')->onDelete('cascade');
 
         });
     }

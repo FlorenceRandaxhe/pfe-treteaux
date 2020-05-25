@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Badge;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Post extends Resource
@@ -49,6 +51,10 @@ class Post extends Resource
         return [
             ID::make()->sortable(),
 
+            BelongsTo::make('Tag')
+                ->hideFromIndex()
+                ->help('Si le type de spectacle souhaité n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Catégories" présent dans la barre latérale'),
+
             Badge::make('Status', function () {
                 return $this->published_at <= now() ? 'publié' : 'brouillon';
             })->map([
@@ -83,8 +89,9 @@ class Post extends Resource
                 ->help('Une brève description de ce qu\'il se trouve/se passe dans l\'image, c\'est utile pour le référencement du site.')
                 ->hideFromIndex(),
 
-            Markdown::make('Contenu', 'content')
+            Trix::make('Contenu', 'content')
                 ->rules('required')
+                ->stacked()
                 ->hideFromIndex(),
         ];
     }

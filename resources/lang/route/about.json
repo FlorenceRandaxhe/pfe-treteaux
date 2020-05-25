@@ -1,7 +1,7 @@
 {
     "title": "La salle",
     "created_at": "2020-05-12 10:00:00",
-    "updated_at": "2020-05-13 11:20:03",
+    "updated_at": "2020-05-24 12:20:02",
     "attributes": {
         "heroTitle": "Locaux ou ext\u00e9rieurs, amateurs ou professionnels, ils sont nombreux \u00e0 avoir \u00e9cum\u00e9 la sc\u00e8ne des Tr\u00e9teaux.",
         "heroIntro": "Ancienne salle de gymnastique de l\u2019Ath\u00e9n\u00e9e de Vis\u00e9, la salle de spectacle Les Tr\u00e9teaux a accueilli pendant pr\u00e8s de 30 ans un grand nombre de manifestations dans une salle v\u00e9tuste, \u00e0 peine am\u00e9nag\u00e9e pour le milieu du spectacle.  C\u2019est donc tout naturellement que Les Tr\u00e9teaux ont \u00e9t\u00e9 choisi quand la Ville a voulu se doter d\u2019une structure adapt\u00e9e aux performances sc\u00e9niques. Apr\u00e8s 2 ans de r\u00e9novation et une modification compl\u00e8te des lieux, la salle de spectacle Les Tr\u00e9teaux nouvelle g\u00e9n\u00e9ration a ouvert ses portes le 30 janvier 2019. Artistes renomm\u00e9s et talents locaux se succ\u00e9deront dans ce nouvel \u00e9crin du Centre Culturel, pour le plus grand plaisir et le confort des spectateurs ainsi que des artistes.",
@@ -61,6 +61,7 @@
                 }
             }
         ],
-        "teamTitle": "Notre \u00e9quipe"
+        "teamTitle": "Notre \u00e9quipe",
+        "heroAlt": "La facade des Tr\u00e9teaux"
     }
 }

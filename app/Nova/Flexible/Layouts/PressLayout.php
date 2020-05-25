@@ -34,21 +34,8 @@ class PressLayout extends Layout
     public function fields()
     {
         return [
-            Date::make('Date de publication', 'published_at')
-                ->pickerFormat('d.m.Y')
-                ->rules('required'),
 
-            Text::make('Titre de l\'article', 'title')
-                ->rules('required'),
 
-            Text::make('Lien vers l\'article', 'url')
-                ->rules('required'),
-
-            Textarea::make('Extrait de l\'article', 'excerpt')
-                ->rules('required'),
-
-            Text::make('Source', 'source')
-                ->rules('required'),
         ];
     }
 

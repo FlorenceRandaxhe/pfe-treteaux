@@ -36,9 +36,9 @@ Ce nouveau projet s\'inscrit dans la lignée mélodique de Gehenot, alternant m�
             'deleted_at' => null,
             'created_at' => now(),
             'updated_at' => now(),
-            'seats' => '',
+            'seats' => null,
             'seating' => true,
-            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
+            'prices' => null,
         ]);
 
         Event::create([
@@ -69,9 +69,9 @@ L\'homme est-il un monstre ou le monstre un homme ?',
             'deleted_at' => null,
             'created_at' => now(),
             'updated_at' => now(),
-            'seats' => '',
+            'seats' => null,
             'seating' => true,
-            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
+            'prices' => null,
         ]);
 
         Event::create([
@@ -98,9 +98,9 @@ Les musiciens aiment parler au public avec un humour de bon aloi et apportent tr
             'deleted_at' => null,
             'created_at' => now(),
             'updated_at' => now(),
-            'seats' => '',
+            'seats' => null,
             'seating' => true,
-            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
+            'prices' => null,
         ]);
 
         Event::create([
@@ -127,9 +127,9 @@ Ce nouveau projet s\'inscrit dans la lignée mélodique de Gehenot, alternant m�
             'deleted_at' => null,
             'created_at' => now(),
             'updated_at' => now(),
-            'seats' => '',
+            'seats' => null,
             'seating' => true,
-            'prices' => '{"adulte": "17", "enfant": "14", "senior": "14", "etudiant": "14"}',
+            'prices' => null,
         ]);
 
     }

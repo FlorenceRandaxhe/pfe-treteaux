@@ -10,7 +10,7 @@
         'img' => Page::get('image'),
         'isEvent' => false,
         'btnType' => 'primary',
-        'alt' => Page::get('heroIntro'),
+        'alt' => Page::get('heroAlt'),
         'file' => false,
         'url' => '#form',
         'icon' => '',

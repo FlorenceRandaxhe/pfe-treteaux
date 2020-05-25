@@ -8,15 +8,20 @@ use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    public function category(Event $event, Request $request){
+    public function category(Event $event, Request $request)
+    {
+        $filtered = Arr::where($event->seats, function ($value, $key) {
+            return $value == '0';
+        });
 
         return view('booking.category', [
-            'event' => $event
+            'event' => $event,
+            'seatsLeft' => count($filtered)
         ]);
     }
 
-    public function chooseCategory(Event $event, Request $request){
-
+    public function chooseCategory(Event $event, Request $request)
+    {
         session([
             'category' => [
                 'adulte' => intval($request->adulte),
@@ -28,6 +33,7 @@ class BookingController extends Controller
 
         $flattened = Arr::flatten(session('category'));
         $sum = array_sum($flattened);
+        session(['sum' => $sum]);
         session(['seat' => []]);
 
         if ($sum === 0) {
@@ -35,54 +41,65 @@ class BookingController extends Controller
         }
 
         if($event->seating === 0){
-            return redirect()->route('confirm', ['event' => $event]);
+            return redirect()->route('cart', ['event' => $event]);
         }
 
         return redirect()->route('seating', ['event' => $event]);
 
     }
 
-    public function seat(Event $event, Request $request){
-
-        $flattened = Arr::flatten(session('category'));
-        $sum = array_sum($flattened);
-        session(['sum' => $sum]);
-
+    public function seat(Event $event, Request $request)
+    {
+        if($event->seating === 0){
+            return redirect()->to(url()->previous());
+        }
 
         return view('booking.seats', [
-            'sum' => $sum,
             'event' => $event
         ]);
     }
 
 
-    public function chooseSeats(Event $event){
-
-        //$request->session()->push('seat',  $request->seats);
-
+    public function chooseSeats(Event $event, Request $request)
+    {
         session(['seat'=> $request->seats]);
 
-        $flattened = Arr::flatten(session('category'));
-        $sum = array_sum($flattened);
-
-        return redirect()->route('confirm', ['event' => $event]);
-
+        return redirect()->route('cart', [
+            'event' => $event
+        ]);
 
         //$result = array_merge($event->seats, $request->seats);
         //$event->update(['seats' => $result]);
 
     }
 
-    public function confirm(Event $event){
-        //return $request->session()->all();
+    public function cart(Event $event, Request $request)
+    {
         $arr = [];
         foreach (session('category') as $key => $value) {
             $arr[] = $event->prices[$key] * $value;
         }
-        $sum = array_sum($arr);
+        $total = array_sum($arr);
+        session(['total' => $total]);
 
-        return view('booking.confirm', [
-            'sum' => $sum,
+        return view('booking.cart', [
+            'event' => $event
+        ]);
+    }
+
+    public function emptyCart(Request $request, Event $event){
+        $request->session()->flush();
+
+        return redirect()->route('booking', [
+            'event' => $event
+        ]);
+
+    }
+
+    public function payment(Event $event, Request $request)
+    {
+       // return $request->session()->all();
+        return view('booking.payment', [
             'event' => $event
         ]);
     }

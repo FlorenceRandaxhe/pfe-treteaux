@@ -21,10 +21,10 @@
                     @if($event && $event->date > now())
                         <a class="hero__link btn btn--{{ $btnType }}" href="{{ $url }}">{{ $label }}</a>
                     @elseif($event && $event->date <= now())
-                        <p>Le {{ $event->date->isoFormat('DD MMM YY \à HH\hMM') }}</p>
+                        <p class="hero__date">Le {{ $event->date->isoFormat('DD MMM YY \à HH\hmm') }}</p>
 
                     @endif
-                @else
+                @elseif($url)
                     <a data-scroll @if($file) download @endif class="hero__link btn{{$icon ? ' btn--' . $icon : '' }} btn--{{ $btnType }}" href="{{ $file ? asset('storage/' . $url) : $url }}">{{ $label }}</a>
                 @endif
             </div>

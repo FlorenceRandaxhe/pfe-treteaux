@@ -12,7 +12,7 @@
                 @if($event->seating === 0)
                     <p class="heroBooking__seating">Placement libre</p>
                 @endif
-                <p class="heroBooking__date">Le {{ $event->date->isoFormat('DD MMM YY') }}</p>
+                <p class="heroBooking__date">Le {{ $event->date->isoFormat('DD MMM YY') }} à {{ $event->date->isoFormat('HH\hmm') }}</p>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
         position: relative;
 
         &--margin{
-            margin-bottom: em(60);
+            margin-bottom: em(50);
         }
 
         &--disabled{
@@ -28,11 +28,6 @@
 
     &__label:not(.form__label--checkbox){
         @include font(latobold);
-        position: absolute;
-        top: -20px;
-        left: 0;
-        opacity: 1;
-        transition: top 0.2s $easin, opacity 0.2s $easin;
     }
 
     &__input,
@@ -41,24 +36,12 @@
         @include input-placeholder();
         @include font();
         font-size: em(xl3);
-        //text-transform: uppercase;
         color: color(black);
-
         border-bottom: 2px solid transparentize(color(black), 0.4);
         padding: em(5) 0;
         width: 100%;
         background-color: transparent;
         transition: border-bottom 0.2s $easin;
-
-        &:placeholder-shown + label{
-            top: 0;
-            opacity:0;
-        }
-
-        &:not(:placeholder-shown) + label{
-            top:-15px;
-            opacity:1;
-        }
 
         &::placeholder{
             transition: color 0.2s $easin;
@@ -86,8 +69,6 @@
             }
         }
     }
-
-
 
 //*****************************************
 
@@ -231,8 +212,13 @@
         cursor: pointer;
         transition: border-color 0.3s $easin;
 
-        &:hover, &:focus{
+        &:hover{
             border-color: color(black);
+        }
+
+        &:focus{
+            border-color: color(black);
+            box-shadow: 0 0 0 2px transparentize(color(black), 0.7);
         }
 
     }

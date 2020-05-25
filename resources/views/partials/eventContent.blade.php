@@ -7,7 +7,7 @@
 
             <section class="eventContent__section">
                 <h3 class="eventContent__title">Description</h3>
-                <div class="wysiwyg">
+                <div class="wysiwyg" itemprop="description">
                     @markdown {{ $event->description }} @endmarkdown
                 </div>
             </section>

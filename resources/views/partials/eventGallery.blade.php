@@ -1,7 +1,7 @@
 @if(count($event->galleryContent) >= 1)
 <section class="eventGallery">
     <div class="wrapper">
-        <div class="eventGallery__container ">
+        <div class="eventGallery__container">
             <div class="eventGallery__titleWrapper">
                 <h2 class="eventGallery__title">Gallerie photos</h2>
             </div>

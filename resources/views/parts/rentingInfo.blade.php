@@ -18,7 +18,7 @@
         @if($room->download)
             <div class="rentingInfo__links">
                 @foreach($room->download as $download)
-                    <a href="{{ asset('storage/' . $download->attributes->roomFile) }}" download class="rentingInfo__link"><span class="sro">Télécharger </span>{{ $download->attributes->roomLabel }}</a>
+                    <a href="{{ asset('storage/' . $download->attributes->roomFile) }}" target="_blank" class="rentingInfo__link"><span class="sro">Télécharger </span>{{ $download->attributes->roomLabel }} <span class="sro">(document pdf)</span></a>
                 @endforeach
             </div>
         @endif

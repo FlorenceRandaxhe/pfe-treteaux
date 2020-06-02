@@ -39,4 +39,14 @@ class ContactRequest extends FormRequest
         $url = $this->redirector->getUrlGenerator();
         return $url->previous() . '#contact';
     }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'Le nom',
+            'email' => 'L\'email',
+            'subject' => 'Le sujet',
+            'message' => 'Le message',
+        ];
+    }
 }

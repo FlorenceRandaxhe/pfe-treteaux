@@ -26,6 +26,11 @@
         }
     }
 
+    &__required{
+        text-align: right;
+        margin-bottom: em(10);
+    }
+
     &__label:not(.form__label--checkbox){
         @include font(latobold);
     }
@@ -245,4 +250,72 @@
 
     }
 
+    &__chekoutContent{
+        margin-top: em(50);
+        width: 100%;
+    }
+
+    &__checkoutControl{
+        width: 100%;
+        margin-bottom: em(20);
+    }
+
+    &__checkoutError{
+        margin-top: em(5);
+        color: color(errorText);
+    }
+
+    &__checkoutInput, .StripeElement{
+        margin-top: em(10);
+        width: 100%;
+        padding: em(12);
+        @include reset-input-styles();
+        @include input-placeholder();
+        @include font(latoregular);
+        font-size: em(m);
+        border: 1px solid color(border);
+        border-radius: 5px;
+        color: color(input);
+        transition: border-color 0.3s $easin, box-shadow 0.3s $easin;
+
+        &::placeholder{
+            color: color(placeholder);
+            @include font(latoregular);
+        }
+
+        &:focus{
+            border-color: color(input);
+            box-shadow: 0 0 0 2px transparentize(color(input), 0.6);
+        }
+        &:hover{
+            border-color: color(input);
+        }
+
+        &--error{
+            border-color: color(errorBg);
+        }
+
+        &--focus{
+            border-color: color(input);
+            box-shadow: 0 0 0 2px transparentize(color(input), 0.6);
+        }
+    }
+
+    @include mq(m){
+
+        &__chekoutContent{
+            margin-top: 0;
+            margin-right: 8%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__checkoutControl{
+            width: 100%;
+            &--small{
+                width: 48%;
+            }
+        }
+    }
 }

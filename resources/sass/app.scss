@@ -32,6 +32,8 @@
 @import 'parts/info';
 @import 'parts/tabs';
 @import 'parts/newsletter';
+@import 'parts/spinner';
+@import 'parts/searchResults';
 
 @import 'parts/heroBasic';
 @import 'parts/heroAbout';
@@ -55,6 +57,7 @@
 
 @import 'parts/allPress';
 @import 'parts/pressCard';
+@import 'parts/pressRelease';
 
 @import 'parts/allRestos';
 @import 'parts/restoCard';
@@ -87,7 +90,11 @@
 @import 'parts/legal';
 
 //@import 'parts/booking';
-@import 'parts/bookingCategory';
-@import 'parts/bookingSeats';
-@import 'parts/bookingCart';
-@import 'parts/bookingPayment';
+@import 'parts/checkoutCategory';
+@import 'parts/checkoutSeats';
+@import 'parts/checkoutCart';
+@import 'parts/checkoutInfo';
+@import 'parts/checkoutPayment';
+@import 'parts/checkoutConfirm';
+@import 'parts/cartSmall';
+@import 'parts/svg';

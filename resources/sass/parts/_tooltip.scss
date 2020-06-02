@@ -31,7 +31,7 @@
         @include triangle(left, center, out, 13px);
     }
 
-    &:hover{
+    &:hover, &:focus{
         .tooltip__text{
             opacity: 1;
             visibility: visible;

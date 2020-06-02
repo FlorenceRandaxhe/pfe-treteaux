@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Season;
-use App\Post;
 use App\Form;
 use App\Mail\RentingMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Http\Requests\RentingRequest;
 
-
 class RentingController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return view('pages.renting');
     }
 
-
     public function submit(RentingRequest $request)
     {
-
         Form::create([
             'form' => 'location',
             'email' => $request->email,

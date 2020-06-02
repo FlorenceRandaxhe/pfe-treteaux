@@ -1,7 +1,8 @@
 .eventInfo{
     max-width: 500px;
     padding: em(30);
-    box-shadow: 0px 4px 52px rgba(41, 40, 40, 0.17);
+    box-shadow:  18px 18px 45px #e3e3e3,
+                 -18px -18px 45px color(white);
     margin-bottom: em(50);
 
 
@@ -97,6 +98,6 @@
     @include mq(m){
         position: sticky;
         top: em(50);
-        min-width: 400px;
+        min-width: 350px;
     }
 }

@@ -1,0 +1,46 @@
+.bPay{
+    padding: em(30) 0 em(70);
+
+    &__title{
+        @include font(latobold);
+        font-size: em(xl);
+        padding-bottom: em(20, xl);
+    }
+
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__heading{
+        padding: em(20, l) 0;
+        font-size: em(l);
+        @include font(latobold);
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: space-between;
+        padding: em(40) 0;
+    }
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column-reverse;
+    }
+
+    &__alert{
+        color: color(errorText);
+        margin-bottom: em(20);
+    }
+    @include mq(m){
+
+        &__container{
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+    }
+}

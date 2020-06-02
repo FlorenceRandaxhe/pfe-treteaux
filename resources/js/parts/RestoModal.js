@@ -40,7 +40,7 @@ export default class RestoModal{
     createMap(){
         this.mapContent = document.createElement('div');
         this.mapContent.setAttribute('class','restoInfo__map');
-        this.mapContent.setAttribute('style', 'width: 100%; height: 200px');
+        this.mapContent.setAttribute('style', 'width: 100%; height: 300px');
         this.modals.querySelector('.restoInfo__container').appendChild(this.mapContent)
     }
 

@@ -17,6 +17,7 @@
         'label' => Page::get('label')
     ])
     <main class="main">
+        @include('partials.allPressRelease')
         @include('partials.allPress')
         @include('partials.newsletter', [
             'color' => 'blue'

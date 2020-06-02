@@ -1,6 +1,7 @@
 <form class="contact__form form" method="POST" action="{{ route('contactForm') }}">
     @csrf
     {!! Honeypot::generate('my_name', 'my_time') !!}
+    <p class="form__required">Tous les champs sont obligatoires</p>
     <div class="form__control form__control--margin @error('name') form__control--error @enderror">
         <label class="form__label" for="name">Nom</label>
         <input type="text" name="name" id="name" class="form__input" placeholder="Votre nom" value="{{ old('name') }}">

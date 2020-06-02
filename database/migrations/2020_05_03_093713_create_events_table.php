@@ -23,8 +23,8 @@ class CreateEventsTable extends Migration
             $table->string('img');
             $table->string('alt');
             $table->text('description');
-            $table->json('prices')->nullable();
-            $table->json('seats')->nullable();
+            $table->json('prices');
+            $table->json('seats');
             $table->json('distribution');
             $table->json('details');
             $table->json('gallery');
@@ -32,6 +32,7 @@ class CreateEventsTable extends Migration
             $table->boolean('featured')->default(false);
             $table->boolean('resto')->default(false);
             $table->boolean('seating')->default(true);
+            $table->string('pressRelease')->nullable();
             $table->timestamp('date');
             $table->timestamps();
             $table->softDeletes();

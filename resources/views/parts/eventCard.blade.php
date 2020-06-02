@@ -1,5 +1,5 @@
 <article class="eventCard{{ $class ? ' eventCard--' . $class : ''}}" itemscope itemtype="https://schema.org/Event">
-    <a class="eventCard__link" href="{{ route('singleEvent', ['season' => $event->season->year, 'event' => $event->slug]) }}"><span class="sro">En savoir plus sur {{ $event->title }}</span></a>
+    <a class="eventCard__link" href="{{ route('singleEvent', ['season' => $event->season, 'event' => $event]) }}"><span class="sro">En savoir plus sur {{ $event->title }}</span></a>
     <figure class="eventCard__fig">
         <img class="eventCard__img" src="{{ asset('storage/' . $event->img) }}" alt="{{ $event->title }}" itemprop="image">
     </figure>

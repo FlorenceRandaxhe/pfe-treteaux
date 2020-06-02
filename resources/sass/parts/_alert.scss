@@ -1,35 +1,24 @@
 .alert{
     padding: em(20);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 110;
+    background-color: rgba(0,0,0,0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s $easin3, visibility 0.3s $easin3;
 
-    &__error{
-        @include font(latobold);
-        background-color: rgba(137, 44, 44, 0.2);
-        border: 2px solid color(error);
-        color: color(error);
-    }
+    &--show{
+        visibility: visible;
+        opacity: 1;
 
-    &__taken,
-    &__total{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 110;
-        background-color: rgba(0,0,0,0.3);
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.3s $easin3, visibility 0.3s $easin3;
-    }
-
-        &--show{
-            visibility: visible;
-            opacity: 1;
-
-            .alert__content{
-                transform: translateX(0);
-            }
+        .alert__content{
+            transform: translateX(0);
         }
+    }
 
     &__content{
         background-color: color(white);
@@ -39,32 +28,34 @@
         max-width: em(400);
         font-size: em(m);
         line-height: em(25);
-        border: 5px solid #e66363;
+        border: 5px solid color(errorBg);
         transform: translateX(100px);
         transition: transform 0.3s $easin3;
-        color: #b54848;
+        color: color(errorText);
+        border-radius: 10px;
 
         &:after{
             content: '!';
             position: absolute;
             top: -17px;
             left: -15px;
-            background-color: #e66363;
-            border: 5px solid #e66363;
+            background-color: color(errorBg);
+            border: 5px solid color(errorBg);
             border-radius: 100%;
-            padding: 0px 11px;
+            padding: 1px 11px;
             color: color(white);
+            font-weight: bold;
         }
     }
 
     &__text{
-        padding: em(70) em(30) em(30);
+        padding: em(50) em(30) em(30);
     }
 
     &__link{
         display: inline-block;
         position: relative;
-        color: #b54848;
+        color: color(errorText);
 
         &:after{
             content: '';
@@ -74,7 +65,7 @@
             width:100%;
             height: 3px;
             z-index: -1;
-            background-color: #e66363;
+            background-color: color(errorBg);
             transition: height 0.3s $easin;
         }
         &:hover, &:focus{
@@ -92,7 +83,7 @@
         right: em(15);
         text-align: right;
         @include font(latobold);
-        color: #b54848;
+        color: color(errorText);
 
         &:before{
             @include icon(cross);

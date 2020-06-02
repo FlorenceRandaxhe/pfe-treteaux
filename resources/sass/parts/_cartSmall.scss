@@ -1,0 +1,47 @@
+.cartSmall{
+    width:100%;
+    border-radius: 10px;
+    box-shadow:  18px 18px 45px #e3e3e3,
+                 -18px -18px 45px color(white);
+    padding: em(10);
+
+    &__title{
+        @include font(latobold);
+        font-size: em(l);
+        padding: em(15, l) 0;
+    }
+
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: em(15) 0;
+        border-bottom: 1px solid color(border);
+    }
+
+    &__total{
+       @include font(latobold);
+        text-align: right;
+        font-size: em(l);
+        padding: em(15, l);
+    }
+
+    &__product{
+        font-size: em(s);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    @include mq(m){
+        max-width: em(300);
+
+        &__content, &__title{
+            padding: em(15);
+        }
+    }
+}
+
+
+
+
+

@@ -22,6 +22,7 @@
     &__content{
         font-size: em(l);
         margin-top: em(80);
+        margin-bottom: em(80);
 
         &--js{
             .rentingInfo{
@@ -47,6 +48,7 @@
         }
 
         &__content{
+            margin-top: 0;
             width: col(7)
         }
 

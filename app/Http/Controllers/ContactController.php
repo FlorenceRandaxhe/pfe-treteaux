@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
-use App\Season;
-use App\Event;
 use App\Form;
 use Newsletter;
 
@@ -20,7 +18,6 @@ class ContactController extends Controller
 
     public function submit(ContactRequest $request)
     {
-
         Form::create([
             'form' => 'contact',
             'email' => $request->email,

@@ -1,20 +1,40 @@
 $colors:
 (
+    // text & background
     white:      #ffffff,
     black:      #292828,
     grey:       #f9f9f9,
 
+    // primary
     blue:       #DAE7F2,
     green:      #C2E4D4,
     pink:       #E6C9C9,
 
+    // secondary
     darkblue:   #203344,
     darkgreen:  #2A4A4F,
     purple:     #4F1C28,
 
+    // status
     error:      #892C2C,
     success:    #BBD5B6,
 
+    // other
     border:     #E7E4E4,
     darkgrey:   #afafaf,
+
+    // checkout color
+    errorText:  #ca3131,
+    errorBg:    #e66363,
+
+    defaultSeat: #d0d3dd,
+    selectedSeat: #55628c,
+    occupiedStroke: #E9E8EB,
+    occupiedFill: #FEFDFF,
+
+    // checkout form
+    input: #32325d,
+    placeholder: #aab7c4,
+
+
 );

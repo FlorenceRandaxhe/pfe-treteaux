@@ -18,14 +18,14 @@ export default class Slider{
         this.div.setAttribute('class', 'featuredEvents__controls')
         this.next = document.createElement('a');
         this.spanNext = document.createElement('span')
-        this.spanNext.innerHTML = "Suivant";
+        this.spanNext.innerHTML = "Spectacle suivant";
         this.spanNext.setAttribute('class','sro');
         this.next.setAttribute('href','#');
         this.next.setAttribute('class','featuredEvents__control featuredEvents__control--next');
 
         this.prev = document.createElement('a');
         this.spanPrev = document.createElement('span')
-        this.spanPrev.innerHTML = "Précédent";
+        this.spanPrev.innerHTML = "Spectacle précédent";
         this.spanPrev.setAttribute('class','sro');
         this.prev.setAttribute('href','#');
         this.prev.setAttribute('class','featuredEvents__control featuredEvents__control--previous');

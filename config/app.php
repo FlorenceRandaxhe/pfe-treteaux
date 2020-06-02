@@ -166,6 +166,7 @@ return [
         Whitecube\NovaPage\NovaPageServiceProvider::class,
         Watson\Active\ActiveServiceProvider::class,
         \Custom\Theme\ThemeServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
         /*
@@ -236,7 +237,8 @@ return [
         'Honeypot' => Msurguy\Honeypot\HoneypotFacade::class,
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
         'Page' => Whitecube\NovaPage\NovaPageFacade::class,
-        'Active' => Watson\Active\Facades\Active::class
+        'Active' => Watson\Active\Facades\Active::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

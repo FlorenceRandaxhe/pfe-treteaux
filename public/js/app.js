@@ -176,6 +176,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_GalleryScroll_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./parts/GalleryScroll.js */ "./resources/js/parts/GalleryScroll.js");
 /* harmony import */ var _parts_EventListModal_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./parts/EventListModal.js */ "./resources/js/parts/EventListModal.js");
 /* harmony import */ var _parts_Seats_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./parts/Seats.js */ "./resources/js/parts/Seats.js");
+/* harmony import */ var _parts_Category_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./parts/Category.js */ "./resources/js/parts/Category.js");
+/* harmony import */ var _parts_Payment_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./parts/Payment.js */ "./resources/js/parts/Payment.js");
+
+
 
 
 
@@ -199,6 +203,108 @@ var search = new _parts_SearchModal_js__WEBPACK_IMPORTED_MODULE_6__["default"](d
 document.querySelectorAll('.nav__item--dropdown').forEach(function (drop) {
   var dropdown = new _parts_Dropdown_js__WEBPACK_IMPORTED_MODULE_2__["default"](drop);
 });
+
+/***/ }),
+
+/***/ "./resources/js/parts/Category.js":
+/*!****************************************!*\
+  !*** ./resources/js/parts/Category.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Category; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Category = /*#__PURE__*/function () {
+  function Category(el) {
+    _classCallCheck(this, Category);
+
+    this.el = el;
+    this.visible = false;
+    this.getElements();
+    this.setEvents();
+  }
+
+  _createClass(Category, [{
+    key: "getElements",
+    value: function getElements() {
+      this.btn = this.el.querySelector('.btn--next');
+      this.alert = this.el.querySelector('.alert');
+      this.close = this.el.querySelector('.alert__close');
+      this.select = this.el.querySelectorAll('.bCat__select');
+    }
+  }, {
+    key: "setEvents",
+    value: function setEvents() {
+      var _this = this;
+
+      this.btn.addEventListener('click', function (e) {
+        return _this.checkCategory(e);
+      });
+      this.close.addEventListener('click', function (e) {
+        return _this.hideAlert(e);
+      });
+      this.alert.addEventListener('click', function (e) {
+        return _this.eventBodyClick(e);
+      });
+    }
+  }, {
+    key: "checkCategory",
+    value: function checkCategory(e) {
+      this.sum = 0;
+
+      for (var i = 0; i < this.select.length; i++) {
+        this.sum += parseInt(this.select[i].value);
+      }
+
+      ;
+
+      if (this.sum === 0) {
+        e.preventDefault();
+        this.showAlert();
+      } else {
+        return;
+      }
+    }
+  }, {
+    key: "showAlert",
+    value: function showAlert() {
+      this.alert.classList.add('alert--show');
+      document.querySelector('body').classList.add('layout--scrollblock');
+    }
+  }, {
+    key: "hideAlert",
+    value: function hideAlert(e) {
+      e.preventDefault();
+      this.alert.classList.remove('alert--show');
+      document.querySelector('body').classList.remove('layout--scrollblock');
+    }
+  }, {
+    key: "eventBodyClick",
+    value: function eventBodyClick(e) {
+      if (this.alert.querySelector('.alert__content') === e.target || this.close === e.target || this.alert.querySelector('.alert__content').contains(e.target) || this.close.contains(e.target)) {
+        return;
+      }
+
+      this.hideAlert(e);
+    }
+  }]);
+
+  return Category;
+}();
+
+
+
+if (document.querySelector('.bCat')) {
+  var cat = new Category(document.querySelector('.bCat'));
+}
 
 /***/ }),
 
@@ -699,6 +805,8 @@ var Map = /*#__PURE__*/function () {
   }, {
     key: "initMap",
     value: function initMap() {
+      var _this = this;
+
       mapboxgl.accessToken = 'pk.eyJ1IjoiZmxvcmVuY2VyYW5kYXhoZSIsImEiOiJjazl3ZmJ2azMwOGI5M2d1aGRldHlxMjJmIn0.l9b5ADWDn7OQ1D7Obndf0g';
       this.map = new mapboxgl.Map({
         container: this.mapContent,
@@ -709,10 +817,27 @@ var Map = /*#__PURE__*/function () {
         zoom: 15,
         style: 'mapbox://styles/florencerandaxhe/ck9oamfii0uix1iliyo6zezeg'
       });
-      this.marker = new mapboxgl.Marker().setLngLat({
-        lat: this.lat,
-        lng: this.lng
-      }).addTo(this.map);
+      this.geojson = {
+        type: 'FeatureCollection',
+        features: [{
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [this.lng, this.lat]
+          },
+          properties: {
+            title: 'Les Tréteaux - Centre Culturel de Visé',
+            description: 'Visé'
+          }
+        }]
+      };
+      this.geojson.features.forEach(function (marker) {
+        _this.mark = document.createElement('div');
+        _this.mark.className = 'contact__marker';
+        new mapboxgl.Marker(_this.mark).setLngLat(marker.geometry.coordinates).addTo(_this.map);
+      }); // this.marker = new mapboxgl.Marker()
+      //      .setLngLat({lat: this.lat, lng: this.lng})
+      //      .addTo(this.map);
     }
   }]);
 
@@ -775,7 +900,7 @@ var Nav = /*#__PURE__*/function () {
       this.line.setAttribute('class', 'header__lines');
       this.burger.appendChild(this.span);
       this.burger.appendChild(this.line);
-      this.container.appendChild(this.burger);
+      this.container.insertBefore(this.burger, this.container.querySelector('.header__responsive'));
     }
   }, {
     key: "setEvents",
@@ -855,6 +980,7 @@ var OpenLightbox = /*#__PURE__*/function () {
     key: "getElements",
     value: function getElements() {
       this.container = this.el.querySelector('.eventGallery__container');
+      this.links = this.el.querySelectorAll('.eventGallery__imgLink');
       this.slides = this.el.querySelectorAll('.eventGallery__img');
     }
   }, {
@@ -865,18 +991,19 @@ var OpenLightbox = /*#__PURE__*/function () {
       if (document.documentElement.clientWidth < 640) return;
 
       var _loop = function _loop(i) {
-        _this.slides[i].addEventListener('click', function (e) {
-          return _this.openLightbox(i);
+        _this.links[i].addEventListener('click', function (e) {
+          return _this.openLightbox(e, i);
         });
       };
 
-      for (var i = 0; i < this.slides.length; i++) {
+      for (var i = 0; i < this.links.length; i++) {
         _loop(i);
       }
     }
   }, {
     key: "openLightbox",
-    value: function openLightbox(i) {
+    value: function openLightbox(e, i) {
+      e.preventDefault();
       this.createElements();
       document.querySelector('body').classList.add('layout--scrollblock');
       this.lightbox = new _lightbox_js__WEBPACK_IMPORTED_MODULE_0__["default"](this.lightbox, i);
@@ -963,6 +1090,197 @@ if (document.querySelector('.eventGallery')) {
 
 /***/ }),
 
+/***/ "./resources/js/parts/Payment.js":
+/*!***************************************!*\
+  !*** ./resources/js/parts/Payment.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Payment; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Payment = /*#__PURE__*/function () {
+  function Payment(el) {
+    _classCallCheck(this, Payment);
+
+    this.el = el;
+    this.getClientInfo();
+    this.setEvents();
+  }
+
+  _createClass(Payment, [{
+    key: "setEvents",
+    value: function setEvents() {
+      var _this = this;
+
+      this.stripe = Stripe('pk_test_JWjZI0QAOuabl66z9qvLZ7St00M7nHwq4C');
+      this.elements = this.stripe.elements();
+      this.card = this.elements.create('card', {
+        style: {
+          base: {
+            color: "#32325d",
+            fontFamily: '"Lato Regular", Helvetica, sans-serif',
+            fontSmoothing: "antialiased",
+            fontSize: "16px",
+            "::placeholder": {
+              color: "#aab7c4"
+            }
+          },
+          invalid: {
+            color: "#e66363",
+            iconColor: "#e66363"
+          }
+        },
+        hidePostalCode: true
+      });
+      this.card.mount('#card-element');
+      this.card.on('change', function (_ref) {
+        var error = _ref.error;
+        _this.displayError = document.getElementById('card-errors');
+
+        if (error) {
+          _this.displayError.textContent = error.message;
+        } else {
+          _this.displayError.textContent = '';
+
+          _this.submitform();
+        }
+      });
+    }
+  }, {
+    key: "getClientInfo",
+    value: function getClientInfo() {
+      var _this2 = this;
+
+      this.token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+      fetch('/getInfo', {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text-plain, */*",
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRF-TOKEN": this.token
+        },
+        method: 'post'
+      }).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        _this2.data = data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "submitform",
+    value: function submitform() {
+      var _this3 = this;
+
+      this.form = document.getElementById('payment-form');
+      this.submitButton = document.getElementById('submit');
+      this.form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+
+        _this3.changeLoadingState(true);
+
+        _this3.cardName = document.getElementById('cardName');
+
+        _this3.stripe.createToken(_this3.card, {
+          name: _this3.cardName.value
+        }).then(function (_ref2) {
+          var token = _ref2.token;
+          console.log('Received Stripe token:', token);
+
+          if (token === undefined) {
+            _this3.cardName.classList.add('form__checkoutInput--error');
+          }
+        })["catch"](function (e) {
+          console.log('got error', e);
+        });
+
+        _this3.clientSecret = _this3.form.getAttribute('data-client');
+
+        _this3.stripe.confirmCardPayment(_this3.clientSecret, {
+          payment_method: {
+            card: _this3.card,
+            billing_details: {
+              name: _this3.cardName.value,
+              email: _this3.data.email,
+              phone: _this3.data.phone,
+              address: {
+                city: _this3.data.town,
+                postal_code: _this3.data.cp,
+                line1: _this3.data.address
+              }
+            }
+          }
+        }).then(function (result) {
+          if (result.error) {
+            _this3.changeLoadingState(false);
+
+            console.log(result.error.message);
+          } else {
+            if (result.paymentIntent.status === 'succeeded') {
+              _this3.token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+              _this3.paymentIntent = result.paymentIntent;
+              _this3.url = _this3.form.action;
+              _this3.redirect = '/confirmation';
+              fetch(_this3.url, {
+                headers: {
+                  "Content-Type": "application/json",
+                  "Accept": "application/json, text-plain, */*",
+                  "X-Requested-With": "XMLHttpRequest",
+                  "X-CSRF-TOKEN": _this3.token
+                },
+                method: 'post',
+                body: JSON.stringify({
+                  paymentIntent: _this3.paymentIntent
+                })
+              }).then(function (data) {
+                console.log(data);
+
+                _this3.form.reset();
+
+                window.location.href = _this3.redirect;
+              })["catch"](function (error) {
+                console.log(error);
+              });
+            }
+          }
+        });
+      });
+    }
+  }, {
+    key: "changeLoadingState",
+    value: function changeLoadingState(isLoading) {
+      if (isLoading) {
+        this.submitButton.disabled = true;
+        document.querySelector(".spinner").classList.remove("spinner--hidden");
+        this.submitButton.classList.add("btn__hidden");
+      } else {
+        this.submitButton.disabled = false;
+        document.querySelector(".spinner").classList.add("spinner--hidden");
+        this.submitButton.classList.remove("btn__hidden");
+      }
+    }
+  }]);
+
+  return Payment;
+}();
+
+
+
+if (document.querySelector('.bPay')) {
+  var payment = new Payment(document.querySelector('.bPay'));
+}
+
+/***/ }),
+
 /***/ "./resources/js/parts/RestoModal.js":
 /*!******************************************!*\
   !*** ./resources/js/parts/RestoModal.js ***!
@@ -1035,7 +1353,7 @@ var RestoModal = /*#__PURE__*/function () {
     value: function createMap() {
       this.mapContent = document.createElement('div');
       this.mapContent.setAttribute('class', 'restoInfo__map');
-      this.mapContent.setAttribute('style', 'width: 100%; height: 200px');
+      this.mapContent.setAttribute('style', 'width: 100%; height: 300px');
       this.modals.querySelector('.restoInfo__container').appendChild(this.mapContent);
     }
   }, {
@@ -1253,6 +1571,7 @@ var Seats = /*#__PURE__*/function () {
     this.el = el;
     this.visible = false;
     this.getElements();
+    this.focusSeat();
     this.setEvents();
   }
 
@@ -1261,12 +1580,12 @@ var Seats = /*#__PURE__*/function () {
     value: function getElements() {
       this.checkboxDisabled = this.el.querySelectorAll('.seat__checkbox[disabled]');
       this.checkbox = this.el.querySelectorAll('.seat__checkbox:not(:disabled)');
-      this.circles = this.el.querySelectorAll('.circle');
+      this.circles = this.el.querySelectorAll('.seat__circle');
       this.takenSeat = this.el.querySelector('.alert__taken');
       this.totalSeat = this.el.querySelector('.alert__total');
       this.closeTaken = this.el.querySelector('.alert__close--taken');
       this.closeTotal = this.el.querySelector('.alert__close--total');
-      this.max = this.el.querySelector('.bSeats__svg').dataset.max;
+      this.max = this.el.querySelector('.seat').dataset.max;
       this.btn = this.el.querySelector('.bSeats__next');
     }
   }, {
@@ -1278,9 +1597,20 @@ var Seats = /*#__PURE__*/function () {
         _this.circles[i].addEventListener('click', function () {
           return _this.toggleSeat(_this.circles[i]);
         });
+
+        _this.circles[i].addEventListener('keyup', function (e) {
+          if (e.key == 'Enter' || e.keyCode == 13) return _this.toggleSeat(_this.circles[i]);
+        });
+
+        _this.circles[i].addEventListener('click', function (e) {
+          if (_this.circles[i].hasAttribute('data-occup')) {
+            _this.showTakenSeatAlert();
+
+            return;
+          }
+        });
       };
 
-      //this.el.querySelector('.booking__check').classList.add('sro');
       for (var i = 0; i < this.circles.length; i++) {
         _loop(i);
       }
@@ -1290,13 +1620,15 @@ var Seats = /*#__PURE__*/function () {
       }
 
       this.closeTaken.addEventListener('click', function (e) {
-        return _this.hideTakenSeatAlert(e);
-      }); //this.takenSeat.addEventListener('click', (e) => this.hideTakenSeatAlert(e))
-
+        return _this.hideAlert(e);
+      });
       this.closeTotal.addEventListener('click', function (e) {
-        return _this.hideTotalSeatAlert(e);
+        return _this.hideAlert(e);
       });
       this.totalSeat.addEventListener('click', function (e) {
+        return _this.eventBodyClick(e);
+      });
+      this.takenSeat.addEventListener('click', function (e) {
         return _this.eventBodyClick(e);
       });
 
@@ -1305,21 +1637,6 @@ var Seats = /*#__PURE__*/function () {
       }
 
       ;
-
-      var _loop2 = function _loop2(_i3) {
-        _this.circles[_i3].addEventListener('click', function (e) {
-          if (_this.circles[_i3].hasAttribute('data-occup')) {
-            _this.showTakenSeatAlert();
-
-            return;
-          }
-        });
-      };
-
-      for (var _i3 = 0; _i3 < this.circles.length; _i3++) {
-        _loop2(_i3);
-      }
-
       this.btn.addEventListener('click', function (e) {
         return _this.checkAmoutOfSeats(e);
       });
@@ -1337,14 +1654,14 @@ var Seats = /*#__PURE__*/function () {
           ;
           this.checkbox[i].checked = !this.checkbox[i].checked;
           this.checkbox[i].toggleAttribute('data-checked');
-          seat.classList.toggle('circle--selected');
+          seat.classList.toggle('seat__circle--selected');
           seat.toggleAttribute('data-selected');
           this.selected = this.el.querySelectorAll('[data-selected]');
           this.sum = parseInt(this.max) + 1;
 
           if (this.selected.length == parseInt(this.max) + 1) {
             this.checkbox[i].checked = !this.checkbox[i].checked;
-            seat.classList.remove('circle--selected');
+            seat.classList.remove('seat__circle--selected');
             seat.removeAttribute('data-selected');
             this.showTotalSeatAlert();
           }
@@ -1357,16 +1674,23 @@ var Seats = /*#__PURE__*/function () {
       for (var i = 0; i < this.circles.length; i++) {
         if (checkbox.id === this.circles[i].dataset.seat && checkbox.disabled && checkbox.checked) {
           this.circles[i].setAttribute('data-occup', 'true');
-          this.circles[i].classList.add('circle--occupied');
+          this.circles[i].classList.add('seat__circle--occupied');
         }
       }
 
-      for (var _i4 = 0; _i4 < this.circles.length; _i4++) {
-        if (checkbox.id === this.circles[_i4].dataset.seat && checkbox.checked && !checkbox.disabled) {
-          this.circles[_i4].setAttribute('data-selected', 'true');
+      for (var _i3 = 0; _i3 < this.circles.length; _i3++) {
+        if (checkbox.id === this.circles[_i3].dataset.seat && checkbox.checked && !checkbox.disabled) {
+          this.circles[_i3].setAttribute('data-selected', 'true');
 
-          this.circles[_i4].classList.add('circle--selected');
+          this.circles[_i3].classList.add('seat__circle--selected');
         }
+      }
+    }
+  }, {
+    key: "focusSeat",
+    value: function focusSeat() {
+      for (var i = 0; i < this.circles.length; i++) {
+        this.circles[i].setAttribute('tabindex', '0');
       }
     }
   }, {
@@ -1387,14 +1711,12 @@ var Seats = /*#__PURE__*/function () {
     value: function showTakenSeatAlert() {
       this.takenSeat.classList.add('alert--show');
       document.querySelector('body').classList.add('layout--scrollblock');
-    }
-  }, {
-    key: "hideTakenSeatAlert",
-    value: function hideTakenSeatAlert(e) {
-      e.preventDefault();
-      this.takenSeat.classList.remove('alert--show');
-      document.querySelector('body').classList.remove('layout--scrollblock');
-    }
+    } // hideTakenSeatAlert(e) {
+    //     e.preventDefault();
+    //     this.takenSeat.classList.remove('alert--show');
+    //     document.querySelector('body').classList.remove('layout--scrollblock');
+    // }
+
   }, {
     key: "showTotalSeatAlert",
     value: function showTotalSeatAlert() {
@@ -1402,21 +1724,21 @@ var Seats = /*#__PURE__*/function () {
       document.querySelector('body').classList.add('layout--scrollblock');
     }
   }, {
-    key: "hideTotalSeatAlert",
-    value: function hideTotalSeatAlert(e) {
+    key: "hideAlert",
+    value: function hideAlert(e) {
       e.preventDefault();
+      this.takenSeat.classList.remove('alert--show');
       this.totalSeat.classList.remove('alert--show');
       document.querySelector('body').classList.remove('layout--scrollblock');
     }
   }, {
     key: "eventBodyClick",
     value: function eventBodyClick(e) {
-      if (this.totalSeat.querySelector('.alert__content') === e.target || this.closeTotal === e.target || this.totalSeat.querySelector('.alert__content').contains(e.target) || this.closeTotal.contains(e.target)) {
+      if (this.totalSeat.querySelector('.alert__content') === e.target || this.closeTotal === e.target || this.totalSeat.querySelector('.alert__content').contains(e.target) || this.closeTotal.contains(e.target) || this.takenSeat.querySelector('.alert__content') === e.target || this.closeTaken === e.target || this.takenSeat.querySelector('.alert__content').contains(e.target) || this.closeTaken.contains(e.target)) {
         return;
       }
 
-      this.hideTakenSeatAlert(e);
-      this.hideTotalSeatAlert(e);
+      this.hideAlert(e);
     }
   }]);
 
@@ -1425,8 +1747,8 @@ var Seats = /*#__PURE__*/function () {
 
 
 
-if (document.querySelector('.bookingSeats')) {
-  var seats = new Seats(document.querySelector('.bookingSeats'));
+if (document.querySelector('.bSeats')) {
+  var seats = new Seats(document.querySelector('.bSeats'));
 }
 
 /***/ }),
@@ -1472,13 +1794,13 @@ var Slider = /*#__PURE__*/function () {
       this.div.setAttribute('class', 'featuredEvents__controls');
       this.next = document.createElement('a');
       this.spanNext = document.createElement('span');
-      this.spanNext.innerHTML = "Suivant";
+      this.spanNext.innerHTML = "Spectacle suivant";
       this.spanNext.setAttribute('class', 'sro');
       this.next.setAttribute('href', '#');
       this.next.setAttribute('class', 'featuredEvents__control featuredEvents__control--next');
       this.prev = document.createElement('a');
       this.spanPrev = document.createElement('span');
-      this.spanPrev.innerHTML = "Précédent";
+      this.spanPrev.innerHTML = "Spectacle précédent";
       this.spanPrev.setAttribute('class', 'sro');
       this.prev.setAttribute('href', '#');
       this.prev.setAttribute('class', 'featuredEvents__control featuredEvents__control--previous');

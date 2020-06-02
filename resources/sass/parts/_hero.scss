@@ -133,11 +133,16 @@
         }
     }
 
+    &__eventComplete{
+        margin-top: em(20);
+        @include font(latobold);
+    }
+
     @include mq(m){
         &__container{
             min-height: em(500);
             max-width: 75vw;
-            padding: em(60) em(100); // mobile & left
+            padding: em(60) em(100);
         }
 
         &__content{

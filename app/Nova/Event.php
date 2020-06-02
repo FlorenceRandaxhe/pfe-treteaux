@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\KeyValue;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Panel;
@@ -59,6 +60,7 @@ class Event extends Resource
             new Panel('Distribution', $this->distriFields()),
             new Panel('Presse', $this->pressFields()),
             new Panel('Gallerie', $this->galleryFields()),
+            new Panel('Communiqué de presse', $this->pressReleaseFields()),
 
         ];
     }
@@ -86,8 +88,8 @@ class Event extends Resource
                 ->help('Mot clef unique relatif à la page actuelle. Il ne peut contenir que des caractères simples (lettre de a-z, pas d\'espaces, d\'accents ou autres) Par exemple, pour un post "Nous embauchons !", le slug pourrait être "nous-embauchons", la page serait alors accessible via le lien: www.votre-site.be/posts/<strong>nous-embauchons</strong>'),
 
             Textarea::make('Intro', 'intro')
-                ->help('Maximum 160 characters.')
-                ->rules('required', 'max:160')
+                ->help('Maximum 200 characters.')
+                ->rules('required', 'max:200')
                 ->hideFromIndex(),
 
             Image::make('Image', 'img')
@@ -115,14 +117,7 @@ class Event extends Resource
             DateTime::make('Date du spectacle', 'date')
                 ->rules('required'),
 
-            KeyValue::make('Prix', 'prices', function (){
-                return $this->prices ?? [
-                    'adulte' => '0',
-                    'etudiant' => '0',
-                    'senior' => '0',
-                    'enfant' => '0'
-                ];
-            })
+            KeyValue::make('Prix', 'prices')
                 ->disableEditingKeys()
                 ->disableAddingRows()
                 ->disableDeletingRows()
@@ -133,12 +128,12 @@ class Event extends Resource
 
 
             Select::make('Placement', 'seating')->options([
-                '1' => 'Choix des places lors de la réservation',
-                '0' => 'Placement libre'
+                '0' => 'Choix des places lors de la réservation',
+                '1' => 'Placement libre',
+                '2' => 'Configuration débout'
             ])->displayUsingLabels()
             ->rules('required')
             ->hideFromIndex(),
-
 
             Boolean::make('Mis en avant', 'featured')
                 ->help('Le spectacle sera affiché dans le header de la page d\'accueil.')
@@ -199,7 +194,8 @@ class Event extends Resource
                         ->rules('required'),
 
                     Text::make('Source', 'source')
-                        ->rules('required'),]),
+                        ->rules('required'),
+                ]),
         ];
     }
 
@@ -220,6 +216,15 @@ class Event extends Resource
                 ]),
         ];
     }
+
+    protected function pressReleaseFields()
+    {
+        return [
+            File::make('Communiqué de presse', 'pressRelease')
+                ->help('Les communiqués de presse des spectacles sont disponible sur la page presse et média du site'),
+        ];
+    }
+
 
     /**
      * The plural form for the current resource

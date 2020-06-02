@@ -20,7 +20,7 @@
         </li>
         @endforeach
     </ul>
-    @if($event->date > now())
+    @if($event->date > now() && $event->seats != 0)
     <a href="{{ route('booking', ['event' => $event->slug]) }}" class="eventInfo__btn btn btn--secondary">Réserver</a>
     @endif
 </section>

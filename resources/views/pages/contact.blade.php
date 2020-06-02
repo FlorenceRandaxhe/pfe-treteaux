@@ -10,6 +10,8 @@
     ])
     <main class="main">
         @include('partials.contact')
+        @include('partials.contactInfo')
+        @include('partials.map')
         @include('partials.latestEvents', [
             'class' => 'footer',
         ])

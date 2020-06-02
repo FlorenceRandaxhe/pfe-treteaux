@@ -9,6 +9,11 @@
             background-color: color(darkblue);
         }
     }
+    &--pink{
+        .page-item.active{
+            background-color: color(purple);
+        }
+    }
 }
 .pagination{
     margin-top: em(50);

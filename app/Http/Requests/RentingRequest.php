@@ -40,4 +40,13 @@ class RentingRequest extends FormRequest
         return $url->previous() . '#form';
     }
 
+    public function attributes()
+    {
+        return [
+            'name' => 'Le nom',
+            'email' => 'L\'email',
+            'date' => 'La date',
+            'message' => 'Le message',
+        ];
+    }
 }

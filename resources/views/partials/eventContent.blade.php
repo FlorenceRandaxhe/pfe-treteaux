@@ -10,6 +10,13 @@
                 <div class="wysiwyg" itemprop="description">
                     @markdown {{ $event->description }} @endmarkdown
                 </div>
+
+                @if($event->resto == 1)
+                <div class="eventContent__resto">
+                    <p>Profitez d'un succulent repas dans les restaurants du centre de Visé, à deux pas de la salle de spectacle, avant de venir apprécier le spectacle à prix réduit.</p>
+                    <a href="{{ route('resto') }}">Voir la liste des restaurants</a>
+                </div>
+                @endif
             </section>
 
             @if(count($event->distributionContent) >= 1)

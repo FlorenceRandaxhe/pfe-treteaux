@@ -32,7 +32,6 @@ class NavComposer
 
     protected function getSeason(){
         $latestSeason =  Season::where('archived', '=', false)->latest()->first();
-
         return $latestSeason->year;
     }
 }

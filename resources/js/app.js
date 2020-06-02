@@ -13,6 +13,8 @@ import OpenLightbox from './parts/OpenLightbox.js';
 import GalleryScroll from './parts/GalleryScroll.js'
 import EventListModal from './parts/EventListModal.js'
 import Seats from './parts/Seats.js'
+import Category from './parts/Category.js'
+import Payment from './parts/Payment.js'
 
 document.body.classList.remove('body--nojs');
 document.body.classList.add('body--js');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Season;
 use App\Event;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 class SeasonController extends Controller

@@ -37,7 +37,7 @@ class TypeSeeder extends Seeder
         ]);
 
         Type::create([
-            'name' => 'Artiste',
+            'name' => 'Spectacle',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

@@ -21,6 +21,11 @@
         // common ************************************
         transition: background-color 0.6s $easin;
 
+        &__svg{
+            width: 100px;
+            height: auto;
+        }
+
         &__icons{
             margin-top: em(10);
             text-align: center;
@@ -28,15 +33,24 @@
 
         &__burger{
             position: absolute;
-            top: em(25);
+            top: em(35);
             right: 0;
-//            border: 1px solid color(black);
             background-color: color(purple);
             padding: 22px 13px;
             border-radius: 100%;
             z-index: 110;
             width: 48px;
             height: 48px;
+            transition: background-color 0.3s $easin;
+
+            &:hover, &:focus{
+                background-color: color(blue);
+                .header__lines,
+                .header__lines:after,
+                .header__lines:before{
+                    background-color: color(purple)
+                }
+            }
         }
 
         &__input{
@@ -49,8 +63,8 @@
             width: 20px;
             background-color: color(white);
             position: relative;
-            left: 8px;
-
+            left: 9px;
+            transition: background-color 0.3s $easin;
 
             &:after,
             &:before{
@@ -63,13 +77,13 @@
             }
 
             &:after{
-                transition: transform 0.3s $easin;
+                transition: background-color 0.3s $easin, transform 0.3s $easin;
                 left:-8px;
                 top:-8px;
             }
 
             &:before{
-                transition: transform 0.3s $easin;
+                transition: background-color 0.3s $easin, transform 0.3s $easin;
                 left:-8px;
                 top: 8px;
             }
@@ -87,7 +101,6 @@
             display: flex;
             flex-direction: column;
         }
-
 
         // js  ********************************************
         &__nav{

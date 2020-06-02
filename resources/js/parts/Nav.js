@@ -26,7 +26,7 @@ export default class Nav{
         this.line.setAttribute('class', 'header__lines');
         this.burger.appendChild(this.span);
         this.burger.appendChild(this.line);
-        this.container.appendChild(this.burger);
+        this.container.insertBefore(this.burger, this.container.querySelector('.header__responsive'));
     }
 
     setEvents() {

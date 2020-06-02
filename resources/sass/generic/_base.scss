@@ -50,7 +50,6 @@ a {
     margin: 0 auto;
 }
 
-
 .body{
     &--nojs{
         @include mq(l, max){

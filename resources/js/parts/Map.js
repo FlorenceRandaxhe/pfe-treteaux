@@ -25,9 +25,33 @@ export default class Map{
                 style: 'mapbox://styles/florencerandaxhe/ck9oamfii0uix1iliyo6zezeg'
         });
 
-        this.marker = new mapboxgl.Marker()
-             .setLngLat({lat: this.lat, lng: this.lng})
-             .addTo(this.map);
+        this.geojson = {
+            type: 'FeatureCollection',
+            features: [
+            {
+                type: 'Feature',
+                geometry: {
+                    type: 'Point',
+                    coordinates: [this.lng, this.lat]
+                },
+                properties: {
+                    title: 'Les Tréteaux - Centre Culturel de Visé',
+                    description: 'Visé',
+                }
+            }]
+        };
+
+        this.geojson.features.forEach( marker => {
+            this.mark = document.createElement('div');
+            this.mark.className = 'contact__marker';
+
+         new mapboxgl.Marker(this.mark)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(this.map);
+        });
+        // this.marker = new mapboxgl.Marker()
+        //      .setLngLat({lat: this.lat, lng: this.lng})
+        //      .addTo(this.map);
     }
 }
 

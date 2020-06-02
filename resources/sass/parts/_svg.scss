@@ -1,0 +1,40 @@
+.seat{
+    border-radius: 10px;
+    width: 100%;
+
+    &__svg{
+        width: 100%;
+        height: auto
+    }
+
+    &__circle{
+        cursor: pointer;
+        fill: color(defaultSeat);
+        stroke-width: 4px;
+        stroke: color(defaultSeat);
+        transition: fill 0.3s $easin, stroke 0.3s $easin;
+
+        &:not(.seat__circle--occupied):hover,
+        &:not(.seat__circle--occupied):focus{
+            stroke: color(selectedSeat);
+            stroke-width: 4px;
+            outline: none;
+        }
+
+        &--selected{
+            stroke: color(selectedSeat);
+            fill: color(selectedSeat);
+        }
+
+        &--occupied{
+            cursor: default;
+            stroke: color(occupiedStroke);
+            stroke-width: 4px;
+            fill: color(occupiedFill);
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+}

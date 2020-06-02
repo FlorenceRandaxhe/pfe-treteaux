@@ -9,18 +9,20 @@ export default class OpenLightbox {
 
     getElements() {
         this.container = this.el.querySelector('.eventGallery__container');
+        this.links = this.el.querySelectorAll('.eventGallery__imgLink');
         this.slides = this.el.querySelectorAll('.eventGallery__img');
     }
 
     setEvents() {
         if (document.documentElement.clientWidth < 640) return;
 
-        for (let i = 0; i < this.slides.length; i++) {
-            this.slides[i].addEventListener('click',(e) => this.openLightbox(i));
+        for (let i = 0; i < this.links.length; i++) {
+            this.links[i].addEventListener('click',(e) => this.openLightbox(e,i));
         }
     }
 
-    openLightbox(i) {
+    openLightbox(e,i) {
+        e.preventDefault();
         this.createElements();
         document.querySelector('body').classList.add('layout--scrollblock');
         this.lightbox = new Lightbox(this.lightbox, i);

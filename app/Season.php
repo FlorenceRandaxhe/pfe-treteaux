@@ -8,6 +8,10 @@ class Season extends Model
 {
     protected $guarded = [];
 
+    protected $casts = [
+        'archived' => 'boolean'
+    ];
+
     public function getRouteKeyName()
     {
         return 'year';
@@ -20,6 +24,11 @@ class Season extends Model
 
     public function scopeLatestSeason($query)
     {
-        return $query->where('archived', '=', false)->latest()->first();
+        return $query->where('archived', false)->latest()->first();
+    }
+
+    public function scopeSeason($query)
+    {
+        return $query->latest()->first()->where('archived', false);
     }
 }

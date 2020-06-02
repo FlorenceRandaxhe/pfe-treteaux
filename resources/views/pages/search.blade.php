@@ -3,7 +3,7 @@
 @section('main')
     @include('partials.heroBasic', [
         'color' => 'grey',
-        'title' => 'Recherche',
+        'title' => 'Recherche (' . $q . ')',
         'intro' => '',
         'img' => '',
         'type' => ''
@@ -27,8 +27,9 @@
             </div>
         </section>
         @else
-        <div class="wrapper">
-            <p>Aucun spectacles ne correspond à la recherche&nbsp;! <a href="{{ route('agenda', ['season' => $latestSeason]) }}">Allez voir l'agenda</a></p>
+        <div class="searchResults wrapper">
+            <p class="searchResults__text">Aucun spectacle ne correspond à la recherche&nbsp;!</p>
+            <a class="btn btn--primary" href="{{ route('agenda', ['season' => $latestSeason]) }}">Voir l'agenda</a>
         </div>
         @endif
 
@@ -50,8 +51,9 @@
             </div>
         </section>
          @else
-         <div class="wrapper">
-            <p>Aucun articles ne correspond à la recherche&nbsp;! <a href="{{ route('post') }}">Voir toutes les actualites</a></p>
+         <div class="searchResults wrapper">
+            <p class="searchResults__text">Aucun article ne correspond à la recherche&nbsp;!</p>
+            <a class="btn btn--primary" href="{{ route('post') }}">Voir toutes les actualités</a>
          </div>
         @endif
     </main>

@@ -7,7 +7,7 @@
             </p>
         </div>
         @if(session('success'))
-                <p class="newsletter__success">Merci pour votre inscription!</p>
+            <p class="newsletter__success">Merci pour votre inscription!</p>
         @else
         <form class="newsletter__form form" method="POST" action="{{ route('newsletter') }}">
             @csrf

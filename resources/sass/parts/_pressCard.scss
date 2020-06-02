@@ -73,14 +73,14 @@
         }
 
         &--blue{
-            &:hover:after, &:focus:after{
+            &:hover:after, &:focus:after, &:focus-within:after{
                 background-color: color(blue);
                 width: em(300);
             }
         }
 
         &--pink{
-            &:hover:after, &:focus:after{
+            &:hover:after, &:focus:after, &:focus-within:after{
                 background-color: color(pink);
                 width: em(300);
             }

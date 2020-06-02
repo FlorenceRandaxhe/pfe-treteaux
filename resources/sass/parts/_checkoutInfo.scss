@@ -1,0 +1,43 @@
+.bInfo{
+    padding: em(30) 0 em(70);
+
+    &__title{
+        @include font(latobold);
+        font-size: em(xl);
+        padding-bottom: em(20, xl);
+    }
+
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__heading{
+        padding: em(20, l) 0;
+        font-size: em(l);
+        @include font(latobold);
+    }
+
+    &__subtitle{
+        @include font(latobold);
+        font-size: em(l);
+        padding: em(15, l);
+    }
+
+    &__btn{
+        display: flex;
+        justify-content: space-between;
+        padding: em(40) 0;
+    }
+
+    @include mq(m){
+
+        &__container{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+}

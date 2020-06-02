@@ -77,24 +77,38 @@ Route::get('/conditions-general-de-vente', 'LegalController@legal')
     ->template(\App\Nova\Templates\Legal::class)
     ->name('legal');
 
-
-Route::get('/reservation/{event}', 'BookingController@category')
+// reservation
+Route::get('/reservation/{event}', 'SeatsController@category')
     ->name('booking');
 
-Route::post('/category{event}', 'BookingController@chooseCategory')
+Route::post('/category{event}', 'SeatsController@chooseCategory')
     ->name('category');
 
-Route::get('/placement/{event}', 'BookingController@seat')
+Route::get('/placement/{event}', 'SeatsController@seat')
     ->name('seating');
 
-Route::post('/chooseSeats/{event}', 'BookingController@chooseSeats')
+Route::post('/chooseSeats/{event}', 'SeatsController@chooseSeats')
     ->name('chooseSeats');
 
-Route::get('/panier/{event}', 'BookingController@cart')
+Route::get('/panier/{event}', 'CartController@cart')
     ->name('cart');
 
-Route::post('/emptyCart/{event}', 'BookingController@emptyCart')
+Route::post('/emptyCart/{event}', 'CartController@emptyCart')
     ->name('emptyCart');
 
-Route::get('/payment/{event}', 'BookingController@payment')
+Route::get('/info/{event}', 'CheckoutController@info')
+    ->name('info');
+
+Route::post('/validateInfo/{event}', 'CheckoutController@validateInfo')
+    ->name('validateInfo');
+
+Route::get('/payment/{event}', 'CheckoutController@payment')
     ->name('payment');
+
+Route::post('/pay/{event}', 'CheckoutController@pay')
+    ->name('pay');
+
+Route::get('/confirmation', 'CheckoutController@confirm')
+    ->name('confirm');
+
+Route::post('/getInfo', function(){ return Session::get('client'); });

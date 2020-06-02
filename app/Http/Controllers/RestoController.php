@@ -8,9 +8,8 @@ use Illuminate\Http\Request;
 
 class RestoController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-
         return view('pages.resto', [
             'restos' => Resto::ordered()->get(),
             'events' => Event::resto()->get()

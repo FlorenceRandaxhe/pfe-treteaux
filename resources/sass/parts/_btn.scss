@@ -119,27 +119,55 @@
         color: color(white);
         font-size: em(m);
         padding: em(15) em(40);
+        border-radius: 3px;
         transition: color 0.3s $easin, background-color 0.3s $easin;
     }
     &--back{
         color: color(black);
         //background-color: color(error);
         border: 2px solid color(border);
-            &:hover, &:focus{
-                outline: none;
-                background-color: color(border);
-                //color: color(white);
-            }
+        position: relative;
+
+        &:before{
+            @include icon(arrow);
+            margin-right: em(10);
+            font-weight: bold;
+            display: inline-block;
+            transform: rotate(180deg);
+        }
+
+        &:hover, &:focus{
+            outline: none;
+            background-color: color(border);
+            //color: color(white);
+        }
     }
 
     &--next{
         background-color: color(black);
         border: 2px solid color(black);
-            &:hover, &:focus{
-                outline: none;
-                background-color: transparent;
-                color: color(black);
-            }
+        position: relative;
+
+        &:after{
+            @include icon(arrow);
+            margin-left: em(10);
+            font-weight: bold;
+        }
+
+        &:hover, &:focus{
+            outline: none;
+            background-color: transparent;
+            color: color(black);
+        }
+    }
+
+    &__hidden{
+        &:after{
+            display:none;
+        }
+        span{
+            display: none;
+        }
     }
 
 

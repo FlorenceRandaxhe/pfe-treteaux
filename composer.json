@@ -19,6 +19,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "barryvdh/laravel-dompdf": "^0.8.6",
+        "custom/theme": "*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "graham-campbell/markdown": "^12.0",
@@ -30,10 +32,10 @@
         "optimistdigital/nova-sortable": "^1.4",
         "spatie/eloquent-sortable": "^3.8",
         "spatie/laravel-newsletter": "^4.8",
+        "stripe/stripe-php": "^7.36",
         "watson/active": "^5.0",
         "whitecube/nova-flexible-content": "^0.2.2",
-        "whitecube/nova-page": "^0.2.4",
-        "custom/theme": "*"
+        "whitecube/nova-page": "^0.2.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

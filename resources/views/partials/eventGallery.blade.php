@@ -8,8 +8,11 @@
 
             <div class="eventGallery__content">
                 @foreach($event->galleryContent as $slide)
+
                     <figure class="eventGallery__fig">
+                    <a href="#" class="eventGallery__imgLink">
                         <img class="eventGallery__img" alt="{{ $slide->alt }}" src="{{ asset('storage/' . $slide->photo) }}">
+                    </a>
                     </figure>
                 @endforeach
             </div>

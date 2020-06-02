@@ -2,10 +2,8 @@
 <section class="eventPress">
     <div class="eventPress__container wrapper">
         <h2 class="eventPress__title">Dans la presse</h2>
-
         <div class="eventPress__content">
             @foreach($event->pressContent as $press)
-
                 @include('parts.pressCard', [
                     'color' => 'pink',
                     'title' => $press->title,
@@ -14,7 +12,6 @@
                     'url' => $press->url,
                     'date' => '',
                 ])
-
             @endforeach
         </div>
     </div>

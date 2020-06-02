@@ -18,9 +18,9 @@
         </div>
         <div class="renting__content">
             @if(session()->has('success'))
-                @include('parts.success',  [
-                    'message' => 'Votre demande a bien été envoyée. Nous reviendrons vers vous le plus rapidement possible'
-                ])
+                <x-success>
+                    Votre demande a bien été envoyée. Nous reviendrons vers vous le plus rapidement possible
+                </x-success>
             @else
                 @include('parts.rentingForm')
             @endif

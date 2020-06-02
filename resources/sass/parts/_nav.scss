@@ -35,6 +35,11 @@
             font-size: em(l);
             margin-right: em(10, l);
             transform: rotate(180deg);
+            transition: transform 0.2s $easin;
+        }
+
+        &:hover:before, &:focus:before{
+            transform: rotate(180deg) translateX(10px);
         }
     }
 
@@ -51,16 +56,23 @@
         &__item{
             padding: em(10);
             display: block;
-            width: 100%;
+            //width: 100%;
         }
 
         &__link{
             color: color(purple);
+
+            &:hover, &:focus, &:focus-within{
+                border-bottom: 4px solid color(purple);
+            }
         }
 
         &__link_sub{
             color: color(purple);
             @include font(latobold);
+            &:hover, &:focus, &:focus-within{
+                border-bottom: 4px solid color(purple);
+            }
         }
 
         &__item_sub{
@@ -173,8 +185,13 @@
             opacity: 0;
             transform: translateY(-10px) translateX(-50%);
             overflow: hidden;
-            box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 32px rgba(17,17,26,0.05);
+            box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1);
             transition: transform 0.3s $easin, opacity 0.1s $easin, border 0s;
+            @include triangle(top, center, out, 13px);
+
+            &:after{
+                border-bottom-color: color(purple);
+            }
         }
 
         &__item{

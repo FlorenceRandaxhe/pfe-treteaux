@@ -1,5 +1,5 @@
 <article class="newsCard{{ $class ? ' newsCard--' . $class : ''}}">
-    <a class="newsCard__link" href="{{ route('singleNews', ['post' => $post->slug]) }}"><span class="sro">Lire l'article&nbsp;: {{ $post->title }}</span></a>
+    <a class="newsCard__link" href="{{ route('singleNews', ['post' => $post]) }}"><span class="sro">Lire l'article&nbsp;: {{ $post->title }}</span></a>
     <figure class="newsCard__fig">
         <img class="newsCard__img" src="{{ asset('storage/' . $post->img) }}" alt="{{ $post->title }}">
     </figure>

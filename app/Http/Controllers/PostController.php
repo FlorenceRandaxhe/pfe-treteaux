@@ -3,14 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Season;
-use App\Event;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
 
-    public function __invoke(Request $request)
+    public function __invoke()
     {
         return view('pages.post', [
             'posts' => Post::published()->paginate(8)

@@ -70,7 +70,7 @@
             <a target="_blank" href="https://florence-randaxhe.com/">
                 <span class="sro">Design et développement par Florence Randaxhe</span>
                 <svg class="footer__logo" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 125 190" width="15" height="22">
-                    <g><g><path fill="#fff" d="M44,113.9c0,10,0,24.73,0,34.78L7,185.66V113.9H44L78.82,77.81H7V41.33L44,6h70.35L79.46,41.07H44c0,17.36,0,19.38,0,36.74Z"/></g></g>
+                    <g><g><path d="M44,113.9c0,10,0,24.73,0,34.78L7,185.66V113.9H44L78.82,77.81H7V41.33L44,6h70.35L79.46,41.07H44c0,17.36,0,19.38,0,36.74Z"/></g></g>
                 </svg>
             </a>
        </div>

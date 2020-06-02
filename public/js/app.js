@@ -1200,7 +1200,7 @@ var Payment = /*#__PURE__*/function () {
             _this3.cardName.classList.add('form__checkoutInput--error');
           }
         })["catch"](function (e) {
-          console.log('got error', e);
+          console.log(e);
         });
 
         _this3.clientSecret = _this3.form.getAttribute('data-client');
@@ -1242,8 +1242,7 @@ var Payment = /*#__PURE__*/function () {
                   paymentIntent: _this3.paymentIntent
                 })
               }).then(function (data) {
-                console.log(data);
-
+                //console.log(data);
                 _this3.form.reset();
 
                 window.location.href = _this3.redirect;

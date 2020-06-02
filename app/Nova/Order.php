@@ -9,7 +9,9 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\KeyValue;
-
+use App\Nova\Metrics\OrderCount;
+use App\Nova\Metrics\OrderPerDay;
+use App\Nova\Metrics\OrderPerEvent;
 
 class Order extends Resource
 {
@@ -81,7 +83,10 @@ class Order extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new OrderCount)->width('1/2'),
+            (new OrderPerDay)->width('1/2')
+        ];
     }
 
     /**
@@ -92,7 +97,10 @@ class Order extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\OrderFilter
+            //new Filters\OrderDateFilter
+        ];
     }
 
     /**

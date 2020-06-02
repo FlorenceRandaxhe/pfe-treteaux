@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
+use App\Nova\Metrics\OrderCount;
+use App\Nova\Metrics\OrderPerDay;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
@@ -54,7 +56,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new Help,
+            (new OrderCount)->width('1/2'),
+            (new OrderPerDay)->width('1/2')
         ];
     }
 

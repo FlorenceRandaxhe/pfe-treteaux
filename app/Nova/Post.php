@@ -58,7 +58,7 @@ class Post extends Resource
             Badge::make('Status', function () {
                 return $this->published_at <= now() ? 'publié' : 'brouillon';
             })->map([
-                'brouillon' => 'danger',
+                'brouillon' => 'info',
                 'publié' => 'success',
             ]),
 
@@ -135,7 +135,9 @@ class Post extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\PostFilter
+        ];
     }
 
     /**

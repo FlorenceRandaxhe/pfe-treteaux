@@ -21,4 +21,9 @@ class Order extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
+    public function scopeEventOrder($query, $value)
+    {
+        return $query->where('event_id', $value);
+    }
 }

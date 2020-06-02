@@ -1127,10 +1127,6 @@ a {
   border-color: #892C2C;
 }
 
-.form__control--error input::-webkit-input-placeholder, .form__control--error textarea::-webkit-input-placeholder {
-  color: #892C2C;
-}
-
 .form__control--error input::-moz-placeholder, .form__control--error textarea::-moz-placeholder {
   color: #892C2C;
 }
@@ -1180,11 +1176,6 @@ a {
   outline: none;
 }
 
-.form__input::-webkit-input-placeholder, .form__textarea::-webkit-input-placeholder {
-  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
 .form__input::-moz-placeholder, .form__textarea::-moz-placeholder {
   -moz-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -1210,10 +1201,6 @@ a {
 .form__textarea:focus,
 .form__textarea:hover {
   border-bottom: 2px solid #292828;
-}
-
-.form__input:focus::-webkit-input-placeholder, .form__input:hover::-webkit-input-placeholder, .form__textarea:focus::-webkit-input-placeholder, .form__textarea:hover::-webkit-input-placeholder {
-  color: #292828;
 }
 
 .form__input:focus::-moz-placeholder, .form__input:hover::-moz-placeholder, .form__textarea:focus::-moz-placeholder, .form__textarea:hover::-moz-placeholder {
@@ -1487,11 +1474,6 @@ a {
 .form__checkoutInput:focus,
 .form .StripeElement:focus {
   outline: none;
-}
-
-.form__checkoutInput::-webkit-input-placeholder, .form .StripeElement::-webkit-input-placeholder {
-  color: #aab7c4;
-  font-family: "latoregular", Playfair, Arial, serif;
 }
 
 .form__checkoutInput::-moz-placeholder, .form .StripeElement::-moz-placeholder {

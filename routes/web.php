@@ -112,3 +112,10 @@ Route::get('/confirmation', 'CheckoutController@confirm')
     ->name('confirm');
 
 Route::post('/getInfo', function(){ return Session::get('client'); });
+
+Route::get('/event', function (Request $request) {
+    return response()->json([
+        'events' => \App\Event::orderBy('date')->limit(4)->get(),
+        'posts' => \App\Post::orderBy('published_at')->limit(4)->get()
+    ]);
+});

@@ -60,7 +60,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             (new OrderCount)->width('1/2'),
             (new OrderPerDay)->width('1/2'),
-            (new Eventcard)->width('full'),
+            //(new Eventcard)->width('full'),
         ];
     }
 

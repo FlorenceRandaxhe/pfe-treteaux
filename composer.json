@@ -14,6 +14,14 @@
         {
             "type": "path",
             "url": "./nova-components/Theme"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/SeatPicker"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Eventcard"
         }
     ],
     "license": "MIT",
@@ -24,7 +32,7 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "graham-campbell/markdown": "^12.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^6.5",
         "laravel/framework": "^7.0",
         "laravel/nova": "~3.0",
         "laravel/tinker": "^2.0",
@@ -33,9 +41,12 @@
         "spatie/eloquent-sortable": "^3.8",
         "spatie/laravel-newsletter": "^4.8",
         "stripe/stripe-php": "^7.36",
+        "tightenco/nova-stripe": "^0.2.4",
+        "treteaux/seat-picker": "*",
         "watson/active": "^5.0",
         "whitecube/nova-flexible-content": "^0.2.2",
-        "whitecube/nova-page": "^0.2.4"
+        "whitecube/nova-page": "^0.2.4",
+        "treteaux/eventcard": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

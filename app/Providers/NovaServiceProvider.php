@@ -4,10 +4,12 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
+use Treteaux\Eventcard\Eventcard;
 use App\Nova\Metrics\OrderCount;
 use App\Nova\Metrics\OrderPerDay;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -57,7 +59,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             (new OrderCount)->width('1/2'),
-            (new OrderPerDay)->width('1/2')
+            (new OrderPerDay)->width('1/2'),
+            (new Eventcard)->width('full'),
         ];
     }
 
@@ -79,6 +82,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
+            //new \Tightenco\NovaStripe\NovaStripe,
             \Whitecube\NovaPage\NovaPageTool::make(),
         ];
     }

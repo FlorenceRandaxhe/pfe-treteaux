@@ -1,4 +1,7 @@
 @component('mail::message')
+# Nouveau message de contact
+
+Vous avez reçu un mouveau message via le formulaire de contact du site web des Tréteaux.
 
 **Nom**: {{ $data->name }}
 

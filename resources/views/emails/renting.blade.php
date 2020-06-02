@@ -1,4 +1,7 @@
 @component('mail::message')
+# Nouveau message de location
+
+Vous avez reçu une nouvelle demande de location via le formulaire de contact du site web des Tréteaux.
 
 **Nom**: {{ $data->name }}
 

@@ -18,6 +18,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Panel;
 use Whitecube\NovaFlexibleContent\Flexible;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Treteaux\SeatPicker\SeatPicker;
 
 class Event extends Resource
 {
@@ -61,7 +62,7 @@ class Event extends Resource
             new Panel('Presse', $this->pressFields()),
             new Panel('Gallerie', $this->galleryFields()),
             new Panel('Communiqué de presse', $this->pressReleaseFields()),
-
+            new Panel('Plan de la salle', $this->occupiedSeats()),
         ];
     }
 
@@ -222,6 +223,17 @@ class Event extends Resource
         return [
             File::make('Communiqué de presse', 'pressRelease')
                 ->help('Les communiqués de presse des spectacles sont disponible sur la page presse et média du site'),
+        ];
+    }
+
+    protected function occupiedSeats()
+    {
+        return [
+            SeatPicker::make('Placement', 'seats')
+                ->readonly()
+                ->hideWhenCreating()
+                ->hideFromIndex()
+                ->stacked(),
         ];
     }
 

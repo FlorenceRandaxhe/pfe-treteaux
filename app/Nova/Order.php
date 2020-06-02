@@ -7,11 +7,11 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\KeyValue;
 use App\Nova\Metrics\OrderCount;
 use App\Nova\Metrics\OrderPerDay;
-use App\Nova\Metrics\OrderPerEvent;
+use App\Event;
 
 class Order extends Resource
 {
@@ -52,7 +52,7 @@ class Order extends Resource
             ID::make()->sortable(),
             BelongsTo::make('Event'),
             Text::make('Email', 'email'),
-            Number::make('Total', 'total'),
+            Currency::make('Total', 'total')->currency('EUR'),
         ];
     }
 
@@ -111,7 +111,9 @@ class Order extends Resource
      */
     public function lenses(Request $request)
     {
-        return [];
+        return [
+            new Lenses\OrderPerSeason,
+        ];
     }
 
     /**

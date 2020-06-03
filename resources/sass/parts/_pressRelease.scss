@@ -20,7 +20,7 @@
     }
 
     &__data{
-        padding: em(24) em(30);
+        padding: em(15);
 
         &:first-of-type{
             border-right: 1px solid color(border);
@@ -38,7 +38,6 @@
     }
 
     &__link{
-        margin-left: em(26);
         position: relative;
 
         &:before{
@@ -106,6 +105,16 @@
             &:before{
                 width: calc(100% - 26px);
             }
+        }
+    }
+
+    @include mq(m){
+        &__data{
+            padding: em(24) em(30);
+        }
+
+        &__link{
+            margin-left: em(26);
         }
     }
 

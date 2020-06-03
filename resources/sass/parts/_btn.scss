@@ -118,7 +118,7 @@
         @include font(latobold);
         color: color(white);
         font-size: em(m);
-        padding: em(15) em(40);
+        padding: em(15) em(20);
         border-radius: 3px;
         transition: color 0.3s $easin, background-color 0.3s $easin;
     }
@@ -169,6 +169,10 @@
             display: none;
         }
     }
-
+    @include mq(m){
+        &--booking{
+            padding: em(15) em(40);
+        }
+    }
 
 }

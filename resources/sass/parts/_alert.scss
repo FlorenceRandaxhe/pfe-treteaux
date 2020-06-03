@@ -23,8 +23,6 @@
     &__content{
         background-color: color(white);
         position: absolute;
-        top: em(40);
-        right: em(40);
         max-width: em(400);
         font-size: em(m);
         line-height: em(25);
@@ -95,6 +93,19 @@
 
         &:hover:before, &:focus:before{
             transform: rotate(90deg);
+        }
+    }
+    @include mq(m){
+        &__content{
+            top: em(40);
+            right: em(40);
+        }
+    }
+
+    @include mq(m, max){
+        &__content{
+            top: em(20);
+            right: calc(50% - 152px)
         }
     }
 }

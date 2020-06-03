@@ -14,14 +14,18 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Panel;
 use Whitecube\NovaFlexibleContent\Flexible;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Treteaux\SeatPicker\SeatPicker;
+use Epartment\NovaDependencyContainer\NovaDependencyContainer;
+use Epartment\NovaDependencyContainer\HasDependencies;
 
 class Event extends Resource
 {
+    use HasDependencies;
     /**
      * The model the resource corresponds to.
      *
@@ -135,6 +139,14 @@ class Event extends Resource
             ])->displayUsingLabels()
             ->rules('required')
             ->hideFromIndex(),
+
+            NovaDependencyContainer::make([
+                Hidden::make('seats')->default(321)
+            ])->dependsOn('seating', 1),
+
+            NovaDependencyContainer::make([
+                Hidden::make('seats')->default(600)
+            ])->dependsOn('seating', 2),
 
             Boolean::make('Mis en avant', 'featured')
                 ->help('Le spectacle sera affiché dans le header de la page d\'accueil.')

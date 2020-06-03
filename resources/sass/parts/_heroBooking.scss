@@ -62,7 +62,7 @@
         border-top: 1px solid color(border);
         color: color(black);
         border-right: 1px solid color(border);
-        padding: em(30);
+        padding: em(30) em(20);
         transition: color 0.3s $easin;
 
         &:before{
@@ -92,7 +92,7 @@
         }
 
         &__back{
-            //padding-left:0;
+            padding: em(30);
         }
 
     }

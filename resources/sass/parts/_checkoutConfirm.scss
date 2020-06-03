@@ -1,5 +1,5 @@
 .bConfirm{
-    padding: em(100) 0 em(150);
+    padding: em(50) 0 em(150);
 
     &__container{
         text-align: center;
@@ -7,17 +7,17 @@
 
     &__title{
         @include font();
-        font-size: em(xl12);
-        padding-bottom: em(50, xl12);
-   }
+        font-size: em(xl5);
+        padding-bottom: em(50, xl5);
+    }
 
-   &__content{
-        padding: em(60);
+    &__content{
+        padding: em(60) em(30);
         margin-top: em(-70);
         background-color: #B1E3BA;
-   }
+    }
 
-   &__text{
+    &__text{
         margin: 0 auto;
         max-width: em(600);
         font-size: em(xl);
@@ -27,6 +27,18 @@
         &--bold{
             @include font(latobold);
         }
-   }
+    }
 
+    @include mq(m){
+        padding: em(100) 0 em(150);
+
+        &__title{
+            font-size: em(xl12);
+            padding-bottom: em(50, xl12);
+        }
+
+        &__content{
+            padding: em(60);
+        }
+    }
 }

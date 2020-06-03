@@ -28,7 +28,7 @@ class CheckoutController extends Controller
 
     public function validateInfo(Event $event, InfoRequest $request)
     {
-        session(['client' => $request->all()]);
+        session(['client' => $request->except(['my_time', 'my_name', '_token'])]);
 
         return redirect()->route('payment', [
             'event' => $event
@@ -38,6 +38,7 @@ class CheckoutController extends Controller
 
     public function payment(Event $event, Request $request)
     {
+
         if (!$request->session()->exists('category')) {
             return redirect()->route('booking', ['event' => $event]);
         }
@@ -65,7 +66,7 @@ class CheckoutController extends Controller
         if ($data['paymentIntent']['status'] === 'succeeded') {
 
             if($event->seating != 0){
-                $event->seats = intval(session('sum'));
+                $event->seats = $event->seats - intval(session('sum'));
                 $event->save();
             } else{
                 $result = array_merge($event->seats, Session('seat'));
@@ -77,12 +78,8 @@ class CheckoutController extends Controller
             $order->email = session('client')['email'];
             $order->orderDate = now();
             $order->total = round(session('total'));
-            $order->clientInfo = json_encode(
-                session('client')
-            );
-            $order->order = json_encode(
-                session('category')
-            );
+            $order->clientInfo = session('client');
+            $order->order = session('category');
             $order->save();
 
 
@@ -99,7 +96,8 @@ class CheckoutController extends Controller
 
             Mail::to(session('client')['email'])->send(new ConfirmReservation($event, $fileName));
 
-            $request->session()->flush();
+            $request->session()->forget(['category', 'sum', 'select', 'total', 'client', 'seat']);
+            //$request->session()->flush();
         }
     }
 

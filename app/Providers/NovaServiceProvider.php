@@ -58,9 +58,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
+            (new Eventcard)->width('full'),
             (new OrderCount)->width('1/2'),
             (new OrderPerDay)->width('1/2'),
-            //(new Eventcard)->width('full'),
         ];
     }
 

@@ -53,6 +53,8 @@ class Order extends Resource
             BelongsTo::make('Event'),
             Text::make('Email', 'email'),
             Currency::make('Total', 'total')->currency('EUR'),
+            KeyValue::make('Info sur le client', 'clientInfo')->rules('json'),
+            KeyValue::make('Info sur la commande', 'order')->rules('json'),
         ];
     }
 
@@ -99,7 +101,6 @@ class Order extends Resource
     {
         return [
             new Filters\OrderFilter
-            //new Filters\OrderDateFilter
         ];
     }
 
@@ -111,9 +112,7 @@ class Order extends Resource
      */
     public function lenses(Request $request)
     {
-        return [
-            new Lenses\OrderPerSeason,
-        ];
+        return [];
     }
 
     /**

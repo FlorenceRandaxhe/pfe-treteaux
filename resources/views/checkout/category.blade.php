@@ -10,7 +10,7 @@
             <div class="bCat__container wrapper">
                 <div class="bCat__heading">
                     <h2 class="bCat__title">Choisissez le nombre de places et leur catégorie</h2>
-                    @if($seatsLeft < 600)
+                    @if($seatsLeft < 15)
                         <p class="bCat__text"><em class="bCat__bold">Attention&nbsp;!</em> Il ne reste plus que <em class="bCat__bold">{{ $seatsLeft }} place(s)</em> pour ce spectacle</p>
                     @endif
                 </div>

@@ -78,9 +78,9 @@ class SeatsController extends Controller
             });
             $filtered = count($filtered);
         } elseif ($event->seating == 1){
-            $filtered = 231 - $event->seats;
+            $filtered = $event->seats;
         } elseif ($event->seating == 2){
-            $filtered = 600 - $event->seats;
+            $filtered = $event->seats;
         }
 
         return $filtered;

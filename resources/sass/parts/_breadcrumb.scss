@@ -35,6 +35,7 @@
     }
 
     @include mq(l, max){
+        margin-left: em(20);
         &__item{
             display: none;
 

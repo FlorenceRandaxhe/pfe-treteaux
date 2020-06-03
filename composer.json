@@ -29,6 +29,7 @@
         "php": "^7.2.5",
         "barryvdh/laravel-dompdf": "^0.8.6",
         "custom/theme": "*",
+        "epartment/nova-dependency-container": "^1.2",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "graham-campbell/markdown": "^12.0",
@@ -42,11 +43,11 @@
         "spatie/laravel-newsletter": "^4.8",
         "stripe/stripe-php": "^7.36",
         "tightenco/nova-stripe": "^0.2.4",
+        "treteaux/eventcard": "*",
         "treteaux/seat-picker": "*",
         "watson/active": "^5.0",
         "whitecube/nova-flexible-content": "^0.2.2",
-        "whitecube/nova-page": "^0.2.4",
-        "treteaux/eventcard": "*"
+        "whitecube/nova-page": "^0.2.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

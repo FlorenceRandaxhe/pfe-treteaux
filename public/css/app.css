@@ -628,7 +628,7 @@ a {
   font-family: "latobold", Playfair, Arial, serif;
   color: #ffffff;
   font-size: 1em;
-  padding: 0.9375em 2.5em;
+  padding: 0.9375em 1.25em;
   border-radius: 3px;
   transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -696,6 +696,12 @@ a {
 
 .btn__hidden span {
   display: none;
+}
+
+@media only screen and (min-width: 760px) {
+  .btn--booking {
+    padding: 0.9375em 2.5em;
+  }
 }
 
 .tooltip {
@@ -921,8 +927,6 @@ a {
 .alert__content {
   background-color: #ffffff;
   position: absolute;
-  top: 2.5em;
-  right: 2.5em;
   max-width: 25em;
   font-size: 1em;
   line-height: 1.5625em;
@@ -1010,6 +1014,20 @@ a {
   transform: rotate(90deg);
 }
 
+@media only screen and (min-width: 760px) {
+  .alert__content {
+    top: 2.5em;
+    right: 2.5em;
+  }
+}
+
+@media only screen and (max-width: 759px) {
+  .alert__content {
+    top: 1.25em;
+    right: calc(50% - 152px);
+  }
+}
+
 .breadcrumb {
   padding: 1.875em 0;
   margin-left: 1.875em;
@@ -1058,6 +1076,10 @@ a {
 }
 
 @media only screen and (max-width: 919px) {
+  .breadcrumb {
+    margin-left: 1.25em;
+  }
+
   .breadcrumb__item {
     display: none;
   }
@@ -1540,7 +1562,6 @@ a {
 .nav__list {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .nav__link {
@@ -3159,7 +3180,7 @@ a {
   border-top: 1px solid #E7E4E4;
   color: #292828;
   border-right: 1px solid #E7E4E4;
-  padding: 1.875em;
+  padding: 1.875em 1.25em;
   transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -3196,6 +3217,10 @@ a {
 @media only screen and (min-width: 760px) {
   .heroBooking__content {
     width: 50%;
+  }
+
+  .heroBooking__back {
+    padding: 1.875em;
   }
 }
 
@@ -4720,7 +4745,7 @@ a {
 }
 
 .allPressRelease__data {
-  padding: 1.5em 1.875em;
+  padding: 0.9375em;
 }
 
 .allPressRelease__data:first-of-type {
@@ -4736,7 +4761,6 @@ a {
 }
 
 .allPressRelease__link {
-  margin-left: 1.625em;
   position: relative;
 }
 
@@ -4825,6 +4849,16 @@ a {
 .allPressRelease__event:hover:before,
 .allPressRelease__event:focus:before {
   width: calc(100% - 26px);
+}
+
+@media only screen and (min-width: 760px) {
+  .allPressRelease__data {
+    padding: 1.5em 1.875em;
+  }
+
+  .allPressRelease__link {
+    margin-left: 1.625em;
+  }
 }
 
 @media only screen and (min-width: 1248px) {
@@ -7386,7 +7420,7 @@ a {
 }
 
 .bConfirm {
-  padding: 6.25em 0 9.375em;
+  padding: 3.125em 0 9.375em;
 }
 
 .bConfirm__container {
@@ -7395,12 +7429,12 @@ a {
 
 .bConfirm__title {
   font-family: "abril_fatfaceregular", Playfair, Arial, serif;
-  font-size: 4.5em;
-  padding-bottom: 0.6944444444em;
+  font-size: 2.25em;
+  padding-bottom: 1.3888888889em;
 }
 
 .bConfirm__content {
-  padding: 3.75em;
+  padding: 3.75em 1.875em;
   margin-top: -4.375em;
   background-color: #B1E3BA;
 }
@@ -7415,6 +7449,21 @@ a {
 
 .bConfirm__text--bold {
   font-family: "latobold", Playfair, Arial, serif;
+}
+
+@media only screen and (min-width: 760px) {
+  .bConfirm {
+    padding: 6.25em 0 9.375em;
+  }
+
+  .bConfirm__title {
+    font-size: 4.5em;
+    padding-bottom: 0.6944444444em;
+  }
+
+  .bConfirm__content {
+    padding: 3.75em;
+  }
 }
 
 .cartSmall {

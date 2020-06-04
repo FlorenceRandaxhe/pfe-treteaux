@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\KeyValue;
 use App\Nova\Metrics\OrderCount;
@@ -52,6 +53,7 @@ class Order extends Resource
             ID::make()->sortable(),
             BelongsTo::make('Event'),
             Text::make('Email', 'email'),
+            Date::make('Date de la réservation', 'orderDate')->format('DD-MM-YYYY'),
             Currency::make('Total', 'total')->currency('EUR'),
             KeyValue::make('Info sur le client', 'clientInfo')->rules('json'),
             KeyValue::make('Info sur la commande', 'order')->rules('json'),

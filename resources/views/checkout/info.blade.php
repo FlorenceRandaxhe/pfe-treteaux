@@ -21,6 +21,8 @@
                             <div class="form__checkoutControl">
                                 <label class="form__label" for="email">Email</label>
                                 <input class="form__checkoutInput @error('email') form__checkoutInput--error @enderror" placeholder="Email" type="email" name="email" id="email" value="@if(Session::get('client')['email']) {{ Session::get('client')['email'] }} @else {{old('email')}} @endif">
+                                <p>Cette adresse sera utilisée pour vous envoyer vos tickets</p>
+
                                 @error('email')
                                     <p class="form__checkoutError">{{ $message }}</p>
                                 @enderror

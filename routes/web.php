@@ -69,7 +69,7 @@ Route::post('/newsletter', 'NewsletterController@submit')
 Route::post('/newsletterFooter', 'NewsletterController@submitFooter')
         ->name('newsletterFooter');
 
-Route::get('/rgpd', 'legalController@rgpd')
+Route::get('/rgpd', 'LegalController@rgpd')
     ->template(\App\Nova\Templates\Rgpd::class)
     ->name('rgpd');
 
@@ -78,10 +78,10 @@ Route::get('/conditions-general-de-vente', 'LegalController@legal')
     ->name('legal');
 
 // reservation
-Route::get('/reservation/{event}', 'SeatsController@category')
+Route::get('/reservation/{event}', 'CategoryController@category')
     ->name('booking');
 
-Route::post('/category{event}', 'SeatsController@chooseCategory')
+Route::post('/category{event}', 'CategoryController@chooseCategory')
     ->name('category');
 
 Route::get('/placement/{event}', 'SeatsController@seat')
@@ -96,10 +96,10 @@ Route::get('/panier/{event}', 'CartController@cart')
 Route::post('/emptyCart/{event}', 'CartController@emptyCart')
     ->name('emptyCart');
 
-Route::get('/info/{event}', 'CheckoutController@info')
+Route::get('/info/{event}', 'InfoController@info')
     ->name('info');
 
-Route::post('/validateInfo/{event}', 'CheckoutController@validateInfo')
+Route::post('/validateInfo/{event}', 'InfoController@validateInfo')
     ->name('validateInfo');
 
 Route::get('/payment/{event}', 'CheckoutController@payment')
@@ -112,10 +112,3 @@ Route::get('/confirmation', 'CheckoutController@confirm')
     ->name('confirm');
 
 Route::post('/getInfo', function(){ return Session::get('client'); });
-
-Route::get('/event', function (Request $request) {
-    return response()->json([
-        'events' => \App\Event::orderBy('date')->limit(4)->get(),
-        'posts' => \App\Post::orderBy('published_at')->limit(4)->get()
-    ]);
-});

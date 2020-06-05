@@ -5,6 +5,7 @@ namespace App\Nova\Templates;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Markdown;
 use Whitecube\NovaPage\Pages\Template;
+use App\Nova\Templates\Panels\MetaPanel;
 
 class Legal extends Template {
 
@@ -18,6 +19,7 @@ class Legal extends Template {
     {
         return [
             Markdown::make('Contenu', 'content'),
+            new MetaPanel('Données meta')
         ];
     }
 

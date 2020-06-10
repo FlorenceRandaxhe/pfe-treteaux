@@ -3,6 +3,7 @@ export default class Lightbox {
     constructor(el, current) {
         this.el = el;
         this.getElements();
+        this.close.focus();
         this.setEvents();
         this.current = current + 1;
         this.getSlide(this.current);

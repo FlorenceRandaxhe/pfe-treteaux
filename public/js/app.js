@@ -2089,6 +2089,7 @@ var Lightbox = /*#__PURE__*/function () {
 
     this.el = el;
     this.getElements();
+    this.close.focus();
     this.setEvents();
     this.current = current + 1;
     this.getSlide(this.current);

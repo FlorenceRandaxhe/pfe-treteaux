@@ -207,6 +207,11 @@ class LayoutComposer
      */
     protected function getImage()
     {
+        if (!$this->page) {
+            $img = $this->image();
+            return asset('storage/'. $img);
+        }
+
         $value = $this->page ? $this->page->meta_image : null;
 
         if($value) {
@@ -214,5 +219,23 @@ class LayoutComposer
         }
 
         return asset('img/social.jpg');
+    }
+
+    protected function image()
+    {
+        $data = $this->view->getData();
+        if (Arr::exists($data, 'event')) {
+            $current = $this->view->getData()['event'];
+            $value = $current->img;
+
+            return $value;
+        }
+
+        if (Arr::exists($data, 'post')) {
+            $current = $this->view->getData()['post'];
+            $value = $current->img;
+
+            return $value;
+        }
     }
 }

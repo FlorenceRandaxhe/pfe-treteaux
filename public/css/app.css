@@ -5,6 +5,7 @@
   src: url("/fonts/abrilfatface-regular-webfont.woff2") format("woff2"), url("/fonts/abrilfatface-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
   src: url("/fonts/lato-black-webfont.woff2") format("woff2"), url("/fonts/lato-black-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -19,6 +21,7 @@
   src: url("/fonts/lato-blackitalic-webfont.woff2") format("woff2"), url("/fonts/lato-blackitalic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -26,6 +29,7 @@
   src: url("/fonts/lato-bold-webfont.woff2") format("woff2"), url("/fonts/lato-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -33,12 +37,14 @@
   src: url("/fonts/lato-bolditalic-webfont.woff2") format("woff2"), url("/fonts/lato-bolditalic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "latoitalic";
   src: url("/fonts/lato-italic-webfont.woff2") format("woff2"), url("/fonts/lato-italic-webfont.woff") format("woff");
   font-weight: normal;
+  font-display: swap;
   font-style: normal;
 }
 
@@ -47,6 +53,7 @@
   src: url("/fonts/lato-light-webfont.woff2") format("woff2"), url("/fonts/lato-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -54,6 +61,7 @@
   src: url("/fonts/lato-lightitalic-webfont.woff2") format("woff2"), url("/fonts/lato-lightitalic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -61,6 +69,7 @@
   src: url("/fonts/lato-regular-webfont.woff2") format("woff2"), url("/fonts/lato-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {

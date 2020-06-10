@@ -8,9 +8,9 @@
 
     <title>@yield('title') - Les Tréteaux</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet'>
     <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('extra-script')
+    @yield('extra-style')
 
     <!-- META -->
     <meta name="description" content="{{ $meta_description }}">

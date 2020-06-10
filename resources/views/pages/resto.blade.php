@@ -1,4 +1,7 @@
 @extends('layout')
+@section('extra-style')
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet'>
+@endsection
 @section('title',Page::title())
 @section('main')
     @include('partials.hero', [

@@ -29,6 +29,7 @@ class EventsComposer
      */
     public function compose(View $view)
     {
+
         $view->with('events', $this->getEvents());
     }
 

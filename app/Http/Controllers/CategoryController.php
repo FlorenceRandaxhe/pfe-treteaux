@@ -43,7 +43,7 @@ class CategoryController extends Controller
     {
         if ($event->seating == 0) {
             $filtered = Arr::where($event->seats, function ($value, $key) {
-                return $value == '0';
+                return $value == 0;
             });
             $filtered = count($filtered);
         } elseif ($event->seating == 1){

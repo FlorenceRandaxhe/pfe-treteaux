@@ -4,9 +4,10 @@ namespace App\Http\Composers;
 
 use Page;
 use Storage;
+use App\Post;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Route;
 use Whitecube\NovaPage\Pages\Template;
+use Illuminate\Support\Arr;
 
 class LayoutComposer
 {
@@ -63,6 +64,10 @@ class LayoutComposer
      */
     protected function getDescription()
     {
+        if (!$this->page) {
+            return $this->description();
+        }
+
         $value = $this->page ? $this->page->meta_description : null;
 
         return $value ?: Page::option('meta')->meta_description;
@@ -75,6 +80,10 @@ class LayoutComposer
      */
     protected function getOgDescription()
     {
+        if (!$this->page) {
+            return $this->description();
+        }
+
         $value = $this->page ? $this->page->meta_og_description : null;
 
         return $value ?: Page::option('meta')->meta_og_description;
@@ -87,9 +96,29 @@ class LayoutComposer
      */
     protected function getTwitterDescription()
     {
+        if (!$this->page) {
+            return $this->description();
+        }
+
         $value = $this->page ? $this->page->meta_twitter_description : null;
 
         return $value ?: Page::option('meta')->meta_twitter_description;
+    }
+
+    protected function description() {
+
+        $data = $this->view->getData();
+        if (Arr::exists($data, 'event')) {
+            $current = $this->view->getData()['event'];
+            $value = $current->intro;
+        }
+
+        if (Arr::exists($data, 'post')) {
+            $current = $this->view->getData()['post'];
+            $value = $current->title;
+        }
+
+        return $value;
     }
 
     /**
@@ -103,6 +132,10 @@ class LayoutComposer
     {
         $signature = env('APP_NAME', 'Les Tréteaux');
 
+        if (!$this->page) {
+            return $this->title($signature);
+        }
+
         if(!($base = $this->getBaseTitle())) {
             return $signature;
         }
@@ -114,6 +147,24 @@ class LayoutComposer
         return trim($base . $separator . ($append ?? $signature), $separator);
     }
 
+    protected function title($signature)
+    {
+        $data = $this->view->getData();
+        if (Arr::exists($data, 'event')) {
+            $current = $this->view->getData()['event'];
+            $value = $current->title;
+
+            return $value . ' - ' . $signature;
+        }
+
+        if (Arr::exists($data, 'post')) {
+            $current = $this->view->getData()['post'];
+            $value = $current->title;
+
+            return $value . ' - ' . $signature;
+        }
+    }
+
     /**
      * Find the current page's base title
      *
@@ -121,7 +172,6 @@ class LayoutComposer
      */
     protected function getBaseTitle()
     {
-
         return $this->page->title ?? null;
     }
 
@@ -132,7 +182,6 @@ class LayoutComposer
      */
     protected function getOgTitle()
     {
-
         $value = $this->page ? $this->page->meta_og_title : null;
 
         return $value ?: $this->getTitle(false);
@@ -145,6 +194,7 @@ class LayoutComposer
      */
     protected function getTwitterTitle()
     {
+
         $value = $this->page ? $this->page->meta_twitter_title : null;
 
         return $value ?: $this->getTitle(false);

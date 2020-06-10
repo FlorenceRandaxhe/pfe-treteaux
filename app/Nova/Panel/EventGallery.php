@@ -30,17 +30,9 @@ class EventGallery extends Panel{
     {
         return [
             Flexible::make('Gallerie', 'gallery')
-                ->button('Ajouter une photo')
-                ->addLayout('Photo', 'photo', [
-
-                    Image::make('Photo', 'photo')
-                        ->creationRules('required')
-                        ->help('Veuillez choisir une image qui fait moins de 1200x1200 et moins de 2 Mo.')
-                        ->deletable(false),
-
-                    Text::make('Description de l\'image', 'alt')
-                        ->help('Une brève description de ce qu\'il se trouve/se passe dans l\'image, c\'est utile pour le référencement du site.'),
-                ]),
+                ->button('Ajouter un média')
+                ->addLayout(\App\Nova\Flexible\Layouts\EventImage::class)
+                ->addLayout(\App\Nova\Flexible\Layouts\EventVideo::class),
         ];
     }
 }

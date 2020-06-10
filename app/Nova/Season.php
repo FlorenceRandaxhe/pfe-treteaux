@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -46,6 +47,14 @@ class Season extends Resource
     {
         return [
             ID::make()->sortable(),
+
+            Badge::make('Status', function () {
+                return $this->archived === true ? 'Archivée' : 'En cours';
+            })->map([
+                'Archivée' => 'danger',
+                'En cours' => 'success',
+            ]),
+
             Text::make('Saison', 'year')
                 ->rules('required', 'max:255')
                 ->creationRules('unique:seasons,year')
@@ -54,6 +63,7 @@ class Season extends Resource
 
             Boolean::make('Saison archivée', 'archived')
                 ->hideFromIndex()
+                ->hideWhenCreating()
                 ->help('Lorqu\'une saison est terminée, marquez la comme archivée'),
 
             HasMany::make('Events'),

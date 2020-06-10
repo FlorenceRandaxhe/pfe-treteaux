@@ -54,8 +54,8 @@ class EventDetails extends Panel
 
             Select::make('Placement', 'seating')->options([
                 '0' => 'Choix des places lors de la réservation',
-                '1' => 'Placement libre',
-                '2' => 'Configuration débout'
+                '1' => 'Placement libre (321 places)',
+                '2' => 'Configuration débout (600 places)'
             ])->displayUsingLabels()
             ->rules('required')
             ->hideFromIndex(),

@@ -34,12 +34,12 @@ class EventPresentation extends Panel{
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Season')
-                ->help('Si la saison souhaitée n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Type de spectacle" présent dans la barre latérale'),
+            BelongsTo::make('Saison', 'season', 'App\Nova\Season')
+                ->help('Si la saison souhaitée n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Type de spectacle" présent dans la barre latérale.'  . ' <a href="/admin/resources/seasons/new">Ou cliquez ici pour créer une directement</a>'),
 
-            BelongsTo::make('Type')
+            BelongsTo::make('Type de spectacle', 'type', 'App\Nova\Type')
                 ->hideFromIndex()
-                ->help('Si le type de spectacle souhaité n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Type de spectacle" présent dans la barre latérale'),
+                ->help('Si le type de spectacle souhaité n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Type de spectacle" présent dans la barre latérale.' . ' <a href="/admin/resources/types/new">Ou cliquez ici pour créer un directement</a>'),
 
             Text::make('Titre du spectacle', 'title')
                 ->rules('required'),

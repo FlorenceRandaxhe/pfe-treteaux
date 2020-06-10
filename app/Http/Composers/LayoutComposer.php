@@ -65,7 +65,7 @@ class LayoutComposer
     protected function getDescription()
     {
         if (!$this->page) {
-            return $this->description();
+            return $this->description() ?: Page::option('meta')->meta_description;
         }
 
         $value = $this->page ? $this->page->meta_description : null;
@@ -81,7 +81,7 @@ class LayoutComposer
     protected function getOgDescription()
     {
         if (!$this->page) {
-            return $this->description();
+            return $this->description() ?: Page::option('meta')->meta_og_description;
         }
 
         $value = $this->page ? $this->page->meta_og_description : null;
@@ -97,7 +97,7 @@ class LayoutComposer
     protected function getTwitterDescription()
     {
         if (!$this->page) {
-            return $this->description();
+            return $this->description() ?: Page::option('meta')->meta_og_description;
         }
 
         $value = $this->page ? $this->page->meta_twitter_description : null;
@@ -108,17 +108,18 @@ class LayoutComposer
     protected function description() {
 
         $data = $this->view->getData();
+        //dd($data);
         if (Arr::exists($data, 'event')) {
             $current = $this->view->getData()['event'];
-            $value = $current->intro;
-        }
+            return $current->intro;
+        };
 
         if (Arr::exists($data, 'post')) {
             $current = $this->view->getData()['post'];
-            $value = $current->title;
+            return $current->title;
         }
 
-        return $value;
+        //return $value;
     }
 
     /**

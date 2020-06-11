@@ -12,19 +12,28 @@
     &__header{
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding: em(20) 0;
     }
 
     &__close{
+        margin-left: auto;
         display: block;
         position: relative;
-        height: em(20);
-        width: em(20);
+        //height: em(20);
+        //width: em(20);
         transition: transform 0.2s $easin;
+        color: color(white);
 
-        &:hover, &:focus{
-            transform: rotate(90deg);
+        &:hover:after, &:focus:after{
+            transform: rotate(135deg);
+        }
+        &:hover:before, &:focus:before{
+            transform: rotate(45deg);
+        }
+
+        span{
+            padding-left: em(30);
         }
 
         &:before,
@@ -32,19 +41,19 @@
             content: '';
             display: block;
             background-color: color(white);
-            width: 100%;
+            width: em(20);
             height: em(2);
             position: absolute;
             transition: transform .3s $easin;
         }
         &:before{
             transform: rotate(-45deg);
-            bottom: em(10);
+            bottom: em(8);
         }
 
         &:after{
             transform: rotate(45deg);
-            bottom: em(10);
+            bottom: em(8);
         }
     }
 

@@ -52,7 +52,7 @@ export default class OpenLightbox {
         this.lightboxHeader.appendChild(this.close);
 
         this.closeText = document.createElement('span');
-        this.closeText.setAttribute('class', 'sro');
+        this.closeText.setAttribute('class', '');
         this.closeText.innerHTML = 'Fermer';
         this.close.appendChild(this.closeText);
 

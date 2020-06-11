@@ -54,7 +54,7 @@ export default class Lightbox {
 
         if (this.slides[this.current - 1].classList.contains('lightbox__video')) {
             this.vid = this.slides[this.current - 1];
-            this.loadPlayer(this.vid, this.slides[this.current - 1].getAttribute('data-video'));
+            this.loadPlayer(this.vid, this.vid.getAttribute('data-video'));
         }
     }
 
@@ -73,12 +73,6 @@ export default class Lightbox {
             videoId: videoId,
         });
 
-        if (!container.classList.contains('lightbox__slides--current')) {
-            //this.player.playVideo();
-            this.player.pauseVideo();
-        } else {
-            //
-        }
     }
 
 }

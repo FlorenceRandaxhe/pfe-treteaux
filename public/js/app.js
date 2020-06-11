@@ -1080,7 +1080,7 @@ var OpenLightbox = /*#__PURE__*/function () {
       this.close.setAttribute('class', 'lightbox__close');
       this.lightboxHeader.appendChild(this.close);
       this.closeText = document.createElement('span');
-      this.closeText.setAttribute('class', 'sro');
+      this.closeText.setAttribute('class', '');
       this.closeText.innerHTML = 'Fermer';
       this.close.appendChild(this.closeText); // next and prev button
 
@@ -2177,7 +2177,7 @@ var Lightbox = /*#__PURE__*/function () {
 
       if (this.slides[this.current - 1].classList.contains('lightbox__video')) {
         this.vid = this.slides[this.current - 1];
-        this.loadPlayer(this.vid, this.slides[this.current - 1].getAttribute('data-video'));
+        this.loadPlayer(this.vid, this.vid.getAttribute('data-video'));
       }
     }
   }, {
@@ -2200,12 +2200,6 @@ var Lightbox = /*#__PURE__*/function () {
         },
         videoId: videoId
       });
-
-      if (!container.classList.contains('lightbox__slides--current')) {
-        //this.player.playVideo();
-        this.player.pauseVideo();
-      } else {//
-      }
     }
   }]);
 

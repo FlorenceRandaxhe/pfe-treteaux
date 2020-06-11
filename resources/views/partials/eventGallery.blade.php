@@ -11,7 +11,7 @@
                     @if($slide->name() === 'video')
                     <div class="eventGallery__fig">
                         <a href="#" class="eventGallery__imgLink">
-                            <img class="eventGallery__img" src="{{ asset('storage/' . $slide->cover) }}">
+                            <img class="eventGallery__img eventGallery__video" data-video="{{ $slide->id }}" src="{{ asset('storage/' . $slide->cover) }}">
                         </a>
                     </div>
                     @else

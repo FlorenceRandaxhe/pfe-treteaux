@@ -1111,19 +1111,35 @@ var OpenLightbox = /*#__PURE__*/function () {
       this.lightboxContent.setAttribute('class', 'lightbox__content');
       this.lightbox.appendChild(this.lightboxContent);
       this.slides.forEach(function (slide) {
-        _this2.lightboxSlides = document.createElement('figure');
+        if (slide.classList.contains('eventGallery__video')) {
+          _this2.lightboxSlides = document.createElement('div');
 
-        _this2.lightboxSlides.setAttribute('class', 'lightbox__slides');
+          _this2.lightboxSlides.setAttribute('class', 'lightbox__slides lightbox__video');
 
-        _this2.lightboxContent.appendChild(_this2.lightboxSlides);
+          _this2.lightboxSlides.setAttribute('data-video', slide.getAttribute('data-video'));
 
-        _this2.image = document.createElement('img');
+          _this2.lightboxContent.appendChild(_this2.lightboxSlides);
 
-        _this2.image.setAttribute('src', slide.src);
+          _this2.player = document.createElement('div');
 
-        _this2.image.setAttribute('class', 'lightbox__img');
+          _this2.player.setAttribute('id', 'player');
 
-        _this2.lightboxSlides.appendChild(_this2.image);
+          _this2.lightboxSlides.appendChild(_this2.player);
+        } else {
+          _this2.lightboxSlides = document.createElement('figure');
+
+          _this2.lightboxSlides.setAttribute('class', 'lightbox__slides');
+
+          _this2.lightboxContent.appendChild(_this2.lightboxSlides);
+
+          _this2.image = document.createElement('img');
+
+          _this2.image.setAttribute('src', slide.src);
+
+          _this2.image.setAttribute('class', 'lightbox__img');
+
+          _this2.lightboxSlides.appendChild(_this2.image);
+        }
       });
     }
   }]);
@@ -2088,6 +2104,7 @@ var Lightbox = /*#__PURE__*/function () {
     _classCallCheck(this, Lightbox);
 
     this.el = el;
+    this.loadYoutubeAPi();
     this.getElements();
     this.close.focus();
     this.setEvents();
@@ -2099,6 +2116,7 @@ var Lightbox = /*#__PURE__*/function () {
     key: "getElements",
     value: function getElements() {
       this.slides = this.el.querySelectorAll('.lightbox__slides');
+      this.videos = this.el.querySelectorAll('.lightbox__video');
       this.close = this.el.querySelector('.lightbox__close');
       this.next = this.el.querySelector('.lightbox__control--next');
       this.prev = this.el.querySelector('.lightbox__control--prev');
@@ -2119,8 +2137,8 @@ var Lightbox = /*#__PURE__*/function () {
       });
       document.addEventListener('keyup', function (e) {
         if (e.key == 'Escape' || e.key == 'Esc' || e.keyCode == 27) return _this.closeLightbox(e);
-        if (e.key == 'ArrowLeft' || e.keyCode == 37) return _this.nextSlide(e, 1);
-        if (e.key == 'ArrowRight' || e.keyCode == 39) return _this.nextSlide(e, -1);
+        if (e.key == 'ArrowLeft' || e.keyCode == 37) return _this.nextSlide(e, -1);
+        if (e.key == 'ArrowRight' || e.keyCode == 39) return _this.nextSlide(e, 1);
       });
     }
   }, {
@@ -2156,6 +2174,38 @@ var Lightbox = /*#__PURE__*/function () {
       }
 
       this.slides[this.current - 1].classList.add('lightbox__slides--current');
+
+      if (this.slides[this.current - 1].classList.contains('lightbox__video')) {
+        this.vid = this.slides[this.current - 1];
+        this.loadPlayer(this.vid, this.slides[this.current - 1].getAttribute('data-video'));
+      }
+    }
+  }, {
+    key: "loadYoutubeAPi",
+    value: function loadYoutubeAPi() {
+      this.tag = document.createElement('script');
+      this.tag.src = "https://www.youtube.com/iframe_api";
+      this.firstScriptTag = document.getElementsByTagName('script')[0];
+      this.firstScriptTag.parentNode.insertBefore(this.tag, this.firstScriptTag);
+    }
+  }, {
+    key: "loadPlayer",
+    value: function loadPlayer(container, videoId) {
+      this.player = new YT.Player(container.querySelector('#player'), {
+        playerVars: {
+          controls: 0,
+          modestbranding: true,
+          showinfo: 0,
+          rel: 0
+        },
+        videoId: videoId
+      });
+
+      if (!container.classList.contains('lightbox__slides--current')) {
+        //this.player.playVideo();
+        this.player.pauseVideo();
+      } else {//
+      }
     }
   }]);
 

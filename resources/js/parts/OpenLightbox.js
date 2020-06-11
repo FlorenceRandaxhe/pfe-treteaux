@@ -1,4 +1,5 @@
-import Lightbox from './lightbox.js'
+import Lightbox from './lightbox.js';
+
 export default class OpenLightbox {
 
     constructor(el) {
@@ -83,14 +84,30 @@ export default class OpenLightbox {
         this.lightbox.appendChild(this.lightboxContent);
 
         this.slides.forEach(slide => {
-            this.lightboxSlides = document.createElement('figure');
-            this.lightboxSlides.setAttribute('class', 'lightbox__slides');
-            this.lightboxContent.appendChild(this.lightboxSlides);
 
-            this.image = document.createElement('img');
-            this.image.setAttribute('src', slide.src);
-            this.image.setAttribute('class', 'lightbox__img');
-            this.lightboxSlides.appendChild(this.image);
+            if (slide.classList.contains('eventGallery__video')) {
+
+                this.lightboxSlides = document.createElement('div');
+                this.lightboxSlides.setAttribute('class', 'lightbox__slides lightbox__video');
+                this.lightboxSlides.setAttribute('data-video', slide.getAttribute('data-video'));
+                this.lightboxContent.appendChild(this.lightboxSlides);
+
+                this.player = document.createElement('div');
+                this.player.setAttribute('id', 'player');
+                this.lightboxSlides.appendChild(this.player);
+
+            } else {
+
+                this.lightboxSlides = document.createElement('figure');
+                this.lightboxSlides.setAttribute('class', 'lightbox__slides');
+                this.lightboxContent.appendChild(this.lightboxSlides);
+
+                this.image = document.createElement('img');
+                this.image.setAttribute('src', slide.src);
+                this.image.setAttribute('class', 'lightbox__img');
+                this.lightboxSlides.appendChild(this.image);
+
+            }
         })
     }
 }

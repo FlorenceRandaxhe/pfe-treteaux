@@ -2,6 +2,7 @@
 @section('title', 'Placement')
 @section('main')
     @include('checkout.partials.heroBooking', [
+        'step' => 'Choix des sièges',
         'back' => route('booking', ['event' => $event->slug]),
     ])
 

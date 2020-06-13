@@ -3,9 +3,9 @@
         <div class="wrapper">
             <div class="heroBooking__content">
                 <h1 class="heroBooking__title">
-                    <span class="sro">Réservation pour&nbsp;:</span>
+                    <span class="sro">Réservation pour </span>
                     <span>{{ $event->title }}</span>
-                    <span class="sro"> - Choix des tarifs</span>
+                    <span class="sro"> - {{ $step }}</span>
                 </h1>
                 <p class="heroBooking__intro">{{ $event->intro }}</p>
 

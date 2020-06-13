@@ -72,20 +72,13 @@ class Event extends Resource
         return [
             NovaDependencyContainer::make([
                 Text::make('Place(s) restante(s) - placement libre (321 places)', 'seats')
-                    ->readonly()
-                    ->onlyOnDetail()
                     ->hideFromIndex()
-            ])->dependsOn('seating', 1)
-            ->onlyOnDetail(),
-
+            ])->dependsOn('seating', 1),
 
             NovaDependencyContainer::make([
                 Text::make('Place(s) restante(s) - configuration debout (600 places)', 'seats')
-                    ->readonly()
-                    ->onlyOnDetail()
                     ->hideFromIndex()
-            ])->dependsOn('seating', 2)
-            ->onlyOnDetail(),
+            ])->dependsOn('seating', 2),
 
             NovaDependencyContainer::make([
                 SeatPicker::make('Placement', 'seats')

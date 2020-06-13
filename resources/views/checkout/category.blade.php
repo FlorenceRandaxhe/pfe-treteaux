@@ -2,6 +2,7 @@
 @section('title', 'Réservation')
 @section('main')
     @include('checkout.partials.heroBooking', [
+        'step' => 'Choix des tarifs',
         'back' => route('singleEvent', ['season' => $event->season->year, 'event' => $event->slug]),
     ])
 

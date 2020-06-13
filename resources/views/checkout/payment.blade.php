@@ -5,6 +5,7 @@
 @section('title', 'Payement')
 @section('main')
     @include('checkout.partials.heroBooking', [
+        'step' => 'Information de payment',
         'back' => route('info', ['event' => $event->slug]),
     ])
 

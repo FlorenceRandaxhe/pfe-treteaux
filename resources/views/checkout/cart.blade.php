@@ -3,10 +3,12 @@
 @section('main')
     @if($event->seating == 1)
     @include('checkout.partials.heroBooking', [
+        'step' => 'Panier',
         'back' => route('seating', ['event' => $event->slug]),
     ])
     @else
     @include('checkout.partials.heroBooking', [
+        'step' => 'Panier',
         'back' => route('booking', ['event' => $event->slug]),
     ])
     @endif

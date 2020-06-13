@@ -47,7 +47,7 @@ class CheckoutController extends Controller
                 $event->save();
             } else{
                 $result = array_merge($event->seats, Session('seat'));
-                $event->update(['seats' => $result]);
+                $event->update(['seats' => json_encode($result)]);
             }
 
             $order = new Order();

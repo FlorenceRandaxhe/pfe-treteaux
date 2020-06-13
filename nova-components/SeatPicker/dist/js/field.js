@@ -668,7 +668,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.seat__circle[data-v-0224618e]{\n    fill: #d0d3dd;\n}\n.seat__circle--occupied[data-v-0224618e]{\n    fill: #55628c;\n}\n", ""]);
+exports.push([module.i, "\n.seat__circle[data-v-0224618e]{\n    fill: #d0d3dd;\n}\n.seat__circle--occupied[data-v-0224618e]{\n    fill: #55628c;\n}\n.legend[data-v-0224618e]{\n    width: 100%;\n}\n.legend__list[data-v-0224618e]{\n    width: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 25px;\n    //background-color: #F9F9F9;\n    //border-radius: 5px;\n    //box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);\n}\n.legend__item[data-v-0224618e]{\n    margin: 0 20px;\n    list-style: none;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.legend__color[data-v-0224618e]{\n    margin-right: 15px;\n    width: 20px;\n    height: 20px;\n    border-radius: 100%;\n}\n.legend__color--free[data-v-0224618e]{\n    background-color: #d0d3dd;\n}\n.legend__color--occupied[data-v-0224618e]{\n    background-color: #55628c;\n}\n", ""]);
 
 // exports
 
@@ -1057,6 +1057,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resource', 'resourceName', 'resourceId', 'field'],
@@ -1094,6 +1107,24 @@ var render = function() {
     { attrs: { field: _vm.field, errors: _vm.errors } },
     [
       _c("template", { slot: "field" }, [
+        _c("div", { staticClass: "legend" }, [
+          _c("ul", { staticClass: "legend__list" }, [
+            _c("li", { staticClass: "legend__item" }, [
+              _c("div", {
+                staticClass: "legend__color legend__color--occupied"
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "legend__label" }, [_vm._v("Occupé")])
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "legend__item" }, [
+              _c("div", { staticClass: "legend__color legend__color--free" }),
+              _vm._v(" "),
+              _c("p", { staticClass: "legend__label" }, [_vm._v("Libre")])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
         _c(
           "svg",
           {
@@ -4773,7 +4804,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.seat__circle[data-v-c023248a]{\n    fill: #d0d3dd;\n}\n.seat__circle--occupied[data-v-c023248a]{\n    fill: #55628c;\n}\n", ""]);
+exports.push([module.i, "\n.seat__circle[data-v-c023248a]{\n    fill: #d0d3dd;\n}\n.seat__circle--occupied[data-v-c023248a]{\n    fill: #55628c;\n}\n.seat__circle--select[data-v-c023248a]{\n    fill: #55628c;\n}\n.input[data-v-c023248a]{\n    visibility: hidden;\n    opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -5139,8 +5170,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     props: ['resourceName', 'resourceId', 'field'],
 
+    data: {
+
+        myStr: ''
+    },
+
     mounted: function mounted() {
+        var _this = this;
+
         this.getOccupiedSeat();
+
+        this.seats = document.querySelectorAll('circle');
+
+        var _loop = function _loop(i) {
+            _this.seats[i].addEventListener('click', function (e) {
+                return _this.toggleSeat(i);
+            });
+        };
+
+        for (var i = 0; i < this.seats.length; i++) {
+            _loop(i);
+        }
     },
 
 
@@ -5149,7 +5199,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Set the initial, internal value for the field.
          */
         setInitialValue: function setInitialValue() {
-            this.value = this.field.value || '';
+            this.value = this.field.value || {};
         },
 
 
@@ -5157,7 +5207,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Fill the given FormData object with the field's internal value.
          */
         fill: function fill(formData) {
-            formData.append(this.field.attribute, this.value || '');
+            //let result;
+
+            this.select = {};
+            this.selectFields = document.querySelectorAll('.seat__circle--select');
+            for (var key in this.field.value) {
+                for (var i = 0; i < this.selectFields.length; i++) {
+                    if (key === this.selectFields[i].dataset.seat && this.selectFields[i].hasAttribute('data-select')) {
+
+                        this.field.value[this.selectFields[i].getAttribute('data-seat')] = "1";
+                    }
+                }
+            }
+
+            this.myStr = JSON.stringify(this.field.value);
+
+            formData.append(this.field.attribute, this.myStr);
         },
 
 
@@ -5165,7 +5230,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Update the field's internal value.
          */
         handleChange: function handleChange(value) {
-            this.value = value;
+            this.value = value || [];
         },
         getOccupiedSeat: function getOccupiedSeat() {
             this.seats = document.querySelectorAll('circle');
@@ -5177,6 +5242,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     }
                 }
             }
+        },
+        toggleSeat: function toggleSeat(i) {
+            if (this.seats[i].hasAttribute('data-occup')) return;
+            this.seats[i].toggleAttribute('data-select');
+            this.seats[i].classList.toggle('seat__circle--select');
         }
     }
 });
@@ -36177,7 +36247,35 @@ var render = function() {
               }
             })
           ]
-        )
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.value,
+              expression: "value"
+            }
+          ],
+          staticClass:
+            "input w-full form-control form-input form-input-bordered",
+          class: _vm.errorClasses,
+          attrs: {
+            id: _vm.field.name,
+            type: "text",
+            placeholder: _vm.field.name
+          },
+          domProps: { value: _vm.value },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.value = $event.target.value
+            }
+          }
+        })
       ])
     ],
     2

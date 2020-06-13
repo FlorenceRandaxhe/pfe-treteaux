@@ -2,6 +2,19 @@
     <default-field :field="field" :errors="errors">
         <template slot="field">
 
+    <div class="legend">
+        <ul class="legend__list">
+            <li class="legend__item">
+                <div class="legend__color legend__color--occupied"></div>
+                <p class="legend__label">Occupé</p>
+            </li>
+            <li class="legend__item">
+                <div class="legend__color legend__color--free"></div>
+                <p class="legend__label">Libre</p>
+            </li>
+        </ul>
+    </div>
+
     <svg class="seat__svg" width="1000" height="1725" viewBox="0 0 1376 2374" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle class="seat__circle circle" data-seat="seat_2" cx="227" cy="1983" r="20" fill="#C2E4D4"/>
 <circle class="seat__circle circle" data-seat="seat_4" cx="288" cy="1983" r="20" fill="#C2E4D4"/>
@@ -332,7 +345,7 @@
 
             <!-- <input
                 :id="field.name"
-                type="checkbox"
+                type="text"
                 class="w-full form-control form-input form-input-bordered"
                 :class="errorClasses"
                 :placeholder="field.name"
@@ -372,5 +385,36 @@ export default {
     }
     .seat__circle--occupied{
         fill: #55628c;
+    }
+    .legend{
+        width: 100%;
+    }
+    .legend__list{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px;
+        //background-color: #F9F9F9;
+        //border-radius: 5px;
+        //box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+    }
+    .legend__item{
+        margin: 0 20px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    .legend__color{
+        margin-right: 15px;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+    }
+    .legend__color--free{
+        background-color: #d0d3dd;
+    }
+    .legend__color--occupied{
+        background-color: #55628c;
     }
 </style>

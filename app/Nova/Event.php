@@ -88,22 +88,11 @@ class Event extends Resource
             ->onlyOnDetail(),
 
             NovaDependencyContainer::make([
-                Text::make('Place(s) restante(s) sur 321', function () {
-                    if ($this->seating == 0) {
-                        $filtered = Arr::where($this->seats, function ($value, $key) {
-                            return $value == 0;
-                        });
-                        $filtered = count($filtered);
-                        return $filtered;
-                    }
-                }),
                 SeatPicker::make('Placement', 'seats')
-                    ->readonly()
-                    ->onlyOnDetail()
                     ->hideFromIndex()
-                    ->stacked(),
+                    ->stacked()
             ])->dependsOn('seating', 0)
-            ->onlyOnDetail()
+
         ];
     }
     /**

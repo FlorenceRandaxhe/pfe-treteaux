@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\File;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Panel;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use App\Nova\Panels\EventPresentation;
@@ -12,9 +13,15 @@ use App\Nova\Panels\EventDistri;
 use App\Nova\Panels\EventPress;
 use App\Nova\Panels\EventGallery;
 use App\Nova\Panels\EventSeat;
+use Treteaux\SeatPicker\SeatPicker;
+use Epartment\NovaDependencyContainer\NovaDependencyContainer;
+use Epartment\NovaDependencyContainer\HasDependencies;
+use Illuminate\Support\Arr;
+
 
 class Event extends Resource
 {
+    use HasDependencies;
     /**
      * The model the resource corresponds to.
      *
@@ -54,20 +61,51 @@ class Event extends Resource
             new EventDistri('Distribution'),
             new EventPress('Presse'),
             new EventGallery('Gallerie'),
-            new Panel('Communiqué de presse', $this->pressReleaseFields()),
-            new EventSeat('Plan de la salle'),
+            new EventSeat('Communiqué de presse'),
+            new Panel('Placement', $this->seatsFileds()),
         ];
+
     }
 
-
-    protected function pressReleaseFields()
+    protected function seatsFileds()
     {
         return [
-            File::make('Communiqué de presse', 'pressRelease')
-                ->help('Les communiqués de presse des spectacles sont disponible sur la page presse et média du site'),
+            NovaDependencyContainer::make([
+                Text::make('Place(s) restante(s) - placement libre (321 places)', 'seats')
+                    ->readonly()
+                    ->onlyOnDetail()
+                    ->hideFromIndex()
+            ])->dependsOn('seating', 1)
+            ->onlyOnDetail(),
+
+
+            NovaDependencyContainer::make([
+                Text::make('Place(s) restante(s) - configuration debout (600 places)', 'seats')
+                    ->readonly()
+                    ->onlyOnDetail()
+                    ->hideFromIndex()
+            ])->dependsOn('seating', 2)
+            ->onlyOnDetail(),
+
+            NovaDependencyContainer::make([
+                Text::make('Place(s) restante(s) sur 321', function () {
+                    if ($this->seating == 0) {
+                        $filtered = Arr::where($this->seats, function ($value, $key) {
+                            return $value == 0;
+                        });
+                        $filtered = count($filtered);
+                        return $filtered;
+                    }
+                }),
+                SeatPicker::make('Placement', 'seats')
+                    ->readonly()
+                    ->onlyOnDetail()
+                    ->hideFromIndex()
+                    ->stacked(),
+            ])->dependsOn('seating', 0)
+            ->onlyOnDetail()
         ];
     }
-
     /**
      * The plural form for the current resource
      *

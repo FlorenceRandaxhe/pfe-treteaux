@@ -16,7 +16,9 @@
                     @markdown {{ $text }} @endmarkdown
                 </div>
                 @if($isEvent)
-                    @if($event && $event->date > now())
+                    @if($seatsLeft == 0)
+                        <p class="hero__eventComplete">Complet</p>
+                    @elseif($event && $event->date > now())
                         <a class="hero__link btn btn--{{ $btnType }}" href="{{ $url }}">{{ $label }}</a>
                     @elseif($event && $event->date <= now())
                         <p class="hero__date">Le {{ $event->date->isoFormat('DD MMM YY \à HH\hmm') }}</p>

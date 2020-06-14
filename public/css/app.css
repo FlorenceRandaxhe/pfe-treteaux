@@ -3400,7 +3400,8 @@ a {
 }
 
 .hero__eventComplete {
-  margin-top: 1.25em;
+  font-size: 1.125em;
+  margin-top: 1.1111111111em;
   font-family: "latobold", Playfair, Arial, serif;
 }
 

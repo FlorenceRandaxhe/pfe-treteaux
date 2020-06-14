@@ -134,7 +134,8 @@
     }
 
     &__eventComplete{
-        margin-top: em(20);
+        font-size: em(l);
+        margin-top: em(20, l);
         @include font(latobold);
     }
 

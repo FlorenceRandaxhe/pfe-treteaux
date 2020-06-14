@@ -27,6 +27,10 @@ class Event extends Model
 
     protected static function booted()
     {
+        static::creating(function ($event) {
+            $event->seats = json_decode($event->seats);
+        });
+
         static::updating(function ($event) {
             $event->seats = json_decode($event->seats);
         });

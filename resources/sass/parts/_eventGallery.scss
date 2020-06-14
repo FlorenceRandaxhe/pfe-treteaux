@@ -27,12 +27,21 @@
         height: 300px;
         margin-right: em(30);
         overflow: hidden;
+        position: relative;
     }
 
     &__imgLink{
         &:hover img, &:focus img{
             transform: scale(1.1);
         }
+    }
+
+    &__svg{
+        stroke: color(white);
+        position: absolute;
+        top: em(15);
+        left: em(15);
+        z-index: 1;
     }
 
     &__img{

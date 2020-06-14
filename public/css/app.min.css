@@ -6786,11 +6786,20 @@ a {
   height: 300px;
   margin-right: 1.875em;
   overflow: hidden;
+  position: relative;
 }
 
 .eventGallery__imgLink:hover img,
 .eventGallery__imgLink:focus img {
   transform: scale(1.1);
+}
+
+.eventGallery__svg {
+  stroke: #ffffff;
+  position: absolute;
+  top: 0.9375em;
+  left: 0.9375em;
+  z-index: 1;
 }
 
 .eventGallery__img {

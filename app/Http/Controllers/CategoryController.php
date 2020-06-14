@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function category(Event $event, Request $request)
     {
-        if ($this->checkSeatsLeft($event) == 0) {
+        if ($this->checkSeatsLeft($event) == 0 || $event->date <= now()) {
             return redirect()->route('singleEvent', ['season' => $event->season, 'event' => $event]);
         }
 

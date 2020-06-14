@@ -52,11 +52,33 @@ class Order extends Resource
         return [
             ID::make()->sortable(),
             BelongsTo::make('Event'),
-            Text::make('Email', 'email'),
+
+            Text::make('Email', 'email')->rules('email'),
+
             Date::make('Date de la réservation', 'orderDate')->format('DD-MM-YYYY'),
+
             Currency::make('Total', 'total')->currency('EUR'),
-            KeyValue::make('Info sur le client', 'clientInfo')->rules('json'),
-            KeyValue::make('Info sur la commande', 'order')->rules('json'),
+
+            KeyValue::make('Info sur le client', 'clientInfo')
+                ->default(function ($request) {
+                    return [
+                        'email' => '',
+                        'firstName' => '',
+                        'lastName' => '',
+                        'phone' => '',
+                        'address' => '',
+                        'town' => '',
+                        'cp' => '',
+                    ];
+                })->disableEditingKeys()
+                ->disableAddingRows()
+                ->disableDeletingRows()
+                ->rules('json'),
+
+            KeyValue::make('Info sur la commande', 'order')
+                ->keyLabel('N° de siège')
+                ->valueLabel('Categorie')
+                ->rules('json'),
         ];
     }
 

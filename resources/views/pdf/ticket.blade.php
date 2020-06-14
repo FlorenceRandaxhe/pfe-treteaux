@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Réservation</title>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:ital,wght@0,700;1,700&display=swap');
 

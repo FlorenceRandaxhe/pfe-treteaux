@@ -26,7 +26,7 @@ class CartController extends Controller
 
     public function emptyCart(Request $request, Event $event)
     {
-        $request->session()->flush();
+       $request->session()->forget(['category', 'sum', 'order', 'select', 'total', 'client', 'seat']);
 
         return redirect()->route('booking', [
             'event' => $event

@@ -57,8 +57,14 @@ class CheckoutController extends Controller
             $order->total = round(session('total'));
             $order->clientInfo = session('client');
             $order->order = session('category');
+            if($event->seating != 0){
+                $order->order = session('category');
+            } else {
+                $c = array_combine(session('select'), session('category'));
+                session(['order' => $c]);
+                $order->order = session('order');
+            }
             $order->save();
-
 
             $fileName =  $order->id . '_' . str_replace(' ', '-', session('client')['lastName']) . '_' . str_replace(' ', '-', session('client')['firstName']);
 
@@ -73,7 +79,7 @@ class CheckoutController extends Controller
 
             Mail::to(session('client')['email'])->send(new ConfirmReservation($event, $fileName));
 
-            $request->session()->forget(['category', 'sum', 'select', 'total', 'client', 'seat']);
+            $request->session()->forget(['category', 'sum', 'order', 'select', 'total', 'client', 'seat']);
             //$request->session()->flush();
         }
     }

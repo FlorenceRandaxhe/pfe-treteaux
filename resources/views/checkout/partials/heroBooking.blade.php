@@ -25,4 +25,10 @@
         </div>
     </div>
     @include('parts.header')
+    <noscript>
+        <div class="wrapper">
+            <p class="noscript__text"> Pour pouvoir réserver des places pour un de nos spectacles, vous devez activer Javascript. Voici les <a class="noscript__link" href="https://www.enable-javascript.com/fr/" target="_blank">instructions pour activer JavaScript dans votre navigateur Web</a>.</p>
+            <p>Vous pouvez également vous rendre au Tréteaux et réserver sur place (du lundi au vendredi de 08h30 à 17h00).</p>
+        </div>
+    </noscript>
 </header>

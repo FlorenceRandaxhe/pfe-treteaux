@@ -9,7 +9,6 @@ export default class Nav{
     }
 
     getElements(){
-        //this.burger = this.el.querySelector('.header__burger');
         this.container = this.el.querySelector('.header__container');
         this.input = this.el.querySelector('.header__input');
         this.isMobile = document.documentElement.clientWidth < 920;
@@ -41,9 +40,7 @@ export default class Nav{
 
         if(this.isVisible){
             this.hide();
-        }
-
-        else{
+        } else{
             this.show();
         }
     }
@@ -59,7 +56,6 @@ export default class Nav{
         this.isVisible = false;
         document.querySelector('body').classList.remove('layout--scrollblock');
     }
-
 }
 
 

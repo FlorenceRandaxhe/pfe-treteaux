@@ -14,7 +14,6 @@ export default class Dropdown{
     }
 
     createElements() {
-        //if(this.isMobile) return;
         this.back = document.createElement('a');
         this.back.setAttribute('class', 'nav__back');
         this.back.setAttribute('href', '#');
@@ -34,9 +33,7 @@ export default class Dropdown{
 
         if(this.isVisible){
             this.hideNav();
-        }
-
-        else{
+        } else{
             this.showNav();
         }
     }
@@ -50,8 +47,6 @@ export default class Dropdown{
         this.isVisible = true;
         this.el.querySelector('.nav__list_sub').classList.add('nav__list_sub--show');
     }
-
-
 }
 
 

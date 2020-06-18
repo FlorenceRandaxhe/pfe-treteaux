@@ -45,6 +45,10 @@ class EventsComposer
                 ->where('slug', '!=', $data->slug)
                 ->limit(3)->get();
 
+            if(count($events) < 1) {
+              $events = $latestSeason->events()->limit(3)->get();
+            }
+
             return $events;
         }
 
@@ -53,4 +57,5 @@ class EventsComposer
 
         return $events;
     }
+
 }

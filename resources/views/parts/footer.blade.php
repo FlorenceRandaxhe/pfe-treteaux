@@ -3,7 +3,7 @@
         <div class="footer__newsletter">
             @if(session('success'))
                 <p class="footer__success">Merci pour votre inscription!</p>
-            @else
+            @endif
             <h2 class="footer__title">Newsletter</h2>
             <form class="form footer__form" action="{{ route('newsletterFooter') }}" method="POST">
                 @csrf
@@ -17,7 +17,7 @@
                     @enderror
                 </div>
             </form>
-            @endif
+
         </div>
 
         <div class="footer__content">

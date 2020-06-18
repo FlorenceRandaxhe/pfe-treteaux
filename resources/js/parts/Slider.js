@@ -13,7 +13,6 @@ export default class Slider{
     }
 
     createElements(){
-        // next & prev buttons
         this.div = document.createElement('div');
         this.div.setAttribute('class', 'featuredEvents__controls')
         this.next = document.createElement('a');
@@ -21,6 +20,7 @@ export default class Slider{
         this.spanNext.innerHTML = "Spectacle suivant";
         this.spanNext.setAttribute('class','sro');
         this.next.setAttribute('href','#');
+        this.next.setAttribute('title','Spectacle suivant');
         this.next.setAttribute('class','featuredEvents__control featuredEvents__control--next');
 
         this.prev = document.createElement('a');
@@ -28,6 +28,7 @@ export default class Slider{
         this.spanPrev.innerHTML = "Spectacle précédent";
         this.spanPrev.setAttribute('class','sro');
         this.prev.setAttribute('href','#');
+        this.prev.setAttribute('title','Spectacle précédent');
         this.prev.setAttribute('class','featuredEvents__control featuredEvents__control--previous');
 
         this.el.appendChild(this.div)
@@ -66,7 +67,6 @@ export default class Slider{
         let nextRef = this.current + 1;
         if (nextRef >= this.slides.length) return 0;
         return nextRef;
-
     }
 
     gotoNum(number){

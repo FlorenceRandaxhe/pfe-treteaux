@@ -12,6 +12,7 @@
                 <div class="bInfo__heading">
                     <h2 class="bInfo__title">Vos informations</h2>
                 </div>
+                <p class="bInfo__field">Tous les champs sont obligatoires</p>
                 <form class="form" method="post" action="{{ route('validateInfo', ['event' => $event->slug]) }}">
                     @csrf
                     {!! Honeypot::generate('my_name', 'my_time') !!}
@@ -22,7 +23,7 @@
                             <div class="form__checkoutControl">
                                 <label class="form__label" for="email">Email</label>
                                 <input class="form__checkoutInput @error('email') form__checkoutInput--error @enderror" placeholder="Email" type="email" name="email" id="email" value="@if(Session::get('client')['email']) {{ Session::get('client')['email'] }} @else {{old('email')}} @endif">
-                                <p>Cette adresse sera utilisée pour vous envoyer vos tickets</p>
+                                <p class="bInfo__text">Cette adresse sera utilisée pour vous envoyer vos tickets</p>
 
                                 @error('email')
                                     <p class="form__checkoutError">{{ $message }}</p>

@@ -12,7 +12,7 @@
         @if(count($events))
         <section class="allEvents">
             <div class="wrapper">
-                <h2 class="sro">Résultat de recherche dans les spectacles</h2>
+                <h2 class="allEvents__subtitle">Résultats de recherche dans les spectacles</h2>
                 <div class="allEvents__container">
                     @foreach($events as $event)
                         @include('parts.eventCard', [
@@ -36,7 +36,7 @@
         @if(count($posts))
         <section class="allPosts">
             <div class="wrapper">
-                <h2 class="sro">Toutes les actus</h2>
+                <h2 class="allEvents__subtitle">Résultats de recherche dans les actus</h2>
                 <div class="allPosts__container">
                     @foreach($posts as $post)
                         @include('parts.newsCard', [
@@ -52,7 +52,7 @@
         </section>
          @else
          <div class="searchResults wrapper">
-            <p class="searchResults__text">Aucun article ne correspond à la recherche&nbsp;!</p>
+            <p class="searchResults__text">Aucune actualité ne correspond à la recherche&nbsp;!</p>
             <a class="btn btn--primary" href="{{ route('post') }}">Voir toutes les actualités</a>
          </div>
         @endif

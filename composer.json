@@ -22,6 +22,10 @@
         {
             "type": "path",
             "url": "./nova-components/Eventcard"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/StringLimit"
         }
     ],
     "license": "MIT",
@@ -47,7 +51,8 @@
         "treteaux/seat-picker": "*",
         "watson/active": "^5.0",
         "whitecube/nova-flexible-content": "^0.2.2",
-        "whitecube/nova-page": "^0.2.4"
+        "whitecube/nova-page": "^0.2.4",
+        "treteaux/string-limit": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

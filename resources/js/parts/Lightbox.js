@@ -22,7 +22,6 @@ export default class Lightbox {
         this.next.addEventListener('click', (e) => this.nextSlide(e, 1));
         this.prev.addEventListener('click', (e) => this.nextSlide(e, -1));
         this.close.addEventListener('click', (e) => this.closeLightbox(e));
-
         document.addEventListener('keyup', (e) => {
             if (e.key == 'Escape' || e.key == 'Esc' || e.keyCode == 27) return this.closeLightbox(e);
             if (e.key == 'ArrowLeft' || e.keyCode == 37) return this.nextSlide(e, -1);
@@ -47,7 +46,6 @@ export default class Lightbox {
 
         for (let i = 0; i < this.slides.length; i++) {
             this.slides[i].classList.remove('lightbox__slides--current');
-
         }
 
         this.slides[this.current - 1].classList.add('lightbox__slides--current');

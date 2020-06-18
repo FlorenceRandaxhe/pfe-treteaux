@@ -16,7 +16,6 @@ export default class OpenLightbox {
 
     setEvents() {
         if (document.documentElement.clientWidth < 640) return;
-
         for (let i = 0; i < this.links.length; i++) {
             this.links[i].addEventListener('click',(e) => this.openLightbox(e,i));
         }
@@ -30,22 +29,17 @@ export default class OpenLightbox {
     }
 
     createElements() {
-        // lightbox container
         this.lightbox = document.createElement('div');
         this.lightbox.setAttribute('class', 'lightbox');
         this.el.appendChild(this.lightbox);
-
-        // lightbox header
         this.lightboxHeader = document.createElement('div');
         this.lightboxHeader.setAttribute('class', 'lightbox__header');
         this.lightbox.appendChild(this.lightboxHeader);
-
         this.createToolbox();
         this.createImages();
     }
 
     createToolbox() {
-        // close button
         this.close = document.createElement('a');
         this.close.setAttribute('href', '#');
         this.close.setAttribute('class', 'lightbox__close');
@@ -56,7 +50,6 @@ export default class OpenLightbox {
         this.closeText.innerHTML = 'Fermer';
         this.close.appendChild(this.closeText);
 
-        // next and prev button
         this.next = document.createElement('a');
         this.spanNext = document.createElement('span')
         this.spanNext.innerHTML = "Suivant";
@@ -78,7 +71,6 @@ export default class OpenLightbox {
     }
 
     createImages() {
-        // slide container
         this.lightboxContent = document.createElement('div');
         this.lightboxContent.setAttribute('class', 'lightbox__content');
         this.lightbox.appendChild(this.lightboxContent);
@@ -86,27 +78,21 @@ export default class OpenLightbox {
         this.slides.forEach(slide => {
 
             if (slide.classList.contains('eventGallery__video')) {
-
                 this.lightboxSlides = document.createElement('div');
                 this.lightboxSlides.setAttribute('class', 'lightbox__slides lightbox__video');
                 this.lightboxSlides.setAttribute('data-video', slide.getAttribute('data-video'));
                 this.lightboxContent.appendChild(this.lightboxSlides);
-
                 this.player = document.createElement('div');
                 this.player.setAttribute('id', 'player');
                 this.lightboxSlides.appendChild(this.player);
-
             } else {
-
                 this.lightboxSlides = document.createElement('figure');
                 this.lightboxSlides.setAttribute('class', 'lightbox__slides');
                 this.lightboxContent.appendChild(this.lightboxSlides);
-
                 this.image = document.createElement('img');
                 this.image.setAttribute('src', slide.src);
                 this.image.setAttribute('class', 'lightbox__img');
                 this.lightboxSlides.appendChild(this.image);
-
             }
         })
     }

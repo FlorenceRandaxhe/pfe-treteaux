@@ -3,7 +3,7 @@
     <div class="wrapper">
         <div class="eventGallery__container">
             <div class="eventGallery__titleWrapper">
-                <h2 class="eventGallery__title">Gallerie photos</h2>
+                <h2 class="eventGallery__title">Galerie photos</h2>
             </div>
 
             <div class="eventGallery__content">

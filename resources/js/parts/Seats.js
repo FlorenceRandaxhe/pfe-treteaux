@@ -23,11 +23,9 @@ export default class Seats{
     setEvents(){
         for (let i = 0; i < this.circles.length; i++) {
             this.circles[i].addEventListener('click', () => this.toggleSeat(this.circles[i]));
-
             this.circles[i].addEventListener('keyup', (e) => {
                 if (e.key == 'Enter' || e.keyCode == 13) return this.toggleSeat(this.circles[i]);
             });
-
             this.circles[i].addEventListener('click', (e) => {
                 if(this.circles[i].hasAttribute('data-occup')){
                     this.showTakenSeatAlert();
@@ -43,7 +41,6 @@ export default class Seats{
         this.closeTotal.addEventListener('click', (e) => this.hideAlert(e))
         this.totalSeat.addEventListener('click', (e) => this.eventBodyClick(e))
         this.takenSeat.addEventListener('click', (e) => this.eventBodyClick(e))
-
 
         for (let i = 0; i < this.checkbox.length; i++) {
             this.showTakenSeat(this.checkbox[i])
@@ -118,12 +115,6 @@ export default class Seats{
         this.takenSeat.classList.add('alert--show');
         document.querySelector('body').classList.add('layout--scrollblock');
     }
-
-    // hideTakenSeatAlert(e) {
-    //     e.preventDefault();
-    //     this.takenSeat.classList.remove('alert--show');
-    //     document.querySelector('body').classList.remove('layout--scrollblock');
-    // }
 
     showTotalSeatAlert(){
         this.totalSeat.classList.add('alert--show');

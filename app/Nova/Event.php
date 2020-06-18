@@ -17,7 +17,7 @@ use Treteaux\SeatPicker\SeatPicker;
 use Epartment\NovaDependencyContainer\NovaDependencyContainer;
 use Epartment\NovaDependencyContainer\HasDependencies;
 use Illuminate\Support\Arr;
-
+use Laravel\Nova\Fields\HasMany;
 
 class Event extends Resource
 {
@@ -63,6 +63,7 @@ class Event extends Resource
             new EventGallery('Gallerie'),
             new EventSeat('Communiqué de presse'),
             new Panel('Placement', $this->seatsFileds()),
+            HasMany::make('Order')
         ];
 
     }
@@ -86,8 +87,7 @@ class Event extends Resource
                 SeatPicker::make('Placement', 'seats')
                     ->hideFromIndex()
                     ->stacked()
-            ])->dependsOn('seating', 0)
-
+            ])->dependsOn('seating', 0),
         ];
     }
     /**

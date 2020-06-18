@@ -19,6 +19,10 @@ export default class RestoModal{
         this.links.addEventListener('click', (e) => this.openModal(e))
         this.overlay.addEventListener('click', (e) => this.closeModal(e))
         this.close.addEventListener('click', (e) => this.closeModal(e))
+
+        document.addEventListener('keyup', (e) => {
+            if (e.key == 'Escape' || e.key == 'Esc' || e.keyCode == 27) return this.closeModal(e);
+        });
     }
 
     openModal(e){
@@ -107,7 +111,6 @@ export default class RestoModal{
 
 
 if (document.querySelector('.allRestos')) {
-
     document.querySelectorAll('.restoCard').forEach(resto => {
         let modal = new RestoModal(resto);
     })

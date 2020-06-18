@@ -12,7 +12,6 @@ export default class GalleryScroll{
     }
 
     createElements(){
-        // next & prev buttons
         this.div = document.createElement('div');
         this.div.setAttribute('class', 'eventGallery__controls')
         this.next = document.createElement('a');

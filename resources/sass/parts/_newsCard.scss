@@ -2,6 +2,8 @@
     position: relative;
     margin-bottom: gut(1);
     overflow: hidden;
+    display:flex;
+    flex-direction: column-reverse;
 
     &:after{
         content:'';

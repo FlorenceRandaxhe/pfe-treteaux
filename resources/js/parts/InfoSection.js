@@ -25,14 +25,11 @@ export default class InfoSection{
         this.close.addEventListener('click', (event) => this.hide(event));
     }
 
-
     hide(){
         event.preventDefault();
         this.el.classList.add('infoSection--hide');
     }
-
 }
-
 
 if (document.querySelector('.infoSection')) {
     let info = new InfoSection(document.querySelector('.infoSection'));

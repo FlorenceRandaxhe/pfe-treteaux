@@ -69,16 +69,12 @@ export default class Payment{
 
         this.form.addEventListener('submit', (ev) => {
             ev.preventDefault();
-
             this.changeLoadingState(true);
-
             this.cardName = document.getElementById('cardName');
-
             this.stripe.createToken(this.card, {
                 name: this.cardName.value
             })
             .then(({token}) => {
-                console.log('Received Stripe token:', token);
                 if (token === undefined) {
                     this.cardName.classList.add('form__checkoutInput--error')
                 }
@@ -105,7 +101,6 @@ export default class Payment{
             }).then((result) => {
                 if (result.error) {
                     this.changeLoadingState(false);
-                    console.log(result.error.message);
 
                 } else {
                     if (result.paymentIntent.status === 'succeeded') {
@@ -126,7 +121,6 @@ export default class Payment{
                             body: JSON.stringify({paymentIntent: this.paymentIntent})
 
                         }).then((data) => {
-                            //console.log(data);
                             this.form.reset();
                             window.location.href = this.redirect;
                         }).catch((error) => {

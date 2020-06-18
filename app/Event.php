@@ -51,6 +51,11 @@ class Event extends Model
         return $this->belongsTo(Season::class);
     }
 
+    public function order()
+    {
+        return $this->hasMany(Order::class);
+    }
+
     public function getGalleryContentAttribute()
     {
         return $this->flexible('gallery');

@@ -15,7 +15,6 @@ export default class Map{
     }
 
     initMap() {
-
         mapboxgl.accessToken = 'pk.eyJ1IjoiZmxvcmVuY2VyYW5kYXhoZSIsImEiOiJjazl3ZmJ2azMwOGI5M2d1aGRldHlxMjJmIn0.l9b5ADWDn7OQ1D7Obndf0g';
 
         this.map = new mapboxgl.Map({
@@ -49,9 +48,6 @@ export default class Map{
             .setLngLat(marker.geometry.coordinates)
             .addTo(this.map);
         });
-        // this.marker = new mapboxgl.Marker()
-        //      .setLngLat({lat: this.lat, lng: this.lng})
-        //      .addTo(this.map);
     }
 }
 

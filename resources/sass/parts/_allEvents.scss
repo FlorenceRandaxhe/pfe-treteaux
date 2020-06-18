@@ -1,10 +1,19 @@
 .allEvents{
     padding: em(70) 0 em(120);
+
+    &__subtitle{
+        @include font();
+        font-size: em(l);
+        padding-bottom: em(50, l);
+        text-align: center;
+    }
+
     @include mq(l){
         &__container{
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            align-items:flex-start;
         }
     }
 }

@@ -76,7 +76,7 @@ class Post extends Resource
                 ->creationRules('unique:posts,slug')
                 ->updateRules('unique:posts,slug,{{resourceId}}')
                 ->hideFromIndex()
-                ->help('Mot clef unique relatif à la page actuelle. Il ne peut contenir que des caractères simples (lettre de a-z, pas d\'espaces, d\'accents ou autres) Par exemple, pour un post "Nous embauchons !", le slug pourrait être "nous-embauchons", la page serait alors accessible via le lien: www.votre-site.be/posts/<strong>nous-embauchons</strong>'),
+                ->help('Mot clef unique relatif à la page actuelle. Il ne peut contenir que des caractères simples (lettre de a-z, pas d\'espaces, d\'accents ou autres)'),
 
             Image::make('Image', 'img')
                 ->hideFromIndex()

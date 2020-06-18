@@ -1,8 +1,6 @@
 <header class="header">
     <div class="hero hero--{{ $class }}">
-        <figure class="hero__fig">
-            <img class="hero__img" src="{{ asset('storage/' . $img) }}" alt="{{ $alt }}">
-        </figure>
+
         <div class="hero__container hero__container--{{ $color }}">
 
             <div class="hero__content">
@@ -16,9 +14,7 @@
                     @markdown {{ $text }} @endmarkdown
                 </div>
                 @if($isEvent)
-                    @if($seatsLeft == 0)
-                        <p class="hero__eventComplete">Complet</p>
-                    @elseif($event && $event->date > now())
+                    @if($event && $event->date > now())
                         <a class="hero__link btn btn--{{ $btnType }}" href="{{ $url }}">{{ $label }}</a>
                     @elseif($event && $event->date <= now())
                         <p class="hero__date">Le {{ $event->date->isoFormat('DD MMM YY \à HH\hmm') }}</p>
@@ -28,6 +24,9 @@
                 @endif
             </div>
         </div>
+        <figure class="hero__fig">
+            <img class="hero__img" src="{{ asset('storage/' . $img) }}" alt="{{ $alt }}">
+        </figure>
     </div>
     @include('parts.header')
 </header>

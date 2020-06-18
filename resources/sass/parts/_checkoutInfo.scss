@@ -8,9 +8,9 @@
     }
 
     &__heading{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        //display: flex;
+        //justify-content: space-between;
+        //align-items: center;
     }
 
     &__heading{
@@ -29,6 +29,15 @@
         display: flex;
         justify-content: space-between;
         padding: em(40) 0;
+    }
+
+    &__text{
+        font-size: em(m, m);
+        padding-top: em(15);
+    }
+
+    &__field{
+        padding-bottom: em(20);
     }
 
     @include mq(m){

@@ -13,6 +13,9 @@
         padding: em(20) 0;
     }
 
+    &__success{
+        color:color(white);
+    }
     &__legal{
         font-size: em(s);
         margin-right: em(40,s);

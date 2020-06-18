@@ -37,7 +37,6 @@ export default class Category{
     showAlert(){
         this.alert.classList.add('alert--show')
         document.querySelector('body').classList.add('layout--scrollblock');
-
     }
 
     hideAlert(e) {

@@ -15,21 +15,21 @@ export default class EventListModal {
     setEvents() {
         this.el.classList.add('restoEvent--js');
         this.el.classList.remove('wrapper');
-
         this.btn.addEventListener('click', (e) => this.openModal(e));
         this.close.addEventListener('click', (e) => this.closeModal(e));
         this.el.addEventListener('click', (e) => this.eventBodyClick(e));
+
+        document.addEventListener('keyup', (e) => {
+            if (e.key == 'Escape' || e.key == 'Esc' || e.keyCode == 27) return this.closeModal(e);
+        });
     }
 
     createElements() {
-        // open modal button
         this.btn = document.createElement('a');
         this.btn.setAttribute('href', '#');
         this.btn.setAttribute('class', 'btn btn--primary');
         this.btn.innerHTML = 'Voir les spectacles concernés';
         document.querySelector('.allRestos__intro').appendChild(this.btn);
-
-        // close btn
         this.close = document.createElement('a');
         this.close.setAttribute('href', '#');
         this.close.setAttribute('class', 'restoEvent__close');
@@ -63,10 +63,7 @@ export default class EventListModal {
         this.visible = false;
         this.el.classList.remove('restoEvent--active');
         document.querySelector('body').classList.remove('layout--scrollblock');
-
     }
-
-
 }
 
 

@@ -1,5 +1,6 @@
 <div class="header__container wrapper">
     <div class="header__logo">
+        <a class="header__link" href="{{ route('home') }}"><span class="sro">Retour à l'acceuil</span></a>
         @include('svg.logo')
         <span class="sro">Les Tréteaux - Centre Culturel de Visé</span>
     </div>

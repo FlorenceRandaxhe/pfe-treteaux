@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Panel;
+use Treteaux\StringLimit\StringLimit;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class EventPresentation extends Panel{
@@ -39,7 +40,8 @@ class EventPresentation extends Panel{
 
             BelongsTo::make('Type de spectacle', 'type', 'App\Nova\Type')
                 ->hideFromIndex()
-                ->help('Si le type de spectacle souhaité n\'apparait pas dans cette liste, il vous suffit de l\'ajouter via le lien "Type de spectacle" présent dans la barre latérale.' . ' <a href="/admin/resources/types/new">Ou cliquez ici pour créer un directement</a>'),
+                ->help('Si le type de spectacle souhaité n\'apparait pas dans cette liste, il vous suffit de le créer')
+                ->showCreateRelationButton(),
 
             Text::make('Titre du spectacle', 'title')
                 ->rules('required'),
@@ -49,11 +51,11 @@ class EventPresentation extends Panel{
                 ->creationRules('unique:events,slug')
                 ->updateRules('unique:events,slug,{{resourceId}}')
                 ->hideFromIndex()
-                ->help('Mot clef unique relatif à la page actuelle. Il ne peut contenir que des caractères simples (lettre de a-z, pas d\'espaces, d\'accents ou autres) Par exemple, pour un post "Nous embauchons !", le slug pourrait être "nous-embauchons", la page serait alors accessible via le lien: www.votre-site.be/posts/<strong>nous-embauchons</strong>'),
+                ->help('Mot clef unique relatif à la page actuelle. Il ne peut contenir que des caractères simples (lettre de a-z, pas d\'espaces, d\'accents ou autres)'),
 
-            Textarea::make('Intro', 'intro')
-                ->help('Maximum 200 characters.')
+            StringLimit::make('Intro', 'intro')
                 ->rules('required', 'max:200')
+                ->max(200)
                 ->hideFromIndex(),
 
             Image::make('Image', 'img')
